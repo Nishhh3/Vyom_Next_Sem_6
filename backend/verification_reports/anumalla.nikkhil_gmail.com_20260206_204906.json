@@ -1,0 +1,33 @@
+{
+  "email": "anumalla.nikkhil@gmail.com",
+  "timestamp": "2026-02-06T20:49:06.759749",
+  "aadhar_number": "9888 9622 9000",
+  "verification_result": {
+    "success": true,
+    "match": true,
+    "confidence": 29.86159831587878,
+    "distance": 0.4769411314520243,
+    "threshold": 0.68,
+    "model": "ArcFace",
+    "doc_detection_conf": 0.9999514818191528,
+    "webcam_detection_conf": 0.9999905824661255,
+    "timestamp": "2026-02-06T20:49:06.741134",
+    "preprocessing": {
+      "document_enhanced": true,
+      "webcam_enhanced": true
+    },
+    "low_confidence_override": false,
+    "risk_score": 35.06920084206061,
+    "approved": false,
+    "decision": "MANUAL REVIEW - Medium Risk"
+  },
+  "file_paths": {
+    "document": "uploads\\anumalla_nikkhil_gmail_com_20260206_204815_doc.jpeg",
+    "webcam": "uploads\\anumalla_nikkhil_gmail_com_20260206_204815_webcam.jpg"
+  },
+  "settings": {
+    "model": "ArcFace",
+    "enhance_document": true,
+    "enhance_webcam": true
+  }
+}
