@@ -27,7 +27,7 @@ except ImportError as e:
     DB_AVAILABLE = False
 
 try:
-    from ocr_utils import extract_aadhar_number
+    from ocr_utils import extract_aadhar as extract_aadhar_number
     OCR_AVAILABLE = True
 except ImportError:
     OCR_AVAILABLE = False

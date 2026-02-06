@@ -9,16 +9,10 @@ class AadharExtractor:
     """Extract Aadhar number from Aadhar card images."""
     
     def __init__(self, tesseract_path: Optional[str] = None):
-        """
-        Initialize Aadhar extractor.
-        
-        Args:
-            tesseract_path: Path to tesseract executable (Windows only)
-        """
-        if tesseract_path:
-            pytesseract.pytesseract.tesseract_cmd = tesseract_path
-        
-        print("✅ Aadhar Extractor initialized")
+           if tesseract_path is None:
+               tesseract_path = r"C:\Program Files\Tesseract-OCR\tesseract.exe"  # adjust if different
+           pytesseract.pytesseract.tesseract_cmd = tesseract_path
+           print("✅ Aadhar Extractor initialized")
     
     def preprocess_for_ocr(self, image_path: str) -> np.ndarray:
         """
