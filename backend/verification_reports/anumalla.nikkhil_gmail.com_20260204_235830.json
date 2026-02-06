@@ -1,0 +1,29 @@
+{
+  "email": "anumalla.nikkhil@gmail.com",
+  "timestamp": "2026-02-04T23:58:30.557189",
+  "aadhar_number": null,
+  "verification_result": {
+    "success": true,
+    "match": true,
+    "confidence": 39.36343890651857,
+    "distance": 0.4123286154356738,
+    "threshold": 0.68,
+    "model": "ArcFace",
+    "doc_detection_conf": 0.9999953508377075,
+    "webcam_detection_conf": 0.9999997615814209,
+    "timestamp": "2026-02-04T23:58:30.515551",
+    "preprocessing": {
+      "document_enhanced": true,
+      "webcam_enhanced": true
+    },
+    "low_confidence_override": false,
+    "risk_score": 30.318280546740716,
+    "approved": false,
+    "decision": "MANUAL REVIEW - Medium Risk"
+  },
+  "settings": {
+    "model": "ArcFace",
+    "enhance_document": true,
+    "enhance_webcam": true
+  }
+}

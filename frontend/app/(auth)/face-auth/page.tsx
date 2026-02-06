@@ -3,23 +3,35 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import StepIndicator from '@/components/StepIndicator';
+import { useKyc } from '@/components/KycContext';
 
 export default function FaceAuthPage() {
   const router = useRouter();
+  const {
+    data: { registration, aadharFile },
+    setWebcamImage,
+  } = useKyc();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [stream, setStream] = useState<MediaStream | null>(null);
   const [cameraError, setCameraError] = useState<string | null>(null);
   const [isCameraReady, setIsCameraReady] = useState(false);
   const [isCapturing, setIsCapturing] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
+    // Ensure previous steps are completed
+    if (!registration || !aadharFile) {
+      router.replace('/register');
+      return;
+    }
+
     startCamera();
     return () => {
       if (stream) {
         stream.getTracks().forEach((track) => track.stop());
       }
     };
-  }, []);
+  }, [registration, aadharFile, router]);
 
   const startCamera = async () => {
     try {
@@ -48,8 +60,9 @@ export default function FaceAuthPage() {
   };
 
   const handleCapture = async () => {
-    if (!videoRef.current || !isCameraReady) return;
+    if (!videoRef.current || !isCameraReady || !registration || !aadharFile) return;
 
+    setErrorMessage(null);
     setIsCapturing(true);
 
     const canvas = document.createElement('canvas');
@@ -60,12 +73,52 @@ export default function FaceAuthPage() {
       ctx.drawImage(videoRef.current, 0, 0);
     }
 
-    setTimeout(() => {
+    try {
+      const blob = await new Promise<Blob | null>((resolve) =>
+        canvas.toBlob((b) => resolve(b), 'image/jpeg')
+      );
+
+      if (!blob) {
+        throw new Error('Failed to capture image from camera');
+      }
+
+      // Store webcam image in context (for potential future use)
+      setWebcamImage(blob);
+
+      const formData = new FormData();
+      formData.append('email', registration.email);
+      formData.append('aadhar_document', aadharFile);
+      formData.append('webcam_image', new File([blob], 'webcam.jpg', { type: 'image/jpeg' }));
+      formData.append('enhance_document', 'true');
+      formData.append('enhance_webcam', 'true');
+
+      const response = await fetch('/api/kyc_signup', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(
+          errorData?.error || errorData?.detail || 'Verification failed on the server'
+        );
+      }
+
+      // Consume result (could be used for UI feedback)
+      await response.json();
+
       if (stream) {
         stream.getTracks().forEach((track) => track.stop());
       }
+
       router.push('/kyc-status');
-    }, 800);
+    } catch (error) {
+      console.error('Face verification error:', error);
+      setErrorMessage(
+        error instanceof Error ? error.message : 'Something went wrong during verification'
+      );
+      setIsCapturing(false);
+    }
   };
 
   const steps = [
@@ -92,7 +145,7 @@ export default function FaceAuthPage() {
       {/* Camera Container */}
       <div className="w-full max-w-lg">
         <div className="relative bg-gray-950 border-2 border-gray-700 rounded-2xl overflow-hidden h-[500px] shadow-2xl">
-          {cameraError ? (
+          {cameraError || errorMessage ? (
             <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
               <svg
                 className="w-16 h-16 text-red-500 mb-4"
@@ -108,7 +161,9 @@ export default function FaceAuthPage() {
                 />
               </svg>
               <p className="text-white font-medium mb-2">Camera Access Required</p>
-              <p className="text-sm text-gray-400">{cameraError}</p>
+              <p className="text-sm text-gray-400">
+                {cameraError || errorMessage}
+              </p>
             </div>
           ) : !isCameraReady ? (
             <div className="absolute inset-0 flex flex-col items-center justify-center">

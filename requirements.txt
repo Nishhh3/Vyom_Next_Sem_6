@@ -1,8 +1,0 @@
-streamlit
-opencv-python
-numpy
-deepface
-mtcnn
-mysql-connector-python
-tensorflow
-pillow
