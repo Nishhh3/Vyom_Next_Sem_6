@@ -1,9 +1,49 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useKyc } from '@/components/KycContext';
+
+type KycStatusResponse =
+  | { success: true; status: string }
+  | { success: false; message?: string };
 
 export default function KYCStatusPage() {
   const router = useRouter();
+  const {
+    data: { registration },
+  } = useKyc();
+  const [statusData, setStatusData] = useState<KycStatusResponse | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchStatus = async () => {
+      if (!registration?.email) return;
+      setIsLoading(true);
+      setError(null);
+
+      try {
+        const res = await fetch(
+          `/api/kyc_signup?email=${encodeURIComponent(registration.email)}`
+        );
+
+        if (!res.ok) {
+          throw new Error(`Failed to fetch status (${res.status})`);
+        }
+
+        const data = (await res.json()) as KycStatusResponse;
+        setStatusData(data);
+      } catch (err) {
+        console.error('Failed to fetch KYC status:', err);
+        setError('Unable to fetch latest KYC status. Please try again later.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchStatus();
+  }, [registration]);
 
   const handleGoToLogin = () => {
     router.push('/login');

@@ -6,9 +6,11 @@ import { useRouter } from 'next/navigation';
 import FormInput from '@/components/FormInput';
 import PrimaryButton from '@/components/PrimaryButton';
 import StepIndicator from '@/components/StepIndicator';
+import { useKyc } from '@/components/KycContext';
 
 export default function RegisterPage() {
   const router = useRouter();
+  const { setRegistration } = useKyc();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -30,8 +32,14 @@ export default function RegisterPage() {
       alert('Please enter a valid 10-digit mobile number');
       return;
     }
-    
-    console.log('Registration data:', formData);
+
+    // Persist registration data for subsequent KYC steps
+    setRegistration({
+      fullName: formData.fullName.trim(),
+      email: formData.email.trim(),
+      mobile: formData.mobile.trim(),
+    });
+
     router.push('/aadhaar-upload');
   };
 
