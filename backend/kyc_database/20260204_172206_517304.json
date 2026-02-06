@@ -1,0 +1,22 @@
+{
+  "record_id": "20260204_172206_517304",
+  "timestamp": "2026-02-04T17:22:06.273626",
+  "customer_name": "Nikhil Anumalla",
+  "customer_email": "anumalla.nikkhil@gmail.com",
+  "customer_phone": "93230155547",
+  "document_type": "National ID",
+  "document_path": "uploaded_document.jpg",
+  "webcam_path": "webcam_capture.jpg",
+  "success": true,
+  "match": false,
+  "confidence": 8.214640821745366,
+  "distance": 0.6241404424121315,
+  "threshold": 0.68,
+  "model": "ArcFace",
+  "doc_detection_conf": 0.9999953508377075,
+  "webcam_detection_conf": 0.9997348189353943,
+  "preprocessing": {
+    "document_enhanced": true,
+    "webcam_enhanced": true
+  },
+  "low_confidence_override": 
