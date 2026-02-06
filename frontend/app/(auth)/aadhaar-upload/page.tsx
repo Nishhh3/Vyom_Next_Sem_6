@@ -1,14 +1,26 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import PrimaryButton from '@/components/PrimaryButton';
 import StepIndicator from '@/components/StepIndicator';
+import { useKyc } from '@/components/KycContext';
 
 export default function AadhaarUploadPage() {
   const router = useRouter();
-  const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+  const {
+    data: { registration, aadharFile },
+    setAadharFile,
+  } = useKyc();
+  const [uploadedFile, setUploadedFile] = useState<File | null>(aadharFile);
   const [isDragging, setIsDragging] = useState(false);
+
+  // Ensure user has completed registration step
+  useEffect(() => {
+    if (!registration) {
+      router.replace('/register');
+    }
+  }, [registration, router]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -16,6 +28,7 @@ export default function AadhaarUploadPage() {
       const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'];
       if (validTypes.includes(file.type)) {
         setUploadedFile(file);
+        setAadharFile(file);
       } else {
         alert('Please upload a valid file (JPG, PNG, or PDF)');
       }
@@ -41,6 +54,7 @@ export default function AadhaarUploadPage() {
       const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'];
       if (validTypes.includes(file.type)) {
         setUploadedFile(file);
+        setAadharFile(file);
       } else {
         alert('Please upload a valid file (JPG, PNG, or PDF)');
       }
@@ -49,6 +63,7 @@ export default function AadhaarUploadPage() {
 
   const handleRemoveFile = () => {
     setUploadedFile(null);
+    setAadharFile(null);
   };
 
   const handleProceed = () => {
