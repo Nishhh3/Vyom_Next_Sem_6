@@ -3,3 +3,18 @@ __pycache__/
 *.pyc
 venv/
 .env*
+*.jpg
+*.jpeg
+
+
+# Ignore runtime JSON files
+backend/kyc_database/*.json
+backend/verification_reports/*.json
+
+# Ignore generic JSON if needed
+*.json
+
+# BUT keep essential frontend config
+!frontend/package.json
+!frontend/package-lock.json
+!frontend/tsconfig.json
