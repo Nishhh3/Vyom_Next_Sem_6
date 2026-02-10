@@ -6,6 +6,8 @@ venv/
 *.jpg
 *.jpeg
 
+uploads/*.jpg
+uploads/*.jpeg
 
 # Ignore runtime JSON files
 backend/kyc_database/*.json
@@ -18,3 +20,5 @@ backend/verification_reports/*.json
 !frontend/package.json
 !frontend/package-lock.json
 !frontend/tsconfig.json
+
+
