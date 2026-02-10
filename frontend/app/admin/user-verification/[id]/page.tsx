@@ -1,185 +1,159 @@
 'use client';
 
 import { useParams, useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
-// Mock user data - in production, fetch this based on ID
-const mockUserData: Record<string, any> = {
-  'KYC001': {
-    id: 'KYC001',
-    name: 'Rahul Sharma',
-    email: 'rahul.sharma@email.com',
-    mobile: '+91 98765 43210',
-    accountNumber: 'VYOM1234567890',
-    aadhaarStatus: 'Verified',
-    faceMatch: 'Yes',
-    confidence: 96.8,
-    riskScore: 12,
-    aadhaarImage: 'https://placehold.co/600x400/1e293b/f1f5f9?text=Aadhaar+Document',
-    faceImage: 'https://placehold.co/400x400/1e293b/f1f5f9?text=Face+Capture',
-    submittedDate: '2024-02-01',
-    currentStatus: 'Approved',
-  },
-  'KYC002': {
-    id: 'KYC002',
-    name: 'Priya Patel',
-    email: 'priya.patel@email.com',
-    mobile: '+91 98765 43211',
-    accountNumber: 'VYOM1234567891',
-    aadhaarStatus: 'Verified',
-    faceMatch: 'Yes',
-    confidence: 94.5,
-    riskScore: 8,
-    aadhaarImage: 'https://placehold.co/600x400/1e293b/f1f5f9?text=Aadhaar+Document',
-    faceImage: 'https://placehold.co/400x400/1e293b/f1f5f9?text=Face+Capture',
-    submittedDate: '2024-02-02',
-    currentStatus: 'Approved',
-  },
-  'KYC003': {
-    id: 'KYC003',
-    name: 'Amit Kumar',
-    email: 'amit.kumar@email.com',
-    mobile: '+91 98765 43212',
-    accountNumber: 'VYOM1234567892',
-    aadhaarStatus: 'Verified',
-    faceMatch: 'No',
-    confidence: 64.2,
-    riskScore: 78,
-    aadhaarImage: 'https://placehold.co/600x400/1e293b/f1f5f9?text=Aadhaar+Document',
-    faceImage: 'https://placehold.co/400x400/1e293b/f1f5f9?text=Face+Capture',
-    submittedDate: '2024-02-03',
-    currentStatus: 'Rejected',
-  },
-  'KYC004': {
-    id: 'KYC004',
-    name: 'Neha Singh',
-    email: 'neha.singh@email.com',
-    mobile: '+91 98765 43213',
-    accountNumber: 'VYOM1234567893',
-    aadhaarStatus: 'Pending',
-    faceMatch: 'Pending',
-    confidence: 0,
-    riskScore: 0,
-    aadhaarImage: 'https://placehold.co/600x400/1e293b/f1f5f9?text=Processing',
-    faceImage: 'https://placehold.co/400x400/1e293b/f1f5f9?text=Processing',
-    submittedDate: '2024-02-04',
-    currentStatus: 'Pending',
-  },
-  'KYC005': {
-    id: 'KYC005',
-    name: 'Vikram Malhotra',
-    email: 'vikram.malhotra@email.com',
-    mobile: '+91 98765 43214',
-    accountNumber: 'VYOM1234567894',
-    aadhaarStatus: 'Verified',
-    faceMatch: 'Yes',
-    confidence: 91.3,
-    riskScore: 15,
-    aadhaarImage: 'https://placehold.co/600x400/1e293b/f1f5f9?text=Aadhaar+Document',
-    faceImage: 'https://placehold.co/400x400/1e293b/f1f5f9?text=Face+Capture',
-    submittedDate: '2024-02-05',
-    currentStatus: 'Pending',
-  },
-  'KYC006': {
-    id: 'KYC006',
-    name: 'Sneha Reddy',
-    email: 'sneha.reddy@email.com',
-    mobile: '+91 98765 43215',
-    accountNumber: 'VYOM1234567895',
-    aadhaarStatus: 'Verified',
-    faceMatch: 'No',
-    confidence: 58.7,
-    riskScore: 85,
-    aadhaarImage: 'https://placehold.co/600x400/1e293b/f1f5f9?text=Aadhaar+Document',
-    faceImage: 'https://placehold.co/400x400/1e293b/f1f5f9?text=Face+Capture',
-    submittedDate: '2024-02-05',
-    currentStatus: 'Rejected',
-  },
-  'KYC007': {
-    id: 'KYC007',
-    name: 'Arjun Mehta',
-    email: 'arjun.mehta@email.com',
-    mobile: '+91 98765 43216',
-    accountNumber: 'VYOM1234567896',
-    aadhaarStatus: 'Pending',
-    faceMatch: 'Pending',
-    confidence: 0,
-    riskScore: 0,
-    aadhaarImage: 'https://placehold.co/600x400/1e293b/f1f5f9?text=Processing',
-    faceImage: 'https://placehold.co/400x400/1e293b/f1f5f9?text=Processing',
-    submittedDate: '2024-02-06',
-    currentStatus: 'Pending',
-  },
-  'KYC008': {
-    id: 'KYC008',
-    name: 'Divya Iyer',
-    email: 'divya.iyer@email.com',
-    mobile: '+91 98765 43217',
-    accountNumber: 'VYOM1234567897',
-    aadhaarStatus: 'Verified',
-    faceMatch: 'Yes',
-    confidence: 97.2,
-    riskScore: 5,
-    aadhaarImage: 'https://placehold.co/600x400/1e293b/f1f5f9?text=Aadhaar+Document',
-    faceImage: 'https://placehold.co/400x400/1e293b/f1f5f9?text=Face+Capture',
-    submittedDate: '2024-02-06',
-    currentStatus: 'Approved',
-  },
+type VerificationReport = {
+  timestamp?: string;
+  aadhar_number?: string | null;
+  verification_result?: {
+    match?: boolean;
+    confidence?: number;
+    risk_score?: number;
+    decision?: string;
+  };
+  settings?: {
+    model?: string;
+  };
+};
+
+type BackendUser = {
+  id: number;
+  email: string;
+  aadhar_number?: string | null;
+  user_id?: string | null;
+  password?: string | null;
+  status?: string | null;
+  email_sent?: boolean | null;
+  created_at?: string | null;
+  updated_at?: string | null;
+};
+
+type UserDetailsResponse = {
+  success: boolean;
+  user: BackendUser;
+  images: {
+    document_image?: string | null;
+    registration_capture?: string | null;
+    webcam_image?: string | null;
+  };
+  verification_report?: VerificationReport | null;
 };
 
 export default function UserVerificationPage() {
   const params = useParams();
   const router = useRouter();
-  const id = params.id as string;
+  const id = Array.isArray(params.id)
+  ? params.id[0]
+  : params.id;
+  if (!id) {
+  return <p className="text-red-500">Invalid user ID</p>;
+}
   
   const [remarks, setRemarks] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [data, setData] = useState<UserDetailsResponse | null>(null);
 
-  // Get user data or show not found
-  const userData = mockUserData[id];
+  useEffect(() => {
+    let cancelled = false;
+    async function load() {
+      try {
+        setLoading(true);
+        setError(null);
+        const res = await fetch(`http://localhost:8000/api/admin/kyc-users/${encodeURIComponent(id)}`, { cache: 'no-store' });
+        if (!res.ok) {
+          const body = await res.json().catch(() => ({}));
+          throw new Error(body?.error || 'Failed to load user');
+        }
+        const json = (await res.json()) as UserDetailsResponse;
+        if (!cancelled) setData(json);
+      } catch (e: any) {
+        if (!cancelled) setError(e?.message || 'Something went wrong');
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, [id]);
 
-  if (!userData) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-16 h-16 mx-auto mb-4 bg-red-600/10 rounded-full flex items-center justify-center">
-            <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-            </svg>
-          </div>
-          <h2 className="text-2xl font-bold text-white mb-2">User Not Found</h2>
-          <p className="text-gray-400 mb-6">The KYC record with ID "{id}" does not exist.</p>
-          <button
-            onClick={() => router.push('/admin/dashboard')}
-            className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 font-medium"
-          >
-            Back to Dashboard
-          </button>
-        </div>
-      </div>
-    );
-  }
+  const user = data?.user;
+  const report = data?.verification_report;
 
-  const handleApprove = () => {
-    setIsProcessing(true);
-    setTimeout(() => {
-      alert(`✅ User ${userData.name} (${id}) has been APPROVED.\n\nRemarks: ${remarks || 'None'}\n\nIn production, this would update the backend.`);
-      setIsProcessing(false);
+  const ui = useMemo(() => {
+    const statusRaw = (user?.status || 'PENDING').toUpperCase();
+    const currentStatus =
+      statusRaw === 'ACCEPTED' ? 'Approved' : statusRaw === 'REJECTED' ? 'Rejected' : 'Pending';
+
+    const match = report?.verification_result?.match;
+    const faceMatch = match === true ? 'Yes' : match === false ? 'No' : 'Pending';
+    const confidence = report?.verification_result?.confidence ?? 0;
+    const riskScore = report?.verification_result?.risk_score ?? 0;
+
+    return { currentStatus, faceMatch, confidence, riskScore };
+  }, [user?.status, report]);
+
+  const handleApprove = async () => {
+    if (!id) {
+      alert("Invalid user ID");
+      return;
+    }
+    try {
+      setIsProcessing(true);
+      const res = await fetch(`/api/admin/kyc-users/${encodeURIComponent(id)}/accept`, { method: 'POST' });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body?.error || 'Accept failed');
+      alert(
+        `✅ User ACCEPTED!\n\nUser ID: ${body?.user_id}\nPassword: ${body?.password}\nEmail sent: ${body?.email_sent ? 'Yes' : 'No'}`
+      );
       router.push('/admin/dashboard');
-    }, 1000);
+    } catch (e: any) {
+      alert(e?.message || 'Failed to accept user');
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
-  const handleReject = () => {
+  const handleReject = async () => {
     if (!remarks.trim()) {
       alert('⚠️ Please provide remarks before rejecting.');
       return;
     }
-    setIsProcessing(true);
-    setTimeout(() => {
-      alert(`❌ User ${userData.name} (${id}) has been REJECTED.\n\nRemarks: ${remarks}\n\nIn production, this would update the backend.`);
-      setIsProcessing(false);
+    try {
+      setIsProcessing(true);
+      const res = await fetch(`/api/admin/kyc-users/${encodeURIComponent(id)}/reject`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ reason: remarks }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body?.error || 'Reject failed');
+      alert(`❌ User REJECTED.\n\nReason: ${remarks}`);
       router.push('/admin/dashboard');
-    }, 1000);
+    } catch (e: any) {
+      alert(e?.message || 'Failed to reject user');
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  const handleResetPending = async () => {
+    try {
+      setIsProcessing(true);
+      const res = await fetch(`/api/admin/kyc-users/${encodeURIComponent(id)}/pending`, { method: 'POST' });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body?.error || 'Reset failed');
+      alert('🔄 Status reset to PENDING');
+      router.push('/admin/dashboard');
+    } catch (e: any) {
+      alert(e?.message || 'Failed to reset');
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   // Determine risk level color
@@ -194,6 +168,32 @@ export default function UserVerificationPage() {
     if (score < 60) return 'bg-yellow-500/10 border-yellow-500/30';
     return 'bg-red-500/10 border-red-500/30';
   };
+
+  if (loading) {
+    return <p className="text-sm text-gray-400">Loading…</p>;
+  }
+
+  if (error || !user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 mx-auto mb-4 bg-red-600/10 rounded-full flex items-center justify-center">
+            <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <h2 className="text-2xl font-bold text-white mb-2">User Not Found</h2>
+          <p className="text-gray-400 mb-6">{error || `The KYC record with ID "${id}" does not exist.`}</p>
+          <button
+            onClick={() => router.push('/admin/dashboard')}
+            className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 font-medium"
+          >
+            Back to Dashboard
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -217,14 +217,14 @@ export default function UserVerificationPage() {
         <div>
           <span
             className={`px-4 py-2 rounded-lg text-sm font-semibold ${
-              userData.currentStatus === 'Approved'
+              ui.currentStatus === 'Approved'
                 ? 'bg-green-500/10 text-green-500 border border-green-500/30'
-                : userData.currentStatus === 'Rejected'
+                : ui.currentStatus === 'Rejected'
                 ? 'bg-red-500/10 text-red-500 border border-red-500/30'
                 : 'bg-yellow-500/10 text-yellow-500 border border-yellow-500/30'
             }`}
           >
-            {userData.currentStatus}
+            {ui.currentStatus}
           </span>
         </div>
       </div>
@@ -243,23 +243,23 @@ export default function UserVerificationPage() {
             <div className="space-y-4">
               <div>
                 <p className="text-xs text-gray-500 uppercase mb-1">Full Name</p>
-                <p className="text-white font-medium">{userData.name}</p>
+                <p className="text-white font-medium">-</p>
               </div>
               <div>
                 <p className="text-xs text-gray-500 uppercase mb-1">Email Address</p>
-                <p className="text-white font-medium">{userData.email}</p>
+                <p className="text-white font-medium">{user.email}</p>
               </div>
               <div>
                 <p className="text-xs text-gray-500 uppercase mb-1">Mobile Number</p>
-                <p className="text-white font-medium">{userData.mobile}</p>
+                <p className="text-white font-medium">-</p>
               </div>
               <div>
                 <p className="text-xs text-gray-500 uppercase mb-1">Account Number</p>
-                <p className="text-white font-mono text-sm">{userData.accountNumber}</p>
+                <p className="text-white font-mono text-sm">{user.user_id || '-'}</p>
               </div>
               <div>
                 <p className="text-xs text-gray-500 uppercase mb-1">Submitted Date</p>
-                <p className="text-white font-medium">{userData.submittedDate}</p>
+                <p className="text-white font-medium">{user.created_at ? String(user.created_at).slice(0, 19) : '-'}</p>
               </div>
             </div>
           </div>
@@ -278,12 +278,12 @@ export default function UserVerificationPage() {
                 <span className="text-gray-400">Aadhaar Status</span>
                 <span
                   className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                    userData.aadhaarStatus === 'Verified'
+                    user.aadhar_number
                       ? 'bg-green-500/10 text-green-500 border border-green-500/30'
                       : 'bg-yellow-500/10 text-yellow-500 border border-yellow-500/30'
                   }`}
                 >
-                  {userData.aadhaarStatus}
+                  {user.aadhar_number ? 'Verified' : 'Pending'}
                 </span>
               </div>
 
@@ -292,62 +292,62 @@ export default function UserVerificationPage() {
                 <span className="text-gray-400">Face Match</span>
                 <span
                   className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                    userData.faceMatch === 'Yes'
+                    ui.faceMatch === 'Yes'
                       ? 'bg-green-500/10 text-green-500 border border-green-500/30'
-                      : userData.faceMatch === 'No'
+                      : ui.faceMatch === 'No'
                       ? 'bg-red-500/10 text-red-500 border border-red-500/30'
                       : 'bg-gray-500/10 text-gray-500 border border-gray-500/30'
                   }`}
                 >
-                  {userData.faceMatch}
+                  {ui.faceMatch}
                 </span>
               </div>
 
               {/* Confidence */}
-              {userData.confidence > 0 && (
+              {ui.confidence > 0 && (
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-gray-400">Confidence</span>
-                    <span className="text-white font-bold">{userData.confidence}%</span>
+                    <span className="text-white font-bold">{ui.confidence.toFixed(1)}%</span>
                   </div>
                   <div className="w-full bg-white/10 rounded-full h-2">
                     <div
                       className={`h-2 rounded-full transition-all duration-500 ${
-                        userData.confidence >= 90
+                        ui.confidence >= 90
                           ? 'bg-green-500'
-                          : userData.confidence >= 70
+                          : ui.confidence >= 70
                           ? 'bg-yellow-500'
                           : 'bg-red-500'
                       }`}
-                      style={{ width: `${userData.confidence}%` }}
+                      style={{ width: `${Math.min(100, Math.max(0, ui.confidence))}%` }}
                     ></div>
                   </div>
                 </div>
               )}
 
               {/* Risk Score */}
-              {userData.riskScore > 0 && (
+              {ui.riskScore > 0 && (
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-gray-400">Risk Score</span>
-                    <span className={`font-bold ${getRiskColor(userData.riskScore)}`}>
-                      {userData.riskScore}
+                    <span className={`font-bold ${getRiskColor(ui.riskScore)}`}>
+                      {ui.riskScore.toFixed(1)}
                     </span>
                   </div>
                   <div className="w-full bg-white/10 rounded-full h-2">
                     <div
                       className={`h-2 rounded-full transition-all duration-500 ${
-                        userData.riskScore < 30
+                        ui.riskScore < 30
                           ? 'bg-green-500'
-                          : userData.riskScore < 60
+                          : ui.riskScore < 60
                           ? 'bg-yellow-500'
                           : 'bg-red-500'
                       }`}
-                      style={{ width: `${userData.riskScore}%` }}
+                      style={{ width: `${Math.min(100, Math.max(0, ui.riskScore))}%` }}
                     ></div>
                   </div>
                   <p className="text-xs text-gray-500 mt-1">
-                    {userData.riskScore < 30 ? 'Low Risk' : userData.riskScore < 60 ? 'Medium Risk' : 'High Risk'}
+                    {ui.riskScore < 30 ? 'Low Risk' : ui.riskScore < 60 ? 'Medium Risk' : 'High Risk'}
                   </p>
                 </div>
               )}
@@ -372,9 +372,12 @@ export default function UserVerificationPage() {
                 <p className="text-sm text-gray-400 mb-3">Aadhaar Document</p>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-4 hover:border-white/20 transition-colors duration-200">
                   <img
-                    src={userData.aadhaarImage}
+                    src={
+                      data?.images?.document_image?.startsWith('data:image')
+                        ? data.images.document_image
+                        : 'https://placehold.co/600x400/1e293b/f1f5f9?text=No+Document'
+                    }
                     alt="Aadhaar Document"
-                    className="w-full h-48 object-cover rounded-lg mb-3"
                   />
                   <button className="w-full px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 rounded-lg transition-colors duration-200 text-sm font-medium flex items-center justify-center gap-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -390,7 +393,7 @@ export default function UserVerificationPage() {
                 <p className="text-sm text-gray-400 mb-3">Face Capture</p>
                 <div className="bg-white/5 border border-white/10 rounded-lg p-4 hover:border-white/20 transition-colors duration-200">
                   <img
-                    src={userData.faceImage}
+                    src={data?.images?.registration_capture || data?.images?.webcam_image || 'https://placehold.co/400x400/1e293b/f1f5f9?text=No+Capture'}
                     alt="Face Capture"
                     className="w-full h-48 object-cover rounded-lg mb-3"
                   />
@@ -433,7 +436,7 @@ export default function UserVerificationPage() {
               <div className="flex gap-4">
                 <button
                   onClick={handleApprove}
-                  disabled={isProcessing || userData.currentStatus === 'Approved'}
+                  disabled={isProcessing || ui.currentStatus === 'Approved'}
                   className="flex-1 px-6 py-3 bg-green-600 hover:bg-green-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white rounded-lg transition-colors duration-200 font-semibold flex items-center justify-center gap-2"
                 >
                   {isProcessing ? (
@@ -456,7 +459,7 @@ export default function UserVerificationPage() {
 
                 <button
                   onClick={handleReject}
-                  disabled={isProcessing || userData.currentStatus === 'Rejected'}
+                  disabled={isProcessing || ui.currentStatus === 'Rejected'}
                   className="flex-1 px-6 py-3 bg-red-600 hover:bg-red-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white rounded-lg transition-colors duration-200 font-semibold flex items-center justify-center gap-2"
                 >
                   {isProcessing ? (
@@ -478,14 +481,21 @@ export default function UserVerificationPage() {
                 </button>
               </div>
 
-              {userData.currentStatus !== 'Pending' && (
-                <div className="mt-4 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
-                  <p className="text-blue-400 text-sm flex items-center gap-2">
+              {ui.currentStatus !== 'Pending' && (
+                <div className={`mt-4 p-4 ${getRiskBg(ui.riskScore)} rounded-lg`}>
+                  <p className="text-gray-200 text-sm flex items-center gap-2">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    This KYC record has already been {userData.currentStatus.toLowerCase()}. Actions are disabled.
+                    This KYC record has already been {ui.currentStatus.toLowerCase()}. You can reset it to pending if needed.
                   </p>
+                  <button
+                    onClick={handleResetPending}
+                    disabled={isProcessing}
+                    className="mt-3 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-gray-200 rounded-lg transition-colors duration-200 text-sm font-medium"
+                  >
+                    Reset to Pending
+                  </button>
                 </div>
               )}
             </div>

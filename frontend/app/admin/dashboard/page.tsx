@@ -1,84 +1,114 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { useEffect, useMemo, useState } from 'react';
 import AdminStatCard from '@/components/AdminStatCard';
 import AdminTable from '@/components/AdminTable';
 
-// Mock Data
-const kycRecords = [
-  {
-    id: 'KYC001',
-    email: 'rahul.sharma@email.com',
-    aadhaarStatus: 'Verified',
-    faceMatch: 'Yes',
-    kycStatus: 'Approved',
-    createdDate: '2024-02-01',
-  },
-  {
-    id: 'KYC002',
-    email: 'priya.patel@email.com',
-    aadhaarStatus: 'Verified',
-    faceMatch: 'Yes',
-    kycStatus: 'Approved',
-    createdDate: '2024-02-02',
-  },
-  {
-    id: 'KYC003',
-    email: 'amit.kumar@email.com',
-    aadhaarStatus: 'Verified',
-    faceMatch: 'No',
-    kycStatus: 'Rejected',
-    createdDate: '2024-02-03',
-  },
-  {
-    id: 'KYC004',
-    email: 'neha.singh@email.com',
-    aadhaarStatus: 'Pending',
-    faceMatch: 'Pending',
-    kycStatus: 'Pending',
-    createdDate: '2024-02-04',
-  },
-  {
-    id: 'KYC005',
-    email: 'vikram.malhotra@email.com',
-    aadhaarStatus: 'Verified',
-    faceMatch: 'Yes',
-    kycStatus: 'Pending',
-    createdDate: '2024-02-05',
-  },
-  {
-    id: 'KYC006',
-    email: 'sneha.reddy@email.com',
-    aadhaarStatus: 'Verified',
-    faceMatch: 'No',
-    kycStatus: 'Rejected',
-    createdDate: '2024-02-05',
-  },
-  {
-    id: 'KYC007',
-    email: 'arjun.mehta@email.com',
-    aadhaarStatus: 'Pending',
-    faceMatch: 'Pending',
-    kycStatus: 'Pending',
-    createdDate: '2024-02-06',
-  },
-  {
-    id: 'KYC008',
-    email: 'divya.iyer@email.com',
-    aadhaarStatus: 'Verified',
-    faceMatch: 'Yes',
-    kycStatus: 'Approved',
-    createdDate: '2024-02-06',
-  },
-];
+type BackendKycUser = {
+  id: number;
+  email: string;
+  aadhar_number?: string | null;
+  user_id?: string | null;
+  status: 'PENDING' | 'ACCEPTED' | 'REJECTED' | string;
+  email_sent?: boolean | null;
+  created_at?: string | null;
+  updated_at?: string | null;
+};
+
+type KycRow = {
+  id: number;
+  email: string;
+  aadhaarStatus: 'Verified' | 'Pending';
+  kycStatus: 'Approved' | 'Rejected' | 'Pending';
+  createdDate: string;
+};
+
+function mapStatus(status: BackendKycUser['status']): KycRow['kycStatus'] {
+  if (status === 'ACCEPTED') return 'Approved';
+  if (status === 'REJECTED') return 'Rejected';
+  return 'Pending';
+}
+
+function formatDate(dt?: string | null): string {
+  if (!dt) return '-';
+  const d = new Date(dt);
+  if (Number.isNaN(d.getTime())) return String(dt).slice(0, 19);
+  return d.toISOString().slice(0, 10);
+}
 
 export default function AdminDashboard() {
   const router = useRouter();
-  
-  const totalRegistrations = kycRecords.length;
-  const approvedCount = kycRecords.filter(r => r.kycStatus === 'Approved').length;
-  const rejectedCount = kycRecords.filter(r => r.kycStatus === 'Rejected').length;
-  const pendingCount = kycRecords.filter(r => r.kycStatus === 'Pending').length;
+
+  const [query, setQuery] = useState('');
+  const [statusFilter, setStatusFilter] = useState<'All' | 'PENDING' | 'ACCEPTED' | 'REJECTED'>('All');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [users, setUsers] = useState<BackendKycUser[]>([]);
+  const [metrics, setMetrics] = useState<{ total: number; accepted: number; rejected: number; pending: number } | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function load() {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const [metricsRes, usersRes] = await Promise.all([
+          fetch('/api/admin/kyc-users/metrics', { cache: 'no-store' }),
+          fetch(statusFilter === 'All' ? '/api/admin/kyc-users' : `/api/admin/kyc-users?status=${encodeURIComponent(statusFilter)}`, {
+            cache: 'no-store',
+          }),
+        ]);
+
+        if (!metricsRes.ok) {
+          const body = await metricsRes.json().catch(() => ({}));
+          throw new Error(body?.error || 'Failed to load metrics');
+        }
+        if (!usersRes.ok) {
+          const body = await usersRes.json().catch(() => ({}));
+          throw new Error(body?.error || 'Failed to load users');
+        }
+
+        const metricsJson = await metricsRes.json();
+        const usersJson = await usersRes.json();
+
+        if (cancelled) return;
+        setMetrics(metricsJson?.metrics ?? null);
+        setUsers(usersJson?.users ?? []);
+      } catch (e: any) {
+        if (cancelled) return;
+        setError(e?.message || 'Something went wrong');
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, [statusFilter]);
+
+  const rows: KycRow[] = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    const mapped = users.map((u) => ({
+      id: u.id,
+      email: u.email,
+      aadhaarStatus: u.aadhar_number ? 'Verified' : 'Pending',
+      kycStatus: mapStatus(u.status),
+      createdDate: formatDate(u.created_at),
+    }));
+
+    if (!q) return mapped;
+    return mapped.filter((r) => r.email.toLowerCase().includes(q) || String(r.id).includes(q));
+  }, [users, query]);
+
+  const totalRegistrations = metrics?.total ?? rows.length;
+  const approvedCount = metrics?.accepted ?? rows.filter((r) => r.kycStatus === 'Approved').length;
+  const rejectedCount = metrics?.rejected ?? rows.filter((r) => r.kycStatus === 'Rejected').length;
+  const pendingCount = metrics?.pending ?? rows.filter((r) => r.kycStatus === 'Pending').length;
 
   const tableColumns = [
     { key: 'id', label: 'ID' },
@@ -92,23 +122,6 @@ export default function AdminDashboard() {
             value === 'Verified'
               ? 'bg-green-500/10 text-green-500 border border-green-500/30'
               : 'bg-yellow-500/10 text-yellow-500 border border-yellow-500/30'
-          }`}
-        >
-          {value}
-        </span>
-      ),
-    },
-    {
-      key: 'faceMatch',
-      label: 'Face Match',
-      render: (value: string) => (
-        <span
-          className={`px-2 py-1 rounded-full text-xs font-medium ${
-            value === 'Yes'
-              ? 'bg-green-500/10 text-green-500 border border-green-500/30'
-              : value === 'No'
-              ? 'bg-red-500/10 text-red-500 border border-red-500/30'
-              : 'bg-gray-500/10 text-gray-500 border border-gray-500/30'
           }`}
         >
           {value}
@@ -146,6 +159,12 @@ export default function AdminDashboard() {
         <h1 className="text-3xl font-bold text-white mb-2">Admin Dashboard</h1>
         <p className="text-gray-400">Overview of KYC registrations and user verification status</p>
       </div>
+
+      {error && (
+        <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 text-red-300">
+          {error}
+        </div>
+      )}
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -216,6 +235,8 @@ export default function AdminDashboard() {
               <input
                 type="text"
                 placeholder="Search records..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
                 className="bg-white/5 border border-white/10 rounded-lg px-4 py-2 pl-10 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent w-64"
               />
               <svg
@@ -229,20 +250,26 @@ export default function AdminDashboard() {
             </div>
 
             {/* Filter */}
-            <button className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 rounded-lg transition-colors duration-200 text-sm font-medium flex items-center gap-2">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-              </svg>
-              Filter
-            </button>
+            <select
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value as any)}
+              className="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-transparent"
+            >
+              <option value="All">All Status</option>
+              <option value="PENDING">Pending</option>
+              <option value="ACCEPTED">Accepted</option>
+              <option value="REJECTED">Rejected</option>
+            </select>
           </div>
         </div>
 
         <AdminTable
           columns={tableColumns}
-          data={kycRecords}
+          data={rows}
           onRowAction={handleViewRecord}
         />
+
+        {loading && <p className="text-sm text-gray-400">Loading…</p>}
       </div>
     </div>
   );

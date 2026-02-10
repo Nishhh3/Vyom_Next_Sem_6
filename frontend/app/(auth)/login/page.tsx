@@ -13,6 +13,8 @@ export default function LoginPage() {
     username: '',
     password: '',
   });
+  const [faceUserId, setFaceUserId] = useState('');
+  const [serverError, setServerError] = useState<string | null>(null);
 
   // Face login states
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -77,17 +79,32 @@ export default function LoginPage() {
       return;
     }
 
-    // TODO: Implement password login logic
-    console.log('Password login:', formData);
-    
-    // Simulate login success
-    router.push('/dashboard');
+    (async () => {
+      try {
+        setServerError(null);
+        const res = await fetch('/api/auth/login/password', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ identifier: formData.username, password: formData.password }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data?.error || 'Login failed');
+        router.push('/dashboard');
+      } catch (err: any) {
+        setServerError(err?.message || 'Login failed');
+      }
+    })();
   };
 
   const handleFaceLogin = async () => {
     if (!videoRef.current || !isCameraReady) return;
+    if (!faceUserId.trim()) {
+      alert('Please enter your User ID (e.g. VYM123456)');
+      return;
+    }
 
     setIsAuthenticating(true);
+    setServerError(null);
 
     // Capture frame
     const canvas = document.createElement('canvas');
@@ -96,16 +113,28 @@ export default function LoginPage() {
     const ctx = canvas.getContext('2d');
     if (ctx) {
       ctx.drawImage(videoRef.current, 0, 0);
-      // TODO: Send image to backend for face authentication
     }
 
-    // Simulate authentication
-    setTimeout(() => {
-      if (stream) {
-        stream.getTracks().forEach((track) => track.stop());
-      }
+    try {
+      const blob = await new Promise<Blob | null>((resolve) =>
+        canvas.toBlob((b) => resolve(b), 'image/jpeg')
+      );
+      if (!blob) throw new Error('Failed to capture image from camera');
+
+      const form = new FormData();
+      form.append('user_id', faceUserId.trim());
+      form.append('webcam_image', new File([blob], 'webcam.jpg', { type: 'image/jpeg' }));
+
+      const res = await fetch('/api/auth/login/face', { method: 'POST', body: form });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data?.error || 'Face login failed');
+
+      if (stream) stream.getTracks().forEach((track) => track.stop());
       router.push('/dashboard');
-    }, 1500);
+    } catch (err: any) {
+      setServerError(err?.message || 'Face login failed');
+      setIsAuthenticating(false);
+    }
   };
 
   const handleChange = (field: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -130,6 +159,11 @@ export default function LoginPage() {
 
         {/* Login Card */}
         <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 md:p-8 shadow-2xl">
+          {serverError && (
+            <div className="mb-5 bg-red-500/10 border border-red-500/30 text-red-200 rounded-lg p-3 text-sm">
+              {serverError}
+            </div>
+          )}
           {/* Login Method Tabs */}
           <div className="flex gap-2 p-1 bg-gray-950 rounded-lg mb-6">
             <button
@@ -281,6 +315,20 @@ export default function LoginPage() {
           {/* Face Login UI */}
           {loginMethod === 'face' && (
             <div className="space-y-5">
+              {/* User ID input */}
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  User ID <span className="text-red-500 ml-1">*</span>
+                </label>
+                <input
+                  type="text"
+                  value={faceUserId}
+                  onChange={(e) => setFaceUserId(e.target.value)}
+                  placeholder="VYM123456"
+                  className="w-full bg-gray-950 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
+                />
+              </div>
+
               {/* Camera Preview */}
               <div className="relative bg-gray-950 border-2 border-gray-700 rounded-xl overflow-hidden h-[400px]">
                 {cameraError ? (
