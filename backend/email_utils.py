@@ -9,7 +9,7 @@ EMAIL = os.getenv("SENDER_EMAIL")
 SMTP_KEY = os.getenv("SMTP_API_KEY")
 SMTP_SERVER = "smtp-relay.brevo.com"
 SMTP_PORT = 587
-SMTP_USERNAME = "879379001@smtp-brevo.com"  # Use your actual SMTP login username here
+SMTP_USERNAME = "877a3c001@smtp-brevo.com"  # Use your actual SMTP login username here
 
 if SMTP_KEY is None:
     raise ValueError("SMTP_API_KEY environment variable not set")

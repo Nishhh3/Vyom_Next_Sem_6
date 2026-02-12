@@ -10,7 +10,7 @@ class AadharExtractor:
     
     def __init__(self, tesseract_path: Optional[str] = None):
            if tesseract_path is None:
-               tesseract_path = r"C:\Program Files\Tesseract-OCR\tesseract.exe"  # adjust if different
+               tesseract_path = r"C:\Program Files\Tesseract-OCR\tesseract.exe" 
            pytesseract.pytesseract.tesseract_cmd = tesseract_path
            print("✅ Aadhar Extractor initialized")
     

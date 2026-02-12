@@ -1,7 +1,7 @@
 # backend_api.py
 # FastAPI implementation for KYC verification system
 
-from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Body
+from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Body, Response, Request, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import os
@@ -12,6 +12,8 @@ import shutil
 from typing import Optional, Literal, Any
 import base64
 import uuid
+from auth_utils import get_current_user
+
 
 # Import your existing modules
 try:
@@ -27,6 +29,22 @@ try:
 except ImportError as e:
     print(f"Error importing database module: {e}")
     DB_AVAILABLE = False
+
+try:
+    from auth_utils import (
+        create_access_token,
+        create_refresh_token,
+        set_refresh_cookie,
+        clear_refresh_cookie,
+        get_current_user,
+        require_admin,
+        refresh_access_token,
+        logout as logout_logic,
+    )
+    AUTH_AVAILABLE = True
+except ImportError as e:
+    print(f"Error importing auth_utils: {e}")
+    AUTH_AVAILABLE = False
 
 try:
     from ocr_utils import extract_aadhar as extract_aadhar_number
@@ -296,7 +314,7 @@ async def verify_kyc(
         )
 
 @app.post("/api/login/password")
-async def login_password(payload: dict = Body(...)):
+async def login_password(payload: dict = Body(...), response: Response = None):
     """
     Login with credentials (user_id or email + password).
     """
@@ -324,10 +342,25 @@ async def login_password(payload: dict = Body(...)):
         if user.get("password") != password:
             raise HTTPException(status_code=401, detail="Invalid credentials")
 
+        # Existing login logic above remains unchanged.
+        # JWT generation happens only after successful authentication.
+        if not AUTH_AVAILABLE or response is None:
+            return {
+                "success": True,
+                "email": user.get("email"),
+                "user_id": user.get("user_id"),
+            }
+
+        access_token = create_access_token(user)
+        refresh_token = create_refresh_token(user)
+        set_refresh_cookie(response, refresh_token)
+
         return {
             "success": True,
             "email": user.get("email"),
             "user_id": user.get("user_id"),
+            "access_token": access_token,
+            "token_type": "bearer",
         }
     except HTTPException:
         raise
@@ -339,19 +372,18 @@ async def login_password(payload: dict = Body(...)):
 async def login_face(
     user_id: str = Form(...),
     webcam_image: UploadFile = File(...),
+    response: Response = None,
 ):
     """
     Login with face authentication.
-
-    Client sends: user_id + webcam_image.
-    Backend loads the stored registration capture for that user and verifies via DeepFace (ArcFace).
     """
     if not DB_AVAILABLE:
         raise HTTPException(status_code=500, detail="Database module not available")
+
     if not DEEPFACE_AVAILABLE:
         raise HTTPException(
             status_code=500,
-            detail="DeepFace not installed/configured on backend. Install with: pip install deepface",
+            detail="DeepFace not installed/configured on backend.",
         )
 
     safe_user_id = (user_id or "").strip()
@@ -361,21 +393,31 @@ async def login_face(
     allowed_extensions = {".jpg", ".jpeg", ".png"}
     ext = Path(webcam_image.filename or "").suffix.lower()
     if ext not in allowed_extensions:
-        raise HTTPException(status_code=400, detail="Invalid file type. Only JPG, JPEG, and PNG are allowed")
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid file type. Only JPG, JPEG, and PNG are allowed",
+        )
 
     try:
-        # Load user and registration image (db helpers convert blob -> temp file).
+        # Fetch user
         user = db.get_user_by_userid(safe_user_id)
         if not user:
             raise HTTPException(status_code=404, detail="User not found")
+
         if user.get("status") != "ACCEPTED":
-            raise HTTPException(status_code=403, detail=f"Account not activated (status: {user.get('status')})")
+            raise HTTPException(
+                status_code=403,
+                detail=f"Account not activated (status: {user.get('status')})",
+            )
 
         registration_image_path = user.get("capture_path") or user.get("registration_capture")
         if not registration_image_path or not os.path.exists(registration_image_path):
-            raise HTTPException(status_code=500, detail="Registration capture not found for this user")
+            raise HTTPException(
+                status_code=500,
+                detail="Registration capture not found for this user",
+            )
 
-        # Save incoming webcam image to disk
+        # Save login image
         ts = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = f"login_{safe_user_id}_{ts}_{uuid.uuid4().hex}{ext}"
         login_capture_path = os.path.join(UPLOAD_FOLDER, filename)
@@ -383,7 +425,7 @@ async def login_face(
         with open(login_capture_path, "wb") as buffer:
             shutil.copyfileobj(webcam_image.file, buffer)
 
-        # Verify using DeepFace (ArcFace)
+        # Face verification
         result = DeepFace.verify(
             img1_path=registration_image_path,
             img2_path=login_capture_path,
@@ -391,7 +433,7 @@ async def login_face(
             enforce_detection=False,
         )
 
-        # Best-effort cleanup
+        # Cleanup
         try:
             if os.path.exists(login_capture_path):
                 os.remove(login_capture_path)
@@ -402,10 +444,31 @@ async def login_face(
         if not verified:
             raise HTTPException(status_code=401, detail="Face verification failed")
 
+        # If JWT not configured
+        if not AUTH_AVAILABLE or response is None:
+            return {
+                "success": True,
+                "email": user.get("email"),
+                "user_id": user.get("user_id"),
+                "verification": {
+                    "verified": verified,
+                    "distance": result.get("distance"),
+                    "threshold": result.get("threshold"),
+                    "model": result.get("model"),
+                },
+            }
+
+        # JWT generation
+        access_token = create_access_token(user)
+        refresh_token = create_refresh_token(user)
+        set_refresh_cookie(response, refresh_token)
+
         return {
             "success": True,
             "email": user.get("email"),
             "user_id": user.get("user_id"),
+            "access_token": access_token,
+            "token_type": "bearer",
             "verification": {
                 "verified": verified,
                 "distance": result.get("distance"),
@@ -413,10 +476,62 @@ async def login_face(
                 "model": result.get("model"),
             },
         }
+
     except HTTPException:
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Face login failed: {str(e)}")
+
+
+@app.post("/api/auth/refresh")
+async def refresh_token_endpoint(request: Request, response: Response):
+    """
+    Refresh access token using refresh token cookie (with rotation).
+    """
+    if not AUTH_AVAILABLE:
+        raise HTTPException(status_code=500, detail="Auth module not available")
+    return await refresh_access_token(request, response)
+
+
+@app.post("/api/auth/logout")
+async def logout_endpoint(request: Request, response: Response):
+    """
+    Logout and invalidate refresh token.
+    """
+    if not AUTH_AVAILABLE:
+        # Even if auth utils are unavailable, clear the cookie best-effort.
+        response = response or Response()
+        clear_refresh_cookie(response)
+        return {"success": True}
+    return await logout_logic(request, response)
+
+
+@app.get("/api/me")
+async def get_me(current_user: dict = Depends(get_current_user)):
+    """
+    Example protected route using get_current_user dependency.
+    """
+    return {
+        "success": True,
+        "user": {
+            "email": current_user.get("email"),
+            "user_id": current_user.get("user_id"),
+            "status": current_user.get("status"),
+            "role": current_user.get("role", "user"),
+        },
+    }
+
+
+@app.get("/api/admin/protected")
+async def admin_protected_route(current_admin: dict = Depends(require_admin)):
+    """
+    Example admin-only protected route using require_admin dependency.
+    """
+    return {
+        "success": True,
+        "message": "Admin access granted",
+        "admin_user_id": current_admin.get("user_id"),
+    }
 
 
 @app.get("/api/status")

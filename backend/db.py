@@ -446,6 +446,87 @@ def update_aadhar_number(email: str, aadhar_number: str) -> bool:
         return False
 
 
+def store_refresh_token(user_id: str, jti: str, token: str, expires_at: datetime) -> None:
+    """
+    Persist a refresh token for rotation/logout.
+    """
+    try:
+        conn = get_conn()
+        cur = conn.cursor()
+        cur.execute(
+            """
+            INSERT INTO refresh_tokens (user_id, jti, token, expires_at)
+            VALUES (%s, %s, %s, %s)
+            """,
+            (user_id, jti, token, expires_at),
+        )
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        print(f"❌ store_refresh_token error: {e}")
+
+
+def get_refresh_token(jti: str) -> Optional[Dict]:
+    """
+    Fetch stored refresh token by its JTI.
+    """
+    try:
+        conn = get_conn()
+        cur = conn.cursor(cursor_factory=RealDictCursor)
+        cur.execute(
+            "SELECT * FROM refresh_tokens WHERE jti=%s",
+            (jti,),
+        )
+        row = cur.fetchone()
+        conn.close()
+        return dict(row) if row else None
+    except Exception as e:
+        print(f"❌ get_refresh_token error: {e}")
+        return None
+
+
+def revoke_refresh_token(jti: str) -> None:
+    """
+    Mark a single refresh token as revoked.
+    """
+    try:
+        conn = get_conn()
+        cur = conn.cursor()
+        cur.execute(
+            """
+            UPDATE refresh_tokens
+            SET revoked=TRUE, revoked_at=%s
+            WHERE jti=%s
+            """,
+            (datetime.utcnow(), jti),
+        )
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        print(f"❌ revoke_refresh_token error: {e}")
+
+
+def revoke_user_refresh_tokens(user_id: str) -> None:
+    """
+    Revoke all refresh tokens belonging to a user (logout-all).
+    """
+    try:
+        conn = get_conn()
+        cur = conn.cursor()
+        cur.execute(
+            """
+            UPDATE refresh_tokens
+            SET revoked=TRUE, revoked_at=%s
+            WHERE user_id=%s AND revoked=FALSE
+            """,
+            (datetime.utcnow(), user_id),
+        )
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        print(f"❌ revoke_user_refresh_tokens error: {e}")
+
+
 # Database schema creation helper
 def create_schema():
     """
@@ -472,6 +553,20 @@ def create_schema():
     CREATE INDEX IF NOT EXISTS idx_user_id ON kyc_users(user_id);
     CREATE INDEX IF NOT EXISTS idx_status ON kyc_users(status);
     CREATE INDEX IF NOT EXISTS idx_aadhar ON kyc_users(aadhar_number);
+
+    CREATE TABLE IF NOT EXISTS refresh_tokens (
+        id SERIAL PRIMARY KEY,
+        user_id VARCHAR(50) NOT NULL,
+        jti VARCHAR(64) UNIQUE NOT NULL,
+        token TEXT NOT NULL,
+        revoked BOOLEAN DEFAULT FALSE,
+        expires_at TIMESTAMP NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        revoked_at TIMESTAMP
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_refresh_tokens_user_id ON refresh_tokens(user_id);
+    CREATE INDEX IF NOT EXISTS idx_refresh_tokens_jti ON refresh_tokens(jti);
     
     -- Create trigger for updated_at
     CREATE OR REPLACE FUNCTION update_updated_at_column()
