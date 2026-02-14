@@ -42,7 +42,7 @@ export default function MyBanksPage() {
         <div className="space-y-2">
           <h1 className="text-3xl lg:text-4xl font-bold">My Banks</h1>
           <p className="text-gray-400 text-lg">
-            Select a bank to view details and transactions
+            Select a bank to view details and manage your account
           </p>
         </div>
 
@@ -51,8 +51,7 @@ export default function MyBanksPage() {
           {banks.map((bank) => (
             <div
               key={bank.id}
-              onClick={() => router.push(`/my-banks/${bank.id}`)}
-              className={`bg-gradient-to-br ${bank.gradient} border ${bank.border} ${bank.hoverBorder} rounded-2xl p-6 backdrop-blur-sm hover:scale-105 transition-all cursor-pointer`}
+              className={`bg-gradient-to-br ${bank.gradient} border ${bank.border} ${bank.hoverBorder} rounded-2xl p-6 backdrop-blur-sm transition-all`}
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -71,28 +70,15 @@ export default function MyBanksPage() {
                   <p className="text-gray-400 text-sm mb-1">Current Balance</p>
                   <p className="text-2xl font-bold">{bank.balance}</p>
                 </div>
-                <div className="pt-4">
-                  <button className="w-full bg-white/10 hover:bg-white/20 rounded-lg py-2.5 text-sm font-medium transition-colors">
-                    View Details →
-                  </button>
-                </div>
+                <button
+                  onClick={() => router.push(`/my-banks/${bank.id}`)}
+                  className="w-full bg-white/10 hover:bg-white/20 rounded-lg py-2.5 text-sm font-medium transition-colors"
+                >
+                  View Details →
+                </button>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Info Card */}
-        <div className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 border border-gray-700/50 rounded-2xl p-6 backdrop-blur-sm">
-          <div className="flex items-start gap-4">
-            <div className="text-3xl">💡</div>
-            <div className="space-y-1">
-              <h3 className="font-semibold text-lg">Quick Tip</h3>
-              <p className="text-gray-400">
-                Click on any bank card to view detailed account information,
-                transaction history, and manage your account settings.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
