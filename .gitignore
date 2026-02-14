@@ -21,4 +21,5 @@ backend/verification_reports/*.json
 !frontend/package-lock.json
 !frontend/tsconfig.json
 
-
+.next/
+node_modules/
