@@ -88,6 +88,16 @@ class BankingKYCPipeline:
             enhance_webcam=enhance_webcam,
         )
 
+    # Pass face embedding forward for FAISS storage/search
+        if result.get("success"):
+            # Prefer webcam embedding (live face)
+            emb = result.get("webcam_embedding") or result.get("embedding")
+            if emb is not None:
+                # ensure list (JSON/FAISS safe)
+                if isinstance(emb, np.ndarray):
+                    emb = emb.tolist()
+                result["embedding"] = emb
+                
         # Add risk assessment
         if result['success']:
             result['risk_score'] = self._calculate_risk_score(result)
