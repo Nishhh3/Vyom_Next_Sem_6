@@ -10,12 +10,13 @@ from insightface.app import FaceAnalysis
 
 from MiniFASNet import MiniFASNetV1, MiniFASNetV2, MiniFASNetV1SE
 
+from face_config import ANTI_SPOOF_THRESHOLD
 # =====================
 # CALIBRATED THRESHOLDS (from your dataset)
 # =====================
-ANTI_SPOOF_THRESHOLD = 0.047    # SilentFace liveness
-SCREEN_TEXTURE_THRESHOLD = 10000 # screen replay detector
-LOW_TEXTURE_THRESHOLD = 25       # print attack detector
+# ANTI_SPOOF_THRESHOLD = 0.5    # SilentFace liveness
+SCREEN_TEXTURE_THRESHOLD = 20000 # screen replay detector
+LOW_TEXTURE_THRESHOLD = 20       # print attack detector
 
 # =====================
 # MODEL PATHS
@@ -110,19 +111,25 @@ def texture_score(face_rgb):
     return float(cv2.Laplacian(gray, cv2.CV_32F).var())
 
 def anti_spoof_score_multi(crops):
-    scores=[]
+    scores = []
     for c in crops:
         t = transform(c).unsqueeze(0)
         with torch.no_grad():
-            p1 = torch.softmax(model_v1(t), dim=1)[0][0]
-            p2 = torch.softmax(model_v2(t), dim=1)[0][0]
-        scores.append(float((p1+p2)/2))
+            raw1 = torch.softmax(model_v1(t), dim=1)[0]
+            raw2 = torch.softmax(model_v2(t), dim=1)[0]
+
+        # CLASS 2 = REAL
+        p1 = raw1[2]
+        p2 = raw2[2]
+
+        scores.append(float((p1 + p2) / 2))
+
     return float(np.mean(scores))
 
 # =====================
 # MAIN VERIFY FUNCTION
 # =====================
-def verify_face_image(image_bytes: bytes, debug: bool=False):
+def verify_face_image(image_bytes: bytes, debug: bool=True):
     """
     Returns:
         status: ok | spoof | no_face
@@ -155,6 +162,9 @@ def verify_face_image(image_bytes: bytes, debug: bool=False):
 
     live = anti_spoof_score_multi(crops)
     tex  = float(np.mean([texture_score(c) for c in crops]))
+    print("DEBUG → Liveness:", live)
+    print("DEBUG → Texture:", tex)
+    print("Threshold:", ANTI_SPOOF_THRESHOLD)
 
     if debug:
         print("PIPELINE → live:", live, "tex:", tex)

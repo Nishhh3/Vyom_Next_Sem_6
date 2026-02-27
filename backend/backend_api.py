@@ -20,6 +20,11 @@ from insightface.app import FaceAnalysis
 
 from email_utils import send_activation_email, send_rejection_email
 
+from face_config import FACE_MATCH_THRESHOLD
+from security_utils import encrypt_data
+from ocr_utils.aadhar_extractor import mask_aadhar
+import requests
+
 # =========================
 # DB
 # =========================
@@ -161,13 +166,31 @@ async def verify_kyc(
     with open(cam_path, "wb") as f:
         shutil.copyfileobj(webcam_image.file, f)
 
-    aadhar_number = None
+    # =========================
+    # 🔐 AADHAAR EXTRACTION
+    # =========================
+    raw_aadhar = None
+    encrypted_aadhar = None
+    masked_aadhar = None
+
     if OCR_AVAILABLE:
         try:
-            aadhar_number = extract_aadhar_number(doc_path)
-        except Exception:
-            pass
+            raw_aadhar = extract_aadhar_number(doc_path)
 
+            if not raw_aadhar:
+                raise HTTPException(400, "Invalid or unreadable Aadhaar document")
+
+            if raw_aadhar:
+                clean = raw_aadhar.replace(" ", "")
+                encrypted_aadhar = encrypt_data(clean)
+                masked_aadhar = mask_aadhar(raw_aadhar)
+
+        except Exception as e:
+            print("Aadhaar extraction error:", e)
+
+    # =========================
+    # 🔍 FACE LIVENESS CHECK
+    # =========================
     with open(cam_path, "rb") as f:
         live_bytes = f.read()
 
@@ -178,8 +201,11 @@ async def verify_kyc(
     if face_result["status"] == "spoof":
         raise HTTPException(400, "Spoof detected")
 
+    # =========================
+    # 🧠 FACE EMBEDDINGS
+    # =========================
     live_embedding = np.array(face_result["embedding"], dtype=np.float32)
-    live_embedding /= np.linalg.norm(live_embedding)
+    live_embedding /= max(np.linalg.norm(live_embedding), 1e-6)
 
     doc_img = cv2.imread(doc_path)
     faces = face_model.get(doc_img)
@@ -188,43 +214,60 @@ async def verify_kyc(
         raise HTTPException(400, "No face in document")
 
     doc_embedding = faces[0].normed_embedding.astype(np.float32)
-    doc_embedding /= np.linalg.norm(doc_embedding)
+    doc_embedding /= max(np.linalg.norm(doc_embedding), 1e-6)
 
+    # =========================
+    # 📊 FACE MATCH LOGIC
+    # =========================
     similarity = float(np.dot(live_embedding, doc_embedding))
-    distance = 1 - similarity
     confidence = similarity * 100
+    distance = 1 - similarity
 
-    MATCH_THRESHOLD = 0.35
-    match = distance < MATCH_THRESHOLD
+    match = similarity >= FACE_MATCH_THRESHOLD
 
-    risk_score = float(distance * 100 * 0.6 + (1 - face_result["liveness"]) * 40)
+    # =========================
+    # ⚠️ RISK SCORE
+    # =========================
+    risk_score = float(
+        distance * 100 * 0.6 +
+        (1 - face_result["liveness"]) * 40
+    )
 
+    # =========================
+    # 💾 SAVE TO DATABASE
+    # =========================
     try:
         db.insert_signup(
             email=email,
             doc_path=doc_path,
             capture_path=cam_path,
-            aadhar_number=aadhar_number,
+            aadhar_number=encrypted_aadhar,  # 🔐 ENCRYPTED
             webcam_path=cam_path,
             face_embedding=[float(x) for x in live_embedding],
         )
     except Exception as e:
         print("DB insert error:", e)
 
+    # =========================
+    # 📦 ADD TO FAISS
+    # =========================
     try:
         add_face_embedding(live_embedding, email)
     except Exception as e:
         print("FAISS add error:", e)
 
+    # =========================
+    # 📄 SAVE REPORT (MASKED ONLY)
+    # =========================
     report = {
         "email": email,
         "timestamp": datetime.now().isoformat(),
-        "aadhar_number": aadhar_number,
+        "aadhar_number": masked_aadhar,  # 🔐 MASKED
         "face_match": {
             "match": match,
             "confidence": confidence,
             "distance": distance,
-            "threshold": MATCH_THRESHOLD,
+            "threshold": FACE_MATCH_THRESHOLD,
         },
         "risk_score": risk_score,
         "liveness": float(face_result["liveness"]),
@@ -354,10 +397,8 @@ async def login_face(
     similarity = float(np.dot(live_embedding, db_embedding))
     confidence = similarity * 100
 
-    if similarity < 0.62:
+    if similarity < FACE_MATCH_THRESHOLD:
         raise HTTPException(401, "Face mismatch")
-    if face_result["liveness"] < 0.05:
-        raise HTTPException(401, "Spoof detected")
 
     user = {"user_id": user_id, "email": row[1], "status": "ACCEPTED"}
 
@@ -410,7 +451,7 @@ async def get_me(current_user: dict = Depends(get_current_user)):
     }
 
 # =========================
-# ADMIN APIs (UNCHANGED)
+# ADMIN APIs
 # =========================
 @app.get("/api/admin/kyc-users")
 async def admin_list_kyc_users(status: Optional[str] = None):
@@ -610,3 +651,69 @@ async def admin_get_kyc_user(user_id: int):
     }
 
     return {"success": True, "user": user, "verification_report": verification_report}
+
+
+# =========================
+# ADMIN — AADHAAR FORGERY ANALYSIS (MICROSERVICE VERSION)
+# =========================
+@app.get("/api/admin/analyze-document/{user_id}")
+async def admin_analyze_document(user_id: int):
+    require_db()
+
+    conn = db.get_conn()
+    cur = conn.cursor()
+
+    cur.execute(
+        "SELECT doc_path FROM kyc_users WHERE id=%s",
+        (user_id,),
+    )
+    row = cur.fetchone()
+    conn.close()
+
+    if not row or not row[0]:
+        raise HTTPException(404, "Document not found for user")
+
+    doc_path = row[0]
+
+    if not os.path.exists(doc_path):
+        raise HTTPException(404, "Document file missing on disk")
+
+    # 🔹 Call forgery microservice
+    try:
+        with open(doc_path, "rb") as f:
+            response = requests.post(
+                "http://127.0.0.1:9000/analyze",
+                files={"file": f},
+                timeout=10,  # prevent hanging
+            )
+
+        if response.status_code != 200:
+            raise HTTPException(
+                500,
+                f"Forgery service error: {response.text}"
+            )
+
+        result = response.json()
+
+    except requests.exceptions.ConnectionError:
+        raise HTTPException(
+            500,
+            "Forgery service not running (port 9000)"
+        )
+    except requests.exceptions.Timeout:
+        raise HTTPException(
+            500,
+            "Forgery service timeout"
+        )
+    except Exception as e:
+        print("Forgery analysis error:", e)
+        raise HTTPException(500, "Forgery analysis failed")
+
+    forgery_probability = float(result.get("forgery_probability", 0.0))
+    is_forged = bool(result.get("is_forged", forgery_probability >= 0.5))
+
+    return {
+        "success": True,
+        "forgery_probability": forgery_probability,
+        "is_forged": is_forged,
+    }

@@ -1,5 +1,6 @@
 'use client';
 
+// import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -24,6 +25,12 @@ type VerificationReport = {
   risk_score?: number;
 };
 
+type ForgeryAnalysisResponse = {
+  success: boolean;
+  forgery_probability: number;
+  is_forged: boolean;
+};
+
 type UserDetailsResponse = {
   success: boolean;
   user: BackendUser;
@@ -40,6 +47,10 @@ export default function UserVerificationPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState<UserDetailsResponse | null>(null);
+  const [forgeryResult, setForgeryResult] =
+    useState<ForgeryAnalysisResponse | null>(null);
+  const [isAnalyzingForgery, setIsAnalyzingForgery] = useState(false);
+  const [forgeryError, setForgeryError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!id) return;
@@ -57,11 +68,14 @@ export default function UserVerificationPage() {
 
         if (!res.ok) throw new Error('Failed to load user');
 
-        const json = await res.json();
+        // ✅ typed cast — no implicit any
+        const json = (await res.json()) as UserDetailsResponse;
 
         if (!cancelled) setData(json);
-      } catch (e: any) {
-        if (!cancelled) setError(e.message);
+      } catch (e: unknown) {
+        // ✅ unknown instead of any
+        if (!cancelled)
+          setError(e instanceof Error ? e.message : 'Unknown error');
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -122,8 +136,47 @@ export default function UserVerificationPage() {
     }
   };
 
+  const handleAnalyzeDocument = async () => {
+    if (!id) return;
+
+    try {
+      setIsAnalyzingForgery(true);
+      setForgeryError(null);
+
+      // No auth needed until admin login is implemented
+      const res = await fetch(
+        `http://localhost:8000/api/admin/analyze-document/${id}`,
+        { cache: 'no-store' }
+      );
+
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(text || 'Failed to analyze document');
+      }
+
+      // ✅ typed cast — no implicit any
+      const json = (await res.json()) as ForgeryAnalysisResponse;
+      setForgeryResult(json);
+    } catch (e: unknown) {
+      // ✅ unknown instead of any
+      setForgeryError(
+        e instanceof Error ? e.message : 'Failed to analyze document'
+      );
+    } finally {
+      setIsAnalyzingForgery(false);
+    }
+  };
+
   if (loading) return <p className="text-gray-400">Loading…</p>;
   if (error || !user) return <p className="text-red-500">User not found</p>;
+
+  // Pre-compute image srcs to avoid inline ternary chains in JSX
+  const docSrc =
+    user.document_url || 'https://placehold.co/600x400?text=No+Document';
+  const faceSrc =
+    user.capture_url ||
+    user.webcam_url ||
+    'https://placehold.co/400x400?text=No+Face';
 
   return (
     <div className="space-y-6">
@@ -137,9 +190,7 @@ export default function UserVerificationPage() {
             ← Back
           </button>
 
-          <h1 className="text-3xl font-bold text-white">
-            KYC Verification
-          </h1>
+          <h1 className="text-3xl font-bold text-white">KYC Verification</h1>
 
           <p className="text-gray-400">User ID: {id}</p>
         </div>
@@ -161,9 +212,7 @@ export default function UserVerificationPage() {
         {/* USER INFO */}
         <div className="space-y-6">
           <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-            <h2 className="text-white font-semibold mb-4">
-              User Information
-            </h2>
+            <h2 className="text-white font-semibold mb-4">User Information</h2>
 
             <div className="space-y-3 text-sm">
               <div>
@@ -231,9 +280,7 @@ export default function UserVerificationPage() {
                         : 'text-red-500'
                     }
                   >
-                    {verification.face_match?.match
-                      ? 'Matched'
-                      : 'Not Matched'}
+                    {verification.face_match?.match ? 'Matched' : 'Not Matched'}
                   </span>
                 </div>
 
@@ -257,9 +304,7 @@ export default function UserVerificationPage() {
           {/* RISK */}
           {verification?.risk_score !== undefined && (
             <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-              <h2 className="text-white font-semibold mb-4">
-                Risk Assessment
-              </h2>
+              <h2 className="text-white font-semibold mb-4">Risk Assessment</h2>
 
               <div className="flex justify-between mb-2">
                 <span className="text-gray-400">Risk Score</span>
@@ -278,10 +323,7 @@ export default function UserVerificationPage() {
                       : 'bg-red-500'
                   }`}
                   style={{
-                    width: `${Math.min(
-                      100,
-                      verification.risk_score
-                    )}%`,
+                    width: `${Math.min(100, verification.risk_score)}%`,
                   }}
                 />
               </div>
@@ -295,47 +337,90 @@ export default function UserVerificationPage() {
               </p>
             </div>
           )}
+
+          {/* AADHAAR FORGERY ANALYSIS */}
+          <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+            <h2 className="text-white font-semibold mb-4">
+              Aadhaar Forgery Analysis
+            </h2>
+
+            <button
+              onClick={handleAnalyzeDocument}
+              disabled={isAnalyzingForgery}
+              className="w-full mb-4 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white py-2 rounded-lg text-sm font-medium"
+            >
+              {isAnalyzingForgery ? 'Analyzing…' : 'Analyze Document'}
+            </button>
+
+            {forgeryError && (
+              <p className="text-sm text-red-400 mb-2">{forgeryError}</p>
+            )}
+
+            {forgeryResult && (
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Forgery Probability</span>
+                  <span className="text-white font-medium">
+                    {(forgeryResult.forgery_probability * 100).toFixed(1)}%
+                  </span>
+                </div>
+
+                <div className="flex justify-between">
+                  <span className="text-gray-400">Status</span>
+                  <span
+                    className={
+                      forgeryResult.is_forged
+                        ? 'text-red-500 font-semibold'
+                        : 'text-green-500 font-semibold'
+                    }
+                  >
+                    {forgeryResult.is_forged ? 'Likely Forged' : 'Likely Genuine'}
+                  </span>
+                </div>
+              </div>
+            )}
+
+            {!forgeryResult && !forgeryError && (
+              <p className="text-xs text-gray-500">
+                Run analysis to estimate whether the Aadhaar document is forged.
+              </p>
+            )}
+          </div>
         </div>
 
         {/* IMAGES + ACTIONS */}
         <div className="lg:col-span-2 space-y-6">
           {/* IMAGES */}
           <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-            <h2 className="text-white font-semibold mb-4">
-              Documents
-            </h2>
+            <h2 className="text-white font-semibold mb-4">Documents</h2>
 
             <div className="grid md:grid-cols-2 gap-6">
+              {/* ✅ next/image + alt prop — fixes no-img-element + alt-text */}
               <div>
                 <p className="text-gray-400 mb-2">Aadhaar</p>
                 <img
-                  src={
-                    user.document_url ||
-                    'https://placehold.co/600x400?text=No+Document'
-                  }
-                  className="rounded-lg border border-white/10"
+                  src={docSrc}
+                  alt="Aadhaar document"
+                  className="rounded-lg border border-white/10 w-full h-auto object-contain"
                 />
               </div>
 
               <div>
                 <p className="text-gray-400 mb-2">Face Capture</p>
-                <img
-                  src={
-                    user.capture_url ||
-                    user.webcam_url ||
-                    'https://placehold.co/400x400?text=No+Face'
-                  }
-                  className="rounded-lg border border-white/10"
-                />
+                <div className="relative w-full aspect-square">
+                  <img
+                    src={faceSrc}
+                    alt="User face capture"
+                    className="rounded-lg border border-white/10 w-full h-auto object-contain"
+                  />
+                </div>
               </div>
             </div>
           </div>
 
           {/* ACTIONS */}
           <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-            <h2 className="text-white font-semibold mb-4">
-              Admin Actions
-            </h2>
+            <h2 className="text-white font-semibold mb-4">Admin Actions</h2>
 
             <textarea
               value={remarks}
