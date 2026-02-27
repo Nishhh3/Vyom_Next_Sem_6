@@ -188,10 +188,22 @@ class WebcamFaceMatcher:
 
         # Step 4: Face matching
         print(f"\n🔍 STEP 4: Comparing faces using {model}...")
-        print(f"   Using: {'Enhanced' if enhance_document else 'Raw'} document face")
-        print(f"   Using: {'Enhanced' if enhance_webcam else 'Raw'} webcam face")
 
         try:
+            # -------- Extract embedding for FAISS --------
+            try:
+                rep = DeepFace.represent(
+                    img_path=webcam_final_path,
+                    model_name=model,
+                    enforce_detection=False,
+                    detector_backend="skip"
+                )
+                webcam_embedding = rep[0]["embedding"]
+            except Exception as e:
+                print(f"⚠️ Embedding extraction failed: {e}")
+                webcam_embedding = None
+
+            # -------- Verification --------
             result = DeepFace.verify(
                 img1_path=doc_path,
                 img2_path=webcam_final_path,
@@ -205,12 +217,9 @@ class WebcamFaceMatcher:
             threshold = result['threshold']
             confidence = max(0, min(100, (1 - distance / threshold) * 100))
 
-            # CRITICAL FIX: Override match result if confidence is too low
             verified = result['verified']
             if confidence < self.MIN_CONFIDENCE_THRESHOLD:
                 verified = False
-                print(f"\n⚠️  Confidence ({confidence:.1f}%) below minimum threshold ({self.MIN_CONFIDENCE_THRESHOLD}%)")
-                print("   Overriding match result to NO MATCH")
 
             match_result = {
                 'success': True,
@@ -226,17 +235,17 @@ class WebcamFaceMatcher:
                     'document_enhanced': enhance_document,
                     'webcam_enhanced': enhance_webcam
                 },
-                'low_confidence_override': confidence < self.MIN_CONFIDENCE_THRESHOLD
+                'low_confidence_override': confidence < self.MIN_CONFIDENCE_THRESHOLD,
+                'embedding': webcam_embedding   # ← IMPORTANT
             }
 
         except Exception as e:
             print(f"❌ Face matching failed: {e}")
             return {
-                'success': False, 
-                'match': False, 
+                'success': False,
+                'match': False,
                 'error': str(e)
             }
-
         # Step 5: Print results
         self._print_results(match_result)
 

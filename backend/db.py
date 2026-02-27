@@ -52,50 +52,48 @@ def blob_to_image(blob_data: bytes, output_path: str) -> bool:
         return False
 
 
-def insert_signup(email: str, doc_path: str, capture_path: str, 
-                 aadhar_number: Optional[str] = None,
-                 webcam_path: Optional[str] = None) -> bool:
+def insert_signup(
+    email,
+    doc_path,
+    capture_path,
+    aadhar_number,
+    webcam_path,
+    face_embedding=None
+):
     """
-    Insert new KYC signup with binary image storage and Aadhar number.
-    
-    Args:
-        email: User email
-        doc_path: Path to document image
-        capture_path: Path to webcam capture image (initial registration)
-        aadhar_number: Extracted Aadhar number (optional)
-        webcam_path: Path to verification webcam image (optional, for later verification)
-        
-    Returns:
-        True if successful
+    Insert new KYC signup with optional face embedding
     """
+
     try:
-        # Convert images to binary
-        doc_blob = image_to_blob(doc_path)
-        capture_blob = image_to_blob(capture_path)
-        webcam_blob = image_to_blob(webcam_path) if webcam_path else None
-        
         conn = get_conn()
         cur = conn.cursor()
 
-        cur.execute("""
-        INSERT INTO kyc_users
-        (email, document_image, registration_capture, webcam_image, aadhar_number,
-         status, created_at)
-        VALUES (%s, %s, %s, %s, %s, 'PENDING', %s)
-        RETURNING id
-        """, (email, psycopg2.Binary(doc_blob), psycopg2.Binary(capture_blob), 
-              psycopg2.Binary(webcam_blob) if webcam_blob else None, 
-              aadhar_number, datetime.now()))
+        cur.execute(
+            """
+            INSERT INTO kyc_users
+            (email, doc_path, capture_path, aadhar_number, webcam_path, face_embedding, status)
+            VALUES (%s, %s, %s, %s, %s, %s, 'PENDING')
+            RETURNING id
+            """,
+            (
+                email,
+                doc_path,
+                capture_path,
+                aadhar_number,
+                webcam_path,
+                face_embedding,
+            ),
+        )
 
         user_id = cur.fetchone()[0]
         conn.commit()
         conn.close()
-        
+
         print(f"✅ User signup saved (ID: {user_id})")
         return True
-        
+
     except Exception as e:
-        print(f"❌ Database error: {e}")
+        print("❌ insert_signup error:", e)
         return False
 
 

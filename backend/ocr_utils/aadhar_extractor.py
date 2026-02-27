@@ -5,6 +5,43 @@ import numpy as np
 from typing import Optional, Tuple
 
 
+# ----------------------------
+# Verhoeff checksum tables
+# ----------------------------
+_d = [
+    [0,1,2,3,4,5,6,7,8,9],
+    [1,2,3,4,0,6,7,8,9,5],
+    [2,3,4,0,1,7,8,9,5,6],
+    [3,4,0,1,2,8,9,5,6,7],
+    [4,0,1,2,3,9,5,6,7,8],
+    [5,9,8,7,6,0,4,3,2,1],
+    [6,5,9,8,7,1,0,4,3,2],
+    [7,6,5,9,8,2,1,0,4,3],
+    [8,7,6,5,9,3,2,1,0,4],
+    [9,8,7,6,5,4,3,2,1,0]
+]
+
+_p = [
+    [0,1,2,3,4,5,6,7,8,9],
+    [1,5,7,6,2,8,3,0,9,4],
+    [5,8,0,3,7,9,6,1,4,2],
+    [8,9,1,6,0,4,3,5,2,7],
+    [9,4,5,3,1,2,6,8,7,0],
+    [4,2,8,6,5,7,3,9,0,1],
+    [2,7,9,3,8,0,6,4,1,5],
+    [7,0,4,6,9,1,3,2,5,8]
+]
+
+def verhoeff_check(num: str) -> bool:
+    c = 0
+    num = list(map(int, reversed(num)))
+    for i, item in enumerate(num):
+        c = _d[c][_p[i % 8][item]]
+    return c == 0
+
+
+
+
 class AadharExtractor:
     """Extract Aadhar number from Aadhar card images."""
     
@@ -26,6 +63,10 @@ class AadharExtractor:
         """
         # Read image
         img = cv2.imread(image_path)
+        h, w = img.shape[:2]
+
+        # Crop middle-lower region (where Aadhaar number usually exists)
+        img = img[int(h * 0.45):int(h * 0.85), :]
         
         # Convert to grayscale
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -75,7 +116,7 @@ class AadharExtractor:
             # Perform OCR
             text = pytesseract.image_to_string(
                 preprocessed,
-                config='--psm 6'  # Assume uniform block of text
+                config='--psm 6 -c tessedit_char_whitelist=0123456789'
             )
             
             # Extract Aadhar number using multiple patterns
@@ -89,7 +130,7 @@ class AadharExtractor:
             print("⚠️  First attempt failed, trying alternative OCR method...")
             text_alt = pytesseract.image_to_string(
                 preprocessed,
-                config='--psm 11'  # Sparse text
+                config='--psm 11 -c tessedit_char_whitelist=0123456789'  # Sparse text
             )
             
             aadhar = self._find_aadhar_pattern(text_alt)
@@ -185,8 +226,16 @@ class AadharExtractor:
         if len(set(clean)) == 1:
             return False
         
+        # Apply Verhoeff checksum validation
+        if not verhoeff_check(clean):
+            return False
+
+        
         return True
     
+
+
+
     def extract_with_manual_fallback(self, image_path: str) -> Tuple[Optional[str], str]:
         """
         Extract Aadhar with manual fallback option.
@@ -220,6 +269,15 @@ def extract_aadhar(image_path: str, tesseract_path: Optional[str] = None) -> Opt
     """
     extractor = AadharExtractor(tesseract_path)
     return extractor.extract_aadhar_number(image_path)
+
+# ----------------------------
+# Mask Aadhaar Number
+# ----------------------------
+def mask_aadhar(aadhar: str) -> str:
+    clean = aadhar.replace(" ", "")
+    if len(clean) != 12:
+        return aadhar
+    return f"XXXX XXXX {clean[-4:]}"
 
 
 if __name__ == "__main__":

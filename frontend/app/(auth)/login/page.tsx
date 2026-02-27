@@ -69,26 +69,30 @@ export default function LoginPage() {
 
   const handlePasswordLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!formData.username.trim()) {
-      alert('Please enter your username or email');
-      return;
-    }
-    if (!formData.password.trim()) {
-      alert('Please enter your password');
-      return;
-    }
+
+    if (!formData.username.trim()) return alert('Enter username');
+    if (!formData.password.trim()) return alert('Enter password');
 
     (async () => {
       try {
         setServerError(null);
-        const res = await fetch('/api/auth/login/password', {
+
+        const form = new FormData();
+        form.append('user_id', formData.username);
+        form.append('password', formData.password);
+
+        const res = await fetch('http://127.0.0.1:8000/api/login/password', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ identifier: formData.username, password: formData.password }),
+          body: form,
+          credentials: 'include', // ⭐ IMPORTANT
         });
-        const data = await res.json().catch(() => ({}));
-        if (!res.ok) throw new Error(data?.error || 'Login failed');
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data?.detail || 'Login failed');
+
+        // store access token
+        localStorage.setItem('access_token', data.access_token);
+
         router.push('/dashboard');
       } catch (err: any) {
         setServerError(err?.message || 'Login failed');
@@ -125,11 +129,18 @@ export default function LoginPage() {
       form.append('user_id', faceUserId.trim());
       form.append('webcam_image', new File([blob], 'webcam.jpg', { type: 'image/jpeg' }));
 
-      const res = await fetch('/api/auth/login/face', { method: 'POST', body: form });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data?.error || 'Face login failed');
+      const res = await fetch('http://127.0.0.1:8000/api/login/face', {
+        method: 'POST',
+        body: form,
+        credentials: 'include',
+      });
 
-      if (stream) stream.getTracks().forEach((track) => track.stop());
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.detail || 'Face login failed');
+
+      localStorage.setItem('access_token', data.access_token);
+
+      if (stream) stream.getTracks().forEach((t) => t.stop());
       router.push('/dashboard');
     } catch (err: any) {
       setServerError(err?.message || 'Face login failed');

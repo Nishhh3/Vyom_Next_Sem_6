@@ -22,3 +22,9 @@ psycopg2-binary==2.9.9
 
 # OCR
 pytesseract==0.3.13
+
+# jwt 
+python-jose[cryptography]
+
+torch
+torchvision
