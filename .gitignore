@@ -6,6 +6,8 @@ venv/
 *.jpg
 *.jpeg
 
+aadhar.key
+
 uploads/*.jpg
 uploads/*.jpeg
 

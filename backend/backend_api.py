@@ -1,9 +1,10 @@
 # backend_api.py
-# FINAL STABLE VERSION — SilentFace + InsightFace + Admin + FAISS (v3.2 + JWT)
+# FINAL STABLE VERSION — SilentFace + InsightFace + Admin + FAISS (v3.2 + JWT) + Loan Recommendation + Gemini AI Advisor
 
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Depends, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
 
 import os
 import cv2
@@ -63,6 +64,34 @@ except ImportError as e:
     AUTH_AVAILABLE = False
 
 # =========================
+# LOAN RECOMMENDATION
+# =========================
+try:
+    from loan_recommendation.predictor import predict_loan
+    LOAN_MODEL_AVAILABLE = True
+    print("✅ Loan recommendation models loaded")
+except ImportError as e:
+    print("Loan models not available:", e)
+    LOAN_MODEL_AVAILABLE = False
+
+# =========================
+# GROQ AI
+# =========================
+try:
+    from groq import Groq
+    GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+    if GROQ_API_KEY:
+        groq_client = Groq(api_key=GROQ_API_KEY)
+        GROQ_AVAILABLE = True
+        print("✅ Groq AI loaded")
+    else:
+        GROQ_AVAILABLE = False
+        print("⚠️  GROQ_API_KEY not set")
+except ImportError:
+    GROQ_AVAILABLE = False
+    print("⚠️  groq package not installed. Run: pip install groq")
+
+# =========================
 # APP INIT
 # =========================
 app = FastAPI(title="KYC Verification API", version="3.2")
@@ -117,14 +146,9 @@ def load_latest_report(email: str):
     report_dir = Path(REPORT_FOLDER)
     if not report_dir.exists():
         return None
-
-    files = sorted(
-        report_dir.glob(f"{safe_email(email)}_*.json"),
-        reverse=True
-    )
+    files = sorted(report_dir.glob(f"{safe_email(email)}_*.json"), reverse=True)
     if not files:
         return None
-
     try:
         with open(files[0], "r") as f:
             return json.load(f)
@@ -166,9 +190,6 @@ async def verify_kyc(
     with open(cam_path, "wb") as f:
         shutil.copyfileobj(webcam_image.file, f)
 
-    # =========================
-    # 🔐 AADHAAR EXTRACTION
-    # =========================
     raw_aadhar = None
     encrypted_aadhar = None
     masked_aadhar = None
@@ -176,21 +197,15 @@ async def verify_kyc(
     if OCR_AVAILABLE:
         try:
             raw_aadhar = extract_aadhar_number(doc_path)
-
             if not raw_aadhar:
                 raise HTTPException(400, "Invalid or unreadable Aadhaar document")
-
             if raw_aadhar:
                 clean = raw_aadhar.replace(" ", "")
                 encrypted_aadhar = encrypt_data(clean)
                 masked_aadhar = mask_aadhar(raw_aadhar)
-
         except Exception as e:
             print("Aadhaar extraction error:", e)
 
-    # =========================
-    # 🔍 FACE LIVENESS CHECK
-    # =========================
     with open(cam_path, "rb") as f:
         live_bytes = f.read()
 
@@ -201,9 +216,6 @@ async def verify_kyc(
     if face_result["status"] == "spoof":
         raise HTTPException(400, "Spoof detected")
 
-    # =========================
-    # 🧠 FACE EMBEDDINGS
-    # =========================
     live_embedding = np.array(face_result["embedding"], dtype=np.float32)
     live_embedding /= max(np.linalg.norm(live_embedding), 1e-6)
 
@@ -216,53 +228,37 @@ async def verify_kyc(
     doc_embedding = faces[0].normed_embedding.astype(np.float32)
     doc_embedding /= max(np.linalg.norm(doc_embedding), 1e-6)
 
-    # =========================
-    # 📊 FACE MATCH LOGIC
-    # =========================
     similarity = float(np.dot(live_embedding, doc_embedding))
     confidence = similarity * 100
     distance = 1 - similarity
-
     match = similarity >= FACE_MATCH_THRESHOLD
 
-    # =========================
-    # ⚠️ RISK SCORE
-    # =========================
     risk_score = float(
         distance * 100 * 0.6 +
         (1 - face_result["liveness"]) * 40
     )
 
-    # =========================
-    # 💾 SAVE TO DATABASE
-    # =========================
     try:
         db.insert_signup(
             email=email,
             doc_path=doc_path,
             capture_path=cam_path,
-            aadhar_number=encrypted_aadhar,  # 🔐 ENCRYPTED
+            aadhar_number=encrypted_aadhar,
             webcam_path=cam_path,
             face_embedding=[float(x) for x in live_embedding],
         )
     except Exception as e:
         print("DB insert error:", e)
 
-    # =========================
-    # 📦 ADD TO FAISS
-    # =========================
     try:
         add_face_embedding(live_embedding, email)
     except Exception as e:
         print("FAISS add error:", e)
 
-    # =========================
-    # 📄 SAVE REPORT (MASKED ONLY)
-    # =========================
     report = {
         "email": email,
         "timestamp": datetime.now().isoformat(),
-        "aadhar_number": masked_aadhar,  # 🔐 MASKED
+        "aadhar_number": masked_aadhar,
         "face_match": {
             "match": match,
             "confidence": confidence,
@@ -312,12 +308,7 @@ async def login_password(
 
     conn = db.get_conn()
     cur = conn.cursor()
-
-    cur.execute(
-        "SELECT email, status, password FROM kyc_users WHERE user_id=%s",
-        (user_id,),
-    )
-
+    cur.execute("SELECT email, status, password FROM kyc_users WHERE user_id=%s", (user_id,))
     row = cur.fetchone()
     conn.close()
 
@@ -328,7 +319,6 @@ async def login_password(
 
     if status != "ACCEPTED":
         raise HTTPException(403, "Account not active")
-
     if password != stored_password:
         raise HTTPException(401, "Invalid password")
 
@@ -362,17 +352,12 @@ async def login_face(
 
     conn = db.get_conn()
     cur = conn.cursor()
-
-    cur.execute(
-        "SELECT id, email, status, face_embedding FROM kyc_users WHERE user_id=%s",
-        (user_id,),
-    )
+    cur.execute("SELECT id, email, status, face_embedding FROM kyc_users WHERE user_id=%s", (user_id,))
     row = cur.fetchone()
     conn.close()
 
     if not row:
         raise HTTPException(404, "User not found")
-
     if row[2] != "ACCEPTED":
         raise HTTPException(403, "Account not active")
 
@@ -456,264 +441,265 @@ async def get_me(current_user: dict = Depends(get_current_user)):
 @app.get("/api/admin/kyc-users")
 async def admin_list_kyc_users(status: Optional[str] = None):
     require_db()
-
     conn = db.get_conn()
     cur = conn.cursor()
-
     if status:
-        cur.execute(
-            "SELECT id, email, aadhar_number, user_id, status, created_at FROM kyc_users WHERE status=%s",
-            (status,),
-        )
+        cur.execute("SELECT id, email, aadhar_number, user_id, status, created_at FROM kyc_users WHERE status=%s", (status,))
     else:
-        cur.execute(
-            "SELECT id, email, aadhar_number, user_id, status, created_at FROM kyc_users"
-        )
-
+        cur.execute("SELECT id, email, aadhar_number, user_id, status, created_at FROM kyc_users")
     rows = cur.fetchall()
     conn.close()
-
-    users = [
-        {
-            "id": r[0],
-            "email": r[1],
-            "aadhar_number": r[2],
-            "user_id": r[3],
-            "status": r[4],
-            "created_at": r[5],
-        }
-        for r in rows
-    ]
-
+    users = [{"id": r[0], "email": r[1], "aadhar_number": r[2], "user_id": r[3], "status": r[4], "created_at": r[5]} for r in rows]
     return {"success": True, "users": users}
 
 @app.get("/api/admin/kyc-users/metrics")
 async def admin_metrics():
     require_db()
-
     conn = db.get_conn()
     cur = conn.cursor()
-
     cur.execute("SELECT COUNT(*) FROM kyc_users")
     total = cur.fetchone()[0]
-
     cur.execute("SELECT COUNT(*) FROM kyc_users WHERE status='ACCEPTED'")
     accepted = cur.fetchone()[0]
-
     cur.execute("SELECT COUNT(*) FROM kyc_users WHERE status='REJECTED'")
     rejected = cur.fetchone()[0]
-
     cur.execute("SELECT COUNT(*) FROM kyc_users WHERE status='PENDING'")
     pending = cur.fetchone()[0]
-
     conn.close()
-
-    return {
-        "success": True,
-        "metrics": {
-            "total": total,
-            "accepted": accepted,
-            "rejected": rejected,
-            "pending": pending,
-        },
-    }
+    return {"success": True, "metrics": {"total": total, "accepted": accepted, "rejected": rejected, "pending": pending}}
 
 @app.post("/api/admin/kyc-users/{user_id}/accept")
 async def admin_accept_kyc(user_id: int):
     require_db()
-
     conn = db.get_conn()
     cur = conn.cursor()
-
     new_user_id = f"VYOM{user_id:05d}"
     password = os.urandom(4).hex()
-
     cur.execute(
-        """
-        UPDATE kyc_users
-        SET status='ACCEPTED',
-            user_id=%s,
-            password=%s
-        WHERE id=%s
-        RETURNING email
-        """,
+        "UPDATE kyc_users SET status='ACCEPTED', user_id=%s, password=%s WHERE id=%s RETURNING email",
         (new_user_id, password, user_id),
     )
-
     row = cur.fetchone()
     conn.commit()
     conn.close()
-
     if not row:
         raise HTTPException(404, "User not found")
-
-    email = row[0]
-
     email_sent = False
     try:
-        email_sent = send_activation_email(email, new_user_id, password)
+        email_sent = send_activation_email(row[0], new_user_id, password)
     except Exception as e:
         print("Email send error:", e)
-
-    return {
-        "success": True,
-        "user_id": new_user_id,
-        "password": password,
-        "email_sent": email_sent,
-    }
+    return {"success": True, "user_id": new_user_id, "password": password, "email_sent": email_sent}
 
 @app.post("/api/admin/kyc-users/{user_id}/reject")
 async def admin_reject_kyc(user_id: int, payload: dict):
     require_db()
-
     reason = payload.get("reason")
-
     conn = db.get_conn()
     cur = conn.cursor()
-
-    cur.execute(
-        """
-        UPDATE kyc_users
-        SET status='REJECTED'
-        WHERE id=%s
-        RETURNING email
-        """,
-        (user_id,),
-    )
-
+    cur.execute("UPDATE kyc_users SET status='REJECTED' WHERE id=%s RETURNING email", (user_id,))
     row = cur.fetchone()
     conn.commit()
     conn.close()
-
     if not row:
         raise HTTPException(404, "User not found")
-
-    email = row[0]
-
     try:
-        send_rejection_email(email, reason)
+        send_rejection_email(row[0], reason)
     except Exception as e:
         print("Reject email error:", e)
-
     return {"success": True, "reason": reason}
 
 @app.post("/api/admin/kyc-users/{user_id}/pending")
 async def admin_reset_pending(user_id: int):
     require_db()
-
     conn = db.get_conn()
     cur = conn.cursor()
-
-    cur.execute(
-        "UPDATE kyc_users SET status='PENDING' WHERE id=%s",
-        (user_id,),
-    )
-
+    cur.execute("UPDATE kyc_users SET status='PENDING' WHERE id=%s", (user_id,))
     conn.commit()
     conn.close()
-
     return {"success": True}
 
 @app.get("/api/admin/kyc-users/{user_id}")
 async def admin_get_kyc_user(user_id: int):
     require_db()
-
     conn = db.get_conn()
     cur = conn.cursor()
-
     cur.execute(
-        """
-        SELECT id, email, aadhar_number, user_id, status,
-               doc_path, capture_path, webcam_path, created_at
-        FROM kyc_users WHERE id=%s
-        """,
+        "SELECT id, email, aadhar_number, user_id, status, doc_path, capture_path, webcam_path, created_at FROM kyc_users WHERE id=%s",
         (user_id,),
     )
     row = cur.fetchone()
     conn.close()
-
     if not row:
         raise HTTPException(404, "User not found")
-
     email = row[1]
     verification_report = load_latest_report(email)
-
     user = {
-        "id": row[0],
-        "email": email,
-        "aadhar_number": row[2],
-        "user_id": row[3],
-        "status": row[4],
-        "document_url": file_to_url(row[5]),
-        "capture_url": file_to_url(row[6]),
-        "webcam_url": file_to_url(row[7]),
-        "created_at": row[8],
+        "id": row[0], "email": email, "aadhar_number": row[2], "user_id": row[3],
+        "status": row[4], "document_url": file_to_url(row[5]), "capture_url": file_to_url(row[6]),
+        "webcam_url": file_to_url(row[7]), "created_at": row[8],
     }
-
     return {"success": True, "user": user, "verification_report": verification_report}
 
-
 # =========================
-# ADMIN — AADHAAR FORGERY ANALYSIS (MICROSERVICE VERSION)
+# ADMIN — AADHAAR FORGERY ANALYSIS
 # =========================
 @app.get("/api/admin/analyze-document/{user_id}")
 async def admin_analyze_document(user_id: int):
     require_db()
-
     conn = db.get_conn()
     cur = conn.cursor()
-
-    cur.execute(
-        "SELECT doc_path FROM kyc_users WHERE id=%s",
-        (user_id,),
-    )
+    cur.execute("SELECT doc_path FROM kyc_users WHERE id=%s", (user_id,))
     row = cur.fetchone()
     conn.close()
-
     if not row or not row[0]:
         raise HTTPException(404, "Document not found for user")
-
     doc_path = row[0]
-
     if not os.path.exists(doc_path):
         raise HTTPException(404, "Document file missing on disk")
-
-    # 🔹 Call forgery microservice
     try:
         with open(doc_path, "rb") as f:
-            response = requests.post(
-                "http://127.0.0.1:9000/analyze",
-                files={"file": f},
-                timeout=10,  # prevent hanging
-            )
-
+            response = requests.post("http://127.0.0.1:9000/analyze", files={"file": f}, timeout=10)
         if response.status_code != 200:
-            raise HTTPException(
-                500,
-                f"Forgery service error: {response.text}"
-            )
-
+            raise HTTPException(500, f"Forgery service error: {response.text}")
         result = response.json()
-
     except requests.exceptions.ConnectionError:
-        raise HTTPException(
-            500,
-            "Forgery service not running (port 9000)"
-        )
+        raise HTTPException(500, "Forgery service not running (port 9000)")
     except requests.exceptions.Timeout:
-        raise HTTPException(
-            500,
-            "Forgery service timeout"
-        )
+        raise HTTPException(500, "Forgery service timeout")
     except Exception as e:
         print("Forgery analysis error:", e)
         raise HTTPException(500, "Forgery analysis failed")
-
     forgery_probability = float(result.get("forgery_probability", 0.0))
     is_forged = bool(result.get("is_forged", forgery_probability >= 0.5))
+    return {"success": True, "forgery_probability": forgery_probability, "is_forged": is_forged}
 
+
+# =========================
+# LOAN RECOMMENDATION
+# =========================
+
+class LoanRequest(BaseModel):
+    age: int
+    employment_type: str
+    monthly_income: float
+    credit_score: int
+    savings: float
+    existing_loan: str
+    loan_purpose: str
+    requested_amount: float
+    tenure_years: int
+    collateral: str
+
+
+@app.post("/api/loan/predict")
+async def loan_predict(data: LoanRequest):
+    if not LOAN_MODEL_AVAILABLE:
+        raise HTTPException(500, "Loan recommendation models not loaded")
+    result = predict_loan(data.model_dump())
     return {
         "success": True,
-        "forgery_probability": forgery_probability,
-        "is_forged": is_forged,
+        "predicted_status": result["predicted_status"],
+        "probabilities": result["probabilities"],
+        "estimated_amount": result["estimated_amount"],
     }
+
+
+# =========================
+# GROQ AI LOAN ADVISOR
+# =========================
+
+class AIAdviceRequest(BaseModel):
+    result: dict
+    formData: dict
+
+
+@app.post("/api/loan/ai-advice")
+async def loan_ai_advice(payload: AIAdviceRequest):
+    if not GROQ_AVAILABLE:
+        raise HTTPException(503, "Groq AI is not configured. Set GROQ_API_KEY environment variable.")
+
+    r = payload.result
+    f = payload.formData
+
+    # Safe value extraction — no crash if any field is None
+    age             = r.get("age") or f.get("age", "N/A")
+    emp_type        = f.get("employment_type", "N/A")
+    monthly_income  = f.get("monthly_income", 0)
+    credit_score    = f.get("credit_score", "N/A")
+    savings         = f.get("savings", 0)
+    existing_loan   = f.get("existing_loan", "N/A")
+    loan_purpose    = f.get("loan_purpose", "N/A")
+    requested_amt   = f.get("requested_amount", 0)
+    tenure          = f.get("tenure_years", "N/A")
+    collateral      = f.get("collateral", "N/A")
+    status          = r.get("status", "N/A")
+    recommended_amt = r.get("recommendedAmount", 0)
+    risk_level      = r.get("riskLevel", "N/A")
+    probability     = r.get("probability", 0)
+
+    prompt = f"""
+You are an expert Indian bank loan advisor. A customer submitted a loan application and received an ML prediction.
+Based on their profile and result, provide personalized, practical advice.
+
+=== CUSTOMER PROFILE ===
+Age: {age}
+Employment Type: {emp_type}
+Monthly Income: Rs {monthly_income}
+Credit Score: {credit_score}
+Savings: Rs {savings}
+Existing Loan: {existing_loan}
+Loan Purpose: {loan_purpose}
+Requested Amount: Rs {requested_amt}
+Tenure: {tenure} years
+Collateral Available: {collateral}
+
+=== ML MODEL PREDICTION ===
+Status: {status}
+Estimated Approved Amount: Rs {recommended_amt}
+Risk Level: {risk_level}
+Approval Probability: {probability}%
+
+=== YOUR TASK ===
+Respond ONLY with a valid JSON object. No markdown, no backticks, no extra text outside JSON.
+
+The JSON must have exactly these 4 keys:
+1. "summary" - 2-3 sentence personalized summary of their situation and prediction.
+2. "documents" - list of 6-8 specific documents needed for a "{loan_purpose}" loan in India.
+3. "steps" - list of 4-6 clear next steps to proceed or improve their application.
+4. "tips" - list of 3-5 specific tips to improve approval chances based on their weak points.
+
+Example format:
+{{
+  "summary": "...",
+  "documents": ["...", "..."],
+  "steps": ["...", "..."],
+  "tips": ["...", "..."]
+}}
+"""
+
+    try:
+        response = groq_client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.7,
+        )
+        raw = response.choices[0].message.content.strip()
+
+        # Strip markdown code fences if present
+        if raw.startswith("```"):
+            parts = raw.split("```")
+            raw = parts[1] if len(parts) > 1 else raw
+            if raw.startswith("json"):
+                raw = raw[4:]
+        raw = raw.strip()
+
+        advice = json.loads(raw)
+        return {"success": True, "advice": advice}
+
+    except json.JSONDecodeError as e:
+        print("Groq JSON parse error:", e)
+        raise HTTPException(500, "AI response could not be parsed. Try again.")
+    except Exception as e:
+        print("Groq error:", e)
+        raise HTTPException(500, f"Groq AI error: {str(e)}")

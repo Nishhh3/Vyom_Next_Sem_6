@@ -1,5 +1,6 @@
 import RiskBadge from "./RiskBadge";
 import ConfidenceBar from "./ConfidenceBar";
+import LoanAIAdvisor from "./LoanAIAdvisor";
 
 interface LoanResult {
   status: "Approved" | "Rejected" | "Under Review";
@@ -9,12 +10,26 @@ interface LoanResult {
   reason: string;
 }
 
+interface LoanFormData {
+  age: number;
+  employment_type: string;
+  monthly_income: number;
+  credit_score: number;
+  savings: number;
+  existing_loan: string;
+  loan_purpose: string;
+  requested_amount: number;
+  tenure_years: number;
+  collateral: string;
+}
+
 interface LoanResultCardProps {
   result: LoanResult;
+  formData: LoanFormData;  // ← added to pass context to Gemini
   onReset: () => void;
 }
 
-export default function LoanResultCard({ result, onReset }: LoanResultCardProps) {
+export default function LoanResultCard({ result, formData, onReset }: LoanResultCardProps) {
   const statusStyles = {
     Approved: "from-green-600/20 to-emerald-600/20 border-green-500/30",
     Rejected: "from-red-600/20 to-orange-600/20 border-red-500/30",
@@ -98,6 +113,9 @@ export default function LoanResultCard({ result, onReset }: LoanResultCardProps)
           </div>
         </div>
       </div>
+
+      {/* ← NEW: Gemini AI Advisor card (same card style as above) */}
+      <LoanAIAdvisor result={result} formData={formData} />
 
       {/* Action Buttons */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -79,7 +79,7 @@ export default function LoanForm({ onSubmit }: LoanFormProps) {
             />
           </div>
 
-          {/* Employment Type - Radio */}
+          {/* Employment Type */}
           <div className="space-y-2">
             <label className="text-sm text-gray-400">Employment Type *</label>
             <div className="flex gap-4 pt-2">
@@ -192,9 +192,7 @@ export default function LoanForm({ onSubmit }: LoanFormProps) {
 
           {/* Requested Amount */}
           <div className="space-y-2">
-            <label className="text-sm text-gray-400">
-              Requested Loan Amount (₹) *
-            </label>
+            <label className="text-sm text-gray-400">Requested Loan Amount (₹) *</label>
             <input
               type="number"
               name="requested_amount"
@@ -212,7 +210,8 @@ export default function LoanForm({ onSubmit }: LoanFormProps) {
             <div className="flex justify-between items-center">
               <label className="text-sm text-gray-400">Tenure (Years) *</label>
               <span className="text-white font-semibold">
-                {formData.tenure_years} {formData.tenure_years === 1 ? "year" : "years"}
+                {formData.tenure_years}{" "}
+                {formData.tenure_years === 1 ? "year" : "years"}
               </span>
             </div>
             <input
