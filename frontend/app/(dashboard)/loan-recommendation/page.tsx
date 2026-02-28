@@ -25,117 +25,67 @@ interface LoanResult {
   reason: string;
 }
 
+// Map model's predicted_status to our UI status
+function mapStatus(predicted: string): "Approved" | "Rejected" | "Under Review" {
+  if (predicted === "Approved") return "Approved";
+  if (predicted === "Rejected") return "Rejected";
+  return "Under Review"; // "Partial" maps to Under Review
+}
+
+// Derive risk level from probabilities
+function mapRiskLevel(probabilities: Record<string, number>): "Low" | "Medium" | "High" {
+  const rejectedProb = probabilities["Rejected"] ?? 0;
+  if (rejectedProb < 0.2) return "Low";
+  if (rejectedProb < 0.5) return "Medium";
+  return "High";
+}
+
 export default function LoanRecommendationPage() {
   const [showResult, setShowResult] = useState(false);
   const [result, setResult] = useState<LoanResult | null>(null);
+  const [formData, setFormData] = useState<LoanFormData | null>(null); // ← store formData
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const generateMockResult = (formData: LoanFormData): LoanResult => {
-    // Mock AI recommendation logic
-    const creditScore = formData.credit_score;
-    const income = formData.monthly_income;
-    const requestedAmount = formData.requested_amount;
-    const hasCollateral = formData.collateral === "Yes";
-    const hasExistingLoan = formData.existing_loan === "Yes";
-    const isSalaried = formData.employment_type === "Salaried";
+  const handleFormSubmit = async (data: LoanFormData) => {
+    setLoading(true);
+    setError(null);
+    setFormData(data); // ← save formData to state
 
-    let status: "Approved" | "Rejected" | "Under Review" = "Approved";
-    let probability = 0;
-    let recommendedAmount = requestedAmount;
-    let riskLevel: "Low" | "Medium" | "High" = "Medium";
-    let reason = "";
+    try {
+      const res = await fetch("http://localhost:8000/api/loan/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-    // Complex mock logic based on multiple factors
-    if (creditScore >= 750 && income >= 50000 && isSalaried && !hasExistingLoan) {
-      status = "Approved";
-      probability = 85;
-      recommendedAmount = requestedAmount;
-      riskLevel = "Low";
-      reason = `Excellent profile! Your credit score of ${creditScore}, stable salaried income of ₹${income.toLocaleString()}/month, and absence of existing loans make you an ideal candidate. Full requested amount of ₹${requestedAmount.toLocaleString()} approved for ${formData.tenure_years} years.`;
-    } else if (creditScore >= 700 && income >= 40000) {
-      status = "Approved";
-      probability = 78;
-      recommendedAmount = hasCollateral
-        ? requestedAmount
-        : Math.floor(requestedAmount * 0.9);
-      riskLevel = "Low";
-      reason = `Strong application with credit score ${creditScore} and monthly income ₹${income.toLocaleString()}. ${
-        hasCollateral
-          ? "Collateral backing allows full amount approval."
-          : "Recommended amount is 90% of requested due to no collateral."
-      } Loan purpose: ${formData.loan_purpose}.`;
-    } else if (creditScore >= 650 && income >= 30000) {
-      status = "Approved";
-      probability = 72;
-      recommendedAmount = Math.floor(requestedAmount * 0.75);
-      riskLevel = "Medium";
-      reason = `Your credit score (${creditScore}) and monthly income (₹${income.toLocaleString()}) support approval for 75% of requested amount. ${
-        hasExistingLoan
-          ? "Existing loan obligations considered in assessment."
-          : ""
-      } ${
-        isSalaried
-          ? "Salaried employment adds stability."
-          : "Unsalaried employment requires closer monitoring."
-      } Tenure of ${formData.tenure_years} years is manageable.`;
-    } else if (creditScore >= 600 && income >= 25000) {
-      status = "Under Review";
-      probability = 55;
-      recommendedAmount = Math.floor(requestedAmount * 0.6);
-      riskLevel = "Medium";
-      reason = `Application requires additional review. Credit score ${creditScore} is acceptable but borderline. Monthly income ₹${income.toLocaleString()} meets minimum threshold. ${
-        hasCollateral
-          ? "Collateral provided improves chances significantly."
-          : "Consider providing collateral for better terms."
-      } May approve up to 60% of requested amount pending verification.`;
-    } else if (creditScore >= 550) {
-      status = "Under Review";
-      probability = 45;
-      recommendedAmount = Math.floor(requestedAmount * 0.5);
-      riskLevel = "High";
-      reason = `Credit score ${creditScore} is below preferred range. Income verification required. ${
-        hasExistingLoan
-          ? "Existing loan increases risk profile."
-          : ""
-      } ${
-        hasCollateral
-          ? "Collateral may help secure up to 50% approval."
-          : "Strong collateral recommended to improve approval chances."
-      } Please be prepared for additional documentation.`;
-    } else {
-      status = "Rejected";
-      probability = 25;
-      recommendedAmount = 0;
-      riskLevel = "High";
-      reason = `Unfortunately, current credit score (${creditScore}) ${
-        income < 25000
-          ? "and monthly income (₹" + income.toLocaleString() + ")"
-          : ""
-      } do not meet minimum lending criteria. We recommend: (1) Improve credit score to above 600, (2) ${
-        !isSalaried ? "Establish stable employment, (3) " : ""
-      }Wait 6-12 months and reapply, ${
-        !hasCollateral ? "(3) Consider secured loan with collateral" : ""
-      }. Loan purpose '${formData.loan_purpose}' noted for future reference.`;
+      if (!res.ok) throw new Error("Prediction failed");
+
+      const json = await res.json();
+
+      const mappedResult: LoanResult = {
+        status: mapStatus(json.predicted_status),
+        probability: Math.round((json.probabilities?.["Approved"] ?? 0) * 100),
+        recommendedAmount: json.estimated_amount,
+        riskLevel: mapRiskLevel(json.probabilities ?? {}),
+        reason: `Based on your profile, our model predicts a ${json.predicted_status} status with an estimated approved amount of ₹${json.estimated_amount?.toLocaleString()}.`,
+      };
+
+      setResult(mappedResult);
+      setShowResult(true);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to get recommendation. Please make sure the backend is running.");
+    } finally {
+      setLoading(false);
     }
-
-    return {
-      status,
-      probability,
-      recommendedAmount,
-      riskLevel,
-      reason,
-    };
-  };
-
-  const handleFormSubmit = (formData: LoanFormData) => {
-    // Simulate processing delay
-    const mockResult = generateMockResult(formData);
-    setResult(mockResult);
-    setShowResult(true);
   };
 
   const handleReset = () => {
     setShowResult(false);
     setResult(null);
+    setFormData(null);
+    setError(null);
   };
 
   return (
@@ -170,11 +120,41 @@ export default function LoanRecommendationPage() {
           </div>
         )}
 
+        {/* Error */}
+        {error && (
+          <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-4 text-red-400 text-sm">
+            {error}
+          </div>
+        )}
+
+        {/* Loading */}
+        {loading && (
+          <div className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 border border-gray-700/50 rounded-2xl p-8 backdrop-blur-sm text-center">
+            <div className="space-y-3">
+              {[80, 60, 70, 50].map((w, i) => (
+                <div
+                  key={i}
+                  className="h-3 bg-gray-700/60 rounded-full animate-pulse mx-auto"
+                  style={{ width: `${w}%` }}
+                />
+              ))}
+              <p className="text-gray-400 text-sm pt-2">Analyzing your profile...</p>
+            </div>
+          </div>
+        )}
+
         {/* Content */}
-        {!showResult ? (
+        {!showResult && !loading && (
           <LoanForm onSubmit={handleFormSubmit} />
-        ) : (
-          result && <LoanResultCard result={result} onReset={handleReset} />
+        )}
+
+        {/* Result — passes both result AND formData */}
+        {showResult && result && formData && (
+          <LoanResultCard
+            result={result}
+            formData={formData}
+            onReset={handleReset}
+          />
         )}
       </div>
     </div>
