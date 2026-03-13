@@ -1,10 +1,17 @@
+"use client";
+
+import AdminNavbar from "@/components/AdminNavbar";
 import ChatContainer from "@/components/support/ChatContainer";
 
 export default function SupportPage() {
   return (
-    <div className="min-h-screen bg-[#0a0b14] py-6 px-8">
-      <div className="max-w-2xl mx-auto">
-        <ChatContainer />
+    <div className="h-screen overflow-hidden bg-[#0b0f1a] flex flex-col">
+      <AdminNavbar />
+      {/* chat fills every pixel below the navbar */}
+      <div className="flex-1 min-h-0 px-6 pt-3 pb-3 max-w-4xl w-full mx-auto flex flex-col">
+        <div className="flex-1 min-h-0">
+          <ChatContainer />
+        </div>
       </div>
     </div>
   );
