@@ -25,3 +25,6 @@ backend/verification_reports/*.json
 
 .next/
 node_modules/
+
+
+backend/kyc_database/

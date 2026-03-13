@@ -27,5 +27,5 @@ async def analyze_document(file: UploadFile = File(...)):
 
     return {
         "forgery_probability": probability,
-        "is_forged": probability >= 0.5
+        "is_forged": probability >= 0.35
     }
