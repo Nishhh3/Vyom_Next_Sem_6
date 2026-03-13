@@ -1,5 +1,5 @@
 # backend_api.py
-# FINAL STABLE VERSION — SilentFace + InsightFace + Admin + FAISS (v3.2 + JWT) + Loan Recommendation + Gemini AI Advisor
+# FINAL STABLE VERSION — SilentFace + InsightFace + Admin + FAISS (v3.2 + JWT) + Loan Recommendation + Gemini AI Advisor + DigiLocker
 
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException, Depends, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
@@ -92,6 +92,17 @@ except ImportError:
     print("⚠️  groq package not installed. Run: pip install groq")
 
 # =========================
+# DIGILOCKER
+# =========================
+try:
+    from digilocker_service import router as digilocker_router, init_digilocker_db
+    DIGILOCKER_AVAILABLE = True
+    print("✅ DigiLocker service loaded")
+except ImportError as e:
+    DIGILOCKER_AVAILABLE = False
+    print("⚠️  DigiLocker service not available:", e)
+
+# =========================
 # APP INIT
 # =========================
 app = FastAPI(title="KYC Verification API", version="3.2")
@@ -111,6 +122,14 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(REPORT_FOLDER, exist_ok=True)
 
 app.mount("/uploads", StaticFiles(directory=UPLOAD_FOLDER), name="uploads")
+
+# =========================
+# DIGILOCKER INIT + MOUNT
+# =========================
+if DIGILOCKER_AVAILABLE:
+    init_digilocker_db()
+    app.include_router(digilocker_router)
+    print("✅ DigiLocker routes mounted at /api/digilocker")
 
 # =========================
 # LOAD INSIGHTFACE ONCE

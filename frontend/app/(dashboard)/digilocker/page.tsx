@@ -2,51 +2,56 @@
 
 import React, { useState, useRef, useCallback, useEffect } from "react";
 
+// ─── Types ────────────────────────────────────────────────────────────────────
 interface DigiDocument {
   id: string;
   name: string;
   type: string;
   size: number;
   uploadedAt: string;
-  dataUrl: string;
 }
 
-const DB_NAME = "DigiLockerDB_Simple";
-const DB_VERSION = 1;
-const STORE_NAME = "documents";
+interface ViewingDoc extends DigiDocument {
+  dataUrl?: string;
+  loading?: boolean;
+}
 
-function openDB(): Promise<IDBDatabase> {
-  return new Promise((resolve, reject) => {
-    const req = indexedDB.open(DB_NAME, DB_VERSION);
-    req.onupgradeneeded = (e) => {
-      const db = (e.target as IDBOpenDBRequest).result;
-      if (!db.objectStoreNames.contains(STORE_NAME)) {
-        db.createObjectStore(STORE_NAME, { keyPath: "id" });
-      }
-    };
-    req.onsuccess = () => resolve(req.result);
-    req.onerror = () => reject(req.error);
+// ─── Config ───────────────────────────────────────────────────────────────────
+// Same port as your existing backend (8000). DigiLocker is mounted there now.
+const API_BASE = "http://localhost:8000";
+const MAX_SIZE_MB = 10;
+const MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
+
+// ─── Auth headers ─────────────────────────────────────────────────────────────
+function getAuthHeaders(): Record<string, string> {
+  // Picks up the JWT your existing login flow stores in localStorage
+  const token =
+    typeof window !== "undefined" ? localStorage.getItem("access_token") : null;
+
+  if (token) return { Authorization: `Bearer ${token}` };
+
+  // ⚠️  Dev-only fallback — remove before deploying to production
+  return { "X-User-Email": "dev@example.com" };
+}
+
+// ─── Generic API fetch ────────────────────────────────────────────────────────
+async function apiFetch(path: string, options: RequestInit = {}) {
+  const res = await fetch(`${API_BASE}${path}`, {
+    ...options,
+    credentials: "include",
+    headers: {
+      ...getAuthHeaders(),
+      ...(options.headers ?? {}),
+    },
   });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: "Unknown error" }));
+    throw new Error(err.detail ?? `HTTP ${res.status}`);
+  }
+  return res.json();
 }
 
-function dbGetAll(db: IDBDatabase): Promise<DigiDocument[]> {
-  return new Promise((resolve, reject) => {
-    const tx = db.transaction(STORE_NAME, "readonly");
-    const req = tx.objectStore(STORE_NAME).getAll();
-    req.onsuccess = () => resolve(req.result as DigiDocument[]);
-    req.onerror = () => reject(req.error);
-  });
-}
-
-function dbPut(db: IDBDatabase, doc: DigiDocument): Promise<void> {
-  return new Promise((resolve, reject) => {
-    const tx = db.transaction(STORE_NAME, "readwrite");
-    const req = tx.objectStore(STORE_NAME).put(doc);
-    req.onsuccess = () => resolve();
-    req.onerror = () => reject(req.error);
-  });
-}
-
+// ─── Formatters ───────────────────────────────────────────────────────────────
 function formatFileSize(bytes: number): string {
   if (bytes === 0) return "0 B";
   const k = 1024;
@@ -75,75 +80,77 @@ function getFileIcon(mimeType: string): { color: string; label: string } {
   return { color: "text-gray-400 bg-gray-500/10 border-gray-500/20", label: "FILE" };
 }
 
+// ─── Component ────────────────────────────────────────────────────────────────
 export default function DigiLockerPage() {
   const [documents, setDocuments] = useState<DigiDocument[]>([]);
+  const [stats, setStats] = useState({ count: 0, totalSize: 0 });
   const [loading, setLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
-  const [viewingDoc, setViewingDoc] = useState<DigiDocument | null>(null);
+  const [viewingDoc, setViewingDoc] = useState<ViewingDoc | null>(null);
   const [isDragging, setIsDragging] = useState(false);
-  const [db, setDb] = useState<IDBDatabase | null>(null);
-  const [toast, setToast] = useState<string | null>(null);
+  const [toast, setToast] = useState<{ msg: string; type: "success" | "error" } | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const MAX_SIZE_MB = 10;
-  const MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
-
-  const showToast = (msg: string) => {
-    setToast(msg);
-    setTimeout(() => setToast(null), 3000);
+  const showToast = (msg: string, type: "success" | "error" = "success") => {
+    setToast({ msg, type });
+    setTimeout(() => setToast(null), 3500);
   };
 
-  useEffect(() => {
-    openDB()
-      .then((database) => {
-        setDb(database);
-        return dbGetAll(database);
-      })
-      .then((docs) => {
-        setDocuments(docs);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
+  // ── Fetch document list + stats ────────────────────────────────────────────
+  const fetchDocuments = useCallback(async () => {
+    try {
+      const [docsRes, statsRes] = await Promise.all([
+        apiFetch("/api/digilocker/documents"),
+        apiFetch("/api/digilocker/stats"),
+      ]);
+      setDocuments(docsRes.documents ?? []);
+      setStats({ count: statsRes.count, totalSize: statsRes.totalSize });
+    } catch (e: any) {
+      showToast(e.message ?? "Failed to load documents", "error");
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
+  useEffect(() => {
+    fetchDocuments();
+  }, [fetchDocuments]);
+
+  // ── Upload ─────────────────────────────────────────────────────────────────
   const handleUpload = useCallback(
     async (file: File) => {
-      if (!db) return;
       if (file.size > MAX_SIZE_BYTES) {
-        showToast(`File too large. Max size is ${MAX_SIZE_MB}MB.`);
+        showToast(`File too large. Max size is ${MAX_SIZE_MB}MB.`, "error");
         return;
       }
 
       setUploading(true);
       try {
-        const dataUrl = await new Promise<string>((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result as string);
-          reader.onerror = reject;
-          reader.readAsDataURL(file);
+        const formData = new FormData();
+        formData.append("file", file);
+
+        const res = await fetch(`${API_BASE}/api/digilocker/upload`, {
+          method: "POST",
+          credentials: "include",
+          headers: getAuthHeaders(), // NOTE: do NOT set Content-Type — browser sets multipart boundary
+          body: formData,
         });
 
-        const doc: DigiDocument = {
-          id: `doc_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-          name: file.name,
-          type: file.type,
-          size: file.size,
-          uploadedAt: new Date().toISOString(),
-          dataUrl,
-        };
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({ detail: "Upload failed" }));
+          throw new Error(err.detail ?? `HTTP ${res.status}`);
+        }
 
-        await dbPut(db, doc);
-        const updated = await dbGetAll(db);
-        setDocuments(updated);
+        await fetchDocuments();
         showToast(`"${file.name}" uploaded successfully`);
-      } catch {
-        showToast("Upload failed. Please try again.");
+      } catch (e: any) {
+        showToast(e.message ?? "Upload failed", "error");
       } finally {
         setUploading(false);
         if (fileInputRef.current) fileInputRef.current.value = "";
       }
     },
-    [db]
+    [fetchDocuments]
   );
 
   const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -158,22 +165,47 @@ export default function DigiLockerPage() {
     if (file) handleUpload(file);
   };
 
+  // ── View (load base64 data URL from backend) ───────────────────────────────
+  const handleView = async (doc: DigiDocument) => {
+    setViewingDoc({ ...doc, loading: true });
+    try {
+      const res = await apiFetch(`/api/digilocker/documents/${doc.id}/dataurl`);
+      setViewingDoc({ ...doc, dataUrl: res.dataUrl, loading: false });
+    } catch (e: any) {
+      setViewingDoc(null);
+      showToast(e.message ?? "Failed to load document", "error");
+    }
+  };
+
+  // ── Delete ─────────────────────────────────────────────────────────────────
+  const handleDelete = async (doc: DigiDocument) => {
+    if (!confirm(`Delete "${doc.name}"? This cannot be undone.`)) return;
+    try {
+      await apiFetch(`/api/digilocker/documents/${doc.id}`, { method: "DELETE" });
+      if (viewingDoc?.id === doc.id) setViewingDoc(null);
+      await fetchDocuments();
+      showToast(`"${doc.name}" deleted`);
+    } catch (e: any) {
+      showToast(e.message ?? "Delete failed", "error");
+    }
+  };
+
+  // ─── Render ───────────────────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-[#0a0b14] text-white p-6 lg:p-8">
       <div className="max-w-5xl mx-auto space-y-8">
 
         {/* ── Header ── */}
-        <div className="space-y-1">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600/30 to-orange-600/20 border border-red-500/30 flex items-center justify-center">
-              <svg className="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-              </svg>
-            </div>
-            <div>
-              <h1 className="text-3xl lg:text-4xl font-bold">DigiLocker</h1>
-              <p className="text-gray-400 text-sm mt-0.5">Your secure personal document vault</p>
-            </div>
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600/30 to-orange-600/20 border border-red-500/30 flex items-center justify-center">
+            <svg className="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <div>
+            <h1 className="text-3xl lg:text-4xl font-bold">DigiLocker</h1>
+            <p className="text-gray-400 text-sm mt-0.5">Your secure personal document vault</p>
           </div>
         </div>
 
@@ -183,7 +215,7 @@ export default function DigiLockerPage() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-400 text-xs">Total Documents</p>
-                <p className="text-2xl font-bold mt-1">{documents.length}</p>
+                <p className="text-2xl font-bold mt-1">{stats.count}</p>
               </div>
               <span className="text-3xl opacity-50">📄</span>
             </div>
@@ -192,9 +224,7 @@ export default function DigiLockerPage() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-400 text-xs">Storage Used</p>
-                <p className="text-2xl font-bold mt-1">
-                  {formatFileSize(documents.reduce((s, d) => s + d.size, 0))}
-                </p>
+                <p className="text-2xl font-bold mt-1">{formatFileSize(stats.totalSize)}</p>
               </div>
               <span className="text-3xl opacity-50">💾</span>
             </div>
@@ -230,7 +260,8 @@ export default function DigiLockerPage() {
               <>
                 <div className="w-14 h-14 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center">
                   <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                      d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                   </svg>
                 </div>
                 <div>
@@ -264,7 +295,8 @@ export default function DigiLockerPage() {
             <div className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 border border-gray-700/50 rounded-2xl flex flex-col items-center justify-center py-16 gap-4 text-center px-8">
               <div className="w-16 h-16 rounded-3xl bg-gradient-to-br from-red-600/20 to-orange-600/10 border border-red-500/20 flex items-center justify-center">
                 <svg className="w-8 h-8 text-red-400/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </div>
               <div>
@@ -295,16 +327,30 @@ export default function DigiLockerPage() {
                         </p>
                       </div>
 
-                      {/* View Button */}
-                      <button
-                        onClick={() => setViewingDoc(doc)}
-                        className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-700/60 hover:bg-gray-600/60 border border-gray-600/50 rounded-lg text-xs text-gray-300 hover:text-white transition-all flex-shrink-0"
-                      >
-                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0zM2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                        </svg>
-                        View
-                      </button>
+                      {/* Actions */}
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        <button
+                          onClick={() => handleView(doc)}
+                          className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-700/60 hover:bg-gray-600/60 border border-gray-600/50 rounded-lg text-xs text-gray-300 hover:text-white transition-all"
+                        >
+                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0zM2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                          </svg>
+                          View
+                        </button>
+
+                        <button
+                          onClick={() => handleDelete(doc)}
+                          className="flex items-center gap-1.5 px-3 py-1.5 bg-red-900/30 hover:bg-red-900/60 border border-red-700/40 rounded-lg text-xs text-red-400 hover:text-red-300 transition-all"
+                        >
+                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                          </svg>
+                          Delete
+                        </button>
+                      </div>
                     </div>
                   );
                 })}
@@ -343,7 +389,11 @@ export default function DigiLockerPage() {
 
             {/* Modal Content */}
             <div className="flex-1 overflow-auto">
-              {viewingDoc.type.startsWith("image/") ? (
+              {viewingDoc.loading ? (
+                <div className="flex items-center justify-center py-20">
+                  <div className="w-8 h-8 border-2 border-gray-700 border-t-red-500 rounded-full animate-spin" />
+                </div>
+              ) : viewingDoc.dataUrl && viewingDoc.type.startsWith("image/") ? (
                 <div className="flex items-center justify-center p-6">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -352,7 +402,7 @@ export default function DigiLockerPage() {
                     className="max-w-full max-h-[65vh] object-contain rounded-lg"
                   />
                 </div>
-              ) : viewingDoc.type === "application/pdf" ? (
+              ) : viewingDoc.dataUrl && viewingDoc.type === "application/pdf" ? (
                 <iframe
                   src={viewingDoc.dataUrl}
                   className="w-full h-[65vh]"
@@ -362,7 +412,8 @@ export default function DigiLockerPage() {
                 <div className="flex flex-col items-center justify-center py-16 gap-4 text-center px-8">
                   <div className="w-16 h-16 rounded-2xl bg-gray-800 border border-gray-700 flex items-center justify-center">
                     <svg className="w-7 h-7 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   </div>
                   <div>
@@ -378,11 +429,21 @@ export default function DigiLockerPage() {
 
       {/* ── Toast ── */}
       {toast && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 bg-gray-800 border border-gray-600/60 text-white text-sm px-5 py-3 rounded-xl shadow-2xl">
-          <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-          </svg>
-          {toast}
+        <div className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 border text-white text-sm px-5 py-3 rounded-xl shadow-2xl ${
+          toast.type === "error"
+            ? "bg-red-950 border-red-700/60"
+            : "bg-gray-800 border-gray-600/60"
+        }`}>
+          {toast.type === "error" ? (
+            <svg className="w-4 h-4 text-red-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          )}
+          {toast.msg}
         </div>
       )}
     </div>

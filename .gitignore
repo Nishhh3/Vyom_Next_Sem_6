@@ -26,5 +26,9 @@ backend/verification_reports/*.json
 .next/
 node_modules/
 
-
+# Databases
 backend/kyc_database/
+ backend/digilocker.db
+ *.db
+*.sqlite
+*.sqlite3
