@@ -1,4 +1,10 @@
+'use client'; // ← ADD line 1 (was missing)
+
+import { useSessionGuard } from '@/hooks/useSessionGuard'; // ← ADD line 2
+
 export default function DashboardPage() {
+  useSessionGuard(); // ← ADD line 3
+
   const stats = [
     { label: "Total Balance", value: "₹12,45,680", icon: "💰" },
     { label: "Connected Banks", value: "3", icon: "🏦" },
@@ -30,36 +36,11 @@ export default function DashboardPage() {
   ];
 
   const transactions = [
-    {
-      date: "Feb 05, 2026",
-      description: "Grocery Store Payment",
-      amount: -2450,
-      type: "debit",
-    },
-    {
-      date: "Feb 04, 2026",
-      description: "Salary Credit",
-      amount: 85000,
-      type: "credit",
-    },
-    {
-      date: "Feb 03, 2026",
-      description: "Electricity Bill",
-      amount: -1840,
-      type: "debit",
-    },
-    {
-      date: "Feb 02, 2026",
-      description: "Online Transfer Received",
-      amount: 5000,
-      type: "credit",
-    },
-    {
-      date: "Feb 01, 2026",
-      description: "Restaurant Payment",
-      amount: -3200,
-      type: "debit",
-    },
+    { date: "Feb 05, 2026", description: "Grocery Store Payment", amount: -2450, type: "debit" },
+    { date: "Feb 04, 2026", description: "Salary Credit", amount: 85000, type: "credit" },
+    { date: "Feb 03, 2026", description: "Electricity Bill", amount: -1840, type: "debit" },
+    { date: "Feb 02, 2026", description: "Online Transfer Received", amount: 5000, type: "credit" },
+    { date: "Feb 01, 2026", description: "Restaurant Payment", amount: -3200, type: "debit" },
   ];
 
   return (
@@ -140,11 +121,7 @@ export default function DashboardPage() {
                     >
                       <td className="py-4 px-6 text-gray-300">{txn.date}</td>
                       <td className="py-4 px-6">{txn.description}</td>
-                      <td
-                        className={`py-4 px-6 text-right font-semibold ${
-                          txn.type === "credit" ? "text-green-400" : "text-red-400"
-                        }`}
-                      >
+                      <td className={`py-4 px-6 text-right font-semibold ${txn.type === "credit" ? "text-green-400" : "text-red-400"}`}>
                         {txn.type === "credit" ? "+" : ""}₹{Math.abs(txn.amount).toLocaleString()}
                       </td>
                     </tr>
