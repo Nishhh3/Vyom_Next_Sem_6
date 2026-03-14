@@ -1,6 +1,6 @@
 "use client";
 
-import AdminNavbar from "@/components/AdminNavbar";
+import AdminNavbar from "@/components/AuthenticatedNavbar";
 import ChatContainer from "@/components/support/ChatContainer";
 
 export default function SupportPage() {
