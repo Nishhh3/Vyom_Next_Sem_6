@@ -7,11 +7,11 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from jose import JWTError, jwt
 
 import db
-
+import os
 
 # NOTE:
 # In production, keep this key in environment/config, not in code.
-SECRET_KEY = "CHANGE_ME_TO_A_LONG_RANDOM_SECRET_KEY"
+SECRET_KEY = os.environ.get("JWT_SECRET", "fallback-for-dev-only")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 15
 REFRESH_TOKEN_EXPIRE_DAYS = 7
@@ -19,6 +19,23 @@ REFRESH_TOKEN_EXPIRE_DAYS = 7
 
 http_bearer = HTTPBearer(auto_error=False)
 
+
+# auth_utils.py — in create_access_token()
+def create_access_token(user: Dict[str, Any]) -> str:
+    user_id = user.get("user_id")
+    if not user_id:
+        raise ValueError("user_id missing on user object")
+
+    payload = {
+        "sub": user_id,
+        "email": user.get("email", ""),   # ← ADD THIS LINE
+        "role": (user.get("role") or "user"),
+    }
+    return _create_token(
+        data=payload,
+        expires_delta=timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES),
+        token_type="access",
+    )
 
 def _create_token(
     data: Dict[str, Any],
