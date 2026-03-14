@@ -87,6 +87,7 @@ export default function FaceAuthPage() {
 
       const formData = new FormData();
       formData.append('email', registration.email);
+      formData.append('phone', registration.mobile);
       formData.append('aadhar_document', aadharFile);
       formData.append('webcam_image', new File([blob], 'webcam.jpg', { type: 'image/jpeg' }));
       formData.append('enhance_document', 'true');
