@@ -58,7 +58,8 @@ def insert_signup(
     capture_path,
     aadhar_number,
     webcam_path,
-    face_embedding=None
+    face_embedding=None,
+    phone=None,              # ← ADD
 ):
     """
     Insert new KYC signup with optional face embedding
@@ -71,8 +72,8 @@ def insert_signup(
         cur.execute(
             """
             INSERT INTO kyc_users
-            (email, doc_path, capture_path, aadhar_number, webcam_path, face_embedding, status)
-            VALUES (%s, %s, %s, %s, %s, %s, 'PENDING')
+            (email, doc_path, capture_path, aadhar_number, webcam_path, face_embedding, phone, status)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, 'PENDING')
             RETURNING id
             """,
             (
@@ -82,6 +83,7 @@ def insert_signup(
                 aadhar_number,
                 webcam_path,
                 face_embedding,
+                phone,                # ← ADD
             ),
         )
 

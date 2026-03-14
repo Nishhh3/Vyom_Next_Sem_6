@@ -1,34 +1,41 @@
 .env
+.env*
+.env.local
+
 __pycache__/
 *.pyc
 venv/
-.env*
-*.jpg
-*.jpeg
-
-aadhar.key
-
-uploads/*.jpg
-uploads/*.jpeg
-
-# Ignore runtime JSON files
-backend/kyc_database/*.json
-backend/verification_reports/*.json
-
-# Ignore generic JSON if needed
-*.json
-
-# BUT keep essential frontend config
-!frontend/package.json
-!frontend/package-lock.json
-!frontend/tsconfig.json
 
 .next/
 node_modules/
 
-# Databases
-backend/kyc_database/
- backend/digilocker.db
- *.db
+# uploads
+uploads/*.jpg
+uploads/*.jpeg
+
+# databases
+*.db
 *.sqlite
 *.sqlite3
+
+backend/kyc_database/
+backend/digilocker.db
+
+# runtime JSON
+backend/kyc_database/*.json
+backend/verification_reports/*.json
+
+# keep frontend configs
+!frontend/package.json
+!frontend/package-lock.json
+!frontend/tsconfig.json
+
+
+*.key
+
+node_modules/
+.next/
+__pycache__/
+uploads/
+
+*.sh

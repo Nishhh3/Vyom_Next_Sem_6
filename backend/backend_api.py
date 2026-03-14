@@ -102,6 +102,17 @@ except ImportError as e:
     DIGILOCKER_AVAILABLE = False
     print("⚠️  DigiLocker service not available:", e)
 
+
+# Bank router
+try:
+    from bank_router import router as bank_router
+    BANK_AVAILABLE = True
+    print("✅ Bank router loaded")
+except ImportError as e:
+    BANK_AVAILABLE = False
+    print("⚠️  Bank router not available:", e)
+ 
+
 # =========================
 # APP INIT
 # =========================
@@ -130,6 +141,10 @@ if DIGILOCKER_AVAILABLE:
     init_digilocker_db()
     app.include_router(digilocker_router)
     print("✅ DigiLocker routes mounted at /api/digilocker")
+
+if BANK_AVAILABLE:
+    app.include_router(bank_router)
+    print("✅ Bank routes mounted at /api/bank")
 
 # =========================
 # LOAD INSIGHTFACE ONCE
@@ -189,6 +204,7 @@ async def verify_kyc(
     email: str = Form(...),
     id_document: UploadFile = File(...),
     webcam_image: UploadFile = File(...),
+    phone: Optional[str] = Form(None),      # ← ADD
 ):
     require_db()
 
@@ -265,6 +281,7 @@ async def verify_kyc(
             aadhar_number=encrypted_aadhar,
             webcam_path=cam_path,
             face_embedding=[float(x) for x in live_embedding],
+            phone=phone,                     # ← ADD
         )
     except Exception as e:
         print("DB insert error:", e)

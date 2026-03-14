@@ -11,6 +11,7 @@ export async function POST(request: NextRequest) {
     
     // Extract form fields
     const email = formData.get('email') as string;
+    const phone = formData.get('phone') as string;
     const aadharFile = formData.get('aadhar_document') as File;
     const webcamImage = formData.get('webcam_image') as File;
     const enhanceDocument = formData.get('enhance_document') === 'true';
@@ -35,6 +36,7 @@ export async function POST(request: NextRequest) {
 
     // Create FormData for FastAPI backend
     const backendFormData = new FormData();
+    backendFormData.append('phone', phone ?? '');
     backendFormData.append('email', email);
     backendFormData.append('id_document', aadharFile);
     backendFormData.append('webcam_image', webcamImage);
