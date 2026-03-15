@@ -1,7 +1,7 @@
 import glob
 import numpy as np
 import os
-from face_auth_pipeline import verify_face_image
+from face.face_auth_pipeline import verify_face_image
 
 def collect(folder):
     files = (

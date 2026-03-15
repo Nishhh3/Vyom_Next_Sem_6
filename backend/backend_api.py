@@ -15,16 +15,21 @@ from pathlib import Path
 from datetime import datetime
 from typing import Optional
 
-from face_search.search_engine import add_face_embedding
-from face_auth_pipeline import verify_face_image
+from face.face_search.search_engine import add_face_embedding
+from face.face_auth_pipeline import verify_face_image
 from insightface.app import FaceAnalysis
 
-from email_utils import send_activation_email, send_rejection_email
+from services.email_utils import send_activation_email, send_rejection_email
 
-from face_config import FACE_MATCH_THRESHOLD
-from security_utils import encrypt_data
-from ocr_utils.aadhar_extractor import mask_aadhar
+from face.face_config import FACE_MATCH_THRESHOLD
+from services.security_utils import encrypt_data
+from ocr.ocr_utils.aadhar_extractor import mask_aadhar
 import requests
+from routers.transfer_router import router as transfer_router
+from dotenv import load_dotenv
+load_dotenv()
+
+
 
 # =========================
 # DB
@@ -39,7 +44,7 @@ except ImportError:
 # OCR
 # =========================
 try:
-    from ocr_utils import extract_aadhar as extract_aadhar_number
+    from ocr.ocr_utils import extract_aadhar as extract_aadhar_number
     OCR_AVAILABLE = True
 except ImportError:
     OCR_AVAILABLE = False
@@ -48,7 +53,7 @@ except ImportError:
 # AUTH (JWT + REFRESH)
 # =========================
 try:
-    from auth_utils import (
+    from services.auth_utils import (
         create_access_token,
         create_refresh_token,
         set_refresh_cookie,
@@ -67,7 +72,7 @@ except ImportError as e:
 # LOAN RECOMMENDATION
 # =========================
 try:
-    from loan_recommendation.predictor import predict_loan
+    from loans.loan_recommendation.predictor import predict_loan
     LOAN_MODEL_AVAILABLE = True
     print("✅ Loan recommendation models loaded")
 except ImportError as e:
@@ -95,7 +100,7 @@ except ImportError:
 # DIGILOCKER
 # =========================
 try:
-    from digilocker_service import router as digilocker_router, init_digilocker_db
+    from services.digilocker_service import router as digilocker_router, init_digilocker_db
     DIGILOCKER_AVAILABLE = True
     print("✅ DigiLocker service loaded")
 except ImportError as e:
@@ -105,7 +110,7 @@ except ImportError as e:
 
 # Bank router
 try:
-    from bank_router import router as bank_router
+    from routers.bank_router import router as bank_router
     BANK_AVAILABLE = True
     print("✅ Bank router loaded")
 except ImportError as e:
@@ -145,6 +150,10 @@ if DIGILOCKER_AVAILABLE:
 if BANK_AVAILABLE:
     app.include_router(bank_router)
     print("✅ Bank routes mounted at /api/bank")
+
+app.include_router(bank_router)       
+app.include_router(transfer_router) 
+
 
 # =========================
 # LOAD INSIGHTFACE ONCE
