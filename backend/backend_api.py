@@ -26,6 +26,7 @@ from services.security_utils import encrypt_data
 from ocr.ocr_utils.aadhar_extractor import mask_aadhar
 import requests
 from routers.transfer_router import router as transfer_router
+from routers.blockchain_router import router as blockchain_router
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -151,8 +152,11 @@ if BANK_AVAILABLE:
     app.include_router(bank_router)
     print("✅ Bank routes mounted at /api/bank")
 
+
+# Bank router , Transfer router , Blockchain router
 app.include_router(bank_router)       
 app.include_router(transfer_router) 
+app.include_router(blockchain_router)
 
 
 # =========================

@@ -21,6 +21,7 @@ import db
 from services.auth_utils import get_current_user
 from services.bank_client import BankServiceError, initiate_transfer
 from services.otp_service import create_otp, verify_otp, send_otp_email
+from services.blockchain import write_block
 
 router = APIRouter(prefix="/api/transfer", tags=["Transfer"])
 
@@ -162,6 +163,20 @@ async def execute_transfer(
         )
     except BankServiceError as e:
         raise HTTPException(e.status_code, e.message)
+
+# ── Write to blockchain ledger ───────────────────────────
+    write_block(
+        vyom_user_id  = user_id,
+        from_bank     = body.bank.upper(),
+        from_account  = body.account_id,
+        to_account    = data.get("to_account", body.to_account_number),
+        to_ifsc       = body.to_ifsc.upper(),
+        amount        = body.amount,
+        ref_number    = data.get("ref_number", ""),
+        remarks       = body.remarks or "Vyom Transfer",
+        credited_bank = data.get("credited_to_bank"),
+        status        = data.get("status", "SUCCESS"),
+    )
 
     return {
         "success":          True,
