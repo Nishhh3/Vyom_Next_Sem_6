@@ -16,8 +16,8 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 
 import db
-from auth_utils import get_current_user
-from bank_client import (
+from services.auth_utils import get_current_user
+from services.bank_client import (
     BankServiceError,
     fetch_all_accounts,
     fetch_balance,

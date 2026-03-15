@@ -1,41 +1,75 @@
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.Python
+
+# Virtual environments
+venv/
+myenv/
+.venv/
+
+# ============================================================
+# Environment & Secrets
+# ============================================================
 .env
 .env*
 .env.local
+*.key
 
-__pycache__/
-*.pyc
-venv/
-
-.next/
-node_modules/
-
-# uploads
-uploads/*.jpg
-uploads/*.jpeg
-
-# databases
+# ============================================================
+# Databases
+# ============================================================
 *.db
 *.sqlite
 *.sqlite3
 
-backend/kyc_database/
-backend/digilocker.db
+# ============================================================
+# Runtime / Generated Files
+# ============================================================
 
-# runtime JSON
-backend/kyc_database/*.json
+# Uploads
+uploads/
+uploads/*.jpg
+uploads/*.jpeg
+uploads/*.png
+uploads/*.pdf
+
+# Temp & reports
+temp/
+backend/temp/
 backend/verification_reports/*.json
 
-# keep frontend configs
+# KYC (runtime generated)
+backend/kyc_database/
+backend/kyc_database/*.json
+
+# ============================================================
+# Frontend
+# ============================================================
+node_modules/
+.next/
+
+# Keep frontend configs
 !frontend/package.json
+!frontend/package-lock.json
 !frontend/package-lock.json
 !frontend/tsconfig.json
 
-
-*.key
-
-node_modules/
-.next/
-__pycache__/
-uploads/
-
+# ============================================================
+# Shell Scripts (optional — remove if you use them)
+# ============================================================
 *.sh
+
+# ============================================================
+# IDEs & OS
+# ============================================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

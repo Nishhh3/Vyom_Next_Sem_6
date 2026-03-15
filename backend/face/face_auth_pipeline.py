@@ -8,9 +8,9 @@ import os
 import torchvision.transforms as T
 from insightface.app import FaceAnalysis
 
-from MiniFASNet import MiniFASNetV1, MiniFASNetV2, MiniFASNetV1SE
+from face.MiniFASNet import MiniFASNetV1, MiniFASNetV2, MiniFASNetV1SE
+from face.face_config import ANTI_SPOOF_THRESHOLD
 
-from face_config import ANTI_SPOOF_THRESHOLD
 # =====================
 # CALIBRATED THRESHOLDS (from your dataset)
 # =====================

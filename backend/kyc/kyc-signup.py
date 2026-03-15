@@ -12,16 +12,15 @@ from typing import Optional, Dict, Any
 import cv2
 import numpy as np
 
-# NEW FACE PIPELINE
-from face_auth_pipeline import verify_face_image
+from face.face_auth_pipeline import verify_face_image
 
 # FAISS SEARCH
-from face_search.search_engine import add_face_embedding
-from face_search.deduplication import check_duplicate
+from face.face_search.search_engine import add_face_embedding
+from face.face_search.deduplication import check_duplicate
 
 # OCR
 try:
-    from ocr_utils import extract_aadhar_number
+    from ocr.ocr_utils import extract_aadhar_number
     OCR_AVAILABLE = True
 except ImportError:
     OCR_AVAILABLE = False
