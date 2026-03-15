@@ -384,10 +384,10 @@ def make_bank_app(bank_name: str, db_path: str) -> Flask:
         con.execute("UPDATE accounts SET balance = ? WHERE id = ?", (new_balance, acc["id"]))
         con.execute(
             """INSERT INTO transactions
-               (id, account_id, type, amount, balance_after, remarks, ref_number, counterparty)
-               VALUES (?,?,?,?,?,?,?,?)""",
+            (id, account_id, type, amount, balance_after, remarks, ref_number, counterparty)
+            VALUES (?,?,?,?,?,?,?,?)""",
             (tx_id, acc["id"], "CREDIT", float(amount), new_balance,
-             remarks, ref_number, from_bank)
+            remarks, ref_number + "_CR", from_bank)
         )
         con.commit()
         con.close()

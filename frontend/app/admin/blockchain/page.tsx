@@ -2,17 +2,6 @@
 
 import { useEffect, useState, useCallback } from "react";
 
-const BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
-
-function authHeaders(): HeadersInit {
-  const token =
-    typeof window !== "undefined" ? localStorage.getItem("access_token") : null;
-  return {
-    "Content-Type": "application/json",
-    ...(token ? { Authorization: `Bearer ${token}` } : {}),
-  };
-}
-
 // ── Types ─────────────────────────────────────────────────────
 interface ChainStatus {
   chain_locked: boolean;
@@ -74,14 +63,16 @@ function StatusBadge({ valid }: { valid: boolean }) {
 
 function AlertTypeBadge({ type }: { type: string }) {
   const map: Record<string, string> = {
-    HASH_MISMATCH:  "bg-red-500/10 text-red-400 border-red-500/30",
-    CHAIN_BREAK:    "bg-red-500/10 text-red-400 border-red-500/30",
-    AUTO_LOCK:      "bg-orange-500/10 text-orange-400 border-orange-500/30",
-    WRITE_BLOCKED:  "bg-yellow-500/10 text-yellow-400 border-yellow-500/30",
+    HASH_MISMATCH: "bg-red-500/10 text-red-400 border-red-500/30",
+    CHAIN_BREAK:   "bg-red-500/10 text-red-400 border-red-500/30",
+    AUTO_LOCK:     "bg-orange-500/10 text-orange-400 border-orange-500/30",
+    WRITE_BLOCKED: "bg-yellow-500/10 text-yellow-400 border-yellow-500/30",
   };
   return (
-    <span className={`px-2 py-0.5 rounded text-xs font-medium border ${map[type] ?? "bg-gray-500/10 text-gray-400 border-gray-500/30"}`}>
-      {type.replace("_", " ")}
+    <span className={`px-2 py-0.5 rounded text-xs font-medium border ${
+      map[type] ?? "bg-gray-500/10 text-gray-400 border-gray-500/30"
+    }`}>
+      {type.replace(/_/g, " ")}
     </span>
   );
 }
@@ -95,93 +86,117 @@ export default function BlockchainPage() {
   const [alerts, setAlerts]           = useState<Alert[]>([]);
   const [offset, setOffset]           = useState(0);
 
-  const [loadingStatus,  setLoadingStatus]  = useState(true);
-  const [loadingVerify,  setLoadingVerify]  = useState(false);
-  const [loadingBlocks,  setLoadingBlocks]  = useState(true);
-  const [loadingAlerts,  setLoadingAlerts]  = useState(true);
-  const [lockingChain,   setLockingChain]   = useState(false);
+  const [loadingStatus, setLoadingStatus] = useState(true);
+  const [loadingVerify, setLoadingVerify] = useState(false);
+  const [loadingBlocks, setLoadingBlocks] = useState(true);
+  const [loadingAlerts, setLoadingAlerts] = useState(true);
+  const [lockingChain,  setLockingChain]  = useState(false);
 
   const [error, setError] = useState<string | null>(null);
 
-  // ── Fetch status ────────────────────────────────────────────
+  // ── Fetch status ───────────────────────────────────────────
   const fetchStatus = useCallback(async () => {
     setLoadingStatus(true);
     try {
-      const r = await fetch(`${BASE}/api/blockchain/status`, { headers: authHeaders() });
-      const d = await r.json();
-      setStatus(d);
-    } catch (e: any) { setError(e.message); }
-    finally { setLoadingStatus(false); }
+      const r = await fetch("/api/blockchain/status", { cache: "no-store" });
+      const d = await r.json().catch(() => ({}));
+      setStatus(d ?? null);
+    } catch (e: any) {
+      setError(e.message);
+    } finally {
+      setLoadingStatus(false);
+    }
   }, []);
 
-  // ── Fetch blocks ────────────────────────────────────────────
+  // ── Fetch blocks ───────────────────────────────────────────
   const fetchBlocks = useCallback(async (off = 0) => {
     setLoadingBlocks(true);
     try {
-      const r = await fetch(`${BASE}/api/blockchain/blocks?limit=10&offset=${off}`, { headers: authHeaders() });
-      const d = await r.json();
-      setBlocks(off === 0 ? d.blocks : (prev) => [...prev, ...d.blocks]);
-      setTotalBlocks(d.total);
-      setOffset(off + d.blocks.length);
-    } catch {}
-    finally { setLoadingBlocks(false); }
+      const r = await fetch(
+        `/api/blockchain/blocks?limit=10&offset=${off}`,
+        { cache: "no-store" }
+      );
+      const d = await r.json().catch(() => ({ blocks: [], total: 0 }));
+      const incoming: Block[] = Array.isArray(d?.blocks) ? d.blocks : [];
+      const total: number     = typeof d?.total === "number" ? d.total : 0;
+
+      setBlocks((prev) => (off === 0 ? incoming : [...prev, ...incoming]));
+      setTotalBlocks(total);
+      setOffset(off + incoming.length);
+    } catch {
+      // silently keep existing blocks on error
+    } finally {
+      setLoadingBlocks(false);
+    }
   }, []);
 
-  // ── Fetch alerts ────────────────────────────────────────────
+  // ── Fetch alerts ───────────────────────────────────────────
   const fetchAlerts = useCallback(async () => {
     setLoadingAlerts(true);
     try {
-      const r = await fetch(`${BASE}/api/blockchain/alerts`, { headers: authHeaders() });
-      const d = await r.json();
-      setAlerts(d.alerts ?? []);
-    } catch {}
-    finally { setLoadingAlerts(false); }
+      const r = await fetch("/api/blockchain/alerts", { cache: "no-store" });
+      const d = await r.json().catch(() => ({ alerts: [] }));
+      setAlerts(Array.isArray(d?.alerts) ? d.alerts : []);
+    } catch {
+      setAlerts([]);
+    } finally {
+      setLoadingAlerts(false);
+    }
   }, []);
 
-  // ── Verify chain ────────────────────────────────────────────
+  // ── Verify chain ───────────────────────────────────────────
   const runVerify = async () => {
     setLoadingVerify(true);
+    setError(null);
     try {
-      const r = await fetch(`${BASE}/api/blockchain/verify`, { headers: authHeaders() });
-      const d = await r.json();
-      setVerify(d);
+      const r = await fetch("/api/blockchain/verify", { cache: "no-store" });
+      const d = await r.json().catch(() => null);
+      if (d) setVerify(d);
       fetchStatus();
       fetchAlerts();
-    } catch (e: any) { setError(e.message); }
-    finally { setLoadingVerify(false); }
+    } catch (e: any) {
+      setError(e.message);
+    } finally {
+      setLoadingVerify(false);
+    }
   };
 
-  // ── Toggle lock ─────────────────────────────────────────────
+  // ── Toggle lock ────────────────────────────────────────────
   const toggleLock = async () => {
     if (!status) return;
     const newLocked = !status.chain_locked;
-    const confirm = window.confirm(
+    const confirmed = window.confirm(
       newLocked
         ? "🔒 Lock the chain? No new transactions will be recorded until unlocked."
         : "🔓 Unlock the chain? New transactions will resume being recorded."
     );
-    if (!confirm) return;
+    if (!confirmed) return;
     setLockingChain(true);
     try {
-      const r = await fetch(`${BASE}/api/blockchain/lock`, {
+      const r = await fetch("/api/blockchain/lock", {
         method:  "POST",
-        headers: authHeaders(),
+        headers: { "Content-Type": "application/json" },
         body:    JSON.stringify({ locked: newLocked }),
       });
-      const d = await r.json();
+      const d = await r.json().catch(() => ({}));
       if (r.ok) fetchStatus();
-      else setError(d.detail ?? "Failed to toggle lock");
-    } catch (e: any) { setError(e.message); }
-    finally { setLockingChain(false); }
+      else setError(d?.detail ?? "Failed to toggle lock");
+    } catch (e: any) {
+      setError(e.message);
+    } finally {
+      setLockingChain(false);
+    }
   };
 
-  // ── Resolve alert ───────────────────────────────────────────
+  // ── Resolve alert ──────────────────────────────────────────
   const resolveAlert = async (id: number) => {
     try {
-      await fetch(`${BASE}/api/blockchain/alerts/${id}/resolve`, {
-        method: "POST", headers: authHeaders(),
+      await fetch(`/api/blockchain/alerts/${id}/resolve`, {
+        method: "POST",
       });
-      setAlerts((prev) => prev.map((a) => a.id === id ? { ...a, resolved: true } : a));
+      setAlerts((prev) =>
+        (prev ?? []).map((a) => (a.id === id ? { ...a, resolved: true } : a))
+      );
     } catch {}
   };
 
@@ -191,7 +206,10 @@ export default function BlockchainPage() {
     fetchAlerts();
   }, []);
 
-  const unresolvedAlerts = alerts.filter((a) => !a.resolved);
+  // Safe derived values
+  const safeAlerts       = alerts ?? [];
+  const unresolvedAlerts = safeAlerts.filter((a) => !a.resolved);
+  const safeBlocks       = blocks ?? [];
 
   return (
     <div className="space-y-8">
@@ -200,7 +218,9 @@ export default function BlockchainPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-white mb-2">Blockchain Ledger</h1>
-          <p className="text-gray-400">Immutable transaction audit trail — SHA-256 cryptographic chain</p>
+          <p className="text-gray-400">
+            Immutable transaction audit trail — SHA-256 cryptographic chain
+          </p>
         </div>
         <button
           onClick={runVerify}
@@ -211,7 +231,8 @@ export default function BlockchainPage() {
             <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
           ) : (
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
           )}
           {loadingVerify ? "Verifying..." : "Verify Chain"}
@@ -230,26 +251,30 @@ export default function BlockchainPage() {
           {
             label: "Chain Status",
             value: loadingStatus ? "—" : (status?.chain_locked ? "Locked" : "Active"),
-            icon: "⛓️",
+            icon:  "⛓️",
             color: status?.chain_locked ? "text-red-400" : "text-green-400",
           },
           {
             label: "Total Blocks",
             value: loadingStatus ? "—" : String(status?.total_blocks ?? 0),
-            icon: "📦",
+            icon:  "📦",
             color: "text-white",
           },
           {
             label: "Unresolved Alerts",
             value: loadingStatus ? "—" : String(status?.unresolved_alerts ?? 0),
-            icon: "🚨",
+            icon:  "🚨",
             color: (status?.unresolved_alerts ?? 0) > 0 ? "text-red-400" : "text-green-400",
           },
           {
             label: "Last Verified",
-            value: verifyResult ? (verifyResult.valid ? "✅ Intact" : "❌ Broken") : "Not yet run",
-            icon: "🔍",
-            color: verifyResult ? (verifyResult.valid ? "text-green-400" : "text-red-400") : "text-gray-400",
+            value: verifyResult
+              ? verifyResult.valid ? "✅ Intact" : "❌ Broken"
+              : "Not yet run",
+            icon:  "🔍",
+            color: verifyResult
+              ? verifyResult.valid ? "text-green-400" : "text-red-400"
+              : "text-gray-400",
           },
         ].map((s) => (
           <div key={s.label} className="bg-white/5 border border-white/10 rounded-xl p-5">
@@ -270,7 +295,9 @@ export default function BlockchainPage() {
             : "bg-red-500/10 border-red-500/30"
         }`}>
           <div className="flex items-center justify-between">
-            <p className={`font-semibold text-lg ${verifyResult.valid ? "text-green-400" : "text-red-400"}`}>
+            <p className={`font-semibold text-lg ${
+              verifyResult.valid ? "text-green-400" : "text-red-400"
+            }`}>
               {verifyResult.message}
             </p>
             <StatusBadge valid={verifyResult.valid} />
@@ -286,13 +313,20 @@ export default function BlockchainPage() {
                 {verifyResult.tampered_block.expected_hash && (
                   <>
                     <span className="text-gray-500">Expected hash</span>
-                    <span className="font-mono text-xs text-green-300">{verifyResult.tampered_block.expected_hash?.slice(0, 32)}...</span>
+                    <span className="font-mono text-xs text-green-300">
+                      {verifyResult.tampered_block.expected_hash?.slice(0, 32)}...
+                    </span>
                     <span className="text-gray-500">Found hash</span>
-                    <span className="font-mono text-xs text-red-300">{verifyResult.tampered_block.block_hash?.slice(0, 32)}...</span>
+                    <span className="font-mono text-xs text-red-300">
+                      {verifyResult.tampered_block.block_hash?.slice(0, 32)}...
+                    </span>
                   </>
                 )}
                 <span className="text-gray-500">Transaction</span>
-                <span>{verifyResult.tampered_block.from_account} → {verifyResult.tampered_block.to_account}</span>
+                <span>
+                  {verifyResult.tampered_block.from_account} →{" "}
+                  {verifyResult.tampered_block.to_account}
+                </span>
                 <span className="text-gray-500">Amount</span>
                 <span>₹{verifyResult.tampered_block.amount}</span>
               </div>
@@ -340,12 +374,17 @@ export default function BlockchainPage() {
           </h2>
           <div className="space-y-2">
             {unresolvedAlerts.map((alert) => (
-              <div key={alert.id} className="bg-red-500/5 border border-red-500/20 rounded-xl p-4 flex items-start justify-between gap-4">
+              <div
+                key={alert.id}
+                className="bg-red-500/5 border border-red-500/20 rounded-xl p-4 flex items-start justify-between gap-4"
+              >
                 <div className="space-y-1.5 flex-1">
                   <div className="flex items-center gap-2">
                     <AlertTypeBadge type={alert.alert_type} />
                     {alert.block_number && (
-                      <span className="text-gray-500 text-xs">Block #{alert.block_number}</span>
+                      <span className="text-gray-500 text-xs">
+                        Block #{alert.block_number}
+                      </span>
                     )}
                     <span className="text-gray-600 text-xs ml-auto">
                       {new Date(alert.created_at).toLocaleString("en-IN")}
@@ -355,9 +394,13 @@ export default function BlockchainPage() {
                   {alert.expected_hash && (
                     <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs mt-2">
                       <span className="text-gray-500">Expected</span>
-                      <span className="font-mono text-green-400">{alert.expected_hash?.slice(0, 24)}...</span>
+                      <span className="font-mono text-green-400">
+                        {alert.expected_hash?.slice(0, 24)}...
+                      </span>
                       <span className="text-gray-500">Found</span>
-                      <span className="font-mono text-red-400">{alert.found_hash?.slice(0, 24)}...</span>
+                      <span className="font-mono text-red-400">
+                        {alert.found_hash?.slice(0, 24)}...
+                      </span>
                     </div>
                   )}
                 </div>
@@ -377,14 +420,16 @@ export default function BlockchainPage() {
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold text-white">Transaction Blocks</h2>
-          <span className="text-gray-400 text-sm">{blocks.length} of {totalBlocks}</span>
+          <span className="text-gray-400 text-sm">
+            {safeBlocks.length} of {totalBlocks}
+          </span>
         </div>
 
-        {loadingBlocks && blocks.length === 0 ? (
+        {loadingBlocks && safeBlocks.length === 0 ? (
           <div className="bg-white/5 border border-white/10 rounded-xl p-8 text-center text-gray-400 animate-pulse">
             Loading blocks...
           </div>
-        ) : blocks.length === 0 ? (
+        ) : safeBlocks.length === 0 ? (
           <div className="bg-white/5 border border-white/10 rounded-xl p-8 text-center text-gray-400">
             No transaction blocks yet. Blocks are created when transfers are made.
           </div>
@@ -395,15 +440,21 @@ export default function BlockchainPage() {
                 <thead>
                   <tr className="border-b border-white/10">
                     {["Block", "From", "To", "Amount", "Bank", "Ref No.", "Hash", "Time"].map((h) => (
-                      <th key={h} className="text-left py-3 px-4 text-gray-400 font-medium text-xs uppercase tracking-wider">
+                      <th
+                        key={h}
+                        className="text-left py-3 px-4 text-gray-400 font-medium text-xs uppercase tracking-wider"
+                      >
                         {h}
                       </th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
-                  {blocks.map((block) => (
-                    <tr key={block.block_number} className="border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors">
+                  {safeBlocks.map((block) => (
+                    <tr
+                      key={block.block_number}
+                      className="border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors"
+                    >
                       <td className="py-3 px-4">
                         <span className="bg-white/10 px-2 py-0.5 rounded text-xs font-mono text-gray-300">
                           #{block.block_number}
@@ -411,24 +462,30 @@ export default function BlockchainPage() {
                       </td>
                       <td className="py-3 px-4">
                         <div className="text-xs">
-                          <p className="text-gray-300 font-mono">{block.from_account.slice(-8)}</p>
+                          <p className="text-gray-300 font-mono">
+                            {(block.from_account ?? "").slice(-8)}
+                          </p>
                           <p className="text-gray-500">{block.from_bank}</p>
                         </div>
                       </td>
                       <td className="py-3 px-4">
                         <div className="text-xs">
-                          <p className="text-gray-300 font-mono">{block.to_account.slice(-8)}</p>
+                          <p className="text-gray-300 font-mono">
+                            {(block.to_account ?? "").slice(-8)}
+                          </p>
                           <p className="text-gray-500">{block.to_ifsc}</p>
                         </div>
                       </td>
                       <td className="py-3 px-4 text-white font-semibold text-sm">
-                        ₹{block.amount.toLocaleString("en-IN")}
+                        ₹{(block.amount ?? 0).toLocaleString("en-IN")}
                       </td>
                       <td className="py-3 px-4">
                         <span className={`text-xs px-2 py-0.5 rounded border font-medium ${
-                          block.from_bank === "HDFC"  ? "bg-red-500/10 text-red-400 border-red-500/20" :
-                          block.from_bank === "ICICI" ? "bg-orange-500/10 text-orange-400 border-orange-500/20" :
-                          "bg-blue-500/10 text-blue-400 border-blue-500/20"
+                          block.from_bank === "HDFC"
+                            ? "bg-red-500/10 text-red-400 border-red-500/20"
+                            : block.from_bank === "ICICI"
+                            ? "bg-orange-500/10 text-orange-400 border-orange-500/20"
+                            : "bg-blue-500/10 text-blue-400 border-blue-500/20"
                         }`}>
                           {block.from_bank}
                         </span>
@@ -437,11 +494,14 @@ export default function BlockchainPage() {
                         {block.ref_number}
                       </td>
                       <td className="py-3 px-4 font-mono text-xs text-gray-500">
-                        {block.block_hash.slice(0, 12)}...
+                        {(block.block_hash ?? "").slice(0, 12)}...
                       </td>
                       <td className="py-3 px-4 text-gray-400 text-xs">
                         {new Date(block.created_at).toLocaleDateString("en-IN", {
-                          day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit"
+                          day:    "2-digit",
+                          month:  "short",
+                          hour:   "2-digit",
+                          minute: "2-digit",
                         })}
                       </td>
                     </tr>
@@ -449,7 +509,7 @@ export default function BlockchainPage() {
                 </tbody>
               </table>
             </div>
-            {blocks.length < totalBlocks && (
+            {safeBlocks.length < totalBlocks && (
               <div className="p-4 border-t border-white/10 text-center">
                 <button
                   onClick={() => fetchBlocks(offset)}
