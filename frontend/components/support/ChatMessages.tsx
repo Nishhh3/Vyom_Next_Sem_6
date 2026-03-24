@@ -5,7 +5,6 @@ import type { Message } from "@/components/support/ChatContainer";
 
 // Renders plain text, voice messages, or file attachments
 function MessageContent({ text }: { text: string }) {
-  // Voice message token: "🎙️ Voice message recorded (Xs) — [audio:blob:...]"
   const audioMatch = text.match(/\[audio:(.*?)\]/);
   if (audioMatch) {
     const url = audioMatch[1];
@@ -27,7 +26,6 @@ function MessageContent({ text }: { text: string }) {
     );
   }
 
-  // File attachment token: "📎 File attached: name (size)"
   if (text.startsWith("📎 File attached:")) {
     const nameMatch = text.match(/File attached: (.+?) \(/);
     const sizeMatch = text.match(/\((.+?)\)/);
@@ -51,7 +49,6 @@ function MessageContent({ text }: { text: string }) {
     );
   }
 
-  // Default plain text
   return (
     <p className="text-[13.5px] text-[#c8d4f0] leading-relaxed">{text}</p>
   );
@@ -84,6 +81,13 @@ function BotAvatar() {
 export default function ChatMessages({ messages, isTyping, onOptionClick, showWelcomeCard }: Props) {
   const bottomRef = useRef<HTMLDivElement>(null);
 
+  // ✅ FIX: format time safely
+  const formatTime = (ts: string) =>
+    new Date(ts).toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isTyping]);
@@ -99,7 +103,7 @@ export default function ChatMessages({ messages, isTyping, onOptionClick, showWe
       <div className="flex items-center gap-3">
         <div className="flex-1 h-px bg-[#1e2a45]" />
         <span className="text-[10.5px] text-[#4a5578] font-medium px-2 whitespace-nowrap">
-          Today · {messages[0]?.time}
+          Today · {messages[0] ? formatTime(messages[0].time) : ""}
         </span>
         <div className="flex-1 h-px bg-[#1e2a45]" />
       </div>
@@ -132,7 +136,9 @@ export default function ChatMessages({ messages, isTyping, onOptionClick, showWe
                 ))}
               </div>
             </div>
-            <span className="text-[10px] text-[#2a3555] pl-1">Aria · {messages[0].time}</span>
+            <span className="text-[10px] text-[#2a3555] pl-1">
+              Aria · {formatTime(messages[0].time)}
+            </span>
           </div>
         </div>
       )}
@@ -146,7 +152,9 @@ export default function ChatMessages({ messages, isTyping, onOptionClick, showWe
               <div className="bg-[#111a2e] border border-[#1e2a45] rounded-2xl rounded-tl-sm px-4 py-3">
                 <MessageContent text={msg.text} />
               </div>
-              <span className="text-[10px] text-[#2a3555] pl-1">Aria · {msg.time}</span>
+              <span className="text-[10px] text-[#2a3555] pl-1">
+                Aria · {formatTime(msg.time)}
+              </span>
             </div>
           </div>
         ) : (
@@ -155,7 +163,9 @@ export default function ChatMessages({ messages, isTyping, onOptionClick, showWe
               <div className="bg-[#ff1f2f] rounded-2xl rounded-br-sm px-4 py-3 shadow-lg shadow-red-900/30">
                 <MessageContent text={msg.text} />
               </div>
-              <span className="text-[10px] text-[#2a3555] pr-1 text-right block">You · {msg.time}</span>
+              <span className="text-[10px] text-[#2a3555] pr-1 text-right block">
+                You · {formatTime(msg.time)}
+              </span>
             </div>
             <div className="w-7 h-7 rounded-lg bg-[#111a2e] border border-[#1e2a45] flex items-center justify-center flex-shrink-0 mb-5 text-[10px] font-bold text-[#7a8aaa]">
               You
