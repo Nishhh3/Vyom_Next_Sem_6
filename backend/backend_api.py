@@ -27,9 +27,20 @@ from ocr.ocr_utils.aadhar_extractor import mask_aadhar
 import requests
 from routers.transfer_router import router as transfer_router
 from routers.blockchain_router import router as blockchain_router
+
+
+
 from dotenv import load_dotenv
 load_dotenv()
 
+# RAG Support
+try:
+    from services.rag_engine import chat_with_rag
+    RAG_AVAILABLE = True
+    print("✅ RAG engine loaded")
+except ImportError as e:
+    RAG_AVAILABLE = False
+    print("⚠️  RAG engine not available:", e)
 
 
 # =========================
@@ -123,6 +134,20 @@ except ImportError as e:
 # APP INIT
 # =========================
 app = FastAPI(title="KYC Verification API", version="3.2")
+
+
+# Support 
+class SupportChatRequest(BaseModel):
+    message: str
+    session_id: Optional[str] = None
+
+@app.post("/api/support/chat")
+async def support_chat(body: SupportChatRequest):
+    if not RAG_AVAILABLE:
+        raise HTTPException(503, "RAG engine not available")
+    result = chat_with_rag(body.message)
+    return result
+
 
 app.add_middleware(
     CORSMiddleware,
