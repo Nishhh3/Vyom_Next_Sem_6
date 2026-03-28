@@ -28,6 +28,10 @@ import requests
 from routers.transfer_router import router as transfer_router
 from routers.blockchain_router import router as blockchain_router
 
+# --- Help Center ---
+from migrations.migrate_helpcenter import run as run_helpcenter_migration
+from routers.helpcenter_router import router as helpcenter_router
+
 
 
 from dotenv import load_dotenv
@@ -135,6 +139,9 @@ except ImportError as e:
 # =========================
 app = FastAPI(title="KYC Verification API", version="3.2")
 
+# --- Help Center migration ---
+run_helpcenter_migration()
+
 
 # Support 
 class SupportChatRequest(BaseModel):
@@ -162,8 +169,10 @@ REPORT_FOLDER = "verification_reports"
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(REPORT_FOLDER, exist_ok=True)
+os.makedirs("static/admin", exist_ok=True)
 
 app.mount("/uploads", StaticFiles(directory=UPLOAD_FOLDER), name="uploads")
+app.mount("/admin", StaticFiles(directory="static/admin", html=True), name="admin")
 
 # =========================
 # DIGILOCKER INIT + MOUNT
@@ -182,6 +191,7 @@ if BANK_AVAILABLE:
 app.include_router(bank_router)       
 app.include_router(transfer_router) 
 app.include_router(blockchain_router)
+app.include_router(helpcenter_router)
 
 
 # =========================

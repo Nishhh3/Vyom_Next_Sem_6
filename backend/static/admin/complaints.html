@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VyomNext Complaint Manager</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --navy: #0f172a;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --hover: #eff6ff;
+      --soft: #f3f4f6;
+
+      --open: #ef4444;
+      --in-progress: #f59e0b;
+      --resolved: #22c55e;
+
+      --loan: #3b82f6;
+      --kyc: #8b5cf6;
+      --transfer: #14b8a6;
+      --account: #f97316;
+      --general: #6b7280;
+
+      --neg: #dc2626;
+      --neu: #d97706;
+      --pos: #16a34a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(120deg, #0b1220 0%, #0f172a 30%, #111827 100%);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .shell {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 24px 50px rgba(2, 6, 23, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .header {
+      background: var(--navy);
+      color: #fff;
+      padding: 16px 20px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .section {
+      padding: 14px 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      background: #f8fafc;
+    }
+
+    .stat h4 {
+      margin: 0;
+      font-size: 13px;
+      color: #374151;
+      font-weight: 600;
+    }
+
+    .stat .value {
+      margin-top: 6px;
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 800;
+    }
+
+    .stat.open .value { color: var(--open); }
+    .stat.in_progress .value { color: var(--in-progress); }
+    .stat.resolved .value { color: var(--resolved); }
+    .stat.total .value { color: #2563eb; }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    select,
+    button {
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 14px;
+      background: #fff;
+      color: #111827;
+    }
+
+    button {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background: #f9fafb;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 980px;
+    }
+
+    thead th {
+      text-align: left;
+      font-size: 12px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 10px;
+    }
+
+    tbody td {
+      padding: 11px 10px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    tr.data-row {
+      cursor: pointer;
+      transition: background-color 120ms ease;
+    }
+
+    tr.data-row:hover {
+      background: var(--hover);
+    }
+
+    tr.detail-row td {
+      background: var(--soft);
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0;
+    }
+
+    .detail-panel {
+      padding: 14px;
+      border-left: 3px solid #9ca3af;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 14px;
+      margin-bottom: 12px;
+    }
+
+    .detail-item {
+      font-size: 13px;
+    }
+
+    .detail-item .k {
+      color: #6b7280;
+      font-weight: 600;
+      margin-right: 6px;
+    }
+
+    .raw {
+      margin: 8px 0 12px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #dbe2ea;
+      border-radius: 10px;
+      white-space: pre-wrap;
+      line-height: 1.45;
+      font-size: 14px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      text-transform: lowercase;
+    }
+
+    .status-open { background: var(--open); }
+    .status-in_progress { background: var(--in-progress); }
+    .status-resolved { background: var(--resolved); }
+
+    .cat-loan { background: var(--loan); }
+    .cat-kyc { background: var(--kyc); }
+    .cat-transfer { background: var(--transfer); }
+    .cat-account { background: var(--account); }
+    .cat-general { background: var(--general); }
+
+    .sentiment {
+      font-weight: 700;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sentiment.neg { color: var(--neg); }
+    .sentiment.neu { color: var(--neu); }
+    .sentiment.pos { color: var(--pos); }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+    }
+
+    .status-update {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .small {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .ok { color: #16a34a; font-weight: 700; }
+    .fail { color: #dc2626; font-weight: 700; }
+
+    .state {
+      text-align: center;
+      padding: 30px 12px;
+      color: #6b7280;
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      body { padding: 10px; }
+      .header { font-size: 18px; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .detail-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="header">VyomNext - Complaint Manager</div>
+
+    <div class="section">
+      <div id="stats" class="stats"></div>
+    </div>
+
+    <div class="section">
+      <div class="filters">
+        <select id="statusFilter">
+          <option value="all">All status</option>
+          <option value="open">open</option>
+          <option value="in_progress">in_progress</option>
+          <option value="resolved">resolved</option>
+        </select>
+
+        <select id="categoryFilter">
+          <option value="all">All category</option>
+          <option value="loan">loan</option>
+          <option value="kyc">kyc</option>
+          <option value="transfer">transfer</option>
+          <option value="account">account</option>
+          <option value="general">general</option>
+        </select>
+
+        <select id="sentimentFilter">
+          <option value="all">All sentiment</option>
+          <option value="negative">negative</option>
+          <option value="neutral">neutral</option>
+          <option value="positive">positive</option>
+        </select>
+
+        <button id="refreshBtn" type="button">Refresh</button>
+      </div>
+    </div>
+
+    <div class="section table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>From</th>
+            <th>Summary</th>
+            <th>Category</th>
+            <th>Sentiment</th>
+            <th>Status</th>
+            <th>Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+      <div id="state" class="state" style="display:none"></div>
+    </div>
+  </div>
+
+  <script>
+    const API = {
+      list: "/helpcenter/complaints",
+      patch: (id) => `/helpcenter/complaints/${id}/status`
+    };
+
+    const state = {
+      all: [],
+      filtered: [],
+      expandedId: null,
+      loading: false,
+      error: null
+    };
+
+    const el = {
+      stats: document.getElementById("stats"),
+      body: document.getElementById("tableBody"),
+      state: document.getElementById("state"),
+      status: document.getElementById("statusFilter"),
+      category: document.getElementById("categoryFilter"),
+      sentiment: document.getElementById("sentimentFilter"),
+      refresh: document.getElementById("refreshBtn")
+    };
+
+    function esc(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function truncate(text, max = 60) {
+      const t = String(text || "").trim();
+      if (t.length <= max) return t;
+      return t.slice(0, max - 1) + "...";
+    }
+
+    function parseDate(value) {
+      if (!value) return null;
+      const d = new Date(value);
+      if (!Number.isNaN(d.getTime())) return d;
+      const alt = new Date(String(value).replace(" ", "T"));
+      if (!Number.isNaN(alt.getTime())) return alt;
+      return null;
+    }
+
+    function relativeTime(value) {
+      const d = parseDate(value);
+      if (!d) return "unknown";
+
+      const diff = Date.now() - d.getTime();
+      const s = Math.floor(diff / 1000);
+      if (s < 10) return "just now";
+      if (s < 60) return `${s}s ago`;
+      const m = Math.floor(s / 60);
+      if (m < 60) return `${m}m ago`;
+      const h = Math.floor(m / 60);
+      if (h < 24) return `${h}h ago`;
+      const days = Math.floor(h / 24);
+      return `${days}d ago`;
+    }
+
+    function statusBadge(status) {
+      const s = status || "open";
+      return `<span class="badge status-${esc(s)}">${esc(s)}</span>`;
+    }
+
+    function categoryBadge(category) {
+      const c = (category || "general").toLowerCase();
+      return `<span class="badge cat-${esc(c)}">${esc(c)}</span>`;
+    }
+
+    function sentimentHtml(sentiment) {
+      const s = (sentiment || "neutral").toLowerCase();
+      if (s === "negative") return `<span class="sentiment neg">🔴 negative</span>`;
+      if (s === "positive") return `<span class="sentiment pos">🟢 positive</span>`;
+      return `<span class="sentiment neu">🟡 neutral</span>`;
+    }
+
+    function categoryColor(category) {
+      const c = (category || "general").toLowerCase();
+      if (c === "loan") return "var(--loan)";
+      if (c === "kyc") return "var(--kyc)";
+      if (c === "transfer") return "var(--transfer)";
+      if (c === "account") return "var(--account)";
+      return "var(--general)";
+    }
+
+    function renderStats(rows) {
+      const counts = { open: 0, in_progress: 0, resolved: 0 };
+      for (const row of rows) {
+        if (counts[row.status] !== undefined) counts[row.status] += 1;
+      }
+      const total = rows.length;
+
+      el.stats.innerHTML = [
+        `<div class="stat open"><h4>Open</h4><div class="value">${counts.open}</div></div>`,
+        `<div class="stat in_progress"><h4>In Progress</h4><div class="value">${counts.in_progress}</div></div>`,
+        `<div class="stat resolved"><h4>Resolved</h4><div class="value">${counts.resolved}</div></div>`,
+        `<div class="stat total"><h4>Total</h4><div class="value">${total}</div></div>`
+      ].join("");
+    }
+
+    function applyFilters() {
+      const status = el.status.value;
+      const category = el.category.value;
+      const sentiment = el.sentiment.value;
+
+      state.filtered = state.all.filter((row) => {
+        const statusOk = status === "all" || row.status === status;
+        const categoryOk = category === "all" || (row.groq_category || "general") === category;
+        const sentimentOk = sentiment === "all" || (row.groq_sentiment || "neutral") === sentiment;
+        return statusOk && categoryOk && sentimentOk;
+      });
+
+      renderTable();
+    }
+
+    function renderState(text) {
+      el.state.style.display = "block";
+      el.state.textContent = text;
+    }
+
+    function hideState() {
+      el.state.style.display = "none";
+      el.state.textContent = "";
+    }
+
+    function renderTable() {
+      el.body.innerHTML = "";
+
+      if (state.loading) {
+        renderState("Loading complaints...");
+        return;
+      }
+
+      if (state.error) {
+        renderState("⚠️ Could not load complaints. Is the backend running?");
+        return;
+      }
+
+      if (!state.filtered.length) {
+        renderState("No complaints found.");
+        return;
+      }
+
+      hideState();
+
+      for (const row of state.filtered) {
+        const tr = document.createElement("tr");
+        tr.className = "data-row";
+        tr.dataset.id = String(row.id);
+
+        const summary = row.groq_summary || row.raw_message || "";
+
+        tr.innerHTML = `
+          <td>${esc(row.id)}</td>
+          <td>${esc(truncate(row.user_identifier, 20))}</td>
+          <td title="${esc(row.raw_message || "")}">${esc(truncate(summary, 60))}</td>
+          <td>${categoryBadge(row.groq_category)}</td>
+          <td>${sentimentHtml(row.groq_sentiment)}</td>
+          <td>${statusBadge(row.status)}</td>
+          <td class="small" title="${esc(row.created_at || "")}">${esc(relativeTime(row.created_at))}</td>
+          <td><button type="button" data-expand="${esc(row.id)}">Change Status ▼</button></td>
+        `;
+
+        tr.addEventListener("click", (e) => {
+          const btn = e.target.closest("button[data-expand]");
+          if (!btn && e.target.tagName === "SELECT") return;
+          toggleExpand(row.id);
+        });
+
+        el.body.appendChild(tr);
+
+        if (state.expandedId === row.id) {
+          const detailTr = document.createElement("tr");
+          detailTr.className = "detail-row";
+          detailTr.innerHTML = `
+            <td colspan="8">
+              <div class="detail-panel" style="border-left-color: ${categoryColor(row.groq_category)};">
+                <div class="detail-grid">
+                  <div class="detail-item"><span class="k">Groq Summary:</span>${esc(row.groq_summary || "-")}</div>
+                  <div class="detail-item"><span class="k">Category:</span>${categoryBadge(row.groq_category)}</div>
+                  <div class="detail-item"><span class="k">Sentiment:</span>${sentimentHtml(row.groq_sentiment)}</div>
+                  <div class="detail-item"><span class="k">Status:</span>${statusBadge(row.status)}</div>
+                  <div class="detail-item"><span class="k">WhatsApp/Email:</span>${esc(row.user_identifier || "-")}</div>
+                  <div class="detail-item"><span class="k">Twilio SID:</span><span class="mono">${esc(row.twilio_msg_sid || "-")}</span></div>
+                  <div class="detail-item"><span class="k">Created At:</span>${esc(row.created_at || "-")}</div>
+                  <div class="detail-item"><span class="k">Subject:</span>${esc(row.subject || "-")}</div>
+                </div>
+
+                <div class="detail-item"><span class="k">Full Message:</span></div>
+                <div class="raw">${esc(row.raw_message || "-")}</div>
+
+                <div class="status-update">
+                  <select id="statusSelect-${row.id}">
+                    <option value="open" ${row.status === "open" ? "selected" : ""}>open</option>
+                    <option value="in_progress" ${row.status === "in_progress" ? "selected" : ""}>in_progress</option>
+                    <option value="resolved" ${row.status === "resolved" ? "selected" : ""}>resolved</option>
+                  </select>
+                  <button type="button" data-update="${row.id}">Update</button>
+                  <span id="msg-${row.id}" class="small"></span>
+                </div>
+              </div>
+            </td>
+          `;
+          el.body.appendChild(detailTr);
+
+          const updateBtn = detailTr.querySelector(`button[data-update="${row.id}"]`);
+          updateBtn.addEventListener("click", async (ev) => {
+            ev.stopPropagation();
+            await updateStatus(row.id);
+          });
+        }
+      }
+    }
+
+    function toggleExpand(id) {
+      state.expandedId = state.expandedId === id ? null : id;
+      renderTable();
+    }
+
+    async function updateStatus(id) {
+      const sel = document.getElementById(`statusSelect-${id}`);
+      const msg = document.getElementById(`msg-${id}`);
+      if (!sel || !msg) return;
+
+      msg.className = "small";
+      msg.textContent = "Updating...";
+
+      try {
+        const res = await fetch(API.patch(id), {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ status: sel.value })
+        });
+
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+
+        msg.className = "ok";
+        msg.textContent = "✅ Updated";
+        await loadComplaints();
+      } catch (err) {
+        msg.className = "fail";
+        msg.textContent = "❌ Failed";
+      }
+    }
+
+    async function loadComplaints() {
+      state.loading = true;
+      state.error = null;
+      renderTable();
+
+      try {
+        const res = await fetch(API.list, { method: "GET" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        state.all = Array.isArray(data) ? data : [];
+        renderStats(state.all);
+        applyFilters();
+      } catch (err) {
+        state.error = err;
+        state.all = [];
+        state.filtered = [];
+        renderStats([]);
+        renderTable();
+      } finally {
+        state.loading = false;
+      }
+    }
+
+    el.status.addEventListener("change", applyFilters);
+    el.category.addEventListener("change", applyFilters);
+    el.sentiment.addEventListener("change", applyFilters);
+    el.refresh.addEventListener("click", loadComplaints);
+
+    loadComplaints();
+  </script>
+</body>
+</html>
