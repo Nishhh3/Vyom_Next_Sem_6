@@ -1,6 +1,6 @@
 import re
 
-from fastapi import APIRouter, Form, HTTPException, Request
+from fastapi import APIRouter, Form, HTTPException, Request, Depends
 from fastapi.responses import PlainTextResponse
 from pydantic import BaseModel
 from twilio.twiml.messaging_response import MessagingResponse
@@ -88,6 +88,38 @@ def get_complaint(complaint_id: int):
 
 class StatusUpdate(BaseModel):
     status: str
+
+
+class CreateComplaintRequest(BaseModel):
+    message: str
+    user_identifier: str = None
+
+
+@router.post("/complaints/from-chat")
+def create_complaint_from_chat(body: CreateComplaintRequest):
+    """
+    Create a complaint from the support chat interface.
+    When RAG can't resolve, users can file a ticket directly.
+    """
+    if not body.message.strip():
+        raise HTTPException(status_code=400, detail="Message cannot be empty")
+    
+    user_id = body.user_identifier or "anonymous"
+    
+    result = save_complaint(
+        channel="whatsapp",  # Treat chat escalations as WhatsApp channel
+        user_identifier=user_id,
+        raw_message=body.message.strip(),
+    )
+    
+    return {
+        "success": True,
+        "complaint_id": result["id"],
+        "reference_number": f"#{result['id']}",
+        "message": f"Support ticket created! Our team will review it and get back to you shortly.",
+        "category": result.get("groq_category"),
+        "status": result.get("status"),
+    }
 
 
 @router.patch("/complaints/{complaint_id}/status")

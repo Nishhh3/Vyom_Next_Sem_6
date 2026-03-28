@@ -144,7 +144,7 @@ export default function ComplaintsPage() {
   const handleToggleExpand = (id: number) => {
     setExpandedId((prev) => (prev === id ? null : id));
   };
-
+  
   const handleStatusUpdate = async (complaintId: number, status: ComplaintStatus) => {
     try {
       setUpdatingId(complaintId);

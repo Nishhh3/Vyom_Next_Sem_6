@@ -40,10 +40,61 @@ const INITIAL_MESSAGE: Message = {
 };
 
 export default function ChatContainer() {
-  const [messages,    setMessages]    = useState<Message[]>([INITIAL_MESSAGE]);
-  const [isTyping,    setIsTyping]    = useState(false);
-  const [activeTopic, setActiveTopic] = useState<Topic>("All");
-  const [sessionId]                   = useState(() => crypto.randomUUID());
+  const [messages,     setMessages]     = useState<Message[]>([INITIAL_MESSAGE]);
+  const [isTyping,     setIsTyping]     = useState(false);
+  const [activeTopic,  setActiveTopic]  = useState<Topic>("All");
+  const [sessionId]                     = useState(() => crypto.randomUUID());
+  const [lastQueryForTicket, setLastQueryForTicket] = useState<string>("");
+  const [isCreatingTicket, setIsCreatingTicket] = useState(false);
+
+  const createSupportTicket = async () => {
+    if (!lastQueryForTicket.trim() || isCreatingTicket) return;
+    
+    setIsCreatingTicket(true);
+    try {
+      const token = typeof window !== "undefined" ? localStorage.getItem("access_token") : null;
+      const userId = typeof window !== "undefined" ? localStorage.getItem("user_id") : "anonymous";
+      
+      const r = await fetch(`${BASE}/helpcenter/complaints/from-chat`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
+        body: JSON.stringify({
+          message: lastQueryForTicket,
+          user_identifier: userId || "anonymous",
+        }),
+      });
+
+      if (!r.ok) {
+        const error = await r.json();
+        throw new Error(error.detail || "Failed to create ticket");
+      }
+
+      const result = await r.json();
+
+      // Show confirmation message
+      const confirmMsg: Message = {
+        id: (Date.now() + 3).toString(),
+        role: "bot",
+        text: `✅ ${result.message}\n\n**Reference #${result.complaint_id}**\n\nCategory: **${result.category}**\n\nYour ticket has been routed to our support team and will be reviewed shortly.`,
+        time: formatTime(),
+      };
+      setMessages((prev) => [...prev, confirmMsg]);
+      setLastQueryForTicket("");
+    } catch (err) {
+      const errMsg: Message = {
+        id: (Date.now() + 3).toString(),
+        role: "bot",
+        text: `❌ Error creating support ticket: ${err instanceof Error ? err.message : "Unknown error"}. Please try again.`,
+        time: formatTime(),
+      };
+      setMessages((prev) => [...prev, errMsg]);
+    } finally {
+      setIsCreatingTicket(false);
+    }
+  };
 
   const sendMessage = async (text: string) => {
     const trimmed = text.trim();
@@ -82,6 +133,7 @@ export default function ChatContainer() {
 
       // If RAG couldn't resolve it — suggest ticket after short delay
       if (data.suggest_ticket) {
+        setLastQueryForTicket(trimmed);
         setTimeout(() => {
           setMessages((prev) => [...prev, {
             id:   (Date.now() + 2).toString(),
@@ -175,6 +227,8 @@ export default function ChatContainer() {
         messages={messages}
         isTyping={isTyping}
         onOptionClick={sendMessage}
+        onCreateTicket={createSupportTicket}
+        isCreatingTicket={isCreatingTicket}
         showWelcomeCard={messages.length === 1}
       />
 
