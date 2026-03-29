@@ -58,6 +58,8 @@ type Props = {
   messages: Message[];
   isTyping: boolean;
   onOptionClick: (text: string) => void;
+  onCreateTicket?: () => void;
+  isCreatingTicket?: boolean;
   showWelcomeCard: boolean;
 };
 
@@ -78,7 +80,7 @@ function BotAvatar() {
   );
 }
 
-export default function ChatMessages({ messages, isTyping, onOptionClick, showWelcomeCard }: Props) {
+export default function ChatMessages({ messages, isTyping, onOptionClick, onCreateTicket, isCreatingTicket, showWelcomeCard }: Props) {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   // ✅ FIX: format time safely
@@ -144,7 +146,7 @@ export default function ChatMessages({ messages, isTyping, onOptionClick, showWe
       )}
 
       {/* Dynamic messages */}
-      {messages.slice(1).map((msg) =>
+      {messages.slice(1).map((msg, idx) =>
         msg.role === "bot" ? (
           <div key={msg.id} className="flex items-start gap-2.5 animate-[fadeUp_0.25s_ease_both]">
             <BotAvatar />
@@ -152,6 +154,16 @@ export default function ChatMessages({ messages, isTyping, onOptionClick, showWe
               <div className="bg-[#111a2e] border border-[#1e2a45] rounded-2xl rounded-tl-sm px-4 py-3">
                 <MessageContent text={msg.text} />
               </div>
+              {/* Show create ticket button if this is the ticket suggestion message */}
+              {msg.text.includes("Would you like to raise a support ticket") && onCreateTicket && (
+                <button
+                  onClick={onCreateTicket}
+                  disabled={isCreatingTicket}
+                  className="mt-2 px-4 py-2 bg-[#ff1f2f] hover:bg-[#e01020] text-white text-[12.5px] font-medium rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isCreatingTicket ? "Creating ticket..." : "Create support ticket"}
+                </button>
+              )}
               <span className="text-[10px] text-[#2a3555] pl-1">
                 Aria · {formatTime(msg.time)}
               </span>

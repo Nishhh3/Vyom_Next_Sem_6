@@ -30,3 +30,6 @@ torch
 torchvision
 
 httpx==0.27.0
+
+groq>=0.9.0
+twilio>=9.0.0
