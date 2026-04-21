@@ -1,0 +1,1501 @@
+age,employment_type,monthly_income,credit_score,savings,existing_loan,loan_purpose,requested_amount,tenure_years,collateral,recommended_loan_type,approved_amount,approval_status
+28,Salaried,58025,695,234947,Yes,Medical,81244,19,No,Personal,434,Rejected
+56,Self-Employed,72982,629,962059,No,Emergency,406778,1,Yes,Personal,406778,Approved
+42,Salaried,23169,645,574740,Yes,Shopping,180889,24,No,Personal,23700,Rejected
+57,Self-Employed,51502,795,187335,Yes,Travel,525435,4,No,Personal,525435,Partial
+38,Salaried,55608,632,362679,No,Shopping,280283,13,No,Personal,280283,Partial
+35,Salaried,63146,628,679927,Yes,Emergency,724079,21,No,Personal,675835,Partial
+56,Student,64039,823,779161,Yes,Medical,99405,5,No,Personal,99405,Partial
+48,Salaried,39526,856,547253,Yes,Shopping,329786,22,Yes,Personal,329786,Approved
+50,Salaried,114523,766,1084685,Yes,Shopping,688551,21,No,Personal,688551,Approved
+55,Salaried,36010,546,664903,Yes,Shopping,132582,2,Yes,Personal,24923,Rejected
+55,Self-Employed,35574,763,575864,No,Travel,468373,7,Yes,Personal,468373,Approved
+28,Self-Employed,31078,570,502585,Yes,Medical,290062,1,Yes,Personal,4643,Rejected
+53,Self-Employed,35906,617,1011262,Yes,Wedding,148907,16,No,Personal,13470,Rejected
+50,Salaried,71175,551,731569,Yes,Wedding,612336,8,Yes,Personal,612336,Approved
+50,Self-Employed,52471,711,1174115,Yes,Medical,297861,2,Yes,Personal,297861,Partial
+46,Salaried,20070,788,974221,No,Wedding,249122,14,No,Personal,249122,Partial
+55,Salaried,51874,561,1074553,Yes,Wedding,121849,2,Yes,Personal,121849,Partial
+28,Self-Employed,21302,828,1116354,No,Travel,300280,9,Yes,Personal,300280,Approved
+40,Business,44637,723,981094,Yes,Shopping,328082,3,Yes,Personal,328082,Partial
+36,Student,34358,798,1129269,Yes,Medical,190814,22,No,Personal,190814,Partial
+56,Self-Employed,39819,644,446974,No,Travel,103266,17,No,Personal,1444,Rejected
+21,Student,70877,762,946596,No,Medical,128898,18,Yes,Personal,128898,Approved
+58,Self-Employed,21370,716,103665,No,Medical,420858,7,Yes,Personal,420858,Partial
+36,Self-Employed,103207,727,396146,No,Travel,216931,14,Yes,Personal,216931,Partial
+51,Self-Employed,35083,706,497302,Yes,Emergency,394207,1,Yes,Personal,394207,Partial
+38,Student,63097,858,714471,Yes,Wedding,658792,4,No,Personal,658792,Approved
+43,Student,36758,573,418624,No,Medical,595175,2,No,Personal,87062,Rejected
+42,Student,54084,797,1083512,No,Travel,471947,22,No,Personal,471947,Approved
+45,Self-Employed,59862,707,20851,No,Emergency,658158,10,Yes,Personal,658158,Partial
+34,Business,76085,889,197829,No,Medical,296277,17,No,Personal,296277,Partial
+22,Salaried,35569,739,975076,No,Emergency,568392,21,Yes,Personal,568392,Partial
+21,Salaried,57171,589,1106236,No,Medical,528634,2,Yes,Personal,528634,Approved
+56,Student,138009,850,914940,No,Emergency,321782,6,No,Personal,321782,Approved
+54,Business,58999,692,619215,Yes,Travel,616390,9,No,Personal,90957,Rejected
+30,Self-Employed,33356,660,891941,Yes,Emergency,662451,7,No,Personal,99714,Rejected
+51,Salaried,119140,828,1148730,Yes,Travel,507007,16,Yes,Personal,507007,Approved
+46,Self-Employed,54183,857,76552,No,Medical,723971,19,Yes,Personal,723971,Approved
+24,Student,26935,644,815085,No,Travel,135884,25,No,Personal,135884,Partial
+43,Self-Employed,75600,731,85074,Yes,Shopping,209784,7,Yes,Personal,209784,Partial
+57,Self-Employed,28396,763,260192,Yes,Shopping,76925,10,Yes,Personal,76925,Approved
+45,Business,105996,588,529292,Yes,Shopping,176935,23,No,Personal,24285,Rejected
+25,Student,33764,748,929164,No,Wedding,506641,21,No,Personal,35400,Rejected
+60,Business,47057,789,695921,Yes,Emergency,305709,3,No,Personal,305709,Approved
+42,Salaried,30650,527,764121,No,Shopping,785244,11,No,Personal,50084,Rejected
+26,Self-Employed,66010,631,1018439,No,Medical,358528,15,Yes,Personal,358528,Approved
+58,Student,37397,696,1174248,No,Travel,371517,12,No,Personal,41359,Rejected
+28,Self-Employed,44202,693,1120243,No,Travel,288533,4,Yes,Personal,288533,Partial
+55,Self-Employed,21786,690,284827,No,Shopping,348151,4,Yes,Personal,348151,Partial
+24,Student,142617,508,860344,No,Wedding,206445,3,Yes,Personal,206445,Approved
+56,Business,75911,854,817710,No,Shopping,499660,15,No,Personal,499660,Approved
+27,Self-Employed,58672,761,523033,Yes,Wedding,52805,18,Yes,Personal,52805,Approved
+39,Salaried,43165,711,972172,Yes,Travel,705420,22,Yes,Personal,678189,Partial
+30,Student,52340,539,625260,No,Travel,783723,4,No,Personal,783723,Partial
+52,Business,21306,803,545059,Yes,Shopping,665643,3,Yes,Personal,510142,Partial
+38,Salaried,55741,684,947422,No,Emergency,145674,6,No,Personal,145674,Partial
+27,Self-Employed,42730,685,859809,Yes,Travel,314659,15,Yes,Personal,314659,Partial
+53,Salaried,67780,607,413389,No,Emergency,104118,20,No,Personal,104118,Partial
+39,Business,65884,580,521843,Yes,Shopping,477809,10,Yes,Personal,477809,Partial
+28,Business,100182,692,632078,No,Emergency,305570,14,No,Personal,305570,Partial
+59,Self-Employed,59053,827,732770,No,Travel,665448,1,No,Personal,665448,Approved
+51,Student,44997,659,694816,Yes,Shopping,451574,23,Yes,Personal,451574,Partial
+41,Business,76589,685,338987,No,Shopping,668849,2,Yes,Personal,668849,Approved
+49,Salaried,34972,518,879787,Yes,Travel,405007,3,No,Personal,69942,Rejected
+45,Student,79080,859,95285,Yes,Wedding,144769,8,No,Personal,144769,Partial
+27,Business,29812,732,700262,Yes,Travel,501607,10,No,Personal,89364,Rejected
+32,Self-Employed,39971,879,525056,No,Wedding,533550,19,Yes,Personal,533550,Approved
+50,Student,55177,544,647371,No,Emergency,366797,23,No,Personal,366797,Partial
+27,Self-Employed,31762,690,639143,Yes,Travel,58491,22,No,Personal,4689,Rejected
+35,Student,26230,894,306846,Yes,Travel,512236,21,Yes,Personal,512236,Partial
+26,Student,33615,516,1151220,No,Wedding,319452,17,No,Personal,319452,Partial
+42,Salaried,22467,528,853432,No,Medical,327304,3,No,Personal,44062,Rejected
+37,Business,62173,529,1008758,Yes,Shopping,282120,20,No,Personal,45945,Rejected
+40,Business,21485,798,1053108,Yes,Shopping,192254,4,Yes,Personal,192254,Approved
+55,Business,43809,553,227663,No,Travel,84305,20,No,Personal,7736,Rejected
+44,Salaried,128148,683,772193,Yes,Wedding,178093,13,No,Personal,178093,Partial
+59,Salaried,30928,617,450347,Yes,Shopping,276441,25,Yes,Personal,276441,Partial
+59,Salaried,24741,859,545659,Yes,Wedding,65582,4,Yes,Personal,65582,Approved
+41,Salaried,21717,553,1123281,Yes,Emergency,520050,24,Yes,Personal,307412,Partial
+53,Self-Employed,85684,889,1113562,No,Medical,552248,15,Yes,Personal,552248,Approved
+49,Salaried,60555,737,284642,No,Emergency,676410,20,No,Personal,676410,Partial
+27,Salaried,71330,862,470936,No,Emergency,405395,15,Yes,Personal,405395,Approved
+41,Business,28352,620,1014611,Yes,Medical,502855,3,Yes,Personal,17054,Rejected
+56,Salaried,38402,686,276337,No,Medical,351601,12,No,Personal,27884,Rejected
+30,Business,23546,672,790831,Yes,Shopping,287144,25,No,Personal,53636,Rejected
+60,Salaried,71556,789,80719,Yes,Travel,418074,9,No,Personal,418074,Partial
+46,Salaried,40747,744,1132502,Yes,Emergency,407455,13,No,Personal,74395,Rejected
+59,Salaried,55099,579,124359,Yes,Emergency,559253,9,No,Personal,67154,Rejected
+28,Student,29281,872,1040542,No,Emergency,678437,2,Yes,Personal,572052,Approved
+34,Self-Employed,59485,601,1063092,No,Emergency,608453,6,Yes,Personal,608453,Approved
+43,Salaried,44315,502,984174,Yes,Shopping,474068,11,No,Personal,42568,Rejected
+31,Business,61858,513,530271,No,Shopping,132467,19,No,Personal,132467,Partial
+35,Student,52503,615,1132758,Yes,Travel,726796,25,No,Personal,586227,Partial
+33,Self-Employed,74911,740,391502,No,Shopping,724225,15,No,Personal,724225,Partial
+30,Business,34490,791,137801,No,Travel,534172,17,Yes,Personal,534172,Approved
+39,Salaried,78027,576,1083398,No,Emergency,649425,15,Yes,Personal,649425,Approved
+30,Salaried,46573,808,196851,Yes,Emergency,510767,2,Yes,Personal,510767,Approved
+45,Business,72247,702,721810,Yes,Shopping,761332,11,Yes,Personal,761332,Approved
+59,Self-Employed,39095,810,670603,No,Travel,636072,5,Yes,Personal,636072,Approved
+29,Salaried,63875,603,780422,No,Travel,559892,6,Yes,Personal,559892,Approved
+25,Student,53315,670,1124216,Yes,Shopping,187414,22,No,Personal,187414,Partial
+60,Self-Employed,51432,687,518136,No,Emergency,295369,20,No,Personal,295369,Partial
+51,Self-Employed,38691,839,610918,No,Wedding,259398,17,No,Personal,259398,Partial
+51,Student,23361,853,281468,No,Travel,521145,3,Yes,Personal,521145,Approved
+35,Business,50874,651,1072785,No,Medical,443124,8,No,Personal,443124,Partial
+42,Self-Employed,29400,841,311069,No,Medical,69927,15,Yes,Personal,69927,Approved
+59,Business,29440,616,120137,Yes,Medical,166242,14,No,Personal,15855,Rejected
+30,Student,40146,674,893605,Yes,Shopping,428120,22,Yes,Personal,66535,Rejected
+56,Salaried,35405,549,802871,No,Travel,120841,24,Yes,Personal,120841,Partial
+27,Student,31544,705,387188,No,Wedding,191403,23,No,Personal,2423,Rejected
+39,Self-Employed,26536,801,670276,No,Travel,88399,18,No,Personal,88399,Partial
+24,Student,46192,714,858906,No,Wedding,570306,13,No,Personal,570306,Partial
+38,Salaried,52587,706,398444,No,Medical,393848,11,Yes,Personal,393848,Approved
+48,Self-Employed,61520,694,759370,No,Medical,753787,9,Yes,Personal,753787,Approved
+31,Salaried,39908,833,92978,Yes,Travel,429742,3,Yes,Personal,429742,Partial
+30,Business,128761,610,308767,No,Travel,311736,13,No,Personal,311736,Partial
+54,Business,95436,634,955902,Yes,Emergency,259902,20,No,Personal,11315,Rejected
+49,Salaried,77707,891,748603,Yes,Travel,215156,18,No,Personal,215156,Approved
+28,Self-Employed,57758,727,776854,No,Shopping,140403,15,Yes,Personal,140403,Partial
+51,Business,76980,617,684855,Yes,Shopping,411249,15,No,Personal,411249,Partial
+58,Self-Employed,54229,717,136209,Yes,Travel,222655,17,Yes,Personal,222655,Partial
+43,Student,58212,570,595565,Yes,Shopping,609392,21,No,Personal,76106,Rejected
+30,Self-Employed,73614,807,106390,Yes,Shopping,327511,3,Yes,Personal,327511,Approved
+22,Business,67878,639,1032808,Yes,Travel,525575,22,No,Personal,54476,Rejected
+51,Business,39879,591,689655,No,Travel,589995,13,Yes,Personal,589995,Partial
+38,Business,23172,549,896892,Yes,Shopping,377905,6,No,Personal,67466,Rejected
+50,Business,66298,550,1079993,No,Shopping,420037,8,Yes,Personal,420037,Partial
+51,Student,47760,517,574639,No,Travel,97440,25,No,Personal,97440,Partial
+44,Student,36523,671,606616,Yes,Emergency,441326,5,Yes,Personal,441326,Partial
+30,Self-Employed,63153,606,101608,Yes,Emergency,594559,23,No,Personal,18321,Rejected
+41,Student,40201,797,725426,No,Emergency,67445,23,No,Personal,67445,Partial
+47,Student,73768,882,75883,No,Medical,661868,9,Yes,Personal,661868,Approved
+60,Business,42306,674,250467,Yes,Travel,489122,1,No,Personal,65774,Rejected
+60,Business,74112,756,1107757,Yes,Emergency,601002,18,No,Personal,601002,Approved
+55,Student,42146,895,574407,No,Travel,635196,7,Yes,Personal,635196,Approved
+40,Student,72618,802,1026220,No,Travel,177794,18,No,Personal,177794,Approved
+43,Self-Employed,29425,741,746376,No,Emergency,274381,21,No,Personal,36832,Rejected
+38,Self-Employed,44277,632,126462,Yes,Medical,155065,21,Yes,Personal,22321,Rejected
+29,Salaried,100702,720,1017614,No,Travel,386768,21,Yes,Personal,386768,Approved
+26,Self-Employed,43695,730,387137,No,Emergency,569447,6,Yes,Personal,569447,Partial
+39,Salaried,38610,806,616769,No,Wedding,578705,21,No,Personal,578705,Approved
+42,Self-Employed,71244,624,49536,No,Wedding,690632,10,Yes,Personal,690632,Partial
+26,Business,56055,843,698641,Yes,Emergency,296961,1,No,Personal,296961,Approved
+40,Salaried,31781,736,267935,No,Emergency,769400,10,Yes,Personal,754986,Partial
+39,Student,57181,843,341253,No,Emergency,786038,24,No,Personal,786038,Approved
+34,Self-Employed,69524,741,1122067,No,Medical,641573,17,No,Personal,641573,Partial
+53,Self-Employed,24910,566,946606,Yes,Shopping,562573,22,Yes,Personal,7292,Rejected
+50,Self-Employed,34968,672,989677,No,Emergency,316817,24,Yes,Personal,316817,Partial
+23,Business,22089,608,164743,No,Emergency,238724,2,No,Personal,42328,Rejected
+47,Student,130133,718,811667,No,Travel,174395,3,Yes,Personal,174395,Approved
+29,Self-Employed,74779,538,990989,No,Wedding,309535,18,No,Personal,309535,Partial
+28,Salaried,63738,725,524713,Yes,Shopping,85207,3,Yes,Personal,85207,Approved
+24,Self-Employed,63182,670,475646,Yes,Wedding,654095,5,No,Personal,654095,Partial
+41,Self-Employed,24694,854,483560,No,Medical,633761,10,No,Personal,561797,Partial
+52,Salaried,129959,802,893096,No,Emergency,242811,5,No,Personal,242811,Approved
+30,Business,134091,863,1131473,Yes,Travel,263214,13,Yes,Personal,263214,Approved
+44,Salaried,47177,534,810978,Yes,Shopping,754066,3,Yes,Personal,754066,Partial
+42,Student,82010,625,266029,No,Emergency,300956,8,Yes,Personal,300956,Approved
+55,Student,31784,664,997281,Yes,Travel,262994,24,No,Personal,14501,Rejected
+30,Salaried,39137,654,639063,Yes,Wedding,448290,7,No,Personal,44245,Rejected
+37,Business,144304,694,758566,Yes,Wedding,618471,5,No,Personal,9742,Rejected
+24,Salaried,47608,738,336732,Yes,Travel,113386,7,No,Personal,113386,Partial
+55,Business,37347,858,621229,Yes,Wedding,162214,17,No,Personal,162214,Partial
+60,Student,58760,741,802345,No,Wedding,364546,15,Yes,Personal,364546,Partial
+23,Salaried,32359,608,39818,Yes,Emergency,726234,3,No,Personal,24998,Rejected
+54,Salaried,49532,866,1017196,No,Travel,619408,2,Yes,Personal,619408,Approved
+22,Self-Employed,44649,822,181349,No,Shopping,458060,6,Yes,Personal,458060,Partial
+26,Student,34322,610,734274,No,Medical,714926,25,No,Personal,59805,Rejected
+43,Business,42272,649,199713,No,Medical,330989,8,Yes,Personal,20221,Rejected
+45,Student,22998,539,952678,No,Medical,188943,25,No,Personal,36355,Rejected
+53,Business,22936,612,700379,No,Emergency,456637,1,No,Personal,31816,Rejected
+57,Self-Employed,55555,538,582889,No,Wedding,505791,5,Yes,Personal,505791,Approved
+25,Student,28080,847,430094,No,Travel,57096,4,Yes,Personal,57096,Approved
+42,Business,46721,887,305473,No,Emergency,379445,11,Yes,Personal,379445,Approved
+39,Business,111776,636,844044,No,Shopping,622133,4,Yes,Personal,622133,Approved
+50,Self-Employed,29546,738,878032,No,Wedding,314955,5,No,Personal,4847,Rejected
+49,Business,37510,718,897240,Yes,Medical,310289,12,Yes,Personal,310289,Partial
+57,Business,123464,831,242181,Yes,Wedding,585482,4,No,Personal,585482,Partial
+58,Self-Employed,20804,638,892363,Yes,Travel,377040,4,Yes,Personal,297644,Partial
+51,Student,34357,836,688801,Yes,Medical,73682,10,Yes,Personal,73682,Approved
+31,Self-Employed,38084,571,914161,No,Wedding,245440,8,No,Personal,245440,Partial
+33,Business,32741,527,451561,No,Shopping,156694,25,Yes,Personal,156694,Partial
+28,Student,66040,682,677256,No,Shopping,169781,20,No,Personal,169781,Partial
+32,Student,91109,801,267173,Yes,Wedding,441439,10,Yes,Personal,441439,Approved
+29,Business,35947,898,383299,Yes,Wedding,246187,16,No,Personal,246187,Partial
+43,Salaried,26393,864,1079980,No,Emergency,794638,14,No,Personal,510375,Approved
+22,Self-Employed,29006,637,372759,No,Shopping,585618,19,No,Personal,71186,Rejected
+44,Salaried,64463,655,234782,Yes,Emergency,325581,10,Yes,Personal,325581,Partial
+28,Self-Employed,44170,645,917931,Yes,Wedding,266995,20,Yes,Personal,39115,Rejected
+55,Self-Employed,43070,674,580659,Yes,Medical,340794,5,No,Personal,19168,Rejected
+41,Self-Employed,72159,619,583540,No,Medical,714406,13,No,Personal,714406,Partial
+44,Business,122899,712,215332,No,Medical,610384,21,No,Personal,610384,Partial
+34,Business,47143,671,293875,No,Medical,154411,11,Yes,Personal,154411,Approved
+31,Business,34018,689,296641,No,Medical,736385,6,No,Personal,43391,Rejected
+24,Business,73790,780,920162,Yes,Medical,273788,23,Yes,Personal,273788,Approved
+54,Business,42793,616,905656,Yes,Wedding,451677,16,Yes,Personal,41071,Rejected
+44,Student,45344,755,319584,Yes,Shopping,731595,17,Yes,Personal,731595,Approved
+30,Business,64497,743,230690,Yes,Shopping,452686,25,Yes,Personal,452686,Partial
+29,Self-Employed,22760,677,617522,Yes,Wedding,592899,22,No,Personal,7152,Rejected
+36,Business,27899,677,168922,Yes,Wedding,455629,12,No,Personal,61736,Rejected
+25,Salaried,20451,606,146812,No,Shopping,485612,17,No,Personal,70328,Rejected
+55,Self-Employed,30155,526,345849,No,Travel,782614,13,Yes,Personal,769854,Partial
+24,Self-Employed,34237,578,135403,No,Medical,63280,22,Yes,Personal,5680,Rejected
+54,Student,24159,789,267582,Yes,Travel,599300,11,No,Personal,348626,Partial
+25,Business,31800,572,369975,No,Medical,651790,6,No,Personal,5772,Rejected
+21,Self-Employed,31926,620,395308,Yes,Wedding,387433,18,No,Personal,35554,Rejected
+25,Student,42063,766,488052,Yes,Emergency,346020,13,Yes,Personal,346020,Approved
+21,Student,38474,880,528735,No,Wedding,623108,12,No,Personal,623108,Partial
+22,Self-Employed,40838,723,722582,Yes,Travel,158998,25,No,Personal,16122,Rejected
+24,Self-Employed,53049,529,1110014,No,Emergency,139026,23,No,Personal,139026,Partial
+46,Salaried,22040,617,516546,No,Emergency,784764,9,No,Personal,19578,Rejected
+33,Self-Employed,69160,513,364719,No,Emergency,176601,15,No,Personal,176601,Partial
+40,Business,23929,587,657985,Yes,Wedding,145643,7,No,Personal,1604,Rejected
+40,Student,55698,551,968334,Yes,Medical,196583,4,No,Personal,14567,Rejected
+29,Self-Employed,62198,886,196243,No,Medical,257356,3,Yes,Personal,257356,Approved
+42,Salaried,35105,573,928394,No,Emergency,766400,16,Yes,Personal,598389,Partial
+32,Student,48948,578,535448,No,Shopping,552300,16,No,Personal,552300,Partial
+47,Self-Employed,76123,681,1160130,Yes,Emergency,620968,13,No,Personal,620968,Partial
+41,Business,20854,629,81453,No,Shopping,424795,2,No,Personal,31608,Rejected
+38,Salaried,57190,703,834581,No,Wedding,671301,6,Yes,Personal,671301,Approved
+58,Salaried,61524,865,318010,Yes,Wedding,564259,16,No,Personal,564259,Partial
+35,Salaried,20022,679,442501,Yes,Travel,112448,11,Yes,Personal,4641,Rejected
+28,Student,128968,890,849624,Yes,Travel,193079,11,No,Personal,193079,Approved
+52,Student,38414,878,768317,Yes,Emergency,371727,22,Yes,Personal,371727,Approved
+57,Business,75259,729,401853,No,Shopping,159167,20,Yes,Personal,159167,Approved
+36,Student,102006,743,724117,No,Wedding,311662,1,No,Personal,311662,Partial
+21,Salaried,44005,622,888261,No,Shopping,443580,13,No,Personal,75766,Rejected
+35,Self-Employed,46188,796,62106,No,Medical,408411,9,Yes,Personal,408411,Approved
+25,Salaried,40107,728,924550,Yes,Wedding,106157,20,No,Personal,13411,Rejected
+56,Student,59746,607,843975,No,Travel,54000,5,Yes,Personal,54000,Approved
+59,Business,20843,682,631972,Yes,Travel,466774,16,Yes,Personal,347205,Partial
+26,Business,49015,624,954858,Yes,Emergency,326195,9,No,Personal,326195,Partial
+30,Salaried,31265,826,497128,Yes,Shopping,770442,13,No,Personal,492464,Partial
+40,Salaried,47981,849,1103844,Yes,Wedding,225284,4,No,Personal,225284,Approved
+48,Salaried,137068,706,330123,No,Medical,456951,11,Yes,Personal,456951,Approved
+54,Business,81621,880,1115891,No,Wedding,205398,4,No,Personal,205398,Approved
+27,Student,78841,653,573934,No,Shopping,688543,21,No,Personal,688543,Partial
+30,Business,49149,897,518239,Yes,Travel,440532,24,No,Personal,440532,Partial
+40,Student,78123,746,498061,Yes,Travel,332507,10,No,Personal,332507,Partial
+49,Self-Employed,133369,853,804146,Yes,Medical,376236,17,Yes,Personal,376236,Approved
+57,Salaried,48677,735,543219,Yes,Travel,788862,15,Yes,Personal,779210,Partial
+53,Business,54060,782,801119,No,Wedding,547635,20,No,Personal,547635,Approved
+37,Salaried,32666,573,469458,Yes,Wedding,332154,21,Yes,Personal,332154,Partial
+21,Business,102702,723,489279,No,Travel,494393,20,No,Personal,494393,Partial
+34,Business,37060,822,234564,Yes,Shopping,728787,17,No,Personal,16734,Rejected
+42,Student,78230,684,646610,Yes,Medical,679180,5,Yes,Personal,679180,Approved
+22,Business,114004,824,834271,Yes,Travel,798021,19,Yes,Personal,798021,Approved
+51,Student,47702,584,1190731,Yes,Emergency,184159,10,Yes,Personal,184159,Partial
+32,Student,57283,696,664004,No,Travel,664015,11,No,Personal,664015,Partial
+24,Salaried,26374,712,820418,No,Wedding,194037,14,Yes,Personal,194037,Partial
+50,Self-Employed,43451,510,1042531,No,Travel,715320,21,Yes,Personal,700142,Partial
+31,Self-Employed,45020,754,929558,No,Emergency,451936,13,No,Personal,451936,Approved
+44,Salaried,74801,769,57572,Yes,Wedding,777213,21,Yes,Personal,777213,Approved
+53,Student,46995,537,976146,No,Travel,563989,14,Yes,Personal,563989,Approved
+46,Salaried,43827,775,65955,Yes,Medical,443417,4,No,Personal,77846,Rejected
+24,Salaried,50647,514,894041,No,Shopping,315015,13,Yes,Personal,315015,Approved
+21,Student,23308,790,307652,No,Travel,169550,4,Yes,Personal,169550,Approved
+37,Self-Employed,33426,606,1169530,No,Travel,295896,7,No,Personal,7237,Rejected
+57,Business,22951,740,232421,No,Emergency,360401,21,Yes,Personal,22898,Rejected
+23,Student,42176,695,263062,Yes,Medical,195117,25,Yes,Personal,195117,Partial
+60,Student,53046,644,403504,Yes,Emergency,335037,13,No,Personal,335037,Partial
+47,Self-Employed,42812,761,237502,No,Shopping,761346,19,No,Personal,671374,Partial
+43,Salaried,78835,754,1033091,No,Emergency,98205,4,No,Personal,98205,Approved
+54,Self-Employed,124342,689,219737,No,Emergency,412544,22,Yes,Personal,412544,Partial
+60,Salaried,25142,661,1059841,Yes,Travel,302593,3,No,Personal,14595,Rejected
+56,Business,27700,556,959730,Yes,Travel,174473,16,No,Personal,26439,Rejected
+47,Salaried,20005,875,658788,Yes,Travel,430992,21,No,Personal,411510,Partial
+42,Business,61905,750,224340,Yes,Travel,714441,1,No,Personal,27871,Rejected
+23,Self-Employed,46930,825,244314,No,Wedding,176611,20,Yes,Personal,176611,Approved
+33,Student,33581,581,278409,No,Emergency,54548,15,Yes,Personal,54548,Partial
+58,Business,103227,765,289236,Yes,Shopping,453348,13,No,Personal,453348,Approved
+36,Student,31234,836,299701,Yes,Shopping,379159,14,No,Personal,379159,Partial
+39,Student,97390,887,392900,No,Travel,639593,23,Yes,Personal,639593,Approved
+47,Student,63841,854,243284,Yes,Medical,752812,13,Yes,Personal,752812,Partial
+31,Student,54799,897,638954,Yes,Travel,524579,25,Yes,Personal,524579,Approved
+56,Self-Employed,68392,666,623221,Yes,Emergency,768430,13,No,Personal,768430,Partial
+37,Self-Employed,75590,834,493009,No,Wedding,358467,25,Yes,Personal,358467,Approved
+32,Self-Employed,53911,655,605340,No,Shopping,317403,5,Yes,Personal,317403,Partial
+30,Salaried,30571,700,651567,No,Medical,792057,19,No,Personal,136473,Rejected
+25,Self-Employed,37597,645,483885,Yes,Travel,428323,22,No,Personal,69533,Rejected
+51,Salaried,31337,716,531342,Yes,Emergency,168881,22,No,Personal,1619,Rejected
+54,Student,36670,606,641667,Yes,Medical,225526,11,Yes,Personal,41255,Rejected
+34,Business,56737,690,932759,Yes,Medical,531532,24,Yes,Personal,531532,Partial
+32,Student,38840,787,874867,No,Emergency,381773,15,No,Personal,381773,Partial
+21,Salaried,69190,509,770151,Yes,Shopping,140707,10,No,Personal,140707,Partial
+46,Salaried,37480,696,839970,No,Travel,760189,21,Yes,Personal,760189,Partial
+56,Self-Employed,20164,651,1146489,Yes,Travel,272022,10,Yes,Personal,272022,Partial
+30,Self-Employed,40214,770,260380,Yes,Shopping,533671,22,Yes,Personal,514151,Partial
+27,Self-Employed,65965,812,288886,Yes,Shopping,123199,4,No,Personal,123199,Approved
+60,Student,54994,647,683398,No,Travel,308133,6,Yes,Personal,308133,Approved
+38,Student,44018,662,990663,No,Emergency,628469,12,No,Personal,110335,Rejected
+38,Self-Employed,56437,714,180353,Yes,Shopping,657021,1,Yes,Personal,657021,Partial
+23,Student,37684,700,331705,No,Shopping,355134,13,Yes,Personal,355134,Partial
+46,Student,41714,704,367799,Yes,Wedding,643868,15,Yes,Personal,643868,Partial
+43,Salaried,35979,634,794761,Yes,Shopping,428799,2,Yes,Personal,428799,Partial
+23,Salaried,122477,566,593561,No,Emergency,735428,19,Yes,Personal,735428,Approved
+25,Student,49728,652,760080,No,Shopping,56918,16,No,Personal,56918,Partial
+53,Student,26124,577,268156,Yes,Medical,554906,14,No,Personal,84837,Rejected
+47,Salaried,24190,621,302536,Yes,Medical,224421,19,Yes,Personal,224421,Partial
+46,Salaried,73855,793,199827,Yes,Emergency,228852,15,No,Personal,228852,Partial
+58,Self-Employed,66739,693,738633,No,Wedding,446583,20,Yes,Personal,446583,Approved
+54,Business,69842,560,101865,Yes,Wedding,682789,3,No,Personal,113114,Rejected
+54,Business,21423,830,501267,No,Travel,667661,25,No,Personal,428144,Partial
+35,Salaried,48729,633,416405,Yes,Shopping,597923,23,Yes,Personal,597923,Partial
+34,Student,23492,583,551906,No,Shopping,433405,18,No,Personal,26698,Rejected
+47,Business,38320,633,663098,No,Wedding,741308,25,No,Personal,42413,Rejected
+27,Self-Employed,45758,671,129162,Yes,Medical,202387,13,Yes,Personal,202387,Partial
+25,Student,22622,819,860213,No,Wedding,721394,23,Yes,Personal,513713,Approved
+54,Student,45688,667,505849,Yes,Travel,300878,22,Yes,Personal,300878,Partial
+38,Business,32948,626,1105785,Yes,Medical,626289,24,Yes,Personal,580831,Partial
+58,Student,46722,678,427948,No,Travel,233537,13,Yes,Personal,233537,Approved
+53,Student,23834,786,1148065,No,Emergency,640525,23,No,Personal,523507,Approved
+50,Business,78247,514,560687,Yes,Wedding,381067,13,Yes,Personal,381067,Approved
+21,Student,23047,696,737211,Yes,Emergency,379119,18,Yes,Personal,335849,Partial
+32,Self-Employed,26542,631,576595,Yes,Wedding,698645,8,Yes,Personal,324918,Partial
+26,Business,75043,731,1031439,No,Emergency,652427,20,No,Personal,652427,Partial
+53,Student,44581,607,1122547,No,Shopping,414158,16,Yes,Personal,414158,Partial
+50,Salaried,65076,602,44788,Yes,Travel,429167,13,Yes,Personal,429167,Partial
+38,Business,124971,664,909072,Yes,Travel,470051,14,No,Personal,470051,Partial
+57,Self-Employed,73620,631,1184632,No,Wedding,206812,13,Yes,Personal,206812,Approved
+52,Self-Employed,147766,641,1040516,No,Emergency,153782,9,Yes,Personal,153782,Approved
+51,Salaried,30966,647,1195139,No,Emergency,177126,12,Yes,Personal,177126,Partial
+33,Self-Employed,117305,687,1090479,No,Medical,449581,25,No,Personal,449581,Partial
+31,Student,40064,709,169619,Yes,Wedding,378709,6,No,Personal,51833,Rejected
+38,Business,61901,854,964323,No,Medical,181113,6,Yes,Personal,181113,Approved
+26,Self-Employed,23375,560,1170148,Yes,Shopping,137295,1,No,Personal,21457,Rejected
+45,Student,44169,681,285104,Yes,Medical,86862,17,Yes,Personal,86862,Partial
+51,Business,115706,618,1150968,Yes,Shopping,506106,19,No,Personal,506106,Partial
+35,Salaried,31985,620,656638,Yes,Travel,350692,1,Yes,Personal,350692,Partial
+52,Business,45096,638,504893,Yes,Wedding,481736,18,No,Personal,481736,Partial
+45,Business,22595,631,1103409,No,Emergency,247132,10,No,Personal,41739,Rejected
+50,Business,40406,642,60675,Yes,Wedding,157241,2,Yes,Personal,23825,Rejected
+21,Self-Employed,20482,644,901313,No,Emergency,780789,16,No,Personal,38296,Rejected
+24,Student,52340,624,423056,No,Medical,799398,13,Yes,Personal,799398,Approved
+36,Salaried,44095,854,457145,No,Travel,216316,13,No,Personal,216316,Partial
+28,Student,29791,506,476735,Yes,Travel,65799,8,No,Personal,6484,Rejected
+36,Salaried,142295,760,798879,Yes,Emergency,145841,8,Yes,Personal,145841,Approved
+24,Salaried,25043,748,283879,No,Shopping,725960,8,No,Personal,50584,Rejected
+22,Business,24414,606,1037752,No,Shopping,780897,18,No,Personal,361165,Partial
+43,Student,59022,874,1182913,Yes,Emergency,360035,3,Yes,Personal,360035,Approved
+53,Business,78932,546,520771,No,Shopping,456313,24,Yes,Personal,456313,Approved
+56,Self-Employed,60571,642,251660,Yes,Medical,186078,17,Yes,Personal,186078,Partial
+52,Self-Employed,38710,820,1047414,No,Wedding,685388,2,No,Personal,685388,Partial
+52,Salaried,40936,571,892317,No,Shopping,328727,23,Yes,Personal,328727,Partial
+25,Self-Employed,92730,529,1134974,No,Shopping,738784,7,Yes,Personal,738784,Approved
+56,Business,75110,812,982006,No,Wedding,626680,4,Yes,Personal,626680,Approved
+55,Business,121308,642,799552,No,Travel,687967,25,No,Personal,687967,Partial
+56,Student,34824,651,20410,Yes,Shopping,191647,10,Yes,Personal,14078,Rejected
+41,Salaried,72601,862,1092214,Yes,Emergency,422932,4,Yes,Personal,422932,Approved
+58,Self-Employed,46577,674,858437,Yes,Travel,555972,24,Yes,Personal,555972,Partial
+57,Salaried,29843,573,820160,Yes,Travel,414831,25,Yes,Personal,414831,Partial
+35,Salaried,70716,640,1119711,Yes,Travel,576806,11,Yes,Personal,576806,Partial
+46,Business,68850,629,925834,No,Wedding,402497,13,Yes,Personal,402497,Partial
+56,Business,33058,700,293416,Yes,Emergency,464521,16,Yes,Personal,464521,Partial
+54,Self-Employed,28724,803,207893,Yes,Emergency,433010,22,No,Personal,85905,Rejected
+22,Student,31459,834,325803,No,Wedding,768651,2,Yes,Personal,746492,Approved
+26,Salaried,57965,758,623319,Yes,Travel,521923,11,Yes,Personal,521923,Approved
+55,Self-Employed,37146,861,1032979,Yes,Emergency,661324,23,Yes,Personal,560263,Partial
+33,Student,41455,738,835047,No,Medical,70005,22,No,Personal,3787,Rejected
+45,Salaried,143526,857,204592,Yes,Shopping,797078,7,No,Personal,797078,Partial
+40,Student,44392,544,758015,No,Wedding,575600,21,No,Personal,50747,Rejected
+22,Student,31199,889,307856,Yes,Shopping,760929,24,No,Personal,514220,Partial
+48,Student,123161,617,453601,Yes,Wedding,374008,19,Yes,Personal,374008,Partial
+30,Self-Employed,38262,693,268276,Yes,Medical,384168,11,Yes,Personal,384168,Partial
+38,Self-Employed,53499,503,579651,Yes,Wedding,770767,20,Yes,Personal,770767,Partial
+51,Self-Employed,39815,684,804249,Yes,Emergency,194192,13,No,Personal,983,Rejected
+38,Business,41998,773,158697,Yes,Travel,529770,15,No,Personal,79682,Rejected
+45,Student,44329,669,1121488,Yes,Emergency,529094,17,Yes,Personal,70499,Rejected
+46,Salaried,36912,733,418145,No,Travel,349803,15,No,Personal,349803,Partial
+24,Self-Employed,41171,693,1069955,Yes,Emergency,483648,6,Yes,Personal,483648,Partial
+58,Self-Employed,52956,689,363920,Yes,Emergency,714873,3,Yes,Personal,714873,Partial
+53,Self-Employed,32471,521,722950,Yes,Wedding,796635,6,Yes,Personal,116983,Rejected
+39,Self-Employed,24311,721,550812,Yes,Emergency,619902,15,No,Personal,28426,Rejected
+58,Business,34479,576,33784,Yes,Shopping,709172,18,No,Personal,91493,Rejected
+23,Self-Employed,71857,678,645877,No,Medical,487211,3,Yes,Personal,487211,Approved
+59,Self-Employed,127211,744,647666,No,Medical,498081,12,No,Personal,498081,Partial
+38,Student,37191,627,142021,Yes,Emergency,772106,19,Yes,Personal,68068,Rejected
+54,Student,145064,681,1063838,No,Travel,252957,6,Yes,Personal,252957,Partial
+28,Self-Employed,63587,643,753269,Yes,Travel,316776,1,Yes,Personal,316776,Partial
+41,Salaried,30921,693,81063,Yes,Travel,755139,7,No,Personal,35587,Rejected
+51,Self-Employed,79231,806,989870,No,Shopping,363884,24,Yes,Personal,363884,Approved
+57,Student,79099,737,333115,No,Emergency,706944,1,No,Personal,706944,Partial
+59,Salaried,74627,710,679553,Yes,Medical,571199,9,No,Personal,571199,Partial
+40,Self-Employed,25734,600,98423,Yes,Shopping,76146,3,No,Personal,5572,Rejected
+51,Student,54696,746,1102437,Yes,Emergency,456415,7,Yes,Personal,456415,Partial
+59,Salaried,49136,566,675319,Yes,Wedding,386467,19,No,Personal,386467,Partial
+41,Business,58935,535,260040,Yes,Wedding,618882,20,Yes,Personal,618882,Partial
+39,Self-Employed,30203,807,1153672,No,Medical,543602,2,Yes,Personal,543602,Approved
+48,Business,39533,882,954986,No,Wedding,797528,10,No,Personal,797528,Partial
+50,Self-Employed,46291,840,223975,No,Emergency,292948,10,No,Personal,292948,Partial
+37,Student,42924,805,701073,No,Medical,548424,16,Yes,Personal,548424,Approved
+31,Student,69807,666,235864,No,Travel,633165,23,Yes,Personal,633165,Partial
+46,Business,27985,662,824921,Yes,Shopping,502091,11,Yes,Personal,436215,Partial
+36,Self-Employed,52553,867,1040537,Yes,Travel,632051,19,No,Personal,632051,Partial
+46,Salaried,42462,818,706624,No,Medical,278182,21,Yes,Personal,278182,Approved
+21,Self-Employed,64844,650,957762,Yes,Travel,647978,7,No,Personal,647978,Partial
+43,Salaried,40037,824,287503,No,Shopping,105708,2,No,Personal,105708,Partial
+43,Salaried,78367,555,846840,No,Emergency,450099,23,No,Personal,450099,Partial
+51,Self-Employed,32602,813,895006,Yes,Wedding,62166,10,Yes,Personal,62166,Partial
+52,Business,97797,582,892112,No,Shopping,238531,23,No,Personal,238531,Partial
+49,Business,26088,601,1064710,Yes,Emergency,622696,23,No,Personal,63342,Rejected
+44,Salaried,42626,593,1123957,No,Shopping,689705,15,Yes,Personal,689705,Partial
+25,Student,79609,700,42614,No,Shopping,397617,15,No,Personal,397617,Partial
+39,Student,42775,798,566188,Yes,Shopping,227292,21,No,Personal,227292,Partial
+60,Salaried,22703,509,602691,No,Travel,319437,5,No,Personal,59646,Rejected
+58,Self-Employed,62117,787,515338,No,Travel,138501,6,Yes,Personal,138501,Approved
+52,Business,57798,884,370818,Yes,Medical,723459,19,No,Personal,723459,Approved
+31,Business,29875,697,1136777,Yes,Emergency,325382,13,No,Personal,18926,Rejected
+49,Business,67376,731,224187,No,Travel,333457,14,No,Personal,51269,Rejected
+50,Self-Employed,69292,854,727592,Yes,Medical,121252,11,Yes,Personal,121252,Approved
+49,Student,29283,605,69703,Yes,Shopping,719078,2,Yes,Personal,34054,Rejected
+45,Self-Employed,72796,537,999276,Yes,Travel,497724,21,No,Personal,497724,Partial
+38,Salaried,30900,787,575042,Yes,Emergency,260416,15,Yes,Personal,260416,Approved
+30,Business,41080,556,563154,Yes,Medical,649098,2,Yes,Personal,619683,Partial
+52,Self-Employed,50029,891,838903,No,Emergency,652553,5,No,Personal,652553,Approved
+52,Business,47657,738,1152732,Yes,Emergency,177091,1,No,Personal,177091,Partial
+24,Salaried,47962,741,983933,No,Wedding,631409,21,Yes,Personal,631409,Partial
+40,Business,70665,845,197969,No,Wedding,87432,24,Yes,Personal,87432,Approved
+36,Business,45976,640,1067913,No,Travel,108777,1,Yes,Personal,108777,Approved
+28,Self-Employed,71867,687,1145250,Yes,Medical,88669,24,Yes,Personal,88669,Partial
+60,Salaried,41259,522,124769,No,Shopping,228980,4,No,Personal,32580,Rejected
+59,Self-Employed,26640,704,863073,No,Travel,273589,4,Yes,Personal,273589,Partial
+28,Student,33603,547,1180580,Yes,Shopping,92675,15,Yes,Personal,92675,Partial
+60,Business,50513,741,33316,Yes,Shopping,347514,6,Yes,Personal,347514,Partial
+51,Self-Employed,40965,658,884092,Yes,Shopping,238744,6,Yes,Personal,238744,Partial
+40,Student,38275,616,1131907,Yes,Shopping,582195,20,No,Personal,27277,Rejected
+38,Salaried,46103,560,1063364,Yes,Medical,726185,6,Yes,Personal,662559,Partial
+42,Business,44261,568,388863,Yes,Shopping,171703,1,No,Personal,21362,Rejected
+47,Self-Employed,79438,700,250965,No,Wedding,482637,8,Yes,Personal,482637,Approved
+51,Business,34282,578,974185,Yes,Wedding,529975,13,No,Personal,26504,Rejected
+42,Self-Employed,38634,517,253013,No,Wedding,410265,15,No,Personal,80154,Rejected
+31,Self-Employed,48081,711,473913,No,Medical,498906,15,No,Personal,498906,Partial
+35,Self-Employed,80666,606,104009,No,Emergency,606921,24,Yes,Personal,606921,Partial
+27,Business,22722,602,872739,Yes,Travel,300675,5,No,Personal,10603,Rejected
+50,Salaried,140787,824,407859,No,Medical,707776,21,No,Personal,707776,Approved
+54,Salaried,44670,679,1157568,Yes,Shopping,402001,22,Yes,Personal,47708,Rejected
+24,Salaried,35248,814,788465,Yes,Shopping,793793,21,Yes,Personal,553720,Approved
+55,Salaried,74163,869,459969,Yes,Travel,578027,11,No,Personal,578027,Approved
+43,Business,37258,841,1135484,No,Medical,247503,15,No,Personal,247503,Approved
+32,Student,90086,535,254932,Yes,Wedding,595980,16,Yes,Personal,595980,Partial
+55,Self-Employed,33766,683,65051,No,Medical,293613,7,Yes,Personal,42339,Rejected
+41,Business,42834,671,953770,No,Travel,230079,10,Yes,Personal,230079,Partial
+39,Salaried,29318,622,357200,No,Wedding,219087,6,Yes,Personal,219087,Partial
+57,Self-Employed,32113,571,92748,No,Travel,520211,12,Yes,Personal,3266,Rejected
+46,Business,65010,760,29005,No,Emergency,353905,21,No,Personal,353905,Partial
+49,Student,73975,606,312391,Yes,Emergency,697518,10,Yes,Personal,697518,Partial
+24,Self-Employed,27279,792,430445,Yes,Medical,586648,3,No,Personal,316435,Partial
+59,Salaried,127326,692,916827,No,Medical,348477,13,No,Personal,348477,Partial
+56,Salaried,49091,654,947998,No,Emergency,196347,6,No,Personal,196347,Partial
+54,Student,39355,743,33880,No,Emergency,233388,21,No,Personal,8973,Rejected
+33,Self-Employed,59486,606,653325,No,Wedding,78143,16,No,Personal,78143,Partial
+51,Salaried,79252,623,1051560,Yes,Travel,567000,1,Yes,Personal,567000,Partial
+51,Business,70579,898,270785,No,Travel,220757,17,Yes,Personal,220757,Approved
+29,Student,28934,682,766553,Yes,Shopping,719983,10,No,Personal,48037,Rejected
+27,Self-Employed,48588,709,651394,No,Medical,610380,22,No,Personal,610380,Partial
+54,Student,35889,718,361896,Yes,Shopping,281854,7,Yes,Personal,281854,Partial
+54,Salaried,22503,516,56447,No,Travel,195766,12,No,Personal,22416,Rejected
+32,Student,46691,516,318549,Yes,Wedding,186543,10,Yes,Personal,186543,Partial
+28,Salaried,35868,731,431777,Yes,Emergency,174698,2,Yes,Personal,174698,Partial
+21,Salaried,69720,716,439481,Yes,Medical,145189,22,No,Personal,145189,Partial
+58,Student,48021,694,527138,Yes,Shopping,277538,4,Yes,Personal,277538,Partial
+55,Salaried,92935,850,1015550,No,Emergency,756242,23,Yes,Personal,756242,Approved
+45,Business,27456,698,679093,Yes,Shopping,192514,15,Yes,Personal,192514,Partial
+56,Salaried,36177,536,978284,No,Wedding,630822,22,No,Personal,630822,Partial
+33,Salaried,76295,687,790580,Yes,Medical,465623,1,No,Personal,465623,Partial
+28,Self-Employed,42774,614,373838,Yes,Travel,259991,12,Yes,Personal,259991,Partial
+52,Student,75100,635,859354,No,Emergency,586256,16,No,Personal,586256,Partial
+28,Student,27563,755,82334,Yes,Medical,572332,24,Yes,Personal,500108,Partial
+41,Self-Employed,40422,509,1110411,No,Travel,744255,15,Yes,Personal,744255,Partial
+42,Salaried,84142,751,824530,No,Emergency,531984,11,No,Personal,531984,Approved
+40,Self-Employed,24406,650,1042267,Yes,Shopping,768666,19,No,Personal,132824,Rejected
+24,Business,39367,878,759799,No,Medical,669145,11,Yes,Personal,669145,Approved
+58,Salaried,70486,613,917891,No,Travel,109191,12,No,Personal,109191,Partial
+58,Salaried,88586,750,727986,Yes,Medical,533298,1,No,Personal,533298,Partial
+38,Salaried,69268,540,812173,No,Emergency,154917,11,Yes,Personal,154917,Approved
+42,Self-Employed,61906,772,1062183,Yes,Travel,328035,18,Yes,Personal,328035,Approved
+35,Salaried,68947,543,593287,Yes,Emergency,269927,19,No,Personal,269927,Partial
+40,Student,37693,654,863686,No,Shopping,239373,20,No,Personal,12225,Rejected
+57,Business,46997,840,581902,No,Shopping,260394,19,Yes,Personal,260394,Approved
+40,Business,48186,737,446892,No,Wedding,318903,9,No,Personal,318903,Partial
+33,Salaried,47106,663,1194038,No,Wedding,217099,14,Yes,Personal,217099,Approved
+38,Self-Employed,51384,845,61751,Yes,Shopping,362453,3,No,Personal,362453,Partial
+44,Salaried,47518,756,515014,Yes,Shopping,746482,19,Yes,Personal,664112,Approved
+59,Salaried,60270,675,837785,Yes,Wedding,162002,14,Yes,Personal,162002,Partial
+47,Student,51833,648,256897,No,Emergency,765903,18,No,Personal,765903,Partial
+30,Student,32050,726,93000,Yes,Travel,629577,23,Yes,Personal,47560,Rejected
+28,Self-Employed,62730,550,555892,No,Travel,270606,3,Yes,Personal,270606,Approved
+47,Salaried,22624,846,1007950,No,Medical,218132,11,No,Personal,218132,Partial
+59,Student,20896,885,405329,No,Medical,470124,21,Yes,Personal,470124,Approved
+26,Salaried,36920,887,292824,No,Emergency,189995,11,No,Personal,189995,Partial
+41,Student,33582,651,811297,Yes,Shopping,728540,1,Yes,Personal,706281,Partial
+33,Student,55530,579,919475,No,Travel,228386,5,Yes,Personal,228386,Partial
+50,Business,43382,711,578267,No,Emergency,186523,24,No,Personal,186523,Partial
+39,Self-Employed,33386,728,628578,No,Wedding,437593,8,No,Personal,437593,Partial
+41,Business,73375,655,557344,Yes,Medical,399031,4,Yes,Personal,399031,Partial
+59,Salaried,36532,798,847739,No,Shopping,238085,5,Yes,Personal,238085,Approved
+42,Business,30397,831,317367,No,Medical,184082,4,No,Personal,184082,Approved
+44,Business,48735,707,573140,No,Travel,565138,14,Yes,Personal,565138,Approved
+49,Salaried,21788,605,1006180,No,Emergency,171660,6,No,Personal,171660,Partial
+56,Business,23686,758,279321,No,Travel,239430,3,Yes,Personal,239430,Approved
+57,Self-Employed,20135,674,398680,No,Emergency,759790,3,Yes,Personal,421310,Partial
+28,Business,23475,760,80554,Yes,Construction,3059206,15,No,Home,475111,Rejected
+41,Self-Employed,21595,793,697738,Yes,Construction,1576374,24,Yes,Home,288274,Approved
+46,Salaried,26823,599,863886,No,Buy House,3304390,21,Yes,Home,680659,Partial
+40,Self-Employed,23149,852,439160,No,Construction,3052168,15,No,Home,424134,Approved
+44,Self-Employed,33959,565,736690,No,Renovation,4955064,22,Yes,Home,652759,Partial
+51,Student,24187,797,541464,No,Buy House,1178283,10,Yes,Home,503170,Approved
+50,Student,39187,564,54117,Yes,Renovation,2328472,24,No,Home,369297,Rejected
+40,Student,34909,836,575901,No,Renovation,1456161,6,Yes,Home,896488,Approved
+55,Salaried,23823,583,1020592,No,Construction,3340070,23,No,Home,414184,Rejected
+40,Salaried,20454,502,414728,Yes,Renovation,2828199,7,No,Home,564744,Rejected
+33,Salaried,35185,554,65753,Yes,Construction,4868867,6,Yes,Home,254415,Rejected
+33,Student,47323,643,36513,Yes,Construction,4958259,21,No,Home,538292,Rejected
+58,Business,21989,655,682385,Yes,Construction,1780970,9,No,Home,235051,Rejected
+48,Salaried,43796,544,938784,Yes,Plot Purchase,4729788,17,Yes,Home,853666,Partial
+45,Business,72057,813,1010536,Yes,Plot Purchase,1523030,20,Yes,Home,1079149,Approved
+59,Business,33630,847,656804,Yes,Buy House,3809721,7,Yes,Home,546716,Approved
+53,Salaried,61067,680,495403,Yes,Construction,2962768,18,Yes,Home,1166666,Partial
+56,Student,77965,852,238401,Yes,Buy House,1688285,15,No,Home,1256853,Partial
+27,Self-Employed,78537,647,349321,No,Construction,1632940,23,No,Home,1457696,Partial
+29,Salaried,64389,722,534465,No,Renovation,1514993,11,No,Home,1220376,Partial
+44,Self-Employed,44690,701,498532,Yes,Construction,4648299,14,No,Home,807562,Rejected
+21,Salaried,30315,699,364613,No,Buy House,2066277,2,No,Home,346219,Rejected
+54,Student,49025,862,658211,No,Plot Purchase,2031966,12,Yes,Home,1117661,Approved
+55,Business,79088,887,868309,Yes,Buy House,3605930,10,Yes,Home,1761661,Approved
+29,Student,36766,667,734518,Yes,Plot Purchase,2824504,1,Yes,Home,729973,Partial
+28,Salaried,58512,811,279654,Yes,Construction,3299478,25,Yes,Home,1259942,Approved
+58,Self-Employed,29323,867,313541,No,Buy House,3550179,17,Yes,Home,805101,Approved
+27,Self-Employed,77147,612,150429,No,Renovation,4542695,5,No,Home,616813,Rejected
+56,Business,69147,655,942914,No,Renovation,2010863,24,No,Home,1255710,Partial
+53,Salaried,64924,696,348916,No,Buy House,1813901,4,No,Home,1063561,Partial
+30,Salaried,32270,663,78673,Yes,Buy House,3359900,5,No,Home,512537,Rejected
+21,Salaried,22213,827,1029100,No,Plot Purchase,3965069,19,No,Home,611147,Approved
+29,Self-Employed,35103,891,961777,Yes,Buy House,4236211,24,No,Home,508892,Partial
+55,Salaried,138078,886,205660,Yes,Plot Purchase,1838355,23,Yes,Home,1838355,Partial
+57,Salaried,148388,560,1074109,Yes,Buy House,3106552,4,Yes,Home,2271497,Partial
+58,Business,37483,823,114337,No,Construction,2314210,1,No,Home,687979,Partial
+45,Student,23254,637,322061,Yes,Renovation,3373576,9,Yes,Home,343705,Partial
+41,Self-Employed,21916,613,691175,Yes,Plot Purchase,3950032,14,No,Home,626004,Rejected
+58,Self-Employed,44654,615,584736,Yes,Construction,1349103,11,No,Home,9763,Rejected
+38,Salaried,38176,753,658819,No,Renovation,1994261,15,Yes,Home,742536,Approved
+36,Business,139211,559,626600,Yes,Construction,3092631,1,Yes,Home,2416497,Partial
+43,Self-Employed,36722,621,1140066,Yes,Construction,1831605,10,Yes,Home,730998,Partial
+48,Self-Employed,76282,688,738558,No,Plot Purchase,2862995,25,No,Home,1310651,Partial
+59,Student,42670,500,1019353,Yes,Construction,4901833,1,Yes,Home,750207,Partial
+25,Salaried,76741,893,278821,No,Construction,2286349,13,No,Home,1404965,Approved
+33,Business,44351,535,770405,Yes,Renovation,2765098,3,No,Home,516777,Rejected
+59,Self-Employed,46906,749,601639,No,Renovation,1348284,6,Yes,Home,968883,Approved
+57,Self-Employed,73885,770,68480,No,Buy House,4382895,22,No,Home,1467587,Partial
+47,Student,36983,647,1104766,Yes,Buy House,3131471,24,Yes,Home,564416,Partial
+46,Self-Employed,48839,604,493176,No,Renovation,2179771,3,Yes,Home,1001130,Approved
+27,Salaried,46478,580,721083,No,Construction,2799501,8,Yes,Home,1220645,Approved
+54,Self-Employed,137479,881,956286,Yes,Buy House,3965819,3,Yes,Home,3196156,Approved
+29,Salaried,137924,578,925632,Yes,Buy House,3273941,4,Yes,Home,2193444,Approved
+47,Self-Employed,75804,723,970872,No,Buy House,3648909,15,No,Home,1306980,Partial
+33,Salaried,39502,872,426039,Yes,Plot Purchase,4331662,21,No,Home,701753,Partial
+36,Self-Employed,51983,574,934039,No,Renovation,4738650,10,Yes,Home,1077146,Approved
+21,Self-Employed,36616,864,134519,No,Renovation,2488301,12,Yes,Home,923014,Partial
+50,Student,68550,878,648372,No,Buy House,4610962,11,Yes,Home,1967533,Approved
+35,Self-Employed,26984,695,715237,No,Renovation,856416,7,No,Home,145409,Rejected
+28,Self-Employed,26370,813,112075,Yes,Plot Purchase,2260847,7,Yes,Home,616529,Partial
+42,Self-Employed,20704,533,232211,Yes,Construction,1730875,22,Yes,Home,125907,Rejected
+44,Student,67267,880,929572,Yes,Renovation,2390825,4,Yes,Home,1379883,Approved
+41,Business,112054,878,416575,No,Renovation,1246768,5,No,Home,1246768,Approved
+58,Business,22667,890,156048,Yes,Plot Purchase,4982457,17,No,Home,352701,Partial
+54,Business,66214,675,860844,Yes,Renovation,4592322,7,Yes,Home,955843,Partial
+45,Self-Employed,129035,611,301711,Yes,Plot Purchase,2730869,10,No,Home,446800,Rejected
+49,Business,32042,802,592563,No,Construction,2761176,1,Yes,Home,826541,Approved
+26,Student,66804,611,599705,Yes,Buy House,3821886,4,Yes,Home,1030417,Partial
+42,Student,46724,791,419806,Yes,Buy House,3312171,25,No,Home,789138,Approved
+46,Business,74832,841,1095098,Yes,Renovation,2560559,13,Yes,Home,1322112,Approved
+56,Business,65120,611,676565,Yes,Renovation,4479921,14,No,Home,879823,Partial
+29,Self-Employed,44176,584,763781,No,Construction,4183702,8,No,Home,823507,Rejected
+23,Self-Employed,30821,703,839747,No,Buy House,4041642,7,No,Home,473469,Rejected
+40,Salaried,42114,605,1044696,Yes,Buy House,4037114,6,Yes,Home,559775,Partial
+54,Salaried,32079,622,705290,No,Buy House,1883285,13,Yes,Home,589297,Partial
+34,Self-Employed,60151,691,1015685,Yes,Renovation,4650005,20,No,Home,849474,Partial
+49,Salaried,69820,855,709735,No,Buy House,1564224,15,No,Home,1564224,Approved
+43,Student,46982,765,890428,Yes,Construction,4026803,6,No,Home,615801,Approved
+23,Self-Employed,55176,681,1147717,No,Renovation,4939673,22,Yes,Home,1414640,Approved
+44,Salaried,66529,804,880033,No,Renovation,1174426,6,No,Home,1174426,Approved
+50,Business,33085,822,99219,Yes,Renovation,3544000,9,Yes,Home,548259,Partial
+56,Self-Employed,64344,535,358410,Yes,Renovation,3267464,1,Yes,Home,1006091,Partial
+25,Salaried,55030,623,474395,Yes,Construction,1200606,22,Yes,Home,793329,Partial
+24,Salaried,32366,784,805686,Yes,Buy House,4337331,7,Yes,Home,582144,Partial
+33,Salaried,48910,585,372075,Yes,Buy House,3544261,2,No,Home,629871,Partial
+34,Business,95835,614,767794,No,Construction,3452815,6,Yes,Home,1929242,Partial
+25,Student,62091,527,882132,No,Buy House,2238303,25,No,Home,1388589,Partial
+45,Self-Employed,40819,897,686825,No,Buy House,4565743,3,No,Home,975974,Approved
+53,Salaried,40196,752,667702,Yes,Renovation,1465968,24,No,Home,481049,Partial
+33,Self-Employed,41038,592,950561,No,Plot Purchase,1132251,5,No,Home,750851,Partial
+22,Self-Employed,60856,627,1151018,Yes,Renovation,4000135,22,Yes,Home,888042,Partial
+25,Business,26306,518,448280,Yes,Renovation,2782313,3,Yes,Home,172132,Rejected
+33,Self-Employed,39852,637,960092,Yes,Buy House,3816391,9,No,Home,443230,Rejected
+53,Business,76857,844,61546,No,Plot Purchase,2081768,14,Yes,Home,1762531,Approved
+50,Student,39858,643,306589,No,Renovation,835069,7,Yes,Home,835069,Partial
+44,Business,33625,816,825384,No,Construction,1125703,10,Yes,Home,837195,Approved
+33,Business,125689,663,792130,Yes,Construction,2870239,21,No,Home,1947882,Partial
+44,Salaried,71147,577,975191,Yes,Renovation,903493,9,Yes,Home,903493,Partial
+45,Business,79524,524,906979,Yes,Plot Purchase,4999729,14,No,Home,1219292,Partial
+26,Salaried,75451,757,584178,Yes,Plot Purchase,853857,24,No,Home,853857,Approved
+25,Business,41447,656,377845,Yes,Renovation,2461116,12,Yes,Home,660032,Partial
+49,Self-Employed,21932,770,563900,No,Renovation,1469493,15,Yes,Home,349157,Approved
+25,Student,27693,687,231412,Yes,Buy House,1151141,2,No,Home,98478,Rejected
+59,Student,142028,875,920629,No,Plot Purchase,2809885,12,No,Home,2809885,Approved
+24,Student,76420,558,862653,Yes,Plot Purchase,2884884,1,Yes,Home,1264062,Partial
+51,Business,50103,803,54876,No,Construction,2759231,2,No,Home,1106420,Approved
+26,Student,35601,900,230670,No,Renovation,1066302,10,Yes,Home,795680,Partial
+56,Business,34623,844,1153862,Yes,Renovation,1550208,8,Yes,Home,688467,Partial
+31,Student,116748,633,1018878,Yes,Construction,1558680,22,Yes,Home,1558680,Partial
+59,Salaried,62354,818,1198389,No,Plot Purchase,1770477,8,Yes,Home,1177938,Approved
+58,Self-Employed,53805,617,677189,No,Plot Purchase,1319128,19,Yes,Home,1319128,Approved
+41,Student,76102,584,485864,Yes,Construction,3450181,13,Yes,Home,1276692,Partial
+35,Business,54831,758,92024,No,Plot Purchase,4812126,10,Yes,Home,1235640,Approved
+45,Salaried,123666,591,461687,Yes,Renovation,4889485,23,Yes,Home,1995551,Approved
+31,Salaried,31056,661,750453,No,Plot Purchase,3168641,13,Yes,Home,721234,Partial
+27,Self-Employed,45928,704,133504,No,Renovation,4506789,15,Yes,Home,803992,Partial
+34,Self-Employed,50300,710,233800,Yes,Renovation,1272542,13,No,Home,247742,Rejected
+24,Salaried,124367,620,867236,Yes,Renovation,4127297,2,Yes,Home,1889247,Approved
+32,Business,76062,743,992394,No,Plot Purchase,897328,9,No,Home,897328,Partial
+53,Self-Employed,38775,843,594042,Yes,Construction,4861692,19,Yes,Home,608695,Approved
+41,Salaried,78253,768,870039,Yes,Buy House,1840936,13,No,Home,1429405,Approved
+32,Self-Employed,34654,752,102089,Yes,Renovation,1536695,19,Yes,Home,539086,Partial
+28,Student,37839,584,20179,Yes,Plot Purchase,4532261,10,Yes,Home,548055,Rejected
+43,Self-Employed,71713,781,97036,Yes,Renovation,1925818,5,No,Home,960817,Partial
+60,Business,28354,684,362505,No,Plot Purchase,4368038,15,Yes,Home,532654,Partial
+38,Self-Employed,68470,851,364023,No,Construction,3978795,5,No,Home,1651552,Approved
+38,Salaried,42412,609,710712,Yes,Plot Purchase,2027501,12,No,Home,116510,Rejected
+45,Salaried,54047,593,662881,No,Plot Purchase,3073765,4,No,Home,1036320,Partial
+45,Self-Employed,44290,857,1176939,No,Plot Purchase,879670,16,Yes,Home,879670,Approved
+57,Student,43770,815,542424,No,Renovation,4482263,23,No,Home,1082154,Partial
+38,Business,43542,779,660024,Yes,Plot Purchase,1556154,10,No,Home,467809,Partial
+26,Self-Employed,22771,862,1053582,Yes,Construction,4975892,14,Yes,Home,435079,Partial
+21,Business,74566,695,1127529,Yes,Renovation,2688012,20,No,Home,956685,Partial
+53,Student,135408,622,802832,Yes,Buy House,3233239,11,Yes,Home,1995297,Partial
+21,Business,29988,885,1101142,Yes,Buy House,3784197,15,No,Home,494322,Partial
+43,Salaried,49169,823,763508,Yes,Construction,2457122,4,No,Home,926628,Partial
+47,Salaried,80906,584,544570,Yes,Plot Purchase,3310584,16,No,Home,988003,Partial
+38,Salaried,137588,545,930080,Yes,Buy House,2390203,12,Yes,Home,1756113,Partial
+42,Salaried,26520,891,577422,Yes,Construction,1868993,14,No,Home,524172,Partial
+46,Business,23534,753,346195,No,Renovation,1236541,17,Yes,Home,501555,Approved
+21,Business,29247,698,919577,Yes,Renovation,2892679,20,Yes,Home,569900,Partial
+36,Business,43149,747,1073470,Yes,Renovation,1810501,7,Yes,Home,617815,Partial
+33,Self-Employed,40200,506,817657,No,Renovation,2660385,17,No,Home,447818,Rejected
+24,Student,31913,645,896765,Yes,Renovation,1143002,11,Yes,Home,55568,Rejected
+39,Business,39874,523,549033,No,Plot Purchase,1735569,12,No,Home,68318,Rejected
+42,Student,61842,871,1129104,No,Renovation,4021639,8,No,Home,1399541,Approved
+59,Salaried,49890,769,424598,No,Plot Purchase,3328967,4,Yes,Home,1145587,Approved
+30,Salaried,33703,633,1195130,No,Buy House,4458488,12,No,Home,528345,Rejected
+22,Self-Employed,42829,795,115305,Yes,Construction,4952578,23,Yes,Home,641797,Partial
+45,Business,28896,601,355550,Yes,Construction,2971262,19,Yes,Home,490640,Partial
+38,Salaried,21494,638,101979,Yes,Plot Purchase,1232180,9,Yes,Home,30457,Rejected
+21,Student,62096,691,1171913,No,Construction,3273761,24,Yes,Home,1622746,Approved
+21,Student,29164,502,1146985,Yes,Plot Purchase,2529387,24,No,Home,304959,Rejected
+46,Self-Employed,43914,815,331079,No,Renovation,4653643,3,No,Home,985268,Partial
+57,Business,103647,726,670453,Yes,Renovation,1382623,6,No,Home,1113125,Partial
+46,Salaried,54499,724,229148,No,Buy House,913682,13,Yes,Home,913682,Partial
+38,Self-Employed,81770,723,243008,No,Renovation,1967946,23,Yes,Home,1967946,Partial
+31,Student,25063,670,580897,Yes,Buy House,3289222,1,Yes,Home,148724,Rejected
+21,Self-Employed,33996,646,621560,Yes,Buy House,4925690,22,No,Home,295503,Rejected
+43,Salaried,53879,719,197847,Yes,Renovation,4395595,20,Yes,Home,940132,Partial
+30,Student,59405,614,588523,No,Plot Purchase,1440633,22,No,Home,1428589,Partial
+30,Student,34637,843,161166,Yes,Plot Purchase,2013561,19,No,Home,402409,Rejected
+45,Student,33888,653,719327,Yes,Construction,4311971,21,Yes,Home,547435,Partial
+55,Self-Employed,39037,855,479976,Yes,Buy House,2505233,8,No,Home,611305,Partial
+29,Salaried,31447,709,312236,No,Construction,2834215,15,Yes,Home,651822,Partial
+29,Salaried,98754,604,910678,No,Buy House,4799911,2,Yes,Home,1657665,Approved
+26,Self-Employed,38650,827,333979,Yes,Plot Purchase,4744193,16,Yes,Home,788885,Approved
+21,Student,21966,729,384024,Yes,Construction,4610915,1,No,Home,743810,Rejected
+35,Business,115629,854,811801,Yes,Construction,1269735,24,Yes,Home,1269735,Approved
+56,Salaried,65350,684,869556,No,Plot Purchase,4358631,6,Yes,Home,1118644,Approved
+44,Student,29247,513,156984,Yes,Plot Purchase,2374909,20,Yes,Home,141121,Rejected
+26,Salaried,45894,607,679722,Yes,Plot Purchase,3168961,10,Yes,Home,691594,Approved
+46,Student,92764,715,1076080,Yes,Buy House,4005385,17,Yes,Home,1689956,Approved
+39,Self-Employed,35175,580,215645,Yes,Renovation,3663999,7,Yes,Home,377819,Rejected
+60,Business,43355,820,521451,Yes,Renovation,4973523,20,Yes,Home,826592,Partial
+40,Salaried,34903,720,639935,Yes,Plot Purchase,3764269,3,No,Home,483122,Rejected
+37,Business,137940,756,279976,No,Plot Purchase,4163321,2,No,Home,3259089,Approved
+29,Business,47683,801,803670,Yes,Construction,3004756,22,No,Home,865984,Partial
+36,Salaried,23450,621,857351,Yes,Construction,1584361,8,No,Home,243716,Rejected
+27,Salaried,23550,822,928306,Yes,Buy House,3461578,13,No,Home,463846,Partial
+51,Salaried,21254,661,325164,Yes,Construction,1323451,11,Yes,Home,430314,Partial
+34,Salaried,20751,896,906928,No,Buy House,1988983,9,Yes,Home,423658,Approved
+49,Business,41942,768,132705,Yes,Plot Purchase,2180205,14,No,Home,249298,Rejected
+55,Self-Employed,137251,689,836081,Yes,Buy House,2013137,18,Yes,Home,2013137,Partial
+41,Salaried,35029,848,683555,Yes,Plot Purchase,830843,22,No,Home,754063,Partial
+49,Salaried,44435,828,1165225,Yes,Renovation,3719953,20,No,Home,989108,Partial
+57,Salaried,31920,539,1072948,Yes,Construction,4273334,23,No,Home,446535,Rejected
+54,Student,25761,648,390976,Yes,Construction,3190987,18,No,Home,104045,Rejected
+26,Salaried,20538,826,237422,No,Construction,1073766,24,Yes,Home,542758,Partial
+50,Business,48060,616,755290,No,Buy House,3942739,14,No,Home,829489,Partial
+37,Student,76056,893,526576,Yes,Buy House,1020174,14,Yes,Home,1020174,Approved
+54,Student,38749,782,1185470,No,Buy House,4399572,7,No,Home,808552,Partial
+32,Business,147801,529,228830,Yes,Construction,2982968,17,Yes,Home,2513573,Partial
+26,Salaried,40607,760,78339,Yes,Buy House,1895116,19,No,Home,641395,Partial
+32,Self-Employed,57267,669,534335,No,Buy House,3106572,25,No,Home,1280978,Partial
+58,Salaried,39526,518,612367,No,Buy House,4946027,6,Yes,Home,887060,Partial
+27,Business,63558,580,180039,Yes,Construction,3430541,22,No,Home,10632,Rejected
+32,Salaried,31233,844,1166057,Yes,Buy House,2417703,6,No,Home,529949,Partial
+30,Self-Employed,53762,728,706900,Yes,Renovation,3044712,8,Yes,Home,967685,Partial
+43,Student,46509,666,858739,Yes,Renovation,3157893,9,Yes,Home,686061,Approved
+58,Student,26744,845,929055,No,Plot Purchase,1702271,14,No,Home,589476,Approved
+44,Salaried,49145,565,550712,No,Construction,1051154,10,No,Home,756557,Partial
+32,Student,27051,816,324170,No,Plot Purchase,891444,4,Yes,Home,628281,Approved
+41,Self-Employed,32635,628,1125749,Yes,Buy House,4337896,4,No,Home,206698,Rejected
+24,Business,28992,616,969559,Yes,Construction,2783250,20,No,Home,4872,Rejected
+50,Student,33199,568,1126276,Yes,Buy House,4741751,11,Yes,Home,315619,Rejected
+38,Student,63119,599,676774,No,Construction,3303528,20,Yes,Home,1396169,Approved
+28,Student,93467,506,41802,Yes,Construction,2698688,4,No,Home,386798,Rejected
+55,Salaried,86881,701,110337,Yes,Buy House,3012303,2,No,Home,397993,Rejected
+38,Self-Employed,140385,540,330381,No,Buy House,2817656,21,No,Home,2817656,Partial
+41,Business,28644,742,760314,Yes,Buy House,1430356,22,Yes,Home,325354,Partial
+34,Business,56158,644,457594,No,Construction,2091836,25,No,Home,1100335,Partial
+44,Business,147301,652,414167,Yes,Renovation,3376533,9,No,Home,115552,Rejected
+36,Salaried,56129,661,1133347,No,Buy House,1505203,12,No,Home,905446,Partial
+53,Business,21741,648,225128,Yes,Construction,2426816,21,No,Home,144664,Rejected
+54,Business,23577,886,542073,Yes,Buy House,1099372,8,Yes,Home,410739,Approved
+38,Self-Employed,72922,821,843940,Yes,Construction,2525581,8,No,Home,1283917,Approved
+39,Student,53089,589,1019834,No,Renovation,3443355,23,Yes,Home,937304,Partial
+50,Self-Employed,142207,603,392276,No,Buy House,3753994,3,Yes,Home,3109704,Approved
+36,Business,46834,587,629555,Yes,Renovation,1587775,17,Yes,Home,741079,Partial
+49,Business,67882,663,551705,No,Plot Purchase,3326095,15,Yes,Home,1794608,Approved
+59,Business,42471,682,63468,Yes,Renovation,3796363,14,Yes,Home,729605,Rejected
+48,Student,22925,548,246349,No,Renovation,3025575,21,No,Home,437564,Rejected
+38,Student,38989,644,277868,No,Plot Purchase,1724345,15,No,Home,244484,Rejected
+30,Student,71769,562,624524,Yes,Construction,1143539,10,Yes,Home,1080493,Partial
+24,Business,34100,707,21345,Yes,Plot Purchase,3176203,9,Yes,Home,149573,Rejected
+33,Business,22644,605,1012325,No,Construction,4148007,8,No,Home,626040,Rejected
+40,Self-Employed,42246,869,311873,Yes,Construction,2473721,9,Yes,Home,703667,Approved
+50,Self-Employed,48702,745,310685,No,Plot Purchase,4729046,23,No,Home,855429,Partial
+47,Business,38314,598,902730,Yes,Plot Purchase,2835459,25,Yes,Home,531945,Partial
+57,Student,47692,652,32484,No,Buy House,1510171,25,No,Home,56124,Rejected
+42,Salaried,68529,643,147642,Yes,Renovation,2009233,24,Yes,Home,1054793,Partial
+30,Student,73565,722,1037024,Yes,Buy House,2083642,4,Yes,Home,1092937,Partial
+27,Business,36574,608,275457,No,Renovation,2770717,13,No,Home,129180,Rejected
+48,Self-Employed,56056,595,524746,Yes,Construction,4830444,17,Yes,Home,724407,Partial
+58,Business,29017,690,245099,No,Renovation,1034634,14,No,Home,2888,Rejected
+58,Student,41313,879,952140,Yes,Construction,4644919,12,Yes,Home,578088,Approved
+53,Self-Employed,43141,666,151629,Yes,Plot Purchase,3646179,21,Yes,Home,291860,Rejected
+40,Business,47503,817,1009336,Yes,Renovation,3518551,19,No,Home,896988,Approved
+25,Salaried,44014,512,242760,No,Plot Purchase,2742252,22,No,Home,402740,Rejected
+47,Salaried,28207,595,172843,No,Buy House,2260181,25,No,Home,69843,Rejected
+57,Self-Employed,36092,637,492900,Yes,Construction,2413094,24,Yes,Home,350569,Rejected
+27,Self-Employed,24605,813,875695,Yes,Construction,2394983,11,Yes,Home,479857,Approved
+43,Student,68308,738,940394,No,Buy House,1455517,21,No,Home,1314055,Partial
+28,Business,39709,603,489806,No,Plot Purchase,1370029,9,No,Home,126562,Rejected
+54,Student,21856,715,252520,No,Buy House,3635729,9,Yes,Home,401923,Partial
+24,Self-Employed,46763,890,150712,Yes,Buy House,3701162,16,Yes,Home,1078674,Partial
+60,Salaried,65689,790,107537,Yes,Renovation,3738174,2,No,Home,980036,Partial
+35,Salaried,83455,771,1140268,No,Construction,1237385,22,Yes,Home,1237385,Approved
+48,Business,23787,715,791140,No,Construction,1285889,7,No,Home,59539,Rejected
+47,Salaried,81953,784,139293,Yes,Construction,2314927,2,Yes,Home,1033105,Approved
+36,Student,33035,616,181069,Yes,Construction,3794383,9,Yes,Home,384757,Rejected
+56,Student,58003,635,688695,Yes,Construction,4878605,2,No,Home,760037,Partial
+54,Self-Employed,38119,648,317714,Yes,Construction,1758303,8,No,Home,145734,Rejected
+58,Business,22768,578,825172,No,Construction,4524707,1,No,Home,691982,Rejected
+48,Salaried,51026,645,74509,No,Buy House,3660048,9,Yes,Home,1340586,Partial
+24,Salaried,43635,794,1141475,No,Renovation,3998501,14,No,Home,994675,Approved
+29,Salaried,42367,742,544146,No,Buy House,3100742,11,No,Home,12938,Rejected
+28,Student,30518,766,950734,No,Buy House,4712778,1,No,Home,660165,Partial
+56,Self-Employed,38991,791,1176470,No,Renovation,2964319,3,No,Home,654705,Partial
+35,Self-Employed,40248,780,260011,Yes,Plot Purchase,1151948,6,No,Home,495610,Partial
+37,Student,47686,811,1153387,Yes,Plot Purchase,1715729,20,Yes,Home,809229,Approved
+25,Self-Employed,38689,706,892351,Yes,Plot Purchase,2000237,21,No,Home,175629,Rejected
+47,Student,29635,762,792385,Yes,Buy House,1691139,10,Yes,Home,529687,Approved
+53,Student,129656,729,334729,No,Buy House,2683922,25,Yes,Home,2481048,Approved
+54,Salaried,71601,657,684670,No,Renovation,3557205,7,No,Home,1685690,Partial
+35,Business,23781,834,879676,No,Buy House,3839167,3,No,Home,540552,Approved
+47,Self-Employed,47092,858,533684,No,Plot Purchase,3206567,22,Yes,Home,977265,Approved
+47,Self-Employed,40730,771,397310,No,Buy House,4311686,1,Yes,Home,1014056,Approved
+51,Salaried,21116,727,370089,Yes,Construction,3772652,5,No,Home,746568,Rejected
+39,Salaried,47024,872,246013,Yes,Construction,4229889,3,No,Home,837775,Partial
+51,Self-Employed,73715,851,195719,Yes,Construction,3982424,1,No,Home,1201951,Partial
+58,Student,92701,664,735374,Yes,Plot Purchase,3507843,19,No,Home,1082361,Partial
+30,Salaried,74073,774,922902,No,Buy House,3713746,19,No,Home,1120773,Approved
+52,Business,25548,718,564062,Yes,Renovation,1605105,8,No,Home,88527,Rejected
+22,Salaried,105577,503,794982,Yes,Construction,1858463,10,No,Home,1192972,Partial
+28,Business,66163,711,306928,No,Plot Purchase,1463262,24,Yes,Home,1449426,Approved
+53,Student,40664,893,175374,No,Buy House,3463611,2,No,Home,1068641,Partial
+23,Salaried,39213,629,430367,No,Construction,2369549,16,Yes,Home,696396,Partial
+26,Self-Employed,22204,679,457354,Yes,Plot Purchase,3990105,2,No,Home,688852,Rejected
+32,Student,78674,663,1048069,No,Construction,3278139,20,No,Home,1481311,Partial
+39,Business,122651,655,262890,Yes,Buy House,3715700,15,No,Home,1984221,Partial
+51,Business,72519,638,581877,Yes,Plot Purchase,2994503,14,Yes,Home,1221937,Partial
+48,Business,21790,694,479167,No,Plot Purchase,4555045,21,Yes,Home,461428,Partial
+55,Self-Employed,53615,878,711397,Yes,Buy House,3980860,20,Yes,Home,1078733,Approved
+43,Salaried,66996,669,436158,Yes,Renovation,3234269,18,No,Home,1019717,Partial
+34,Self-Employed,84729,855,235001,No,Renovation,3174728,16,Yes,Home,1843737,Approved
+36,Salaried,24051,817,860435,Yes,Buy House,1441955,24,No,Home,425620,Partial
+47,Salaried,47205,718,338447,Yes,Renovation,3418837,24,No,Home,682907,Partial
+40,Student,23266,684,1008598,No,Buy House,2664392,10,No,Home,438155,Partial
+55,Self-Employed,36286,816,1166264,Yes,Buy House,4133201,15,Yes,Home,676137,Approved
+27,Student,46531,742,220045,Yes,Renovation,1503710,7,No,Home,274415,Rejected
+57,Self-Employed,36168,640,728561,Yes,Construction,846739,2,No,Home,128116,Rejected
+55,Business,41365,660,1032916,Yes,Buy House,3951483,4,No,Home,784490,Rejected
+28,Self-Employed,48499,730,909574,No,Renovation,4307674,6,No,Home,646806,Partial
+39,Student,40155,865,368013,Yes,Plot Purchase,2907548,10,Yes,Home,857270,Approved
+29,Self-Employed,47178,641,893050,Yes,Buy House,846996,5,No,Home,640935,Partial
+27,Business,22002,873,348105,Yes,Plot Purchase,918526,12,Yes,Home,422431,Approved
+48,Student,45132,633,1196737,Yes,Buy House,2615642,3,Yes,Home,644565,Partial
+29,Business,45296,875,601409,No,Buy House,2744739,7,Yes,Home,1066560,Approved
+30,Self-Employed,48659,509,129448,Yes,Construction,4756814,17,No,Home,252468,Rejected
+56,Business,32633,811,673811,No,Renovation,2193484,17,Yes,Home,991485,Approved
+56,Business,45852,616,1190011,No,Renovation,1012194,21,No,Home,1012194,Partial
+43,Business,38343,769,822071,No,Renovation,4508440,6,Yes,Home,701594,Approved
+40,Student,32087,849,47251,No,Construction,4141132,2,No,Home,287492,Rejected
+24,Salaried,65428,882,973115,No,Buy House,1120391,6,No,Home,1120391,Approved
+30,Self-Employed,54314,515,137541,No,Plot Purchase,1617683,21,Yes,Home,1241482,Partial
+60,Salaried,42019,802,374866,No,Construction,4292837,17,Yes,Home,983546,Approved
+53,Self-Employed,52752,505,597818,Yes,Renovation,827048,23,No,Home,639298,Partial
+42,Business,42816,559,204889,Yes,Buy House,2357419,3,Yes,Home,401983,Rejected
+31,Salaried,32272,713,537434,No,Renovation,3404554,22,Yes,Home,613378,Partial
+38,Self-Employed,33565,625,592101,Yes,Plot Purchase,4487618,6,No,Home,381276,Rejected
+43,Business,72513,730,828831,Yes,Construction,3710188,18,Yes,Home,1090587,Partial
+53,Student,45343,628,1000813,No,Renovation,4786348,2,Yes,Home,902125,Approved
+57,Business,79533,589,239389,No,Construction,4788748,1,Yes,Home,1779413,Partial
+32,Student,35297,697,65612,No,Construction,4149852,20,No,Home,391344,Rejected
+59,Student,33144,719,511369,Yes,Plot Purchase,4161735,14,No,Home,315183,Rejected
+59,Self-Employed,98291,542,132826,Yes,Plot Purchase,4647967,10,Yes,Home,1164641,Partial
+30,Self-Employed,59873,624,515312,Yes,Renovation,2093002,14,Yes,Home,697046,Partial
+27,Business,32912,841,809140,No,Buy House,4051205,23,Yes,Home,884670,Approved
+46,Student,76863,829,845964,Yes,Buy House,2659704,12,No,Home,1354132,Approved
+42,Salaried,74632,610,502499,Yes,Buy House,2571945,16,Yes,Home,1105831,Partial
+32,Business,30193,706,1028000,Yes,Renovation,2171897,9,No,Home,243753,Rejected
+26,Student,53323,824,45636,Yes,Construction,4614233,11,Yes,Home,1155782,Partial
+46,Business,59928,695,263182,No,Construction,3610716,17,No,Home,854643,Partial
+48,Business,52622,543,560722,Yes,Construction,1207213,17,No,Home,593777,Partial
+52,Business,49136,648,549167,No,Buy House,3041734,11,No,Home,817051,Partial
+49,Student,21167,646,96781,No,Buy House,1593332,8,Yes,Home,226020,Rejected
+38,Student,111995,855,981375,Yes,Plot Purchase,1121177,3,No,Home,1121177,Approved
+27,Business,43769,581,653310,No,Renovation,2954681,13,Yes,Home,1028907,Partial
+28,Self-Employed,29935,859,531185,Yes,Renovation,4465365,12,No,Home,590476,Partial
+38,Salaried,79811,536,591850,Yes,Buy House,4275608,14,Yes,Home,1151828,Partial
+41,Salaried,20592,777,153635,No,Construction,3557771,24,No,Home,383963,Partial
+42,Student,46955,660,1066425,Yes,Construction,2944904,18,Yes,Home,681797,Approved
+26,Business,31314,595,1130634,No,Plot Purchase,4587449,10,No,Home,494028,Partial
+31,Student,33611,726,615355,No,Renovation,3974491,8,No,Home,116006,Rejected
+57,Student,25213,823,1173581,No,Construction,3139412,12,Yes,Home,737302,Approved
+41,Business,33237,660,620379,No,Construction,3219340,6,Yes,Home,680219,Partial
+50,Self-Employed,53222,684,896819,No,Buy House,2680663,14,Yes,Home,1180489,Approved
+26,Business,122602,763,1009674,Yes,Construction,2419266,12,Yes,Home,2053826,Approved
+36,Self-Employed,43356,803,298187,No,Renovation,4668654,3,Yes,Home,1031077,Approved
+36,Self-Employed,145565,875,714700,Yes,Buy House,857741,8,No,Home,857741,Partial
+54,Business,52306,787,1146886,Yes,Construction,4833306,23,Yes,Home,745779,Approved
+23,Student,36762,833,918815,Yes,Plot Purchase,1737709,4,Yes,Home,699720,Approved
+30,Self-Employed,56885,643,175335,No,Renovation,2981034,23,No,Home,472253,Rejected
+37,Student,44947,566,624882,Yes,Plot Purchase,3242916,8,No,Home,319544,Rejected
+51,Business,55061,898,289595,Yes,Construction,2958437,20,No,Home,687899,Approved
+40,Self-Employed,28500,666,1103845,No,Plot Purchase,2107589,16,Yes,Home,589299,Partial
+52,Self-Employed,65796,548,49847,Yes,Plot Purchase,2531654,11,Yes,Home,940544,Partial
+28,Self-Employed,35051,682,45586,Yes,Plot Purchase,1075486,24,Yes,Home,133016,Rejected
+25,Student,37522,858,186613,Yes,Renovation,2948088,15,Yes,Home,804859,Partial
+36,Self-Employed,64945,577,577346,No,Buy House,1911901,3,Yes,Home,1057965,Approved
+58,Business,37594,734,688694,Yes,Buy House,4506909,7,No,Home,618005,Rejected
+34,Business,20314,711,253882,No,Construction,804153,25,Yes,Home,488214,Partial
+52,Self-Employed,35836,683,648384,No,Plot Purchase,3109286,18,Yes,Home,705636,Partial
+32,Business,49273,841,1059742,Yes,Construction,3355513,6,Yes,Home,1076613,Approved
+55,Self-Employed,23562,775,664245,No,Buy House,3317097,11,No,Home,401227,Partial
+31,Self-Employed,75750,520,349531,No,Construction,3059749,17,No,Home,1617181,Partial
+40,Student,30935,801,963105,No,Construction,847584,14,No,Home,555571,Approved
+29,Business,50639,772,457484,No,Buy House,3499838,10,No,Home,985561,Approved
+56,Self-Employed,70237,710,594542,Yes,Renovation,3530349,3,Yes,Home,1344405,Approved
+23,Business,79783,784,607501,No,Buy House,3674708,2,Yes,Home,1689762,Approved
+39,Salaried,48863,804,887754,Yes,Renovation,1538240,5,No,Home,751181,Approved
+37,Student,54603,738,678424,No,Renovation,2344678,25,No,Home,986313,Partial
+42,Self-Employed,73071,678,68524,Yes,Construction,4124472,4,No,Home,63214,Rejected
+53,Student,34326,850,705915,No,Buy House,1433780,10,No,Home,974430,Partial
+55,Self-Employed,77732,867,1002404,Yes,Construction,3122511,25,Yes,Home,1627724,Approved
+30,Student,41228,659,1126696,No,Plot Purchase,853300,1,No,Home,572440,Partial
+48,Self-Employed,27303,699,704970,No,Plot Purchase,2080141,21,Yes,Home,584374,Partial
+32,Salaried,39723,731,287016,No,Plot Purchase,2730251,3,No,Home,284245,Rejected
+35,Self-Employed,50895,556,278180,No,Renovation,3991165,1,No,Home,894702,Partial
+34,Business,24084,522,1082633,Yes,Buy House,4902938,6,Yes,Home,397490,Partial
+33,Self-Employed,146442,633,1086895,Yes,Buy House,3987915,15,Yes,Home,2489672,Approved
+43,Student,88560,709,650601,Yes,Construction,4754066,23,Yes,Home,1542579,Partial
+41,Salaried,28159,501,288327,Yes,Buy House,1313227,5,No,Home,194879,Rejected
+60,Business,63738,566,337467,Yes,Renovation,1051491,12,Yes,Home,877038,Approved
+44,Student,50934,805,79762,No,Construction,1190065,2,Yes,Home,1190065,Approved
+31,Self-Employed,31425,744,900558,Yes,Construction,4281916,4,No,Home,667791,Rejected
+21,Student,49476,753,697121,No,Construction,4933920,20,Yes,Home,907571,Approved
+30,Self-Employed,74353,551,612025,Yes,Plot Purchase,2348761,8,Yes,Home,1267215,Partial
+58,Student,54316,648,324550,Yes,Buy House,2460073,24,No,Home,639983,Partial
+36,Self-Employed,20383,662,741214,Yes,Construction,2602176,21,No,Home,61771,Rejected
+38,Student,49246,543,1042057,No,Plot Purchase,3005057,22,Yes,Home,1133922,Partial
+22,Self-Employed,34989,751,1174408,No,Plot Purchase,4596388,5,No,Home,747427,Approved
+53,Self-Employed,49020,770,317184,Yes,Renovation,3769034,25,Yes,Home,808128,Approved
+24,Student,42730,856,369707,No,Renovation,2697985,6,Yes,Home,1258997,Approved
+48,Self-Employed,33135,716,1114186,No,Plot Purchase,1941856,16,No,Home,291376,Rejected
+40,Self-Employed,88758,552,314237,Yes,Renovation,4081944,16,Yes,Home,1445656,Partial
+33,Self-Employed,52312,636,314524,No,Renovation,4519352,4,Yes,Home,1278143,Approved
+21,Salaried,37178,580,1007987,Yes,Plot Purchase,1847439,22,No,Home,178979,Rejected
+38,Salaried,49200,681,998375,No,Construction,3241981,19,Yes,Home,925463,Approved
+59,Student,47851,900,926970,No,Plot Purchase,3114128,2,Yes,Home,1220410,Approved
+37,Student,23313,845,529071,No,Plot Purchase,1672125,8,No,Home,583020,Approved
+45,Business,23532,702,226730,Yes,Plot Purchase,4338560,4,Yes,Home,678521,Rejected
+49,Business,37129,551,925544,Yes,Buy House,3559535,7,Yes,Home,29752,Rejected
+50,Student,42380,632,600140,No,Construction,3007660,2,No,Home,573862,Rejected
+41,Business,75591,848,206372,No,Plot Purchase,3365531,12,Yes,Home,1957990,Approved
+46,Student,70955,548,443937,No,Plot Purchase,3626971,23,No,Home,1624599,Partial
+31,Student,26219,717,1081409,No,Construction,1436991,25,Yes,Home,501954,Partial
+46,Student,31146,651,298988,No,Buy House,3516535,4,No,Home,574606,Rejected
+30,Student,27355,777,534539,Yes,Renovation,904172,15,Yes,Home,337484,Approved
+60,Business,63584,673,423154,No,Construction,2993556,6,No,Home,1218337,Partial
+44,Student,110764,646,181565,Yes,Renovation,1610519,11,Yes,Home,1578684,Partial
+59,Self-Employed,73514,862,489686,No,Construction,4473127,9,Yes,Home,1687917,Approved
+31,Salaried,38317,809,1019558,Yes,Buy House,3116013,3,No,Home,796937,Partial
+59,Business,45046,822,471315,No,Plot Purchase,2750891,10,No,Home,875688,Approved
+58,Student,69976,596,771513,Yes,Buy House,4270463,25,Yes,Home,1123257,Partial
+59,Self-Employed,50967,847,270609,No,Construction,4050175,3,Yes,Home,1233200,Approved
+42,Self-Employed,31637,555,548511,No,Plot Purchase,4167420,3,Yes,Home,691376,Partial
+26,Student,23081,603,147718,Yes,Buy House,2213590,22,No,Home,2443,Rejected
+41,Business,46215,865,806088,Yes,Construction,2324937,6,Yes,Home,917949,Approved
+30,Student,49210,709,392227,Yes,Buy House,1809007,15,Yes,Home,806855,Partial
+32,Self-Employed,145229,519,727572,No,Construction,1776279,22,No,Home,1776279,Partial
+36,Business,33247,507,1027520,Yes,Plot Purchase,4106662,17,Yes,Home,433610,Partial
+33,Student,135879,649,192782,No,Buy House,3497059,1,No,Home,2465616,Partial
+39,Salaried,21364,511,664076,Yes,Buy House,1034571,21,No,Home,92213,Rejected
+55,Salaried,72419,851,1118875,Yes,Buy House,2599299,17,No,Home,1074413,Partial
+35,Student,26671,674,52700,Yes,Buy House,3236401,13,Yes,Home,346817,Rejected
+32,Business,62183,823,113861,Yes,Plot Purchase,4347044,5,Yes,Home,1177849,Approved
+38,Business,63628,817,603190,Yes,Plot Purchase,887490,25,No,Home,887490,Approved
+29,Self-Employed,23748,562,159461,Yes,Renovation,2951670,18,No,Home,274201,Rejected
+27,Salaried,49019,743,1183395,No,Buy House,4733896,7,Yes,Home,816377,Approved
+45,Self-Employed,42728,782,934250,No,Construction,1144368,15,Yes,Home,1068976,Approved
+23,Salaried,124742,785,388111,No,Buy House,4082561,15,Yes,Home,2161536,Approved
+25,Self-Employed,26368,693,940380,Yes,Renovation,3214296,15,Yes,Home,414641,Partial
+24,Salaried,63433,603,376338,No,Renovation,1670675,12,Yes,Home,933773,Approved
+24,Business,53921,881,93809,Yes,Construction,3169517,1,No,Home,946229,Partial
+52,Student,40863,718,341153,No,Renovation,2011377,18,No,Home,203660,Rejected
+37,Self-Employed,20686,639,321955,Yes,Renovation,4174157,15,No,Home,425504,Rejected
+47,Business,34821,650,992065,No,Construction,1916646,11,No,Home,297998,Rejected
+33,Student,133505,640,467770,No,Buy House,4594333,5,No,Home,3237408,Partial
+60,Business,27116,714,348664,No,Renovation,4515988,17,No,Home,699393,Rejected
+32,Student,100429,868,434837,Yes,Construction,2861068,14,No,Home,1830960,Approved
+60,Salaried,75788,502,38179,Yes,Plot Purchase,3792185,11,Yes,Home,1502202,Partial
+40,Salaried,49794,716,956623,No,Plot Purchase,3343765,11,Yes,Home,1060073,Partial
+30,Self-Employed,37442,825,351938,No,Renovation,1750936,23,No,Home,843873,Partial
+23,Self-Employed,65494,622,61846,No,Construction,966569,15,Yes,Home,966569,Partial
+42,Salaried,52258,579,649364,No,Renovation,3490214,5,Yes,Home,1362375,Approved
+26,Student,76193,680,896061,Yes,Renovation,3150872,12,No,Home,54537,Rejected
+36,Student,34186,635,980679,Yes,Renovation,889572,11,Yes,Home,123239,Rejected
+45,Business,42016,649,723877,No,Construction,3669983,17,No,Home,579215,Rejected
+33,Business,22729,892,197828,No,Buy House,1878152,17,Yes,Home,473092,Partial
+25,Self-Employed,27764,740,40227,Yes,Buy House,2110667,24,No,Home,348619,Rejected
+27,Salaried,24545,595,190195,Yes,Buy House,4432010,3,Yes,Home,405695,Rejected
+41,Self-Employed,26465,847,410206,No,Construction,2351287,10,Yes,Home,648990,Approved
+37,Self-Employed,68856,900,280068,Yes,Plot Purchase,2710216,7,Yes,Home,1393489,Approved
+39,Business,29352,633,743012,Yes,Plot Purchase,3160966,17,Yes,Home,339887,Partial
+43,Salaried,76795,687,955187,Yes,Plot Purchase,3832312,24,Yes,Home,1343133,Partial
+41,Business,46573,664,649663,No,Renovation,2230701,11,Yes,Home,1033628,Partial
+50,Student,132854,716,993901,No,Construction,4319836,5,Yes,Home,3504733,Partial
+45,Self-Employed,20457,705,382345,Yes,Renovation,1595627,19,Yes,Home,176850,Rejected
+33,Salaried,25187,710,1172025,No,Construction,4987063,8,Yes,Home,577829,Partial
+52,Salaried,23473,541,1019712,No,Construction,2615327,5,Yes,Home,565793,Partial
+31,Student,72416,877,275532,Yes,Plot Purchase,3931926,17,No,Home,1307985,Approved
+25,Salaried,33664,642,509555,No,Plot Purchase,3658479,21,No,Home,337466,Rejected
+57,Self-Employed,69969,705,542398,No,Buy House,3429493,19,No,Home,1107114,Partial
+41,Salaried,35161,789,160352,No,Plot Purchase,2000270,13,Yes,Home,734501,Partial
+36,Self-Employed,60723,680,1031987,Yes,Construction,3435434,9,No,Home,987248,Partial
+59,Salaried,21984,770,1117863,No,Construction,891553,8,No,Home,330421,Partial
+22,Salaried,74982,648,995048,Yes,Renovation,4525710,15,No,Home,825774,Partial
+38,Self-Employed,64855,676,289558,No,Buy House,3539199,1,Yes,Home,1238632,Approved
+45,Salaried,71179,623,704951,Yes,Plot Purchase,1130355,21,No,Home,130200,Rejected
+25,Salaried,23350,692,512859,Yes,Plot Purchase,3636675,25,No,Home,516377,Rejected
+46,Salaried,41031,898,345025,Yes,Renovation,1766779,7,No,Home,531182,Partial
+56,Salaried,47619,843,108908,Yes,Renovation,1954885,8,Yes,Home,916027,Approved
+46,Salaried,29490,686,890189,Yes,Buy House,2551848,2,Yes,Home,413530,Partial
+26,Student,47165,527,339303,Yes,Plot Purchase,3939860,21,No,Home,519145,Partial
+59,Student,30717,821,269912,No,Construction,4203181,15,Yes,Home,595715,Approved
+27,Self-Employed,38684,797,469508,No,Buy House,2727786,12,No,Home,547687,Partial
+21,Self-Employed,78193,664,834893,No,Renovation,4924529,15,No,Home,1384566,Partial
+36,Salaried,78981,503,124916,Yes,Plot Purchase,4533439,9,Yes,Home,1558781,Partial
+27,Salaried,41160,554,801862,Yes,Buy House,3295358,9,No,Home,275487,Rejected
+50,Self-Employed,40863,895,83685,No,Buy House,1522219,6,Yes,Home,1144461,Partial
+56,Student,43031,609,341482,Yes,Construction,1050803,3,No,Home,108114,Rejected
+32,Salaried,21442,792,610492,No,Buy House,3081386,7,No,Home,351306,Partial
+21,Salaried,77375,864,1044516,Yes,Plot Purchase,3853745,23,Yes,Home,1516339,Approved
+51,Self-Employed,49550,671,1154070,Yes,Construction,2259305,11,No,Home,749136,Partial
+39,Self-Employed,74631,893,1157219,No,Buy House,2923998,12,No,Home,1486189,Approved
+50,Business,78240,731,740274,Yes,Renovation,1970389,20,No,Home,1181044,Partial
+47,Salaried,85503,674,28473,No,Renovation,3609342,18,Yes,Home,1663591,Partial
+44,Business,46848,674,756382,No,Renovation,4605526,23,Yes,Home,1255911,Approved
+33,Salaried,66532,847,322735,Yes,Renovation,4206780,23,No,Home,1259742,Approved
+27,Self-Employed,21019,627,409470,Yes,Construction,1797849,3,No,Home,5540,Rejected
+59,Student,32285,655,1023360,Yes,Buy House,4994260,22,No,Home,496602,Rejected
+45,Salaried,39238,810,1048251,Yes,Construction,1528371,13,Yes,Home,597526,Approved
+36,Salaried,44544,678,1004150,Yes,Construction,2616597,11,No,Home,311127,Rejected
+22,Business,25938,690,834068,Yes,Construction,2258935,9,Yes,Home,342917,Partial
+39,Student,42505,509,437591,No,Buy House,4048938,16,Yes,Home,861022,Partial
+32,Self-Employed,42381,664,499686,No,Buy House,2179366,23,Yes,Home,887585,Partial
+59,Salaried,32015,831,63070,No,Construction,4773331,21,Yes,Home,761835,Partial
+48,Salaried,28610,891,770030,No,Renovation,1815112,13,Yes,Home,650455,Approved
+33,Business,67889,634,1022186,Yes,Construction,1771818,22,Yes,Home,870526,Partial
+29,Business,21965,602,256459,No,Plot Purchase,1949757,19,Yes,Home,600297,Partial
+34,Self-Employed,65673,613,381586,No,Renovation,1864980,18,Yes,Home,1382314,Approved
+53,Salaried,28095,826,778587,Yes,Buy House,4422796,9,No,Home,578295,Partial
+22,Self-Employed,62245,678,491274,Yes,Renovation,2824511,16,No,Home,752731,Partial
+59,Salaried,38405,599,325269,Yes,Construction,3155801,12,No,Home,358070,Rejected
+40,Student,141593,650,1194798,Yes,Buy House,4907696,16,No,Home,2058373,Partial
+25,Student,58889,873,1096925,Yes,Renovation,2404460,11,No,Home,1048896,Approved
+42,Business,39587,685,415004,Yes,Renovation,3832372,25,No,Home,545377,Rejected
+32,Salaried,78710,632,451455,No,Skill Course,615131,6,No,Education,615131,Partial
+57,Business,24795,610,549605,Yes,Higher Studies,239557,13,No,Education,32443,Rejected
+50,Student,33778,506,916967,No,PhD,1016816,20,Yes,Education,595638,Partial
+28,Student,51786,508,601657,Yes,Abroad Studies,1743895,18,No,Education,107422,Rejected
+23,Salaried,31062,791,615985,No,Abroad Studies,1396694,8,Yes,Education,734093,Approved
+36,Self-Employed,39140,629,380379,No,Abroad Studies,291213,7,Yes,Education,291213,Partial
+36,Business,35057,765,482089,No,Abroad Studies,1507527,4,Yes,Education,806319,Approved
+45,Business,23288,825,951414,No,PhD,148290,5,No,Education,148290,Partial
+48,Student,36352,650,947338,Yes,Higher Studies,1360290,12,Yes,Education,492651,Partial
+34,Student,28983,638,504222,No,Higher Studies,1539678,20,No,Education,11471,Rejected
+45,Student,20671,693,953919,No,Skill Course,830291,3,No,Education,68120,Rejected
+51,Self-Employed,47972,667,1133454,Yes,Skill Course,200618,2,No,Education,200618,Partial
+26,Salaried,37211,836,332537,No,Skill Course,1926637,5,No,Education,699500,Partial
+54,Salaried,23023,867,388981,No,PhD,1976787,18,No,Education,502578,Partial
+33,Salaried,23326,701,394825,Yes,Skill Course,1616678,25,No,Education,128789,Rejected
+21,Student,75112,705,63448,Yes,Abroad Studies,201385,13,Yes,Education,201385,Partial
+59,Student,29151,659,387305,Yes,Abroad Studies,1442462,23,Yes,Education,300,Rejected
+39,Business,36054,822,1174095,No,Skill Course,1749168,17,No,Education,882778,Approved
+47,Self-Employed,36375,504,453886,Yes,Skill Course,342296,20,No,Education,3129,Rejected
+41,Business,20525,700,328638,No,Skill Course,931228,19,Yes,Education,422935,Partial
+49,Student,35281,816,449271,No,Higher Studies,614569,5,No,Education,614569,Partial
+39,Student,35240,888,928868,Yes,Skill Course,1821959,20,No,Education,554736,Partial
+51,Salaried,26339,665,368012,Yes,Skill Course,225592,4,Yes,Education,24331,Rejected
+22,Business,46165,809,704813,No,Higher Studies,1952903,12,Yes,Education,1268019,Approved
+53,Salaried,67957,865,1081049,Yes,Skill Course,1485412,5,No,Education,1280488,Approved
+30,Self-Employed,56434,549,598310,No,Higher Studies,735248,8,Yes,Education,735248,Partial
+57,Self-Employed,47063,830,1167259,No,Higher Studies,442656,7,Yes,Education,442656,Approved
+25,Self-Employed,25426,847,259572,Yes,Skill Course,1393519,22,No,Education,545050,Partial
+37,Student,60700,686,1110620,No,Abroad Studies,1809035,20,Yes,Education,1173030,Partial
+53,Student,43733,734,649863,No,Abroad Studies,1871020,4,Yes,Education,984223,Partial
+30,Salaried,66576,696,858547,No,Skill Course,270140,19,No,Education,270140,Partial
+25,Student,87459,705,926321,Yes,Higher Studies,799999,14,No,Education,799999,Partial
+52,Business,33281,631,620766,Yes,Skill Course,433849,20,Yes,Education,433849,Partial
+27,Salaried,44164,569,918719,No,Higher Studies,104377,3,Yes,Education,104377,Partial
+44,Student,52868,539,712357,Yes,Higher Studies,1388413,2,Yes,Education,858816,Partial
+31,Business,66069,575,631169,Yes,Abroad Studies,236194,20,No,Education,236194,Partial
+53,Salaried,27333,729,845005,No,PhD,1799261,22,Yes,Education,551896,Partial
+39,Business,27704,800,704950,Yes,Abroad Studies,1574789,8,No,Education,275056,Partial
+28,Self-Employed,34710,592,174019,No,Skill Course,1314817,25,No,Education,64287,Rejected
+56,Student,107496,888,90959,No,Abroad Studies,823697,6,No,Education,823697,Partial
+37,Business,36305,651,698595,No,PhD,1480774,5,No,Education,96449,Rejected
+21,Self-Employed,134500,542,330730,Yes,PhD,682719,5,Yes,Education,682719,Partial
+21,Student,76222,807,25740,Yes,Abroad Studies,409971,16,Yes,Education,409971,Approved
+53,Student,49149,676,432428,No,PhD,1608077,25,Yes,Education,1142405,Approved
+23,Student,33347,702,151697,No,Abroad Studies,760979,14,No,Education,10147,Rejected
+35,Student,20140,606,485150,No,Higher Studies,1001797,8,No,Education,71731,Rejected
+55,Business,48460,884,662156,Yes,Skill Course,1735096,16,Yes,Education,1187014,Approved
+45,Student,41499,688,920727,Yes,PhD,143391,11,Yes,Education,8460,Rejected
+31,Student,63618,554,448014,Yes,Skill Course,749052,12,Yes,Education,749052,Partial
+28,Salaried,88649,790,395328,Yes,Skill Course,354676,25,No,Education,354676,Approved
+60,Student,61674,811,389934,No,Higher Studies,1400951,7,No,Education,1400951,Approved
+42,Self-Employed,42594,662,756902,Yes,PhD,317200,11,No,Education,41778,Rejected
+51,Salaried,109721,847,1189073,No,Skill Course,517570,13,No,Education,517570,Approved
+57,Student,41776,887,730359,No,Skill Course,1907759,24,Yes,Education,991685,Approved
+59,Salaried,35513,671,734506,Yes,Skill Course,615978,20,Yes,Education,561786,Partial
+23,Salaried,29837,756,561655,No,Skill Course,1882027,5,No,Education,745518,Approved
+44,Salaried,44203,603,74835,No,Higher Studies,1923483,11,Yes,Education,52493,Rejected
+44,Salaried,28657,802,279474,Yes,Higher Studies,585531,19,Yes,Education,553766,Partial
+56,Salaried,67988,897,1165180,No,Higher Studies,1977634,18,No,Education,1425616,Approved
+47,Salaried,58817,756,164174,Yes,Higher Studies,1969406,19,Yes,Education,848101,Approved
+46,Salaried,39361,784,191985,No,Higher Studies,1422965,6,Yes,Education,884820,Partial
+29,Self-Employed,76942,851,520352,No,Abroad Studies,1133167,1,No,Education,1133167,Approved
+45,Self-Employed,59592,652,883068,No,Higher Studies,1582485,9,Yes,Education,1186611,Approved
+21,Salaried,26264,897,288836,Yes,Abroad Studies,377764,21,Yes,Education,377764,Partial
+23,Salaried,54357,791,256167,Yes,Higher Studies,1840574,21,Yes,Education,798973,Approved
+49,Self-Employed,41232,815,701808,No,PhD,1490662,13,No,Education,928863,Partial
+45,Student,41818,890,529122,No,PhD,202620,16,No,Education,202620,Partial
+24,Salaried,67180,653,251560,No,Skill Course,471321,5,No,Education,471321,Partial
+54,Salaried,31398,629,962340,Yes,PhD,919136,23,No,Education,34992,Rejected
+22,Self-Employed,62602,671,1088913,Yes,Skill Course,1194772,4,No,Education,867283,Partial
+54,Student,50666,513,525887,No,Abroad Studies,1416003,9,Yes,Education,1083042,Approved
+22,Student,75222,673,735750,Yes,Abroad Studies,327470,16,Yes,Education,327470,Partial
+38,Self-Employed,71950,875,768447,Yes,Abroad Studies,1967004,13,No,Education,1238573,Approved
+43,Business,67449,630,923501,Yes,Higher Studies,1285224,23,Yes,Education,1073130,Partial
+34,Business,44202,587,1170430,No,Abroad Studies,1647749,23,Yes,Education,738602,Partial
+37,Salaried,133627,535,963376,Yes,Abroad Studies,1382983,3,No,Education,126463,Rejected
+23,Business,67730,596,33330,No,Skill Course,309911,7,No,Education,37727,Rejected
+38,Salaried,31434,836,1186618,Yes,Higher Studies,1499426,1,Yes,Education,583290,Approved
+35,Salaried,56418,771,298141,No,PhD,573170,15,Yes,Education,573170,Approved
+34,Student,78842,896,925597,Yes,Abroad Studies,1093483,23,Yes,Education,1093483,Approved
+55,Self-Employed,79259,611,350373,Yes,PhD,327414,3,Yes,Education,327414,Approved
+38,Student,55158,873,1137462,Yes,Abroad Studies,1381252,15,No,Education,781104,Approved
+34,Salaried,29684,669,994899,Yes,Abroad Studies,1989179,19,Yes,Education,59330,Rejected
+56,Business,41287,695,303573,Yes,Abroad Studies,1775504,17,Yes,Education,514027,Partial
+59,Salaried,38097,567,1147358,Yes,Skill Course,1251142,9,No,Education,128583,Rejected
+34,Self-Employed,57226,743,1106230,Yes,Higher Studies,985254,20,No,Education,43157,Rejected
+38,Student,45083,503,70766,Yes,Abroad Studies,1688715,3,No,Education,51516,Rejected
+49,Student,40671,875,74193,Yes,PhD,1509660,12,No,Education,151971,Rejected
+39,Student,37883,874,1152490,No,Higher Studies,415783,10,No,Education,415783,Partial
+60,Salaried,35364,555,1000025,Yes,Higher Studies,1488392,2,Yes,Education,622959,Partial
+42,Salaried,36904,620,869731,No,Abroad Studies,966065,19,Yes,Education,876634,Partial
+41,Student,62000,622,807114,Yes,PhD,211226,18,Yes,Education,211226,Approved
+60,Business,75773,880,1122728,Yes,Higher Studies,661639,5,Yes,Education,661639,Approved
+37,Salaried,79991,601,568631,No,PhD,1145319,21,Yes,Education,1145319,Approved
+33,Salaried,27937,508,316749,No,Abroad Studies,1194133,20,No,Education,63626,Rejected
+47,Self-Employed,43764,831,468526,Yes,Higher Studies,1068811,10,No,Education,766359,Partial
+45,Self-Employed,44585,638,108749,Yes,Skill Course,812886,13,Yes,Education,6098,Rejected
+26,Business,33473,795,1095797,Yes,Higher Studies,872531,25,Yes,Education,545597,Approved
+32,Student,24399,707,149037,No,Higher Studies,1888798,2,No,Education,109543,Rejected
+43,Self-Employed,58445,714,276230,No,Abroad Studies,1790195,24,Yes,Education,1117142,Partial
+50,Business,75801,506,436533,Yes,Abroad Studies,1133017,19,Yes,Education,1087361,Partial
+35,Salaried,78011,509,195878,No,PhD,299874,25,No,Education,299874,Partial
+56,Salaried,26056,604,81652,Yes,Higher Studies,1252889,11,No,Education,3439,Rejected
+36,Business,40867,788,614855,Yes,Higher Studies,1950277,24,No,Education,561710,Partial
+43,Self-Employed,52499,610,278313,No,Abroad Studies,585175,4,No,Education,585175,Partial
+22,Self-Employed,63346,592,350674,Yes,Higher Studies,603615,20,Yes,Education,603615,Approved
+25,Salaried,21195,796,292739,No,Skill Course,1422208,24,Yes,Education,474062,Approved
+52,Business,45910,853,221295,Yes,PhD,1736421,24,Yes,Education,1161516,Partial
+24,Self-Employed,33036,743,77188,No,Higher Studies,771881,5,No,Education,57305,Rejected
+37,Student,46784,671,404625,No,PhD,1413610,19,Yes,Education,984687,Approved
+30,Self-Employed,114575,606,262910,Yes,PhD,1736288,10,Yes,Education,1583878,Partial
+56,Self-Employed,26945,648,280334,Yes,PhD,1549358,4,No,Education,193065,Rejected
+57,Salaried,59364,720,53078,No,PhD,1685905,9,Yes,Education,1420716,Partial
+45,Student,71029,874,976725,Yes,Abroad Studies,1222531,17,No,Education,1222531,Approved
+57,Self-Employed,38525,502,1069495,No,Abroad Studies,1967597,19,Yes,Education,769201,Partial
+35,Student,75437,824,1194087,Yes,PhD,425060,14,Yes,Education,425060,Approved
+47,Salaried,55699,800,1197885,Yes,Skill Course,1505399,17,Yes,Education,1051547,Approved
+54,Self-Employed,68388,793,26442,No,Abroad Studies,1992152,14,Yes,Education,1387815,Approved
+30,Business,31754,619,930469,No,PhD,822924,3,No,Education,694733,Partial
+34,Salaried,46500,687,325591,Yes,Skill Course,1673748,17,No,Education,140009,Rejected
+46,Self-Employed,46092,851,590218,Yes,PhD,1677756,1,Yes,Education,751925,Approved
+53,Business,79732,737,135659,Yes,Abroad Studies,257405,25,No,Education,21944,Rejected
+22,Salaried,129178,679,605623,Yes,Skill Course,213924,10,Yes,Education,213924,Approved
+54,Self-Employed,64527,881,321251,Yes,Abroad Studies,1436940,24,No,Education,1097375,Approved
+49,Business,32803,591,961673,Yes,PhD,1508014,24,No,Education,291223,Rejected
+26,Business,77067,650,120023,Yes,Skill Course,147678,19,Yes,Education,147678,Partial
+37,Salaried,106010,630,207038,Yes,Abroad Studies,524921,11,No,Education,61235,Rejected
+55,Salaried,26714,763,233189,Yes,Higher Studies,896560,20,Yes,Education,371988,Partial
+53,Student,36244,645,808489,Yes,PhD,255893,7,Yes,Education,255893,Partial
+31,Student,48315,666,110180,Yes,Skill Course,210939,14,No,Education,6659,Rejected
+46,Business,24645,848,1096658,Yes,Higher Studies,1848936,6,Yes,Education,553075,Approved
+58,Self-Employed,26336,720,900526,Yes,PhD,1744994,19,No,Education,121440,Rejected
+55,Self-Employed,77790,670,687820,No,Abroad Studies,1300462,1,No,Education,1300462,Partial
+58,Business,23899,690,148112,No,PhD,1186906,16,Yes,Education,200418,Rejected
+21,Business,22764,764,398428,Yes,Skill Course,1513235,21,No,Education,257872,Partial
+44,Salaried,67665,747,575553,No,Higher Studies,1196469,19,Yes,Education,1196469,Approved
+41,Business,85169,669,583121,Yes,Higher Studies,432056,14,No,Education,432056,Partial
+42,Salaried,110121,859,928383,No,Abroad Studies,725239,17,No,Education,725239,Approved
+56,Salaried,59292,681,1164399,No,PhD,292236,25,Yes,Education,292236,Approved
+55,Business,35650,598,411666,Yes,Skill Course,897857,20,No,Education,164578,Rejected
+50,Business,66138,620,935332,No,Abroad Studies,771332,23,Yes,Education,771332,Approved
+55,Student,50022,624,518035,No,Higher Studies,1491607,2,No,Education,981450,Partial
+60,Student,68652,586,281778,Yes,Skill Course,1887783,9,Yes,Education,904225,Partial
+54,Business,32912,545,636906,Yes,Abroad Studies,1533457,21,Yes,Education,640424,Partial
+35,Self-Employed,49540,747,733421,No,Higher Studies,1535436,6,No,Education,871182,Partial
+51,Self-Employed,125004,674,380410,No,Abroad Studies,820004,19,Yes,Education,820004,Approved
+53,Salaried,32819,604,1046832,No,Higher Studies,1379019,13,No,Education,150630,Rejected
+37,Self-Employed,30047,751,1094392,Yes,PhD,445641,4,No,Education,406353,Partial
+42,Self-Employed,21235,546,460791,No,Skill Course,715828,10,Yes,Education,422490,Partial
+33,Salaried,25685,714,469771,No,Abroad Studies,1775212,16,Yes,Education,506206,Partial
+22,Student,99620,885,248809,No,Higher Studies,1728089,25,Yes,Education,1728089,Approved
+54,Salaried,67162,608,296057,No,Skill Course,372159,1,No,Education,372159,Partial
+43,Business,24484,863,917899,No,PhD,1761564,2,No,Education,515069,Approved
+31,Self-Employed,31071,695,606392,No,Skill Course,1770596,24,No,Education,151012,Rejected
+32,Self-Employed,40132,742,917806,No,Higher Studies,1950715,1,Yes,Education,770023,Partial
+44,Self-Employed,48783,631,294995,Yes,Higher Studies,536928,11,No,Education,68391,Rejected
+34,Business,25968,793,655987,No,PhD,1329840,17,No,Education,473462,Approved
+35,Business,40883,795,886709,Yes,Abroad Studies,868174,24,Yes,Education,707731,Approved
+25,Self-Employed,55665,748,300443,Yes,Abroad Studies,1372088,3,Yes,Education,1059682,Partial
+40,Salaried,44192,511,1109660,Yes,PhD,435860,14,No,Education,3175,Rejected
+55,Self-Employed,63240,612,976358,Yes,PhD,1073626,6,No,Education,911176,Partial
+56,Student,32416,573,88563,No,PhD,901977,5,Yes,Education,144015,Rejected
+32,Business,141443,558,471031,Yes,Abroad Studies,1857121,15,Yes,Education,1857121,Partial
+57,Self-Employed,78887,512,915693,No,Skill Course,595498,22,Yes,Education,595498,Approved
+44,Self-Employed,78040,773,691515,No,Higher Studies,1125723,9,No,Education,1125723,Approved
+35,Self-Employed,59498,603,717563,No,Higher Studies,478453,9,No,Education,478453,Partial
+58,Business,38711,508,359926,Yes,PhD,1693302,11,Yes,Education,611475,Partial
+41,Self-Employed,38294,853,529664,Yes,Higher Studies,382520,5,Yes,Education,382520,Approved
+24,Self-Employed,48946,597,1182262,No,PhD,832562,20,No,Education,832562,Partial
+44,Student,40887,719,147676,Yes,Skill Course,733557,7,Yes,Education,84078,Rejected
+28,Business,47367,774,216228,Yes,Abroad Studies,1734143,25,Yes,Education,704566,Approved
+33,Business,48437,770,138884,Yes,PhD,273325,1,No,Education,273325,Partial
+59,Salaried,21586,759,262346,Yes,PhD,960066,6,Yes,Education,336563,Approved
+28,Salaried,32536,617,398970,Yes,PhD,385184,4,Yes,Education,385184,Partial
+49,Self-Employed,40413,775,97642,No,PhD,897512,19,Yes,Education,653261,Partial
+32,Business,71796,854,237326,Yes,Abroad Studies,310677,25,No,Education,310677,Partial
+46,Self-Employed,81146,642,302348,Yes,PhD,370128,20,No,Education,48067,Rejected
+43,Business,52164,888,22592,Yes,Abroad Studies,1734140,23,No,Education,1055664,Partial
+35,Business,29026,545,1172793,No,PhD,743710,18,No,Education,19647,Rejected
+30,Salaried,35789,829,278186,No,PhD,584036,20,Yes,Education,584036,Approved
+60,Salaried,43643,831,913803,Yes,Abroad Studies,365253,14,Yes,Education,365253,Approved
+27,Student,48313,587,35891,Yes,Higher Studies,623653,23,No,Education,119010,Rejected
+46,Business,45179,815,907491,No,Skill Course,1028644,20,Yes,Education,1028644,Approved
+32,Self-Employed,47576,532,988351,No,Higher Studies,1263796,1,Yes,Education,1214719,Partial
+53,Salaried,20873,826,1181493,Yes,PhD,679170,4,No,Education,338175,Partial
+23,Salaried,46618,814,959023,Yes,Higher Studies,818733,5,Yes,Education,799858,Approved
+23,Business,28077,591,500644,No,Skill Course,857325,3,Yes,Education,541848,Partial
+46,Self-Employed,26440,572,932462,Yes,PhD,993194,12,No,Education,53624,Rejected
+28,Salaried,41988,772,864271,Yes,PhD,1965702,15,No,Education,508759,Partial
+43,Salaried,47220,560,59805,Yes,PhD,969907,2,No,Education,164321,Rejected
+58,Salaried,76054,557,1038489,No,Higher Studies,141204,4,No,Education,141204,Partial
+56,Salaried,68446,882,585300,Yes,Higher Studies,764096,11,Yes,Education,764096,Approved
+53,Salaried,59753,874,1062087,No,Abroad Studies,1459010,20,No,Education,1207112,Approved
+28,Business,38236,747,881692,No,Abroad Studies,1117025,4,Yes,Education,948483,Partial
+57,Student,47227,541,936232,Yes,Higher Studies,1380408,7,No,Education,636386,Partial
+37,Self-Employed,77792,890,312692,Yes,Higher Studies,1181231,7,No,Education,1181231,Approved
+31,Salaried,21799,890,77523,No,Abroad Studies,874639,4,Yes,Education,717356,Approved
+26,Business,146015,795,1085809,Yes,Skill Course,737773,3,No,Education,737773,Approved
+43,Self-Employed,34429,816,937855,Yes,Higher Studies,1802615,18,Yes,Education,517770,Partial
+51,Student,23070,767,416182,No,Skill Course,1349232,19,Yes,Education,433368,Approved
+26,Self-Employed,36373,872,587103,Yes,Abroad Studies,1071734,20,No,Education,716985,Partial
+51,Salaried,39295,692,267283,No,Higher Studies,843671,3,No,Education,673643,Partial
+36,Self-Employed,42091,897,1180168,Yes,Skill Course,324413,11,No,Education,324413,Partial
+46,Self-Employed,21480,828,613577,No,Skill Course,1383045,13,Yes,Education,443616,Approved
+40,Self-Employed,20380,543,234349,No,Skill Course,1316342,5,Yes,Education,65566,Rejected
+21,Self-Employed,33111,665,498050,Yes,Skill Course,928770,14,Yes,Education,525704,Partial
+54,Business,52234,680,152980,Yes,Abroad Studies,1839999,10,Yes,Education,130172,Rejected
+43,Self-Employed,106814,748,507900,Yes,Higher Studies,816657,16,No,Education,816657,Partial
+37,Student,23093,700,65992,Yes,Skill Course,1139331,12,No,Education,112438,Rejected
+41,Salaried,72840,604,893234,No,PhD,1980255,3,No,Education,1320000,Partial
+37,Salaried,49738,823,988307,Yes,Higher Studies,1028725,4,No,Education,884679,Approved
+27,Self-Employed,70400,550,809644,No,Abroad Studies,1565659,18,No,Education,1420025,Partial
+40,Business,42566,744,706453,No,Skill Course,1785227,19,No,Education,314105,Rejected
+32,Salaried,75594,647,536730,No,Skill Course,337792,23,Yes,Education,337792,Partial
+24,Self-Employed,67624,863,848135,Yes,Abroad Studies,961488,14,No,Education,961488,Approved
+41,Student,32418,607,71953,No,Skill Course,475238,5,No,Education,49157,Rejected
+38,Business,33449,555,569728,Yes,Skill Course,988334,1,No,Education,140907,Rejected
+22,Business,60110,777,423256,Yes,Abroad Studies,1897337,14,Yes,Education,846356,Approved
+45,Self-Employed,56040,807,626476,Yes,Skill Course,1365946,4,No,Education,725240,Approved
+48,Self-Employed,53881,537,399676,No,PhD,751409,14,No,Education,751409,Partial
+25,Business,22590,590,229536,Yes,PhD,225763,12,No,Education,983,Rejected
+27,Business,32978,664,1191950,Yes,Abroad Studies,1311817,7,Yes,Education,559203,Partial
+21,Student,43536,634,364163,No,Higher Studies,445241,3,Yes,Education,445241,Partial
+51,Student,31328,819,1136292,Yes,Abroad Studies,872791,15,No,Education,550519,Partial
+29,Salaried,72765,849,700104,No,Higher Studies,165925,12,No,Education,165925,Approved
+39,Business,24772,740,253630,Yes,PhD,698665,7,Yes,Education,437824,Partial
+26,Business,45347,627,529390,No,PhD,455930,21,Yes,Education,455930,Partial
+55,Business,76859,560,761616,Yes,Higher Studies,1372427,21,Yes,Education,1372427,Approved
+37,Student,56369,577,501389,No,Skill Course,1408893,24,Yes,Education,1031483,Approved
+40,Salaried,48286,883,237761,Yes,PhD,1094407,23,No,Education,703273,Partial
+48,Student,116550,718,773851,No,Higher Studies,1831936,9,No,Education,1831936,Partial
+25,Business,57126,701,1178615,Yes,Abroad Studies,1449830,1,No,Education,263370,Rejected
+53,Student,74096,680,912516,Yes,Skill Course,759558,25,Yes,Education,759558,Approved
+51,Salaried,34726,785,810295,Yes,PhD,1589969,2,Yes,Education,432342,Approved
+34,Self-Employed,25332,631,236433,Yes,Higher Studies,921867,4,No,Education,45194,Rejected
+54,Salaried,68254,763,325566,Yes,Higher Studies,488212,2,Yes,Education,488212,Approved
+25,Business,32432,503,1085192,No,Higher Studies,123496,23,No,Education,12573,Rejected
+26,Student,43740,671,626838,No,Higher Studies,1336549,21,Yes,Education,962137,Partial
+56,Self-Employed,30136,676,683522,Yes,Abroad Studies,1637915,2,Yes,Education,95619,Rejected
+21,Student,59141,871,815217,No,Higher Studies,1993601,3,No,Education,1462665,Approved
+45,Business,22419,582,844154,No,Higher Studies,1576562,10,Yes,Education,480361,Partial
+49,Student,40123,872,583849,No,Skill Course,1721110,2,Yes,Education,1011598,Approved
+39,Self-Employed,43776,680,869884,Yes,Higher Studies,1207200,13,No,Education,136325,Rejected
+57,Salaried,42351,845,172353,No,PhD,478766,1,No,Education,478766,Partial
+50,Business,39487,603,202400,Yes,PhD,1881048,14,No,Education,41240,Rejected
+56,Salaried,79404,720,311923,Yes,Skill Course,1170589,15,No,Education,1149421,Partial
+52,Business,22956,756,1043992,No,Higher Studies,302526,13,Yes,Education,302526,Approved
+58,Business,137114,621,315516,No,PhD,211976,11,Yes,Education,211976,Approved
+29,Salaried,61358,816,1039439,Yes,Abroad Studies,106052,11,No,Education,106052,Approved
+52,Salaried,50592,733,152895,No,PhD,676945,8,No,Education,35654,Rejected
+38,Business,145943,571,708072,No,Higher Studies,1118114,1,Yes,Education,1118114,Approved
+49,Self-Employed,33752,569,802534,Yes,Higher Studies,1748993,16,Yes,Education,655512,Partial
+24,Salaried,32183,877,393293,No,Skill Course,489923,4,Yes,Education,489923,Approved
+44,Self-Employed,137749,572,305557,Yes,PhD,248646,2,Yes,Education,248646,Approved
+21,Business,42959,888,201663,No,Skill Course,576060,18,No,Education,576060,Partial
+47,Self-Employed,63505,677,559158,No,PhD,1853916,16,Yes,Education,1725303,Partial
+53,Self-Employed,106501,858,193313,Yes,Higher Studies,640681,25,Yes,Education,640681,Approved
+56,Business,26002,537,467397,No,Abroad Studies,807568,15,No,Education,71567,Rejected
+55,Business,34066,676,1169142,Yes,Skill Course,1236534,23,No,Education,83340,Rejected
+35,Business,119049,618,1152864,Yes,Higher Studies,1034314,11,No,Education,1034314,Partial
+46,Student,30995,647,852707,Yes,Higher Studies,1345848,7,Yes,Education,170158,Rejected
+27,Salaried,42932,604,233315,Yes,Higher Studies,1070351,4,Yes,Education,5006,Rejected
+30,Student,73074,895,835928,Yes,Abroad Studies,1429271,22,Yes,Education,1398463,Approved
+35,Student,58784,742,391461,Yes,Abroad Studies,1018001,3,Yes,Education,1018001,Partial
+43,Salaried,48178,704,126480,Yes,Skill Course,550046,11,Yes,Education,550046,Partial
+58,Student,49183,729,938681,No,Higher Studies,1704289,2,No,Education,1081491,Partial
+50,Salaried,127993,780,157914,Yes,Skill Course,1520901,1,No,Education,1520901,Partial
+21,Self-Employed,68972,535,750248,Yes,PhD,195645,2,Yes,Education,195645,Partial
+60,Salaried,124147,878,385454,No,Skill Course,1538698,12,Yes,Education,1538698,Approved
+25,Salaried,35954,674,47364,Yes,Higher Studies,254534,13,No,Education,2889,Rejected
+36,Business,42753,776,426523,No,Abroad Studies,143015,10,No,Education,143015,Partial
+31,Student,27142,544,43182,Yes,PhD,756625,16,Yes,Education,74938,Rejected
+27,Business,26021,681,411685,Yes,Skill Course,794220,8,Yes,Education,8375,Rejected
+57,Salaried,79241,687,117297,No,PhD,1170463,8,Yes,Education,1170463,Partial
+28,Salaried,34551,618,33621,No,PhD,800622,22,No,Education,48776,Rejected
+26,Self-Employed,39450,800,371245,No,Abroad Studies,978875,2,Yes,Education,978875,Approved
+30,Business,37061,532,988766,No,Higher Studies,1033059,1,Yes,Education,635264,Partial
+31,Self-Employed,68047,524,924814,Yes,Higher Studies,839396,4,Yes,Education,839396,Partial
+21,Student,34212,514,1075146,No,Skill Course,1253932,7,No,Education,149153,Rejected
+50,Business,42633,571,1103732,Yes,Skill Course,595626,23,Yes,Education,595626,Partial
+59,Self-Employed,32302,760,1086444,No,Skill Course,1949830,6,No,Education,712516,Partial
+53,Self-Employed,44706,601,133192,Yes,Skill Course,1225446,18,Yes,Education,59936,Rejected
+29,Self-Employed,22905,663,604604,Yes,Higher Studies,238493,24,Yes,Education,238493,Partial
+57,Self-Employed,72058,580,47358,Yes,Higher Studies,680907,2,Yes,Education,680907,Partial
+49,Business,24167,747,531074,No,Higher Studies,1984314,23,Yes,Education,502127,Partial
+24,Business,26456,507,742331,Yes,PhD,846290,15,No,Education,140841,Rejected
+35,Self-Employed,72407,520,208028,No,PhD,726079,22,Yes,Education,726079,Partial
+31,Self-Employed,45728,531,1155004,No,PhD,440163,3,No,Education,440163,Partial
+33,Salaried,20458,647,871155,No,PhD,1679455,14,No,Education,80201,Rejected
+26,Business,21980,637,554219,No,PhD,1004890,21,Yes,Education,583141,Partial
+59,Self-Employed,68598,602,653970,No,Abroad Studies,371530,6,No,Education,371530,Partial
+28,Salaried,24812,701,881794,Yes,Skill Course,659006,24,No,Education,10299,Rejected
+55,Business,92857,825,329369,Yes,Higher Studies,1479957,24,No,Education,1281540,Approved
+42,Self-Employed,73599,793,986646,Yes,Skill Course,1214906,12,Yes,Education,976608,Approved
+33,Salaried,57894,590,787231,No,Skill Course,1607365,13,Yes,Education,1159386,Approved
+45,Student,46085,676,582563,No,Abroad Studies,1015587,7,No,Education,1001994,Partial
+38,Business,43859,665,821757,Yes,Skill Course,365233,14,Yes,Education,2900,Rejected
+55,Salaried,47484,799,1085448,Yes,PhD,1349786,11,Yes,Education,800258,Approved
+57,Business,47664,615,522328,Yes,Abroad Studies,602472,15,No,Education,602472,Partial
+28,Student,24015,794,130392,No,Abroad Studies,1762283,21,Yes,Education,652785,Partial
+40,Student,56996,735,969601,No,Abroad Studies,318627,8,No,Education,318627,Partial
+28,Business,126697,757,272176,Yes,Higher Studies,1268074,12,No,Education,1268074,Approved
+38,Self-Employed,49682,659,564759,No,Higher Studies,335779,22,No,Education,335779,Partial
+22,Business,78683,758,486751,No,Abroad Studies,1310695,15,No,Education,1310695,Approved
+33,Self-Employed,23652,608,117813,No,Higher Studies,151561,5,No,Education,1495,Rejected
+23,Salaried,143419,766,288484,Yes,Skill Course,1071221,10,Yes,Education,1071221,Approved
+40,Self-Employed,96177,776,854658,Yes,Higher Studies,516199,16,Yes,Education,516199,Approved
+43,Self-Employed,32804,592,76180,Yes,Abroad Studies,821356,19,No,Education,92339,Rejected
+34,Self-Employed,24940,834,495716,Yes,Higher Studies,702573,17,Yes,Education,572344,Approved
+35,Student,27426,612,1083834,No,PhD,292178,2,No,Education,33518,Rejected
+32,Business,75819,850,352178,Yes,Higher Studies,129694,13,Yes,Education,129694,Approved
+43,Self-Employed,68294,882,403537,Yes,Skill Course,1220156,16,No,Education,1220156,Approved
+41,Business,54294,527,340374,Yes,Higher Studies,1682052,6,Yes,Education,704056,Partial
+56,Self-Employed,71791,882,406153,Yes,PhD,219873,24,No,Education,219873,Approved
+42,Self-Employed,21615,783,1024092,Yes,Higher Studies,669494,3,Yes,Education,367953,Approved
+27,Self-Employed,41921,710,1192078,No,Skill Course,411421,25,Yes,Education,411421,Partial
+45,Self-Employed,21878,637,857385,Yes,Skill Course,909744,19,No,Education,124818,Rejected
+23,Student,38634,522,161123,No,Skill Course,251038,3,No,Education,22427,Rejected
+42,Business,38663,744,808477,Yes,PhD,1247397,19,No,Education,125084,Rejected
+21,Self-Employed,25528,621,51266,Yes,Higher Studies,385118,20,No,Education,26448,Rejected
+57,Self-Employed,64091,879,866271,No,PhD,176201,18,No,Education,176201,Approved
+52,Business,46145,768,296512,No,Higher Studies,1065491,21,No,Education,1044392,Approved
+55,Business,63775,708,456217,No,Higher Studies,1421132,7,Yes,Education,1150300,Approved
+53,Student,24085,520,273863,Yes,Skill Course,1119823,12,Yes,Education,328308,Partial
+50,Student,43296,517,902617,No,Skill Course,1242435,13,No,Education,751353,Partial
+49,Business,91669,626,828781,No,Skill Course,1899148,14,Yes,Education,1560721,Approved
+43,Student,65410,575,829754,No,Abroad Studies,1073923,19,No,Education,1073923,Partial
+57,Student,42804,642,451779,Yes,PhD,1607885,23,No,Education,84678,Rejected
+54,Self-Employed,42099,639,512349,Yes,Skill Course,1382878,11,No,Education,227868,Rejected
+36,Student,114305,795,484323,No,Higher Studies,1760330,23,No,Education,1760330,Approved
+59,Self-Employed,57945,787,598369,No,Skill Course,1939356,10,Yes,Education,1131297,Approved
+56,Self-Employed,21564,665,901072,Yes,Abroad Studies,1307161,20,No,Education,253581,Rejected
+21,Business,42651,561,110915,No,Skill Course,504155,11,No,Education,48567,Rejected
+42,Business,54323,753,98207,Yes,Skill Course,683296,1,Yes,Education,683296,Approved
+25,Self-Employed,57322,706,77432,Yes,Higher Studies,385968,24,No,Education,43688,Rejected
+46,Student,39493,643,727540,No,Higher Studies,1303060,1,No,Education,94501,Rejected
+56,Student,42798,650,484073,Yes,Skill Course,200784,3,Yes,Education,200784,Partial
+47,Self-Employed,97791,531,428740,No,Abroad Studies,656003,15,No,Education,656003,Partial
+40,Self-Employed,73404,665,850986,Yes,Abroad Studies,1293449,2,No,Education,996882,Partial
+24,Self-Employed,71425,584,1041932,No,PhD,652591,10,Yes,Education,652591,Approved
+41,Salaried,37582,814,118422,Yes,PhD,919658,6,No,Education,41807,Rejected
+33,Self-Employed,25023,780,39543,Yes,Skill Course,941529,1,Yes,Education,396680,Partial
+35,Salaried,28311,657,162020,Yes,PhD,865880,22,No,Education,125406,Rejected
+60,Student,60329,696,138836,Yes,Abroad Studies,217545,9,No,Education,15127,Rejected
+58,Student,55592,628,588020,Yes,Skill Course,1061444,2,Yes,Education,1061444,Partial
+22,Salaried,25342,890,297668,No,Higher Studies,1021376,2,No,Education,604116,Approved
+55,Business,53329,842,1058493,No,Higher Studies,1405054,9,No,Education,1189034,Approved
+44,Self-Employed,34441,586,1003901,Yes,Abroad Studies,426215,11,Yes,Education,426215,Partial
+58,Student,44846,692,554191,Yes,Abroad Studies,1415335,8,No,Education,40007,Rejected
+32,Salaried,22816,751,1133411,No,Abroad Studies,1561482,17,Yes,Education,583126,Approved
+60,Salaried,79192,739,972976,Yes,Higher Studies,1773396,16,No,Education,1089221,Partial
+58,Student,55840,695,249411,No,Abroad Studies,398015,4,Yes,Education,398015,Partial
+36,Self-Employed,25956,546,626625,Yes,PhD,469408,5,Yes,Education,466788,Partial
+37,Business,56304,721,1151578,Yes,Skill Course,733427,7,No,Education,733427,Partial
+40,Business,39009,724,588248,No,Higher Studies,1903931,1,Yes,Education,833860,Partial
+53,Student,45103,769,959933,No,PhD,995774,9,Yes,Education,930830,Approved
+41,Business,26061,664,1014396,No,Skill Course,1289585,6,Yes,Education,396199,Partial
+46,Student,24645,755,78252,No,Abroad Studies,1342623,19,Yes,Education,424479,Partial
+47,Self-Employed,39379,697,863523,Yes,PhD,1501684,14,Yes,Education,597827,Partial
+60,Student,55895,548,179378,No,Higher Studies,1455404,22,No,Education,56082,Rejected
+35,Salaried,38805,709,490704,Yes,Abroad Studies,1883635,3,Yes,Education,575854,Partial
+25,Student,66757,749,801167,Yes,PhD,941929,14,No,Education,937776,Partial
+58,Salaried,28589,608,836763,No,Higher Studies,189297,10,Yes,Education,189297,Partial
+52,Business,65744,641,1112156,No,PhD,690912,25,No,Education,690912,Partial
+28,Business,57134,624,254447,Yes,Abroad Studies,475486,23,No,Education,90462,Rejected
+25,Salaried,40045,628,256491,No,Higher Studies,288843,24,No,Education,288843,Partial
+47,Student,37263,520,1097280,Yes,Higher Studies,559989,4,Yes,Education,494147,Partial
+31,Salaried,31397,762,1150871,No,Abroad Studies,1930746,7,No,Education,490457,Partial
+41,Self-Employed,49042,631,1173084,Yes,PhD,1866748,12,Yes,Education,845968,Partial
+60,Salaried,33045,656,363962,No,Abroad Studies,1898925,25,No,Education,108427,Rejected
+53,Business,78927,775,1034292,No,Skill Course,1431690,24,Yes,Education,1431690,Approved
+46,Self-Employed,23432,671,659008,Yes,Abroad Studies,425168,1,Yes,Education,304307,Partial
+59,Self-Employed,37713,778,752593,Yes,PhD,782343,15,Yes,Education,649256,Partial
+52,Business,21423,681,796437,Yes,Skill Course,618756,1,Yes,Education,58273,Rejected
+47,Salaried,36487,811,898705,Yes,Skill Course,1485674,18,No,Education,561635,Partial
+30,Business,42804,823,1139599,No,Skill Course,1305330,25,Yes,Education,928601,Approved
+40,Self-Employed,27324,892,932586,Yes,Skill Course,1959323,25,No,Education,483759,Partial
+49,Student,54677,826,907203,No,PhD,1115925,3,No,Education,1115925,Approved
+59,Business,42272,672,758078,No,Higher Studies,1167573,13,No,Education,222030,Rejected
+40,Salaried,27947,659,1108395,No,Higher Studies,898638,7,No,Education,69526,Rejected
+39,Student,39822,581,1099550,No,Abroad Studies,348025,1,No,Education,60120,Rejected
+23,Business,38116,736,57912,Yes,Skill Course,1190694,9,No,Education,229968,Rejected
+55,Self-Employed,76362,561,659885,Yes,Skill Course,1847782,20,No,Education,124026,Rejected
+21,Self-Employed,138600,724,119076,Yes,Skill Course,1610376,7,Yes,Education,1610376,Partial
+58,Student,50567,812,832442,No,Abroad Studies,1831131,4,No,Education,1391562,Approved
+39,Business,21696,662,60906,Yes,Abroad Studies,969154,17,No,Education,53489,Rejected
+48,Student,54027,534,639973,No,Higher Studies,925008,9,Yes,Education,925008,Approved
+48,Business,62263,504,812366,Yes,Higher Studies,778653,25,Yes,Education,778653,Partial
+51,Self-Employed,33941,768,399165,Yes,Skill Course,594742,20,Yes,Education,594742,Approved
+39,Business,58475,662,835367,No,Skill Course,880906,18,No,Education,880906,Partial
+27,Self-Employed,30241,510,307687,No,Abroad Studies,313128,11,No,Education,39055,Rejected
+24,Salaried,62924,523,211689,Yes,Abroad Studies,1733263,23,No,Education,82340,Rejected
+48,Student,37877,879,746673,No,Skill Course,458548,23,No,Education,458548,Partial
+43,Self-Employed,60245,514,1073519,No,Higher Studies,1040838,16,No,Education,1040838,Partial
+54,Salaried,39637,557,972333,No,Abroad Studies,1703662,9,No,Education,74001,Rejected
+40,Business,73980,796,255164,No,Skill Course,1572888,4,No,Education,1136339,Approved
+59,Self-Employed,27581,669,83512,Yes,Abroad Studies,983499,7,Yes,Education,52701,Rejected
+36,Self-Employed,21226,665,1141867,Yes,Skill Course,1765985,18,Yes,Education,333615,Partial
+21,Student,64248,587,151270,No,PhD,1550200,6,Yes,Education,1450927,Partial
+34,Student,65815,852,124862,Yes,Skill Course,990987,17,Yes,Education,990987,Approved
+45,Business,35702,649,360966,No,Skill Course,570776,19,Yes,Education,570776,Partial
+59,Student,70615,788,736083,Yes,Higher Studies,335228,20,Yes,Education,335228,Approved
+51,Self-Employed,37409,896,733829,Yes,PhD,1491609,4,Yes,Education,744228,Approved
+39,Business,36862,797,980120,No,Skill Course,1827812,15,Yes,Education,779574,Approved
+43,Self-Employed,94571,734,395705,Yes,PhD,1633286,3,No,Education,283350,Rejected
+33,Business,65143,542,1129646,No,Higher Studies,1756556,9,No,Education,1221470,Partial
+52,Self-Employed,32819,747,194063,Yes,Higher Studies,540234,24,Yes,Education,14952,Rejected
+26,Self-Employed,66112,741,596931,No,Higher Studies,1647464,19,Yes,Education,1557970,Approved
+57,Salaried,24843,655,907008,Yes,Higher Studies,1417020,8,No,Education,10835,Rejected
+50,Salaried,71920,617,847460,Yes,Higher Studies,1307274,24,Yes,Education,1111929,Partial
+36,Self-Employed,65543,683,680915,No,PhD,188630,4,Yes,Education,188630,Partial
+55,Salaried,73501,536,707321,Yes,Abroad Studies,1598695,5,No,Education,789563,Partial
+42,Business,44822,718,942475,Yes,PhD,1291916,7,No,Education,162183,Rejected
+24,Salaried,67844,712,922198,Yes,PhD,1495988,12,No,Education,754398,Partial
+45,Business,35969,646,747118,Yes,Skill Course,616107,4,No,Education,86510,Rejected
+29,Self-Employed,25954,710,352205,No,PhD,109827,25,No,Education,17079,Rejected
+26,Business,58403,590,884464,Yes,PhD,778071,2,Yes,Education,778071,Partial
+40,Business,51405,752,98587,Yes,Abroad Studies,1128474,22,Yes,Education,596059,Approved
+47,Self-Employed,48089,614,572174,No,PhD,343393,22,No,Education,343393,Partial
+22,Business,21471,652,565527,Yes,Abroad Studies,1160438,19,Yes,Education,400534,Partial
+38,Student,61489,590,517296,No,Abroad Studies,1873893,18,No,Education,906892,Partial
+33,Salaried,63921,864,271276,Yes,Skill Course,1726676,25,No,Education,1071438,Partial
+58,Salaried,26735,657,773180,Yes,Abroad Studies,948723,24,Yes,Education,461615,Partial
+37,Salaried,20276,880,256384,No,Higher Studies,490677,7,No,Education,412767,Partial
+31,Salaried,88890,764,507889,Yes,Skill Course,1044159,20,Yes,Education,1044159,Approved
+38,Salaried,43176,897,590658,Yes,Abroad Studies,667746,19,Yes,Education,667746,Approved
+56,Salaried,35817,800,227179,Yes,PhD,159058,5,No,Education,159058,Partial
+37,Business,25814,664,646099,Yes,Higher Studies,655776,6,No,Education,13531,Rejected
+23,Self-Employed,37230,689,820026,Yes,Higher Studies,413124,2,No,Education,7351,Rejected
+30,Salaried,30984,781,839826,No,Higher Studies,1297979,24,Yes,Education,663759,Approved
+58,Salaried,35232,641,82967,Yes,Abroad Studies,386390,4,No,Education,1615,Rejected
+22,Business,35121,596,92576,No,Higher Studies,328918,6,Yes,Education,5407,Rejected
+53,Business,71466,619,409310,Yes,Skill Course,1924813,1,No,Education,1177922,Partial
+52,Salaried,37929,738,1013968,Yes,Skill Course,613547,15,No,Education,108141,Rejected
+35,Student,45772,754,405177,No,PhD,132289,5,Yes,Education,132289,Approved
+58,Student,54651,891,55688,No,PhD,1952418,10,No,Education,990652,Partial
+32,Business,61572,629,293783,No,PhD,1363907,14,Yes,Education,1216487,Approved
+29,Student,127067,645,254769,No,Higher Studies,322928,2,Yes,Education,322928,Partial
+58,Salaried,34085,652,618811,No,PhD,1759190,9,No,Education,535640,Partial
+24,Salaried,28822,634,69567,Yes,Higher Studies,1299334,15,Yes,Education,148702,Rejected
+29,Salaried,21429,573,1129574,Yes,Abroad Studies,1747151,13,Yes,Education,377149,Partial
+38,Business,21280,616,489765,No,PhD,493198,11,No,Education,8640,Rejected
+31,Self-Employed,66111,758,50502,No,Abroad Studies,1696692,11,Yes,Education,977308,Approved
+56,Business,29558,824,970926,Yes,Higher Studies,107043,19,Yes,Education,107043,Partial
+21,Salaried,48045,819,339329,Yes,Abroad Studies,1057866,5,No,Education,903428,Approved
+45,Salaried,44020,670,192386,No,PhD,613684,16,No,Education,106946,Rejected
+58,Student,58161,714,222964,Yes,Higher Studies,1197631,15,Yes,Education,145567,Rejected
+44,Student,24637,800,334743,Yes,Higher Studies,243473,7,No,Education,243473,Partial
+38,Business,34630,674,545090,No,PhD,1005848,19,No,Education,481025,Partial
+24,Self-Employed,41101,756,1150521,Yes,Abroad Studies,1468639,23,Yes,Education,678202,Approved
+39,Salaried,49185,605,1133332,No,PhD,649621,17,Yes,Education,649621,Approved
+43,Self-Employed,25235,777,742344,No,Skill Course,282850,1,Yes,Education,282850,Approved
+56,Self-Employed,30879,514,898020,Yes,Skill Course,825513,21,Yes,Education,104223,Rejected
+28,Salaried,39713,507,574701,No,Higher Studies,278788,14,Yes,Education,278788,Partial
+50,Salaried,43704,765,440487,Yes,Higher Studies,835780,19,No,Education,544548,Partial
+37,Student,44098,697,701788,Yes,Skill Course,900767,25,No,Education,46584,Rejected
+30,Business,27168,797,822830,Yes,Skill Course,596181,4,Yes,Education,438570,Partial
+34,Student,24879,645,1190911,No,PhD,1221468,3,No,Education,26622,Rejected
+29,Business,56006,601,1088263,No,Skill Course,1565468,14,No,Education,1343174,Partial
+38,Salaried,137925,825,1164578,No,Skill Course,1092592,17,No,Education,1092592,Approved
+58,Salaried,61850,552,248281,No,Skill Course,405291,17,No,Education,27456,Rejected
+40,Salaried,33738,817,1168576,Yes,Higher Studies,805226,4,Yes,Education,752861,Approved
+43,Self-Employed,38836,725,858167,No,Higher Studies,311970,10,Yes,Education,311970,Partial
+26,Self-Employed,20082,830,509688,No,Skill Course,1149504,8,No,Education,487705,Partial
+38,Business,33276,711,58349,No,Higher Studies,481146,4,Yes,Education,40763,Rejected
+33,Student,43796,503,268436,No,PhD,108789,2,No,Education,21032,Rejected
+53,Business,21915,608,442879,Yes,Higher Studies,268153,20,No,Education,865,Rejected
+34,Student,142239,782,244264,No,PhD,1697877,24,Yes,Education,1697877,Approved
+45,Self-Employed,61626,878,126804,No,PhD,1822759,4,No,Education,1755182,Partial
+28,Salaried,34337,644,1131719,Yes,Higher Studies,1091005,23,Yes,Education,589500,Partial
+49,Salaried,45539,698,137939,Yes,PhD,321844,15,Yes,Education,321844,Partial
+28,Business,100268,525,825720,No,Higher Studies,1222970,16,No,Education,1222970,Partial
+23,Business,68339,722,401809,No,Skill Course,1744960,18,Yes,Education,1637392,Approved
+23,Salaried,28417,796,427171,Yes,Abroad Studies,440303,7,No,Education,325597,Partial
+45,Business,47751,651,1010190,Yes,Skill Course,239026,13,No,Education,239026,Partial
+57,Student,78753,743,694976,Yes,PhD,1976215,24,Yes,Education,1363172,Partial
+21,Business,108520,505,1116143,No,Abroad Studies,1573912,6,No,Education,1573912,Partial
+57,Self-Employed,48025,609,482192,Yes,Higher Studies,1648935,1,No,Education,755958,Partial
+21,Student,51536,547,169460,No,PhD,1564411,16,No,Education,121156,Rejected
+60,Student,38020,500,703360,Yes,PhD,982085,4,No,Education,132530,Rejected
+58,Business,54007,632,1177228,No,Abroad Studies,1245063,11,Yes,Education,1245063,Partial
+42,Salaried,39407,673,1063858,Yes,Skill Course,424564,11,No,Education,78454,Rejected
+50,Self-Employed,32561,537,633875,No,Skill Course,986783,25,No,Education,512480,Partial
+25,Business,35095,706,1068660,No,PhD,1789274,4,No,Education,336182,Rejected
+35,Business,52006,663,686999,No,Abroad Studies,1963670,8,Yes,Education,890383,Approved
+40,Student,72011,506,359733,Yes,PhD,1537075,11,No,Education,1320528,Partial
+32,Student,138812,633,305436,Yes,Abroad Studies,401605,15,No,Education,401605,Partial
+34,Student,37972,823,1018009,No,Skill Course,1366138,23,Yes,Education,873481,Approved
+53,Business,63319,898,83354,No,Abroad Studies,469864,17,No,Education,469864,Partial
+36,Student,45827,567,323647,No,Higher Studies,1997514,7,No,Education,865308,Partial
+37,Salaried,42341,803,882965,No,PhD,1148180,2,No,Education,794030,Partial
+25,Salaried,45600,619,399432,No,Abroad Studies,1055130,7,No,Education,787403,Partial
+32,Self-Employed,23487,839,798026,No,PhD,323573,14,Yes,Education,323573,Approved
+31,Student,28788,824,1180687,Yes,Abroad Studies,317192,2,No,Education,317192,Partial
+58,Self-Employed,49441,552,1172580,Yes,Abroad Studies,1523144,4,No,Education,687687,Partial
+24,Business,48454,559,60531,Yes,Abroad Studies,1034592,3,No,Education,8624,Rejected
+39,Self-Employed,33541,767,552268,No,Higher Studies,1909895,13,Yes,Education,580468,Approved
+49,Business,80699,673,88181,No,Skill Course,227644,25,No,Education,40157,Rejected
+56,Student,39779,678,491578,Yes,PhD,477869,15,Yes,Education,50805,Rejected
+35,Student,59781,865,920177,Yes,PhD,1049092,5,No,Education,1049092,Approved

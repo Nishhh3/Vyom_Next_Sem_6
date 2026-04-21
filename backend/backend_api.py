@@ -180,7 +180,7 @@ app.mount("/admin", StaticFiles(directory="static/admin", html=True), name="admi
 if DIGILOCKER_AVAILABLE:
     init_digilocker_db()
     app.include_router(digilocker_router)
-    print("✅ DigiLocker routes mounted at /api/digilocker")
+    print("✅ DigiLocker (NO PIN MODE) mounted at /api/digilocker")
 
 if BANK_AVAILABLE:
     app.include_router(bank_router)

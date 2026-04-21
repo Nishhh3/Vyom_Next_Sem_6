@@ -1,0 +1,1501 @@
+age,employment_type,monthly_income,credit_score,savings,existing_loan,loan_purpose,requested_amount,tenure_years,collateral,recommended_loan_type,approved_amount,approval_status
+25,Business,33344,728,110014,No,Vehicle Upgrade,408845,9,No,Car,91971,Rejected
+37,Self-Employed,34295,883,821873,Yes,Taxi Purchase,513986,1,No,Car,413242,Partial
+23,Business,165158,681,107056,No,Used Car,1576961,6,No,Car,1576961,Partial
+54,Freelancer,89093,855,1121796,No,Used Car,1822171,6,Yes,Car,1822171,Approved
+32,Business,32818,847,842972,No,New Car Purchase,1617677,1,Yes,Car,568722,Approved
+36,Freelancer,43713,746,1369662,No,Taxi Purchase,672432,8,Yes,Car,672432,Approved
+51,Salaried,34953,532,768297,No,New Car Purchase,527794,7,No,Car,21733,Rejected
+49,Salaried,74738,588,1361886,No,Vehicle Upgrade,1290926,1,No,Car,1290926,Partial
+44,Salaried,60739,838,164734,Yes,New Car Purchase,1616009,6,Yes,Car,1123623,Partial
+41,Self-Employed,128168,830,802775,Yes,New Car Purchase,1620403,9,No,Car,1620403,Approved
+25,Self-Employed,20675,715,1432647,No,New Car Purchase,632560,5,No,Car,409533,Partial
+30,Business,37873,788,1225765,No,Used Car,726292,2,No,Car,510676,Approved
+54,Salaried,156209,614,65987,Yes,New Car Purchase,1558504,5,Yes,Car,1558504,Partial
+30,Self-Employed,81717,671,89191,No,Vehicle Upgrade,1130080,12,No,Car,1130080,Partial
+61,Salaried,168801,684,750150,Yes,Vehicle Upgrade,1266286,12,Yes,Car,1266286,Approved
+42,Business,34714,717,433639,Yes,Taxi Purchase,1087134,7,Yes,Car,528217,Partial
+57,Freelancer,29696,533,1084510,No,New Car Purchase,1528865,1,No,Car,475000,Partial
+42,Self-Employed,67427,875,1228566,No,Vehicle Upgrade,1007114,4,No,Car,1002949,Approved
+53,Self-Employed,21401,690,326855,No,Used Car,1553447,14,No,Car,418320,Partial
+60,Business,50914,670,507263,Yes,Vehicle Upgrade,652364,14,No,Car,568981,Partial
+22,Freelancer,62992,567,377977,Yes,Taxi Purchase,770048,5,No,Car,766590,Partial
+61,Business,84126,748,1362714,No,New Car Purchase,426147,7,No,Car,426147,Approved
+44,Self-Employed,26372,792,108762,Yes,New Car Purchase,1146516,15,Yes,Car,15702,Rejected
+24,Self-Employed,78552,778,667921,Yes,Used Car,1381071,5,No,Car,1307471,Partial
+51,Self-Employed,36729,842,849301,Yes,Taxi Purchase,389327,7,Yes,Car,389327,Approved
+28,Self-Employed,48250,699,66537,No,Vehicle Upgrade,1060831,9,No,Car,683325,Partial
+54,Salaried,71291,783,835900,Yes,Taxi Purchase,594801,7,Yes,Car,594801,Approved
+43,Salaried,27178,646,1416858,No,Used Car,539885,1,Yes,Car,487376,Partial
+24,Business,46608,792,523109,No,New Car Purchase,1716159,6,Yes,Car,875483,Approved
+44,Self-Employed,53799,635,553609,No,New Car Purchase,1946239,4,Yes,Car,1375085,Partial
+57,Business,24268,739,1293856,No,New Car Purchase,1978711,6,No,Car,351879,Partial
+40,Salaried,26018,677,249400,Yes,Used Car,730634,7,Yes,Car,171306,Rejected
+57,Self-Employed,28531,891,1440263,Yes,Vehicle Upgrade,685881,13,Yes,Car,470664,Partial
+28,Business,49959,507,564461,No,Taxi Purchase,494544,3,No,Car,494544,Partial
+29,Salaried,133227,723,1367953,No,New Car Purchase,496228,8,Yes,Car,496228,Approved
+50,Freelancer,73513,777,307462,No,Used Car,803279,1,No,Car,803279,Approved
+27,Self-Employed,33805,613,848167,No,New Car Purchase,1959337,2,Yes,Car,503847,Partial
+56,Self-Employed,130817,721,1417918,No,Vehicle Upgrade,897447,1,Yes,Car,897447,Approved
+49,Salaried,110180,506,1183181,Yes,Taxi Purchase,1512762,15,Yes,Car,1512762,Partial
+49,Business,47228,753,951317,Yes,New Car Purchase,736695,9,No,Car,606877,Partial
+28,Salaried,80966,663,1418121,Yes,Taxi Purchase,1680085,11,No,Car,870756,Partial
+30,Business,33788,803,891875,Yes,New Car Purchase,1517074,9,Yes,Car,619807,Partial
+60,Salaried,41471,602,1186007,No,Vehicle Upgrade,1994502,1,No,Car,746971,Partial
+56,Business,21300,695,233064,No,Taxi Purchase,1691036,13,No,Car,324034,Rejected
+26,Self-Employed,58900,712,238527,No,Taxi Purchase,1003065,15,Yes,Car,1003065,Partial
+48,Business,35757,513,140598,Yes,Used Car,608638,6,Yes,Car,46878,Rejected
+57,Self-Employed,41431,562,1078855,Yes,Vehicle Upgrade,1034385,8,Yes,Car,559275,Partial
+52,Freelancer,40901,674,1492163,Yes,Taxi Purchase,330341,6,No,Car,47859,Rejected
+42,Self-Employed,161860,874,1028463,No,New Car Purchase,687247,11,Yes,Car,687247,Approved
+52,Freelancer,50934,704,292216,No,Vehicle Upgrade,1713777,15,No,Car,61918,Rejected
+57,Self-Employed,91318,686,911715,No,New Car Purchase,1974721,12,No,Car,1282589,Approved
+48,Freelancer,22400,669,244983,Yes,New Car Purchase,1072147,5,Yes,Car,221381,Rejected
+50,Freelancer,95293,633,657310,No,Vehicle Upgrade,1032272,7,No,Car,1032272,Partial
+23,Freelancer,30530,526,631889,No,Used Car,970651,12,No,Car,511770,Partial
+24,Freelancer,63631,710,1027963,Yes,Used Car,712899,14,No,Car,712899,Approved
+62,Freelancer,49819,713,645375,Yes,Taxi Purchase,506661,11,No,Car,506661,Partial
+55,Self-Employed,21879,553,1097939,No,Used Car,1929646,11,No,Car,339842,Partial
+48,Salaried,85895,559,1485881,Yes,Used Car,593044,3,No,Car,593044,Partial
+39,Self-Employed,62858,696,1275885,Yes,Used Car,1581596,13,No,Car,644488,Approved
+43,Self-Employed,23295,544,481989,Yes,Taxi Purchase,660797,3,No,Car,158872,Rejected
+37,Salaried,25104,539,388249,No,Vehicle Upgrade,1847489,13,Yes,Car,580842,Partial
+41,Freelancer,39694,572,331381,Yes,Taxi Purchase,1360676,4,No,Car,668300,Partial
+34,Self-Employed,27615,716,278936,Yes,New Car Purchase,1346159,5,Yes,Car,401314,Partial
+36,Freelancer,100224,795,1207891,No,Used Car,1594639,5,Yes,Car,1594639,Approved
+27,Freelancer,35999,559,707793,Yes,New Car Purchase,1895229,7,No,Car,461692,Partial
+43,Self-Employed,44525,808,274015,No,Vehicle Upgrade,560931,8,No,Car,560931,Partial
+38,Business,56047,582,757195,No,Taxi Purchase,1112435,14,No,Car,770995,Partial
+43,Self-Employed,59414,871,541392,No,Used Car,841850,6,No,Car,841850,Approved
+47,Freelancer,50371,790,1025680,Yes,Used Car,1556337,11,Yes,Car,812492,Approved
+42,Salaried,72071,706,143574,Yes,Used Car,1984891,1,No,Car,795261,Partial
+32,Self-Employed,25671,721,871609,No,Taxi Purchase,844517,1,No,Car,422053,Partial
+50,Business,138030,553,612521,No,New Car Purchase,416134,9,No,Car,416134,Partial
+36,Salaried,21334,890,1334066,No,Used Car,765807,14,Yes,Car,427220,Partial
+54,Freelancer,36270,645,710085,No,Used Car,703637,13,Yes,Car,703637,Partial
+34,Business,35415,689,850173,No,Used Car,461460,3,Yes,Car,461460,Approved
+28,Freelancer,92711,718,1214011,Yes,Vehicle Upgrade,1675163,11,No,Car,1023824,Partial
+41,Freelancer,39277,646,1264895,No,Vehicle Upgrade,1613058,5,No,Car,671595,Partial
+32,Freelancer,22127,639,1371667,No,Vehicle Upgrade,1124971,12,Yes,Car,401427,Partial
+23,Self-Employed,61217,763,579657,Yes,Taxi Purchase,1093827,7,Yes,Car,917684,Approved
+62,Self-Employed,177574,506,1075266,No,Taxi Purchase,1133218,6,Yes,Car,1133218,Partial
+46,Self-Employed,77749,528,780302,Yes,Vehicle Upgrade,1930177,3,No,Car,1361910,Partial
+23,Freelancer,42772,508,373336,Yes,Used Car,835843,3,No,Car,484953,Partial
+23,Salaried,27122,691,319193,Yes,Taxi Purchase,1518212,12,No,Car,283074,Partial
+26,Business,54737,557,1255594,Yes,Used Car,767589,14,Yes,Car,767589,Partial
+39,Business,27700,532,811522,No,Used Car,1378132,15,Yes,Car,374318,Partial
+39,Salaried,84086,863,861356,Yes,Taxi Purchase,1596469,6,No,Car,1367678,Approved
+26,Salaried,56608,831,443023,Yes,Vehicle Upgrade,1826067,15,Yes,Car,926431,Approved
+58,Self-Employed,87953,659,574727,Yes,New Car Purchase,488654,15,No,Car,488654,Partial
+48,Freelancer,24139,638,1333242,No,Taxi Purchase,1626884,9,No,Car,406766,Partial
+51,Business,35440,794,964285,No,Vehicle Upgrade,976002,4,No,Car,665580,Approved
+57,Salaried,57048,637,321081,No,Used Car,1707459,15,No,Car,933584,Partial
+39,Self-Employed,55580,607,1254948,No,Vehicle Upgrade,1739880,6,Yes,Car,903091,Approved
+58,Salaried,141556,719,1353233,Yes,Vehicle Upgrade,1268295,5,Yes,Car,1268295,Approved
+32,Business,26045,672,777617,Yes,Used Car,316331,7,No,Car,29088,Rejected
+50,Freelancer,29705,719,147215,Yes,Used Car,300246,15,No,Car,18666,Rejected
+49,Salaried,35064,736,1187877,Yes,Used Car,1946311,2,Yes,Car,390460,Partial
+51,Freelancer,84516,644,1485081,No,New Car Purchase,351950,14,No,Car,351950,Partial
+60,Business,87772,523,393498,Yes,Used Car,1347607,15,No,Car,1035870,Partial
+61,Freelancer,85203,657,327516,Yes,Taxi Purchase,1771947,13,Yes,Car,1679019,Partial
+45,Salaried,36382,900,886943,Yes,Taxi Purchase,765149,13,No,Car,571207,Partial
+57,Freelancer,41422,505,490205,Yes,Taxi Purchase,900121,3,No,Car,494165,Partial
+57,Business,22682,585,852035,No,Vehicle Upgrade,1280544,14,No,Car,439789,Partial
+33,Salaried,178074,526,142778,Yes,Used Car,1572775,15,No,Car,308887,Rejected
+39,Self-Employed,25527,730,1181581,Yes,Vehicle Upgrade,1116240,5,No,Car,187407,Rejected
+27,Business,160919,568,1095527,No,Used Car,895508,9,Yes,Car,895508,Approved
+39,Self-Employed,64089,848,890288,Yes,Vehicle Upgrade,1171278,1,Yes,Car,898998,Approved
+55,Salaried,24404,824,1485359,No,Vehicle Upgrade,1554890,6,No,Car,447695,Partial
+59,Self-Employed,132755,686,732194,Yes,Used Car,978446,8,No,Car,978446,Approved
+49,Business,82024,881,1322028,Yes,Used Car,1416311,15,No,Car,1416311,Approved
+26,Business,24069,563,779297,Yes,New Car Purchase,1622742,11,No,Car,349225,Rejected
+49,Salaried,61411,651,155849,Yes,Used Car,397102,9,Yes,Car,20658,Rejected
+29,Self-Employed,37607,791,1032817,No,Vehicle Upgrade,399943,6,Yes,Car,399943,Approved
+55,Salaried,54251,868,170634,Yes,Vehicle Upgrade,623638,9,Yes,Car,623638,Partial
+25,Salaried,40620,610,846444,Yes,Vehicle Upgrade,1560186,4,Yes,Car,658446,Partial
+51,Freelancer,23020,562,521783,Yes,Vehicle Upgrade,1352324,10,No,Car,185570,Rejected
+28,Salaried,75019,850,1118484,No,Vehicle Upgrade,1811228,9,No,Car,1811228,Approved
+57,Business,114150,715,817989,No,Vehicle Upgrade,1905044,9,No,Car,1905044,Approved
+36,Freelancer,32360,540,528462,Yes,Used Car,1783739,13,Yes,Car,574392,Partial
+49,Salaried,26045,663,160047,Yes,Vehicle Upgrade,495750,8,Yes,Car,117189,Rejected
+39,Self-Employed,56823,769,1219991,Yes,Used Car,1578376,6,No,Car,887095,Approved
+35,Salaried,28509,599,817211,No,New Car Purchase,557112,10,Yes,Car,557112,Partial
+25,Self-Employed,41342,889,166178,No,Vehicle Upgrade,413334,7,Yes,Car,413334,Partial
+33,Business,86727,668,776799,No,Vehicle Upgrade,1386611,7,No,Car,1221208,Partial
+25,Self-Employed,66591,664,748393,No,Used Car,1594126,3,Yes,Car,1386175,Approved
+48,Freelancer,46752,870,1349187,No,Used Car,410578,5,No,Car,410578,Approved
+51,Salaried,20998,516,461627,Yes,Used Car,499123,12,No,Car,1988,Rejected
+60,Self-Employed,23651,696,495604,Yes,New Car Purchase,455599,8,Yes,Car,424813,Partial
+37,Salaried,75000,824,734745,Yes,Vehicle Upgrade,1480432,1,Yes,Car,1374829,Approved
+60,Business,51188,651,977318,No,Used Car,364879,9,No,Car,364879,Partial
+50,Salaried,41326,686,375638,No,Vehicle Upgrade,1783428,11,No,Car,694461,Approved
+43,Business,69273,813,1173200,No,Taxi Purchase,1873200,9,No,Car,1335635,Approved
+61,Salaried,62137,812,234617,No,New Car Purchase,926122,12,No,Car,926122,Partial
+61,Self-Employed,68330,732,1026798,No,Used Car,1157793,2,No,Car,1157793,Partial
+61,Freelancer,84599,655,370988,Yes,Vehicle Upgrade,1296101,10,Yes,Car,1296101,Partial
+22,Freelancer,82098,695,966257,Yes,Used Car,988198,11,No,Car,988198,Partial
+49,Freelancer,120020,643,242935,No,Vehicle Upgrade,1561420,9,No,Car,1561420,Partial
+52,Salaried,108944,880,872470,Yes,Used Car,1288158,8,Yes,Car,1288158,Approved
+58,Business,22312,669,995858,No,Used Car,1194814,15,No,Car,324760,Partial
+47,Freelancer,24114,895,1084488,No,Vehicle Upgrade,312428,9,No,Car,312428,Approved
+53,Salaried,22311,797,107663,Yes,Vehicle Upgrade,812202,1,Yes,Car,298787,Partial
+60,Salaried,63324,892,210438,No,New Car Purchase,1075867,6,Yes,Car,1075867,Approved
+36,Salaried,61182,799,275681,Yes,Vehicle Upgrade,1342762,6,Yes,Car,854943,Partial
+43,Freelancer,34280,781,202254,No,Used Car,896221,2,Yes,Car,644654,Partial
+49,Freelancer,77811,769,942024,No,Vehicle Upgrade,1528632,6,No,Car,1325811,Approved
+38,Freelancer,71867,610,810666,No,Used Car,815797,5,No,Car,815797,Partial
+30,Self-Employed,31163,682,743244,No,Used Car,1922870,8,No,Car,579960,Partial
+59,Salaried,47509,900,1232391,Yes,New Car Purchase,1515986,9,Yes,Car,877323,Approved
+48,Salaried,81519,603,1161579,No,Used Car,1697550,12,No,Car,1221004,Partial
+43,Business,43056,532,1353158,No,Taxi Purchase,393740,6,Yes,Car,393740,Partial
+31,Business,33949,730,1142546,No,Used Car,1642581,3,Yes,Car,731772,Approved
+59,Salaried,179197,728,1249583,No,New Car Purchase,623350,8,No,Car,623350,Approved
+57,Business,45569,602,1456600,Yes,New Car Purchase,320100,4,No,Car,320100,Partial
+52,Business,54140,703,398034,No,Taxi Purchase,864061,12,Yes,Car,864061,Approved
+42,Business,59119,622,928751,Yes,Used Car,431777,14,No,Car,431777,Partial
+35,Freelancer,86290,739,1218982,No,Taxi Purchase,545976,12,Yes,Car,545976,Approved
+46,Self-Employed,29207,720,412017,No,Vehicle Upgrade,1687777,13,No,Car,514821,Partial
+23,Freelancer,43170,852,229079,Yes,Vehicle Upgrade,1204233,11,No,Car,519953,Partial
+30,Self-Employed,46543,565,1393285,Yes,Used Car,1525377,4,Yes,Car,673663,Partial
+26,Business,27078,759,1302175,No,Vehicle Upgrade,653266,1,Yes,Car,574308,Partial
+35,Salaried,42824,695,835849,Yes,Vehicle Upgrade,1962010,13,Yes,Car,747862,Partial
+33,Self-Employed,25117,519,890229,No,New Car Purchase,1500258,6,Yes,Car,427348,Partial
+40,Business,60932,620,283533,No,Used Car,1201333,15,No,Car,75232,Rejected
+56,Freelancer,46432,849,73414,No,New Car Purchase,1146945,1,Yes,Car,1124664,Partial
+26,Self-Employed,24896,852,306172,No,Used Car,971785,4,Yes,Car,582135,Approved
+59,Self-Employed,23134,519,200381,Yes,Used Car,1354315,1,No,Car,101525,Rejected
+56,Freelancer,54020,509,808171,No,Used Car,633336,14,No,Car,633336,Partial
+34,Self-Employed,143000,819,816053,Yes,Taxi Purchase,923506,2,Yes,Car,923506,Approved
+25,Self-Employed,40906,662,1398180,No,New Car Purchase,1495443,1,Yes,Car,759680,Partial
+46,Business,38986,509,336012,No,New Car Purchase,897564,15,No,Car,608592,Partial
+40,Freelancer,35030,857,474932,Yes,New Car Purchase,1603617,3,No,Car,682920,Partial
+44,Salaried,47651,836,613081,No,Taxi Purchase,687457,2,No,Car,687457,Approved
+27,Salaried,33737,856,829009,No,Vehicle Upgrade,1144233,13,No,Car,757655,Partial
+34,Salaried,30464,617,871551,No,Vehicle Upgrade,861523,6,No,Car,583956,Partial
+22,Self-Employed,171521,573,969444,Yes,Vehicle Upgrade,1428520,1,Yes,Car,1428520,Approved
+37,Business,46006,887,894954,No,New Car Purchase,1613986,5,Yes,Car,1259692,Approved
+25,Business,22285,632,917377,No,Taxi Purchase,1911195,2,Yes,Car,377195,Partial
+51,Business,42156,500,1456498,Yes,New Car Purchase,760462,11,Yes,Car,533240,Partial
+35,Freelancer,34497,675,440617,No,Used Car,1361492,11,Yes,Car,501186,Partial
+46,Salaried,86512,790,196543,No,New Car Purchase,564828,15,Yes,Car,564828,Approved
+41,Business,49702,732,1421008,Yes,Used Car,1574632,15,No,Car,538290,Partial
+56,Business,54316,736,1247378,No,New Car Purchase,443239,5,No,Car,443239,Partial
+27,Self-Employed,62027,623,138626,No,Vehicle Upgrade,333743,2,No,Car,333743,Partial
+47,Freelancer,41631,754,921608,No,Vehicle Upgrade,980432,14,Yes,Car,697643,Approved
+31,Freelancer,71660,742,180610,Yes,New Car Purchase,1444445,7,Yes,Car,1027363,Partial
+32,Freelancer,23740,787,74068,Yes,Used Car,802779,7,Yes,Car,323167,Partial
+51,Self-Employed,42962,835,817773,No,New Car Purchase,632110,11,No,Car,632110,Approved
+51,Salaried,67614,727,87047,Yes,New Car Purchase,1627409,11,Yes,Car,1226936,Partial
+42,Business,35921,721,226523,No,Taxi Purchase,1918977,14,Yes,Car,757741,Partial
+37,Self-Employed,28082,897,427400,No,Taxi Purchase,1706451,10,No,Car,514639,Partial
+57,Business,97912,684,1357768,Yes,Vehicle Upgrade,613204,5,No,Car,613204,Partial
+40,Freelancer,67567,679,112593,Yes,Used Car,1876919,4,Yes,Car,1263066,Partial
+45,Freelancer,59859,662,674762,No,New Car Purchase,1003622,15,Yes,Car,1003622,Approved
+39,Freelancer,102919,586,619729,Yes,Vehicle Upgrade,1685593,3,Yes,Car,1330176,Partial
+24,Freelancer,22902,525,1295278,Yes,Vehicle Upgrade,605153,14,No,Car,35668,Rejected
+33,Freelancer,49245,855,1489770,Yes,New Car Purchase,1512774,15,No,Car,729913,Approved
+60,Freelancer,36378,537,569849,No,Taxi Purchase,950381,12,Yes,Car,716268,Partial
+35,Freelancer,30555,713,1435041,No,Taxi Purchase,450982,3,No,Car,450982,Partial
+40,Business,30130,552,1386198,Yes,New Car Purchase,623856,11,No,Car,31003,Rejected
+46,Self-Employed,23791,840,399257,Yes,Taxi Purchase,1267788,6,Yes,Car,467938,Partial
+48,Business,150332,716,1048923,Yes,New Car Purchase,1435009,8,No,Car,1435009,Partial
+29,Business,46484,702,390892,Yes,Taxi Purchase,379407,5,No,Car,379407,Partial
+53,Freelancer,34711,803,468937,No,New Car Purchase,1251964,14,Yes,Car,643019,Approved
+26,Self-Employed,91736,540,810921,No,Used Car,1813935,9,No,Car,1677843,Partial
+51,Salaried,109130,664,845588,Yes,Vehicle Upgrade,860403,10,No,Car,860403,Partial
+46,Self-Employed,44551,823,1322502,No,Taxi Purchase,405358,8,Yes,Car,405358,Approved
+37,Salaried,26816,740,135262,Yes,New Car Purchase,1413331,4,No,Car,158018,Rejected
+35,Business,32394,570,1397831,Yes,New Car Purchase,1889203,15,No,Car,229488,Rejected
+35,Self-Employed,54848,694,589219,Yes,Vehicle Upgrade,351183,1,Yes,Car,351183,Approved
+57,Salaried,40668,605,909836,Yes,Vehicle Upgrade,1717404,13,No,Car,283623,Rejected
+40,Self-Employed,86150,526,643898,Yes,Used Car,1428066,15,Yes,Car,1308578,Partial
+58,Salaried,36553,569,57642,Yes,Taxi Purchase,802920,8,Yes,Car,512924,Partial
+53,Freelancer,61421,545,772200,Yes,Vehicle Upgrade,505349,5,No,Car,505349,Partial
+52,Salaried,29127,675,1072058,Yes,Vehicle Upgrade,653547,15,Yes,Car,356720,Partial
+32,Self-Employed,64144,635,570259,Yes,Taxi Purchase,1446751,5,No,Car,969146,Partial
+32,Business,83173,722,609905,No,Taxi Purchase,1862426,3,Yes,Car,1474804,Approved
+45,Salaried,36091,879,1211870,Yes,New Car Purchase,916539,13,No,Car,604414,Partial
+30,Business,58830,797,338847,No,New Car Purchase,1729011,15,Yes,Car,1323506,Approved
+51,Freelancer,21436,826,411370,No,Taxi Purchase,364223,12,No,Car,364223,Partial
+42,Freelancer,39088,840,1477314,No,Vehicle Upgrade,1804192,10,No,Car,734055,Approved
+42,Business,89835,844,407529,Yes,Vehicle Upgrade,865285,15,Yes,Car,865285,Approved
+42,Freelancer,81131,623,1060575,Yes,Taxi Purchase,510932,5,No,Car,510932,Partial
+34,Freelancer,45898,690,1103746,Yes,Used Car,1551350,2,Yes,Car,682989,Approved
+53,Freelancer,41461,537,1205354,Yes,Vehicle Upgrade,1225371,4,Yes,Car,538413,Partial
+51,Salaried,74546,845,204805,Yes,Taxi Purchase,1186891,5,No,Car,1186891,Partial
+25,Freelancer,164597,876,724457,No,Used Car,1876008,14,No,Car,1876008,Approved
+30,Business,26516,551,605142,Yes,New Car Purchase,624295,5,Yes,Car,363304,Partial
+31,Business,28414,631,1492822,Yes,Vehicle Upgrade,1155952,10,No,Car,56424,Rejected
+37,Freelancer,127595,876,547900,Yes,New Car Purchase,620613,13,No,Car,620613,Approved
+44,Salaried,23208,765,815645,Yes,Vehicle Upgrade,347381,9,Yes,Car,347381,Approved
+48,Self-Employed,39518,619,331059,No,New Car Purchase,1233326,14,No,Car,626843,Partial
+34,Self-Employed,48628,676,526425,No,Taxi Purchase,1258116,7,Yes,Car,1004697,Approved
+37,Self-Employed,31832,758,1384846,No,Taxi Purchase,1058028,2,Yes,Car,588421,Partial
+57,Self-Employed,162111,686,1276364,Yes,Vehicle Upgrade,1657618,8,No,Car,1657618,Partial
+38,Self-Employed,20513,660,234912,Yes,Taxi Purchase,1796293,4,No,Car,278005,Rejected
+57,Freelancer,134385,726,99036,Yes,Used Car,550715,2,Yes,Car,550715,Partial
+49,Salaried,45958,724,1391744,Yes,Used Car,688444,4,No,Car,621949,Partial
+54,Business,35442,667,1355932,No,Vehicle Upgrade,1402653,12,No,Car,659624,Partial
+35,Freelancer,20652,561,512374,No,Used Car,1194626,11,No,Car,294136,Rejected
+40,Freelancer,44650,720,637573,No,Vehicle Upgrade,1909719,4,Yes,Car,855782,Approved
+52,Business,24233,636,197515,Yes,New Car Purchase,699391,15,Yes,Car,15742,Rejected
+26,Salaried,32099,581,292306,No,New Car Purchase,1862911,12,Yes,Car,408173,Rejected
+40,Salaried,43734,691,1431829,No,Vehicle Upgrade,1709469,12,Yes,Car,945782,Approved
+27,Salaried,66564,660,1029242,Yes,Vehicle Upgrade,507569,3,Yes,Car,507569,Approved
+46,Self-Employed,49891,884,1131880,No,Used Car,1483991,8,Yes,Car,886786,Approved
+52,Freelancer,88136,845,968538,Yes,Used Car,349242,9,No,Car,349242,Partial
+54,Freelancer,122880,650,152908,Yes,Vehicle Upgrade,1132902,4,No,Car,1132902,Partial
+24,Self-Employed,47781,702,1227772,No,Used Car,1806552,14,Yes,Car,825331,Approved
+23,Freelancer,53619,614,1293212,Yes,Used Car,1414780,1,Yes,Car,891855,Partial
+39,Freelancer,71211,522,239232,Yes,New Car Purchase,1189486,8,Yes,Car,1189486,Partial
+40,Self-Employed,50654,523,726376,No,New Car Purchase,1203526,4,No,Car,801679,Partial
+55,Business,111426,564,1467751,No,New Car Purchase,772215,13,Yes,Car,772215,Approved
+41,Self-Employed,70843,664,1183457,No,Used Car,1116790,14,Yes,Car,1116790,Approved
+44,Salaried,69777,576,1201473,Yes,Vehicle Upgrade,1958674,12,No,Car,1035205,Partial
+43,Self-Employed,23255,791,781469,Yes,New Car Purchase,914720,13,No,Car,286456,Partial
+42,Self-Employed,53954,604,278922,Yes,Taxi Purchase,727939,4,No,Car,66401,Rejected
+22,Self-Employed,101073,774,180516,No,Vehicle Upgrade,1021353,14,No,Car,1021353,Partial
+48,Salaried,20115,786,1410854,Yes,Used Car,347442,11,Yes,Car,256381,Approved
+58,Self-Employed,38137,551,31942,No,Used Car,1885443,9,No,Car,355115,Rejected
+34,Business,42326,550,56586,No,Taxi Purchase,550954,11,No,Car,550954,Partial
+34,Salaried,57244,511,594607,No,New Car Purchase,1328099,6,No,Car,750901,Partial
+61,Business,149310,751,1411102,No,Vehicle Upgrade,861269,13,No,Car,861269,Approved
+35,Freelancer,46833,671,525929,No,Vehicle Upgrade,1777987,2,Yes,Car,812943,Partial
+27,Self-Employed,60243,737,1485373,Yes,New Car Purchase,1782097,9,Yes,Car,693012,Approved
+36,Self-Employed,29109,859,111584,Yes,Taxi Purchase,343730,5,Yes,Car,343730,Partial
+24,Salaried,75921,704,622497,Yes,Used Car,602837,8,No,Car,602837,Partial
+33,Self-Employed,46435,637,1000315,Yes,Vehicle Upgrade,341708,6,Yes,Car,341708,Partial
+38,Self-Employed,33058,647,1315000,No,Vehicle Upgrade,624688,11,Yes,Car,624688,Partial
+62,Self-Employed,65952,900,1350150,No,Vehicle Upgrade,601806,6,No,Car,601806,Approved
+24,Salaried,68017,698,399064,No,New Car Purchase,754304,11,No,Car,754304,Approved
+50,Business,70622,695,852404,Yes,Vehicle Upgrade,450758,7,Yes,Car,450758,Approved
+28,Salaried,127549,542,635277,No,Vehicle Upgrade,1262148,6,No,Car,1262148,Partial
+53,Self-Employed,35794,669,676463,Yes,New Car Purchase,415501,10,Yes,Car,415501,Partial
+52,Self-Employed,40490,585,1060467,Yes,Used Car,1040628,12,Yes,Car,540031,Partial
+38,Self-Employed,79845,843,937773,Yes,Vehicle Upgrade,826697,13,Yes,Car,826697,Approved
+31,Self-Employed,165811,823,1130358,No,Taxi Purchase,950378,11,Yes,Car,950378,Approved
+62,Freelancer,38616,863,36622,No,Vehicle Upgrade,457625,11,Yes,Car,457625,Partial
+34,Salaried,61486,659,826131,Yes,New Car Purchase,1869511,7,No,Car,875200,Partial
+50,Freelancer,27431,695,1117621,No,Vehicle Upgrade,846983,13,No,Car,569351,Partial
+24,Freelancer,26221,815,1067771,Yes,Used Car,508793,3,Yes,Car,332323,Partial
+50,Business,32998,504,272212,No,New Car Purchase,943881,3,Yes,Car,127166,Rejected
+45,Self-Employed,47680,670,978606,Yes,New Car Purchase,1939997,3,Yes,Car,693619,Partial
+24,Business,35386,727,618495,No,Used Car,1381413,9,No,Car,498337,Partial
+51,Self-Employed,80212,804,1110496,Yes,Used Car,1437363,13,Yes,Car,1257860,Approved
+34,Business,93736,725,600375,Yes,Used Car,378286,10,Yes,Car,378286,Partial
+51,Freelancer,88211,855,673834,Yes,Vehicle Upgrade,704037,14,No,Car,704037,Partial
+58,Freelancer,45067,892,599027,Yes,Used Car,1713594,9,Yes,Car,759343,Approved
+50,Salaried,44123,732,385546,No,Used Car,1782394,2,No,Car,799914,Partial
+57,Salaried,45477,586,882538,No,Vehicle Upgrade,625365,9,No,Car,625365,Partial
+58,Business,100566,709,1176189,No,Used Car,647159,10,Yes,Car,647159,Approved
+49,Business,55791,527,1187810,No,New Car Purchase,1496539,4,No,Car,848545,Partial
+47,Freelancer,32181,657,781656,No,New Car Purchase,622582,14,Yes,Car,622582,Partial
+30,Self-Employed,39941,659,517306,Yes,Used Car,449392,9,Yes,Car,449392,Partial
+38,Business,30408,812,1279309,Yes,New Car Purchase,945712,12,No,Car,608316,Partial
+29,Self-Employed,175028,851,1258293,No,Used Car,677117,7,Yes,Car,677117,Approved
+58,Self-Employed,21902,535,203209,No,New Car Purchase,1933618,4,No,Car,53618,Rejected
+33,Business,50801,782,502029,No,Taxi Purchase,1918022,3,Yes,Car,1137851,Approved
+30,Salaried,44202,708,97274,No,Taxi Purchase,1012770,9,No,Car,599677,Partial
+32,Self-Employed,68981,883,383010,No,Vehicle Upgrade,1871701,3,No,Car,1140633,Approved
+24,Salaried,69541,649,466498,No,Used Car,714157,11,No,Car,714157,Approved
+47,Self-Employed,49122,520,1305622,Yes,Vehicle Upgrade,1050826,6,Yes,Car,788654,Partial
+58,Business,40512,705,906935,No,Used Car,1115519,1,No,Car,695002,Partial
+44,Self-Employed,120071,672,1290782,Yes,Taxi Purchase,966911,4,Yes,Car,966911,Partial
+35,Salaried,35025,502,851791,No,Taxi Purchase,452867,13,No,Car,452867,Partial
+39,Business,79824,683,1113442,No,Taxi Purchase,693022,14,No,Car,693022,Approved
+45,Self-Employed,58528,636,849405,Yes,Taxi Purchase,1307309,9,No,Car,97540,Rejected
+23,Business,33296,730,1439867,Yes,Used Car,589847,11,Yes,Car,533330,Partial
+57,Freelancer,59336,759,779406,Yes,Vehicle Upgrade,1575485,9,Yes,Car,1016280,Partial
+46,Freelancer,22623,852,805377,No,New Car Purchase,322372,8,No,Car,322372,Partial
+43,Self-Employed,83217,696,863037,No,Vehicle Upgrade,1979823,14,Yes,Car,1623847,Approved
+54,Salaried,39261,658,665141,No,Taxi Purchase,1601468,11,No,Car,669818,Partial
+53,Freelancer,31973,564,194966,No,Used Car,797204,9,Yes,Car,62921,Rejected
+61,Salaried,74211,838,1340321,No,New Car Purchase,1314189,9,No,Car,1314189,Approved
+24,Self-Employed,46271,625,1129391,Yes,New Car Purchase,408882,1,No,Car,81815,Rejected
+34,Salaried,40821,594,164565,No,Vehicle Upgrade,932918,6,Yes,Car,737298,Partial
+46,Self-Employed,94591,864,112190,Yes,New Car Purchase,1151683,11,No,Car,1151683,Partial
+53,Self-Employed,41137,713,1364105,No,Used Car,1020710,7,No,Car,863938,Approved
+34,Business,56691,897,853277,Yes,New Car Purchase,403568,14,Yes,Car,403568,Approved
+47,Self-Employed,21717,627,594190,No,Used Car,819999,13,Yes,Car,294036,Partial
+56,Salaried,38279,808,89523,Yes,New Car Purchase,1783946,13,Yes,Car,714973,Partial
+38,Salaried,49611,722,317377,No,Vehicle Upgrade,1507678,6,No,Car,1039698,Partial
+44,Self-Employed,41171,807,578979,No,Taxi Purchase,1136490,2,Yes,Car,816739,Approved
+32,Freelancer,51356,723,794513,No,Vehicle Upgrade,1364281,8,No,Car,988247,Partial
+29,Salaried,81656,536,79161,Yes,Used Car,1744897,6,Yes,Car,1247012,Partial
+42,Salaried,26008,826,782966,Yes,Used Car,1343252,14,No,Car,327382,Partial
+44,Salaried,31232,731,564501,No,Vehicle Upgrade,1895113,8,Yes,Car,544307,Approved
+62,Business,27768,517,1109296,No,New Car Purchase,1482940,14,No,Car,455590,Partial
+27,Freelancer,28353,605,257483,No,Used Car,1273288,12,No,Car,52363,Rejected
+25,Salaried,55253,677,1441312,No,New Car Purchase,746865,11,No,Car,746865,Partial
+27,Freelancer,75136,797,599271,No,Vehicle Upgrade,446683,1,Yes,Car,446683,Approved
+30,Business,36702,547,256644,Yes,Used Car,1063293,3,Yes,Car,655019,Partial
+60,Freelancer,73527,700,1261838,Yes,Taxi Purchase,345989,4,Yes,Car,345989,Approved
+45,Self-Employed,32430,657,1339460,Yes,Vehicle Upgrade,1224022,14,Yes,Car,628199,Partial
+37,Self-Employed,40304,609,477672,Yes,Taxi Purchase,1542073,1,Yes,Car,582127,Partial
+36,Business,37593,615,296880,Yes,Taxi Purchase,1922019,3,No,Car,450536,Rejected
+49,Freelancer,21801,779,1227655,Yes,New Car Purchase,1398159,7,Yes,Car,394089,Approved
+40,Self-Employed,43099,824,746521,Yes,Taxi Purchase,1154098,15,Yes,Car,919871,Partial
+32,Freelancer,20845,611,203914,No,New Car Purchase,1008589,11,Yes,Car,413755,Partial
+37,Self-Employed,24312,806,852759,Yes,New Car Purchase,1359415,3,No,Car,337112,Partial
+59,Business,24907,671,239218,Yes,Vehicle Upgrade,1347960,13,Yes,Car,179409,Rejected
+56,Salaried,39119,760,592004,Yes,Taxi Purchase,1192997,5,No,Car,587576,Partial
+32,Freelancer,57767,890,782931,No,New Car Purchase,1741829,11,Yes,Car,1362098,Approved
+46,Freelancer,131769,815,985490,No,New Car Purchase,1747101,1,Yes,Car,1747101,Approved
+62,Self-Employed,145321,805,278486,Yes,Used Car,399113,14,Yes,Car,399113,Partial
+47,Freelancer,20335,801,834106,No,Used Car,421460,13,No,Car,421460,Partial
+24,Freelancer,66855,652,957595,Yes,New Car Purchase,1629283,6,No,Car,976081,Partial
+35,Business,26215,663,1131987,No,Used Car,794626,4,No,Car,436994,Partial
+41,Freelancer,122749,733,43719,Yes,Used Car,607865,6,No,Car,607865,Partial
+62,Salaried,32555,894,841643,No,New Car Purchase,1883619,2,No,Car,548111,Approved
+26,Self-Employed,40229,739,1077556,No,Vehicle Upgrade,1513026,1,No,Car,803995,Partial
+37,Self-Employed,47545,594,1467300,Yes,Vehicle Upgrade,1700977,11,Yes,Car,666748,Partial
+31,Salaried,21444,678,1302519,Yes,Vehicle Upgrade,1318469,3,No,Car,228884,Rejected
+52,Business,88140,733,513967,No,Used Car,814040,3,Yes,Car,814040,Approved
+36,Freelancer,44121,654,284269,Yes,New Car Purchase,1754414,10,Yes,Car,592663,Partial
+54,Business,48461,769,754186,Yes,Vehicle Upgrade,1222858,12,No,Car,656322,Partial
+54,Self-Employed,110580,856,814601,Yes,New Car Purchase,1840299,8,Yes,Car,1840299,Approved
+40,Salaried,30300,569,1404593,Yes,Used Car,1914879,15,No,Car,55282,Rejected
+52,Self-Employed,58120,768,716446,No,Used Car,1411807,13,No,Car,841009,Approved
+52,Freelancer,97175,812,1358577,Yes,Used Car,624080,2,Yes,Car,624080,Approved
+59,Self-Employed,46506,784,1382821,Yes,Vehicle Upgrade,361189,3,Yes,Car,361189,Approved
+46,Freelancer,127618,789,514041,Yes,Vehicle Upgrade,584417,2,No,Car,584417,Approved
+49,Freelancer,31838,502,196631,Yes,Used Car,1358645,14,No,Car,77256,Rejected
+30,Freelancer,47030,545,1380686,Yes,New Car Purchase,1591782,1,No,Car,609447,Partial
+45,Business,40963,722,924429,Yes,Used Car,601263,11,No,Car,601263,Partial
+50,Freelancer,63577,790,993618,No,Used Car,819682,13,Yes,Car,819682,Approved
+57,Self-Employed,155611,767,993764,No,New Car Purchase,1670272,6,No,Car,1670272,Approved
+35,Business,166675,644,596182,Yes,Used Car,561054,12,No,Car,561054,Partial
+28,Self-Employed,61410,509,798227,Yes,Taxi Purchase,746309,4,No,Car,746309,Partial
+57,Self-Employed,35988,719,155804,No,Used Car,1074974,13,Yes,Car,722473,Partial
+31,Business,46659,671,1008130,Yes,Taxi Purchase,523685,9,No,Car,69753,Rejected
+56,Business,87357,512,1041848,No,New Car Purchase,808413,10,No,Car,808413,Partial
+26,Salaried,77360,707,75025,Yes,Vehicle Upgrade,1211499,11,Yes,Car,1108322,Partial
+57,Salaried,27510,630,954187,Yes,Used Car,1134499,12,Yes,Car,1000,Rejected
+47,Freelancer,30000,725,36502,Yes,New Car Purchase,1733341,10,No,Car,171732,Rejected
+44,Freelancer,22316,848,618514,No,Used Car,925887,4,No,Car,489576,Partial
+33,Business,164811,686,126563,No,New Car Purchase,894103,13,No,Car,894103,Partial
+29,Freelancer,84697,568,658795,Yes,Used Car,790514,10,Yes,Car,790514,Partial
+58,Self-Employed,63586,814,472708,No,Taxi Purchase,775421,7,Yes,Car,775421,Approved
+36,Business,63556,641,747477,Yes,Used Car,1512850,12,No,Car,1150092,Partial
+36,Self-Employed,26726,711,730742,Yes,Taxi Purchase,1273791,15,No,Car,321376,Partial
+36,Freelancer,167660,647,1056456,No,New Car Purchase,1450669,7,No,Car,1450669,Partial
+44,Self-Employed,90381,691,902780,Yes,New Car Purchase,1636968,3,No,Car,1422525,Partial
+55,Self-Employed,65043,668,1319217,No,New Car Purchase,834335,2,No,Car,834335,Partial
+34,Freelancer,42732,897,1281339,No,Used Car,696902,3,Yes,Car,696902,Approved
+52,Business,20885,603,244886,No,Vehicle Upgrade,1014805,5,Yes,Car,69835,Rejected
+61,Salaried,21409,723,777312,No,Used Car,438403,14,No,Car,338692,Partial
+52,Business,61934,544,1487861,No,New Car Purchase,1918610,9,Yes,Car,1206553,Partial
+45,Freelancer,117045,882,1354600,Yes,Used Car,428980,2,Yes,Car,428980,Approved
+42,Freelancer,86778,539,1236448,Yes,Taxi Purchase,1312439,14,Yes,Car,1115533,Partial
+42,Self-Employed,27597,598,1016726,Yes,Vehicle Upgrade,974083,11,Yes,Car,521295,Partial
+40,Business,52103,845,164761,No,New Car Purchase,1091137,2,No,Car,1091137,Partial
+37,Freelancer,81581,858,1203148,Yes,New Car Purchase,1097044,2,Yes,Car,1097044,Approved
+45,Self-Employed,41337,670,206545,No,New Car Purchase,803468,12,No,Car,16855,Rejected
+41,Freelancer,104676,671,738829,Yes,Used Car,1590798,10,No,Car,1590798,Partial
+33,Salaried,28149,840,139551,Yes,Taxi Purchase,1429444,6,No,Car,415470,Partial
+41,Salaried,60399,895,123050,Yes,Vehicle Upgrade,1786945,6,No,Car,1227258,Partial
+53,Salaried,29112,727,1319393,Yes,New Car Purchase,621352,2,Yes,Car,476967,Partial
+25,Freelancer,35800,764,855437,Yes,New Car Purchase,1849418,9,Yes,Car,521289,Approved
+33,Freelancer,44442,609,1254190,Yes,Used Car,382195,5,No,Car,382195,Partial
+33,Business,23462,510,1301415,No,Vehicle Upgrade,1488977,10,Yes,Car,429596,Partial
+47,Salaried,31470,701,120913,Yes,Used Car,1706854,15,Yes,Car,37824,Rejected
+33,Business,69517,892,1314379,Yes,Taxi Purchase,1265482,8,No,Car,979003,Approved
+37,Salaried,109302,752,1484198,Yes,Taxi Purchase,1689778,10,No,Car,1302711,Partial
+34,Self-Employed,92554,699,1261549,No,Vehicle Upgrade,1147382,13,No,Car,1147382,Approved
+47,Business,167713,638,740553,No,Taxi Purchase,1833570,15,No,Car,1833570,Partial
+31,Freelancer,140536,885,1082614,Yes,New Car Purchase,1796929,13,Yes,Car,1796929,Approved
+31,Freelancer,45300,738,486527,Yes,New Car Purchase,435346,9,Yes,Car,435346,Partial
+62,Business,73243,714,142901,Yes,Taxi Purchase,1725960,10,Yes,Car,1126204,Partial
+46,Salaried,28604,899,642155,No,Taxi Purchase,1902237,4,Yes,Car,673937,Approved
+55,Business,79433,663,60101,No,New Car Purchase,881755,6,Yes,Car,881755,Partial
+44,Freelancer,37054,751,1386251,Yes,New Car Purchase,1855949,11,No,Car,571052,Partial
+37,Self-Employed,133895,628,1208084,No,New Car Purchase,393149,15,No,Car,393149,Partial
+36,Salaried,49731,630,286319,Yes,Taxi Purchase,497366,5,No,Car,104461,Rejected
+26,Business,39844,684,449836,Yes,Vehicle Upgrade,587532,13,Yes,Car,587532,Partial
+56,Salaried,33453,617,595643,No,Taxi Purchase,1026780,3,Yes,Car,708172,Partial
+52,Business,24213,771,780628,No,Taxi Purchase,707584,11,No,Car,408406,Approved
+61,Business,118307,631,215438,Yes,Taxi Purchase,1903585,6,No,Car,229387,Rejected
+37,Business,27701,689,1045091,No,New Car Purchase,550238,6,Yes,Car,550238,Partial
+57,Business,76994,549,1040790,No,Vehicle Upgrade,1768748,9,No,Car,1390729,Partial
+51,Business,69564,773,478362,No,New Car Purchase,1296762,9,Yes,Car,1296762,Approved
+45,Salaried,30346,828,1386495,Yes,New Car Purchase,1042818,4,Yes,Car,483037,Partial
+34,Freelancer,48243,614,33910,Yes,Used Car,683177,15,Yes,Car,3805,Rejected
+45,Salaried,31288,530,1493091,No,Taxi Purchase,1989047,5,No,Car,302389,Rejected
+39,Salaried,48204,628,671737,Yes,Used Car,309890,3,Yes,Car,309890,Partial
+50,Salaried,125484,638,165604,No,Used Car,1232031,8,No,Car,117334,Rejected
+50,Business,39498,709,965252,No,Used Car,1146617,7,No,Car,772726,Approved
+27,Business,21753,693,1122859,Yes,Vehicle Upgrade,1396476,5,Yes,Car,385350,Partial
+24,Self-Employed,38460,881,320357,No,Used Car,776116,14,Yes,Car,776116,Approved
+23,Business,42072,707,752389,No,Vehicle Upgrade,1956828,4,No,Car,672243,Partial
+22,Business,36441,826,1078574,Yes,Vehicle Upgrade,525435,2,Yes,Car,525435,Approved
+37,Self-Employed,56956,886,1214165,Yes,New Car Purchase,514343,10,Yes,Car,514343,Partial
+22,Self-Employed,165820,855,1358832,Yes,Taxi Purchase,1342062,2,No,Car,1342062,Approved
+25,Salaried,41215,895,887307,No,Taxi Purchase,1025565,5,Yes,Car,741581,Approved
+37,Self-Employed,165150,657,576492,No,Used Car,902285,1,Yes,Car,902285,Approved
+24,Freelancer,47412,724,458466,No,Taxi Purchase,461830,10,Yes,Car,461830,Approved
+45,Freelancer,42068,857,767122,No,New Car Purchase,1543054,14,No,Car,925970,Approved
+27,Self-Employed,30645,686,310813,No,Used Car,980814,11,Yes,Car,506256,Partial
+55,Business,32882,665,61863,Yes,Vehicle Upgrade,1068443,2,Yes,Car,124190,Rejected
+41,Self-Employed,43202,650,545342,No,New Car Purchase,1466049,9,No,Car,608648,Partial
+44,Business,22096,697,1357952,No,Vehicle Upgrade,815946,7,No,Car,335903,Partial
+58,Salaried,62239,561,377714,No,Used Car,874700,3,Yes,Car,874700,Approved
+27,Salaried,132870,514,1165851,Yes,Used Car,1032039,7,No,Car,1032039,Partial
+49,Freelancer,71389,864,1279565,No,Vehicle Upgrade,382961,6,Yes,Car,382961,Approved
+59,Salaried,41525,769,723811,No,Used Car,947966,2,No,Car,678049,Approved
+55,Freelancer,52199,717,187420,No,Vehicle Upgrade,1489953,14,No,Car,137529,Rejected
+59,Business,61211,649,57013,Yes,New Car Purchase,939985,6,No,Car,114525,Rejected
+38,Freelancer,115095,571,1389759,No,Taxi Purchase,1870316,7,No,Car,1870316,Approved
+37,Freelancer,161593,657,309586,No,Taxi Purchase,914060,2,No,Car,914060,Partial
+47,Salaried,49038,612,1254972,No,New Car Purchase,1043226,12,No,Car,850787,Partial
+32,Business,40585,699,1124289,Yes,Taxi Purchase,1637850,14,No,Car,550747,Partial
+50,Freelancer,82185,857,746823,No,Vehicle Upgrade,790036,12,Yes,Car,790036,Approved
+30,Freelancer,28072,705,317662,No,Used Car,1082968,4,Yes,Car,613800,Partial
+27,Self-Employed,150311,528,586533,No,New Car Purchase,1114679,7,Yes,Car,1114679,Approved
+43,Salaried,64019,514,254726,No,Used Car,1669598,5,Yes,Car,1325338,Partial
+55,Business,150490,658,909013,Yes,Used Car,1521779,9,No,Car,1521779,Partial
+62,Freelancer,37705,831,174470,Yes,Used Car,731601,2,No,Car,558423,Partial
+45,Freelancer,115489,688,682827,No,New Car Purchase,1358599,1,No,Car,1358599,Approved
+29,Self-Employed,25050,636,1009911,No,New Car Purchase,1682302,8,No,Car,361628,Partial
+55,Business,160150,896,1248240,No,Vehicle Upgrade,935265,2,Yes,Car,935265,Approved
+22,Self-Employed,86045,859,289703,Yes,Used Car,1552427,3,Yes,Car,1552427,Partial
+58,Salaried,66312,653,261235,Yes,New Car Purchase,1684548,2,No,Car,256784,Rejected
+59,Salaried,31419,694,104715,Yes,Vehicle Upgrade,1879471,6,Yes,Car,220505,Rejected
+28,Self-Employed,179645,899,114291,Yes,Used Car,654516,12,No,Car,654516,Partial
+61,Salaried,95845,559,1400889,Yes,Vehicle Upgrade,1750549,13,No,Car,1228576,Partial
+47,Business,55788,613,414244,No,Used Car,1303007,7,No,Car,948298,Partial
+27,Salaried,117066,711,549053,No,Vehicle Upgrade,595868,10,No,Car,595868,Approved
+23,Salaried,154557,756,43396,Yes,Used Car,508852,13,No,Car,10998,Rejected
+49,Self-Employed,25711,670,915777,No,Used Car,997783,12,No,Car,393700,Partial
+56,Business,83722,852,752331,Yes,Taxi Purchase,1561099,3,Yes,Car,1459818,Approved
+26,Self-Employed,35336,638,1279167,Yes,New Car Purchase,730934,12,Yes,Car,567129,Partial
+56,Business,45300,664,228911,Yes,New Car Purchase,1187620,8,Yes,Car,237521,Rejected
+25,Self-Employed,155261,618,1106946,Yes,Vehicle Upgrade,1614743,1,No,Car,1614743,Partial
+49,Freelancer,30475,793,58509,No,Used Car,979070,8,Yes,Car,578780,Partial
+25,Salaried,109843,705,213013,Yes,Vehicle Upgrade,1342279,13,No,Car,1342279,Partial
+23,Freelancer,28330,703,1480687,Yes,Taxi Purchase,622917,5,Yes,Car,402792,Partial
+30,Freelancer,99859,626,675517,No,New Car Purchase,639785,10,No,Car,639785,Partial
+34,Business,130840,603,244956,No,Taxi Purchase,1179399,1,No,Car,1179399,Partial
+50,Business,129449,819,94529,Yes,Used Car,1738101,14,Yes,Car,1738101,Partial
+33,Self-Employed,52107,678,1075985,No,Taxi Purchase,1086899,15,No,Car,923971,Partial
+38,Self-Employed,50427,658,1487880,No,New Car Purchase,1580934,10,Yes,Car,1098142,Partial
+62,Freelancer,25749,853,633833,Yes,Taxi Purchase,977826,3,No,Car,419553,Partial
+29,Freelancer,104685,645,453034,Yes,Taxi Purchase,885283,12,Yes,Car,885283,Partial
+60,Freelancer,28221,678,1297905,Yes,New Car Purchase,1219923,12,No,Car,459610,Partial
+45,Business,32567,712,123940,Yes,New Car Purchase,1589676,13,Yes,Car,357904,Rejected
+35,Self-Employed,43924,510,59370,Yes,New Car Purchase,393294,15,No,Car,82504,Rejected
+27,Self-Employed,75351,505,687728,No,Taxi Purchase,1877904,11,Yes,Car,1842303,Approved
+58,Business,34937,628,183571,No,New Car Purchase,1261719,9,Yes,Car,715269,Partial
+52,Salaried,36162,572,1366788,Yes,Taxi Purchase,605907,6,Yes,Car,579264,Partial
+28,Self-Employed,40967,725,1367364,No,New Car Purchase,1576452,3,No,Car,851647,Partial
+33,Freelancer,44574,718,752890,Yes,New Car Purchase,1955091,8,Yes,Car,549976,Partial
+39,Self-Employed,55834,796,816124,No,Used Car,1043998,6,Yes,Car,997175,Approved
+26,Business,42880,614,234951,No,Vehicle Upgrade,1263019,15,No,Car,52132,Rejected
+47,Freelancer,40174,707,1266082,No,Taxi Purchase,631338,11,No,Car,625602,Approved
+35,Self-Employed,56188,674,36981,No,Taxi Purchase,1511680,7,No,Car,316123,Rejected
+34,Business,66129,575,487052,No,Used Car,788555,13,Yes,Car,788555,Approved
+53,Freelancer,66836,782,749827,Yes,Vehicle Upgrade,1138544,3,No,Car,740850,Approved
+37,Business,147722,724,818507,Yes,New Car Purchase,932090,6,No,Car,932090,Partial
+40,Salaried,62547,621,1455930,No,Taxi Purchase,645048,1,Yes,Car,645048,Approved
+32,Business,22418,593,878429,No,Used Car,1303661,12,Yes,Car,433763,Partial
+24,Business,22329,714,168716,Yes,New Car Purchase,384824,4,Yes,Car,315182,Partial
+39,Freelancer,35573,701,1044589,No,Vehicle Upgrade,1410642,8,No,Car,635300,Approved
+27,Self-Employed,63574,876,1169185,No,Medical Emergency,172552,10,Yes,Gold,172552,Approved
+57,Freelancer,33043,882,542096,Yes,Small Business Support,559043,2,No,Gold,404143,Partial
+33,Self-Employed,25896,845,921423,Yes,Medical Emergency,517137,11,No,Gold,336200,Partial
+51,Business,132042,895,133586,No,Medical Emergency,363964,15,No,Gold,363964,Partial
+49,Self-Employed,71658,564,1079543,Yes,Education Fees,530964,11,Yes,Gold,530964,Partial
+49,Business,63845,645,407411,No,Small Business Support,638194,11,Yes,Gold,638194,Partial
+32,Self-Employed,141515,705,1126413,No,Education Fees,95931,15,No,Gold,95931,Approved
+30,Business,33218,677,80039,No,Medical Emergency,758031,4,Yes,Gold,579846,Partial
+46,Salaried,58056,681,1473002,No,Medical Emergency,760741,5,No,Gold,760741,Partial
+50,Freelancer,29527,735,1180633,No,Small Business Support,554241,14,No,Gold,519561,Partial
+31,Salaried,35114,765,1359399,Yes,Personal Need,346390,4,No,Gold,346390,Partial
+46,Freelancer,54468,754,1300777,No,Education Fees,156324,8,No,Gold,156324,Partial
+54,Self-Employed,50624,733,314357,No,Small Business Support,778722,1,No,Gold,778722,Approved
+61,Business,39710,595,261680,Yes,Medical Emergency,613128,14,No,Gold,706,Rejected
+48,Self-Employed,43599,748,933668,Yes,Medical Emergency,619609,2,Yes,Gold,619609,Partial
+30,Self-Employed,22124,664,1140409,Yes,Personal Need,214322,11,No,Gold,41048,Rejected
+37,Self-Employed,31301,550,1402074,No,Small Business Support,442297,9,Yes,Gold,442297,Partial
+25,Freelancer,81432,754,663740,No,Small Business Support,723732,14,Yes,Gold,723732,Approved
+43,Business,34599,631,595058,Yes,Small Business Support,402783,1,Yes,Gold,402783,Partial
+38,Self-Employed,45177,648,271592,Yes,Medical Emergency,354729,12,Yes,Gold,354729,Partial
+61,Salaried,49356,721,717882,Yes,Education Fees,474349,3,Yes,Gold,474349,Partial
+31,Self-Employed,89131,723,41220,No,Small Business Support,102663,4,No,Gold,102663,Partial
+55,Salaried,20533,677,1329040,Yes,Small Business Support,621146,11,Yes,Gold,339184,Partial
+44,Freelancer,66516,649,67812,No,Medical Emergency,87543,9,No,Gold,87543,Partial
+58,Business,49877,642,70392,Yes,Personal Need,80232,12,Yes,Gold,80232,Partial
+45,Self-Employed,41758,524,510270,Yes,Education Fees,61394,13,No,Gold,61394,Partial
+27,Business,22870,836,556560,No,Small Business Support,457341,11,Yes,Gold,457341,Approved
+47,Business,99824,723,1241444,No,Medical Emergency,240196,3,Yes,Gold,240196,Approved
+53,Self-Employed,137593,807,42547,No,Small Business Support,728329,12,Yes,Gold,728329,Approved
+37,Business,20517,835,158873,Yes,Medical Emergency,520174,14,No,Gold,127985,Rejected
+27,Self-Employed,43842,689,1100079,Yes,Personal Need,154603,4,No,Gold,154603,Partial
+41,Salaried,40730,749,1025803,Yes,Education Fees,240234,13,Yes,Gold,240234,Approved
+25,Business,40926,639,457070,Yes,Education Fees,393903,11,Yes,Gold,393903,Partial
+53,Self-Employed,31684,671,733766,No,Personal Need,91092,7,No,Gold,91092,Partial
+30,Salaried,55693,689,1498586,Yes,Medical Emergency,654228,7,No,Gold,654228,Partial
+32,Freelancer,43632,812,180608,No,Personal Need,428949,12,Yes,Gold,428949,Partial
+53,Freelancer,20279,587,982633,No,Medical Emergency,786497,7,No,Gold,352928,Partial
+45,Freelancer,59132,804,70847,No,Medical Emergency,353873,10,Yes,Gold,353873,Partial
+36,Business,46485,834,800863,Yes,Personal Need,446615,9,No,Gold,446615,Approved
+25,Business,83149,562,336190,No,Personal Need,217874,15,Yes,Gold,217874,Partial
+51,Business,72381,871,1009848,No,Medical Emergency,313529,4,Yes,Gold,313529,Approved
+50,Salaried,35312,870,1144693,Yes,Small Business Support,155259,9,Yes,Gold,155259,Approved
+50,Self-Employed,43779,537,1181485,Yes,Small Business Support,178732,7,No,Gold,178732,Partial
+39,Business,43768,587,661323,No,Personal Need,291720,3,No,Gold,291720,Partial
+49,Salaried,80721,677,1334162,Yes,Small Business Support,596423,12,Yes,Gold,596423,Partial
+25,Freelancer,56425,748,390124,Yes,Small Business Support,573793,6,No,Gold,573793,Partial
+24,Freelancer,28039,757,349086,Yes,Education Fees,111172,14,Yes,Gold,111172,Partial
+29,Self-Employed,81602,561,936942,No,Medical Emergency,522453,10,Yes,Gold,522453,Approved
+49,Business,34780,884,1033736,No,Education Fees,592667,11,Yes,Gold,592667,Approved
+52,Self-Employed,57221,689,99253,Yes,Small Business Support,676309,7,Yes,Gold,140440,Rejected
+45,Business,47743,539,73079,No,Personal Need,796739,1,Yes,Gold,796739,Partial
+45,Business,102965,876,1305011,No,Personal Need,259060,11,Yes,Gold,259060,Approved
+41,Business,72062,842,252211,No,Education Fees,691118,9,Yes,Gold,691118,Approved
+47,Business,51553,822,962602,Yes,Education Fees,630268,8,No,Gold,630268,Partial
+22,Freelancer,33998,690,271638,No,Education Fees,480531,3,No,Gold,87991,Rejected
+44,Freelancer,22524,678,759897,No,Medical Emergency,765503,2,No,Gold,189351,Rejected
+25,Self-Employed,79834,880,1018006,No,Education Fees,387216,6,Yes,Gold,387216,Approved
+43,Business,48109,639,301836,No,Education Fees,343693,6,No,Gold,343693,Partial
+46,Freelancer,69215,629,1458267,No,Education Fees,83215,14,Yes,Gold,83215,Partial
+42,Freelancer,132107,640,362122,Yes,Personal Need,166455,12,No,Gold,166455,Partial
+43,Self-Employed,171457,627,1163225,Yes,Personal Need,98475,11,Yes,Gold,98475,Partial
+44,Self-Employed,139848,650,826567,No,Small Business Support,120709,4,No,Gold,120709,Approved
+37,Business,35254,556,463787,Yes,Education Fees,709824,7,Yes,Gold,623318,Partial
+49,Freelancer,170430,536,355058,No,Education Fees,246277,6,Yes,Gold,246277,Approved
+31,Self-Employed,32418,780,232709,No,Education Fees,630465,9,No,Gold,514065,Partial
+58,Freelancer,24999,713,398924,Yes,Education Fees,662495,7,Yes,Gold,430661,Partial
+46,Salaried,28120,875,46365,Yes,Small Business Support,128451,11,No,Gold,30460,Rejected
+45,Salaried,53318,722,1388332,Yes,Small Business Support,535687,5,Yes,Gold,535687,Partial
+50,Salaried,82119,593,191458,No,Small Business Support,659607,5,Yes,Gold,659607,Partial
+35,Freelancer,170121,756,1432733,No,Personal Need,423792,2,No,Gold,423792,Approved
+57,Business,20441,685,495404,Yes,Education Fees,101513,14,Yes,Gold,101513,Partial
+29,Business,51503,639,1112047,No,Small Business Support,431742,5,No,Gold,431742,Partial
+37,Business,29397,555,313873,Yes,Medical Emergency,549749,10,No,Gold,118512,Rejected
+30,Salaried,26300,622,681491,Yes,Personal Need,580931,5,Yes,Gold,346428,Partial
+52,Business,34107,529,1252933,Yes,Personal Need,471433,3,Yes,Gold,426051,Partial
+50,Self-Employed,80571,550,232318,Yes,Small Business Support,235687,8,Yes,Gold,235687,Partial
+28,Salaried,32902,549,1230322,Yes,Personal Need,139354,1,No,Gold,30431,Rejected
+59,Freelancer,103996,654,343233,No,Medical Emergency,643914,6,Yes,Gold,643914,Approved
+48,Salaried,26683,862,668000,Yes,Small Business Support,700707,9,No,Gold,427802,Partial
+26,Salaried,38366,668,635592,Yes,Medical Emergency,537391,8,No,Gold,481463,Partial
+59,Salaried,74771,562,555547,No,Education Fees,188452,13,No,Gold,188452,Partial
+31,Self-Employed,82281,851,431408,No,Small Business Support,676819,13,No,Gold,676819,Approved
+25,Business,47371,622,105844,No,Small Business Support,51964,8,No,Gold,51964,Partial
+28,Self-Employed,22130,684,95873,Yes,Personal Need,450394,15,Yes,Gold,67385,Rejected
+39,Business,25893,746,65012,No,Medical Emergency,351951,9,Yes,Gold,351951,Partial
+49,Business,44092,713,1319762,No,Education Fees,206874,6,No,Gold,206874,Partial
+45,Business,144885,769,1137578,Yes,Personal Need,743756,9,No,Gold,743756,Partial
+41,Freelancer,162360,529,616350,No,Personal Need,649909,3,No,Gold,649909,Approved
+43,Salaried,169306,893,1409974,Yes,Small Business Support,153974,1,Yes,Gold,153974,Approved
+42,Salaried,85288,828,866251,Yes,Personal Need,57393,8,Yes,Gold,57393,Approved
+59,Freelancer,60612,741,1123052,Yes,Personal Need,278343,12,No,Gold,278343,Partial
+47,Business,65147,879,739518,Yes,Small Business Support,654966,14,Yes,Gold,654966,Approved
+23,Salaried,66235,744,702575,Yes,Medical Emergency,754755,12,Yes,Gold,754755,Approved
+46,Salaried,41793,884,469481,No,Small Business Support,511152,4,Yes,Gold,511152,Approved
+47,Salaried,141864,878,1026062,Yes,Medical Emergency,571299,6,Yes,Gold,571299,Approved
+37,Self-Employed,47993,820,1401536,Yes,Personal Need,181517,15,No,Gold,181517,Partial
+51,Business,30809,805,343685,No,Personal Need,292472,11,Yes,Gold,292472,Partial
+26,Salaried,66875,505,1005716,No,Medical Emergency,52957,12,Yes,Gold,52957,Approved
+31,Salaried,37544,617,107281,No,Education Fees,392751,13,No,Gold,81758,Rejected
+37,Self-Employed,32585,539,757869,Yes,Small Business Support,85546,14,Yes,Gold,85546,Partial
+37,Self-Employed,74409,657,191903,Yes,Personal Need,771335,13,No,Gold,771335,Partial
+24,Salaried,31094,616,554256,No,Medical Emergency,798792,15,Yes,Gold,647210,Partial
+43,Business,31920,517,1079556,Yes,Medical Emergency,599736,7,No,Gold,34378,Rejected
+29,Salaried,20753,894,1268648,No,Education Fees,75732,10,Yes,Gold,75732,Approved
+24,Self-Employed,49966,612,619873,No,Small Business Support,173529,6,Yes,Gold,173529,Partial
+60,Business,156795,854,78609,Yes,Personal Need,678944,2,No,Gold,678944,Partial
+32,Freelancer,65368,853,912774,Yes,Personal Need,788058,1,Yes,Gold,788058,Approved
+24,Self-Employed,36988,837,1216548,No,Medical Emergency,125893,7,No,Gold,125893,Approved
+39,Self-Employed,20049,852,73359,Yes,Medical Emergency,799820,14,Yes,Gold,289251,Partial
+52,Self-Employed,71858,705,1470042,Yes,Small Business Support,621854,15,Yes,Gold,621854,Approved
+48,Freelancer,102250,627,227530,No,Education Fees,143570,2,No,Gold,143570,Partial
+53,Business,84824,839,202895,Yes,Personal Need,654021,4,Yes,Gold,654021,Partial
+25,Salaried,20258,604,1089969,No,Small Business Support,97626,15,Yes,Gold,97626,Partial
+37,Business,41931,514,322015,No,Education Fees,108360,10,No,Gold,108360,Partial
+61,Business,48891,576,368966,No,Education Fees,56285,4,No,Gold,56285,Partial
+32,Business,20648,807,755343,No,Small Business Support,409038,15,No,Gold,368817,Partial
+49,Business,33379,690,193372,Yes,Personal Need,175345,3,No,Gold,22270,Rejected
+61,Freelancer,45321,865,83603,Yes,Small Business Support,181046,12,Yes,Gold,181046,Partial
+47,Freelancer,83884,835,757031,No,Small Business Support,424007,8,Yes,Gold,424007,Approved
+41,Business,105966,850,604161,No,Medical Emergency,372744,3,No,Gold,372744,Approved
+24,Freelancer,21987,681,319916,Yes,Education Fees,507574,10,No,Gold,289590,Partial
+47,Freelancer,56352,553,250141,No,Education Fees,371404,8,Yes,Gold,371404,Partial
+36,Salaried,82358,618,558933,Yes,Education Fees,367194,3,No,Gold,367194,Partial
+48,Salaried,87236,828,1195911,No,Personal Need,715811,11,No,Gold,715811,Approved
+28,Self-Employed,53413,798,1002640,Yes,Personal Need,598935,10,No,Gold,598935,Approved
+35,Freelancer,96556,524,625728,No,Personal Need,307760,6,No,Gold,307760,Partial
+36,Freelancer,37821,576,897497,Yes,Personal Need,376897,11,No,Gold,376897,Partial
+46,Business,141407,502,445448,No,Small Business Support,356414,3,No,Gold,356414,Partial
+22,Business,69836,637,1021521,Yes,Personal Need,520950,8,No,Gold,520950,Partial
+34,Business,31032,883,1159843,Yes,Small Business Support,198902,12,Yes,Gold,198902,Approved
+33,Salaried,44432,597,439537,No,Personal Need,769567,14,No,Gold,769567,Partial
+38,Freelancer,28374,866,790972,No,Medical Emergency,665131,14,Yes,Gold,497875,Approved
+36,Salaried,36636,871,1462683,No,Personal Need,300385,1,No,Gold,300385,Approved
+48,Self-Employed,65187,563,183377,No,Medical Emergency,314074,12,No,Gold,61478,Rejected
+29,Self-Employed,94444,536,191784,No,Education Fees,644264,15,Yes,Gold,644264,Partial
+41,Business,37891,585,60910,No,Personal Need,370932,4,No,Gold,56539,Rejected
+22,Freelancer,32394,726,438195,Yes,Small Business Support,570110,4,Yes,Gold,544007,Partial
+28,Salaried,33191,697,698445,Yes,Small Business Support,782752,12,No,Gold,421437,Partial
+53,Salaried,76203,690,1497271,No,Education Fees,444672,7,No,Gold,444672,Approved
+58,Self-Employed,47224,565,1300839,Yes,Education Fees,441640,13,No,Gold,441640,Partial
+55,Salaried,138519,839,1378772,Yes,Education Fees,509971,11,Yes,Gold,509971,Approved
+48,Self-Employed,104930,537,978504,No,Personal Need,214840,12,Yes,Gold,214840,Approved
+25,Self-Employed,20985,667,901050,No,Medical Emergency,123081,11,Yes,Gold,123081,Partial
+27,Freelancer,38311,839,256636,No,Personal Need,162984,9,Yes,Gold,162984,Partial
+38,Self-Employed,78446,793,1338160,No,Personal Need,294449,7,Yes,Gold,294449,Approved
+29,Self-Employed,25749,811,348344,No,Medical Emergency,418551,1,No,Gold,418551,Partial
+39,Freelancer,24663,577,1062760,No,Education Fees,560028,1,Yes,Gold,343336,Partial
+34,Salaried,23069,652,396384,Yes,Personal Need,335772,4,Yes,Gold,335772,Partial
+45,Salaried,35775,759,87845,Yes,Personal Need,326038,1,No,Gold,34964,Rejected
+29,Freelancer,61477,885,949449,No,Personal Need,402247,6,Yes,Gold,402247,Approved
+27,Self-Employed,28060,768,370146,Yes,Medical Emergency,565546,3,Yes,Gold,339235,Partial
+43,Salaried,41115,703,246365,No,Small Business Support,95510,6,Yes,Gold,95510,Partial
+33,Self-Employed,47736,644,1053191,No,Medical Emergency,587923,1,Yes,Gold,587923,Partial
+37,Freelancer,107186,568,488033,Yes,Personal Need,502037,3,No,Gold,502037,Partial
+23,Business,95209,692,510619,Yes,Small Business Support,708960,12,Yes,Gold,708960,Approved
+22,Self-Employed,23475,534,807457,Yes,Education Fees,166154,8,Yes,Gold,2790,Rejected
+32,Salaried,63558,653,784856,No,Small Business Support,352592,13,Yes,Gold,352592,Partial
+44,Self-Employed,84334,521,1335908,No,Medical Emergency,655866,1,No,Gold,655866,Partial
+44,Freelancer,84771,739,1432876,Yes,Medical Emergency,262089,14,No,Gold,262089,Partial
+58,Business,112917,642,1063780,No,Medical Emergency,650043,7,Yes,Gold,650043,Approved
+32,Salaried,83568,631,373988,No,Small Business Support,667075,4,No,Gold,667075,Partial
+22,Freelancer,27300,659,978471,No,Personal Need,523389,4,Yes,Gold,523389,Partial
+47,Freelancer,87454,530,106804,No,Small Business Support,386541,9,Yes,Gold,386541,Partial
+40,Freelancer,172751,533,1004434,No,Personal Need,67862,1,No,Gold,67862,Approved
+56,Business,31439,526,641454,No,Personal Need,538133,7,Yes,Gold,538133,Partial
+47,Freelancer,34839,500,578888,No,Education Fees,594595,2,Yes,Gold,594595,Partial
+46,Freelancer,25164,691,1453619,No,Medical Emergency,442865,12,No,Gold,355926,Partial
+44,Self-Employed,84685,540,1457358,No,Medical Emergency,706187,14,No,Gold,706187,Partial
+28,Salaried,22467,663,1150173,Yes,Small Business Support,263782,3,No,Gold,4256,Rejected
+23,Freelancer,161501,670,125092,No,Medical Emergency,762388,6,Yes,Gold,762388,Partial
+23,Business,63281,874,1022400,No,Medical Emergency,104410,7,No,Gold,104410,Approved
+34,Freelancer,120228,598,869728,No,Small Business Support,58519,14,No,Gold,58519,Partial
+48,Self-Employed,49656,839,748067,Yes,Personal Need,198537,1,Yes,Gold,198537,Partial
+40,Business,29455,775,1230672,Yes,Small Business Support,439216,9,Yes,Gold,413888,Approved
+60,Freelancer,45809,886,548588,No,Small Business Support,649264,6,Yes,Gold,649264,Approved
+37,Self-Employed,33393,652,1378370,No,Medical Emergency,234420,8,Yes,Gold,234420,Partial
+55,Self-Employed,161000,763,1015126,Yes,Personal Need,235729,4,No,Gold,235729,Approved
+59,Business,84843,628,609089,Yes,Small Business Support,601114,11,Yes,Gold,601114,Partial
+26,Freelancer,64564,673,372434,No,Personal Need,87370,1,No,Gold,87370,Partial
+48,Salaried,47441,601,37421,No,Personal Need,694406,9,Yes,Gold,694406,Partial
+27,Self-Employed,20792,788,1342219,Yes,Personal Need,358953,11,No,Gold,226681,Partial
+44,Self-Employed,40454,730,647332,Yes,Education Fees,465148,4,No,Gold,465148,Partial
+49,Salaried,23556,587,921734,No,Personal Need,94187,15,No,Gold,94187,Partial
+26,Business,39673,508,534296,Yes,Education Fees,125286,11,No,Gold,125286,Partial
+34,Freelancer,34924,625,988818,No,Personal Need,791333,8,No,Gold,462465,Partial
+35,Freelancer,39177,546,1342393,Yes,Education Fees,685946,9,Yes,Gold,627063,Partial
+31,Self-Employed,45289,799,989587,Yes,Education Fees,670717,15,Yes,Gold,670717,Partial
+47,Business,20755,808,497444,No,Personal Need,778565,8,No,Gold,370459,Partial
+35,Self-Employed,115096,620,961029,Yes,Small Business Support,593887,12,Yes,Gold,593887,Partial
+34,Business,30984,871,369700,Yes,Small Business Support,205399,10,Yes,Gold,205399,Approved
+53,Business,24074,671,1257501,Yes,Education Fees,675443,1,Yes,Gold,407398,Partial
+43,Freelancer,85314,877,991090,Yes,Medical Emergency,740151,5,No,Gold,740151,Approved
+56,Business,106838,630,1324658,No,Medical Emergency,419938,13,No,Gold,419938,Partial
+22,Salaried,149894,674,848020,No,Small Business Support,72237,11,No,Gold,72237,Approved
+46,Self-Employed,20689,691,371871,Yes,Personal Need,533439,12,No,Gold,331120,Partial
+29,Self-Employed,122573,636,1022329,No,Small Business Support,575450,6,No,Gold,575450,Approved
+43,Salaried,26860,810,559868,No,Small Business Support,623054,4,Yes,Gold,491739,Partial
+51,Salaried,30985,634,1202833,No,Personal Need,410432,3,Yes,Gold,410432,Partial
+32,Salaried,36853,687,488444,No,Medical Emergency,193773,6,No,Gold,193773,Partial
+34,Business,32525,592,511936,Yes,Personal Need,98360,3,No,Gold,24525,Rejected
+43,Self-Employed,41465,823,956772,Yes,Education Fees,321550,8,No,Gold,321550,Partial
+41,Freelancer,22990,642,406626,No,Personal Need,347457,11,Yes,Gold,347457,Partial
+30,Business,35538,565,54578,No,Medical Emergency,459968,13,No,Gold,95823,Rejected
+50,Salaried,170598,545,109781,No,Small Business Support,218994,8,Yes,Gold,218994,Partial
+53,Business,79920,682,681708,Yes,Small Business Support,62763,14,Yes,Gold,62763,Approved
+35,Business,33368,767,526587,Yes,Personal Need,329137,9,No,Gold,329137,Partial
+42,Salaried,168325,671,470184,Yes,Education Fees,385013,4,Yes,Gold,385013,Partial
+62,Freelancer,83986,791,152633,No,Small Business Support,437214,3,No,Gold,437214,Approved
+30,Business,72228,666,450927,No,Medical Emergency,110440,13,No,Gold,110440,Partial
+45,Self-Employed,90425,702,288597,Yes,Medical Emergency,725993,5,No,Gold,725993,Partial
+60,Freelancer,24723,669,981003,No,Education Fees,155815,8,No,Gold,155815,Partial
+43,Business,40559,626,323176,No,Medical Emergency,502852,12,Yes,Gold,502852,Partial
+48,Salaried,81476,618,101651,No,Education Fees,756219,11,No,Gold,756219,Partial
+42,Salaried,34444,570,839335,Yes,Small Business Support,422924,12,Yes,Gold,422924,Partial
+24,Freelancer,29815,683,218573,No,Small Business Support,527231,3,No,Gold,3407,Rejected
+55,Freelancer,79461,647,1125133,No,Education Fees,556995,2,No,Gold,556995,Partial
+39,Business,144118,693,308673,No,Medical Emergency,242095,12,Yes,Gold,242095,Approved
+47,Salaried,52654,533,853390,No,Medical Emergency,262337,10,Yes,Gold,262337,Partial
+59,Salaried,29853,517,229576,Yes,Small Business Support,634357,8,No,Gold,120821,Rejected
+25,Self-Employed,70801,656,158624,No,Medical Emergency,254242,4,No,Gold,254242,Partial
+23,Business,83399,640,357363,Yes,Small Business Support,178210,13,No,Gold,178210,Partial
+47,Freelancer,91113,900,648485,No,Personal Need,537846,5,Yes,Gold,537846,Approved
+28,Salaried,31302,872,839829,Yes,Small Business Support,184404,12,Yes,Gold,184404,Approved
+40,Freelancer,23632,514,1162718,Yes,Personal Need,88866,1,Yes,Gold,88866,Partial
+55,Business,31275,685,188491,No,Education Fees,198504,12,No,Gold,6144,Rejected
+29,Freelancer,131458,811,1051550,Yes,Personal Need,367259,14,Yes,Gold,367259,Approved
+37,Salaried,62489,826,1458300,Yes,Medical Emergency,605248,10,Yes,Gold,605248,Approved
+31,Salaried,69827,898,1305164,Yes,Education Fees,379097,14,No,Gold,379097,Approved
+50,Self-Employed,28297,774,156573,No,Personal Need,533526,4,No,Gold,82295,Rejected
+31,Self-Employed,50079,568,655953,Yes,Personal Need,440247,2,No,Gold,440247,Partial
+56,Salaried,32774,735,724993,No,Education Fees,199204,15,No,Gold,199204,Partial
+58,Business,47463,597,945264,No,Medical Emergency,177998,3,Yes,Gold,177998,Approved
+61,Freelancer,92990,811,340631,No,Personal Need,269581,11,Yes,Gold,269581,Approved
+26,Salaried,63742,787,516807,No,Personal Need,76770,8,Yes,Gold,76770,Approved
+59,Freelancer,31987,686,1260160,No,Small Business Support,483357,11,No,Gold,483357,Partial
+41,Freelancer,110520,593,1059537,No,Education Fees,728974,7,No,Gold,728974,Approved
+57,Self-Employed,31855,616,1332303,Yes,Education Fees,500720,3,Yes,Gold,500720,Partial
+53,Salaried,34591,772,958171,No,Small Business Support,106919,13,No,Gold,106919,Approved
+49,Freelancer,43643,633,1295377,Yes,Medical Emergency,332337,12,No,Gold,332337,Partial
+42,Business,57440,746,390625,No,Education Fees,204308,3,Yes,Gold,204308,Approved
+25,Self-Employed,59982,732,1111115,Yes,Education Fees,647383,8,No,Gold,647383,Partial
+39,Business,81870,706,1133481,Yes,Small Business Support,292436,3,Yes,Gold,292436,Partial
+23,Salaried,22602,613,333646,Yes,Education Fees,292796,6,Yes,Gold,279420,Partial
+55,Self-Employed,47485,896,1033201,No,Personal Need,687928,7,No,Gold,687928,Approved
+52,Self-Employed,125456,687,1491429,No,Medical Emergency,726347,1,Yes,Gold,726347,Approved
+46,Business,41344,741,101088,No,Education Fees,419262,15,Yes,Gold,419262,Partial
+52,Salaried,62926,518,117675,No,Medical Emergency,757707,9,Yes,Gold,757707,Partial
+25,Self-Employed,49947,834,481048,Yes,Personal Need,279930,15,No,Gold,279930,Partial
+51,Freelancer,142986,666,567686,Yes,Education Fees,283527,2,No,Gold,283527,Partial
+56,Business,45180,638,454482,Yes,Personal Need,666308,3,Yes,Gold,545885,Partial
+28,Salaried,167573,851,796221,No,Education Fees,424022,13,Yes,Gold,424022,Approved
+48,Business,48667,574,410276,No,Small Business Support,330002,6,No,Gold,330002,Partial
+41,Business,77204,654,610671,Yes,Personal Need,794693,13,No,Gold,794693,Partial
+44,Business,171211,645,1203281,No,Personal Need,229612,12,No,Gold,229612,Partial
+36,Freelancer,48322,506,853835,Yes,Personal Need,390933,12,Yes,Gold,390933,Partial
+26,Business,36510,754,1201372,No,Education Fees,423915,6,Yes,Gold,423915,Partial
+51,Freelancer,63054,670,1440585,Yes,Small Business Support,779220,4,Yes,Gold,779220,Partial
+35,Business,49943,653,491389,Yes,Education Fees,158066,5,No,Gold,158066,Partial
+36,Salaried,41110,867,817173,Yes,Medical Emergency,334775,4,No,Gold,334775,Partial
+32,Freelancer,32448,563,252385,No,Medical Emergency,146183,8,No,Gold,23383,Rejected
+31,Self-Employed,72699,566,1087865,No,Personal Need,501178,9,No,Gold,501178,Partial
+50,Salaried,24783,696,617687,No,Medical Emergency,401495,7,No,Gold,357248,Partial
+29,Business,56111,788,943680,Yes,Small Business Support,406823,13,No,Gold,406823,Partial
+58,Salaried,31609,771,44923,No,Personal Need,531029,7,No,Gold,531029,Partial
+57,Freelancer,33598,883,688087,Yes,Personal Need,407776,4,No,Gold,407776,Partial
+23,Freelancer,29765,633,900905,Yes,Education Fees,82293,13,Yes,Gold,82293,Partial
+59,Salaried,23825,752,33772,Yes,Medical Emergency,570780,13,No,Gold,67822,Rejected
+34,Freelancer,111966,894,261198,No,Small Business Support,321413,8,No,Gold,321413,Partial
+28,Business,64021,651,309603,Yes,Education Fees,238587,10,Yes,Gold,238587,Partial
+52,Freelancer,60466,695,716081,No,Small Business Support,751945,2,Yes,Gold,751945,Approved
+27,Self-Employed,48219,837,348038,No,Personal Need,548402,9,Yes,Gold,548402,Approved
+39,Self-Employed,68167,622,1125916,Yes,Small Business Support,425769,12,No,Gold,425769,Partial
+42,Salaried,27001,710,1429848,Yes,Personal Need,227131,1,Yes,Gold,227131,Partial
+27,Self-Employed,71560,567,1341106,No,Small Business Support,85954,3,No,Gold,85954,Partial
+29,Business,164057,643,747770,No,Education Fees,552689,3,No,Gold,552689,Partial
+55,Business,46274,646,1097325,Yes,Personal Need,595794,11,Yes,Gold,549232,Partial
+42,Self-Employed,67097,676,1163740,No,Small Business Support,191595,11,No,Gold,191595,Approved
+49,Self-Employed,44529,782,779489,No,Medical Emergency,541498,5,Yes,Gold,541498,Approved
+30,Business,30279,695,886497,Yes,Personal Need,123199,7,No,Gold,123199,Partial
+39,Salaried,128901,803,1494456,No,Education Fees,266054,9,No,Gold,266054,Approved
+57,Salaried,84373,643,1065000,Yes,Small Business Support,151553,12,No,Gold,151553,Partial
+52,Freelancer,102832,741,1361347,Yes,Medical Emergency,330812,10,Yes,Gold,330812,Approved
+43,Salaried,119913,641,1451974,Yes,Education Fees,167872,15,No,Gold,167872,Partial
+28,Freelancer,76183,576,330622,No,Education Fees,628878,15,Yes,Gold,628878,Partial
+25,Self-Employed,76659,782,283516,No,Personal Need,470730,8,Yes,Gold,470730,Approved
+26,Salaried,57034,539,1200526,No,Medical Emergency,530539,12,Yes,Gold,530539,Approved
+46,Salaried,20435,710,186032,No,Medical Emergency,104194,9,Yes,Gold,104194,Partial
+40,Freelancer,48088,522,1466219,No,Personal Need,248442,7,No,Gold,248442,Partial
+35,Salaried,41921,601,1326973,No,Personal Need,703702,3,Yes,Gold,703702,Approved
+35,Freelancer,46913,634,171528,Yes,Personal Need,588547,15,No,Gold,59379,Rejected
+42,Self-Employed,87866,715,1439850,Yes,Medical Emergency,732452,10,Yes,Gold,732452,Approved
+45,Salaried,38597,668,1433523,No,Small Business Support,260188,15,No,Gold,260188,Partial
+44,Freelancer,65349,693,371451,No,Education Fees,427759,9,Yes,Gold,427759,Approved
+53,Freelancer,47009,588,960450,No,Small Business Support,157898,3,Yes,Gold,157898,Partial
+61,Self-Employed,61277,559,1342394,Yes,Personal Need,503998,2,Yes,Gold,503998,Partial
+59,Business,164517,539,525239,Yes,Medical Emergency,153202,2,No,Gold,153202,Partial
+53,Freelancer,140223,591,635084,Yes,Education Fees,289834,12,Yes,Gold,289834,Approved
+49,Business,38992,641,1011716,Yes,Education Fees,104400,13,Yes,Gold,104400,Partial
+48,Business,27045,546,1420305,No,Education Fees,292395,9,No,Gold,292395,Partial
+38,Freelancer,47771,865,91282,No,Education Fees,612555,4,Yes,Gold,612555,Partial
+35,Business,35439,883,1330766,No,Education Fees,654396,15,No,Gold,651636,Approved
+50,Freelancer,44991,542,787036,Yes,Personal Need,59446,13,No,Gold,59446,Partial
+34,Salaried,40290,803,991218,No,Medical Emergency,420445,14,No,Gold,420445,Approved
+48,Freelancer,74263,837,82833,No,Personal Need,258707,3,Yes,Gold,258707,Approved
+49,Business,35119,774,667477,Yes,Small Business Support,117419,13,No,Gold,117419,Partial
+28,Self-Employed,69139,658,48513,Yes,Personal Need,675401,1,No,Gold,675401,Partial
+59,Business,48657,544,1049089,No,Medical Emergency,419821,11,Yes,Gold,419821,Approved
+54,Business,42312,571,1437959,No,Medical Emergency,161387,11,No,Gold,161387,Partial
+53,Freelancer,22196,556,757845,No,Personal Need,435456,12,No,Gold,4000,Rejected
+57,Salaried,145583,630,851894,No,Small Business Support,297322,6,No,Gold,297322,Partial
+22,Self-Employed,70277,630,1320457,No,Medical Emergency,318113,3,No,Gold,318113,Partial
+40,Freelancer,89007,676,1060056,No,Education Fees,726977,11,No,Gold,726977,Partial
+22,Self-Employed,28460,707,510041,No,Small Business Support,339895,8,No,Gold,339895,Partial
+34,Self-Employed,26221,634,156372,Yes,Personal Need,491910,14,No,Gold,62612,Rejected
+44,Freelancer,146807,524,323771,Yes,Education Fees,219016,14,Yes,Gold,219016,Partial
+59,Business,46038,645,510217,Yes,Education Fees,95866,11,No,Gold,95866,Partial
+37,Business,76391,801,304256,Yes,Personal Need,656657,1,No,Gold,656657,Partial
+45,Business,34921,708,337430,Yes,Personal Need,194782,7,No,Gold,194782,Partial
+28,Self-Employed,126092,595,701029,Yes,Small Business Support,198735,2,No,Gold,198735,Partial
+48,Business,144667,646,809261,No,Medical Emergency,738366,2,Yes,Gold,738366,Approved
+23,Business,23878,707,894793,Yes,Medical Emergency,591221,14,Yes,Gold,322000,Partial
+60,Business,28154,686,37402,Yes,Small Business Support,140430,13,Yes,Gold,140430,Partial
+42,Freelancer,36794,542,676669,Yes,Small Business Support,748471,11,Yes,Gold,441043,Partial
+24,Self-Employed,163216,673,656152,No,Small Business Support,346368,1,No,Gold,346368,Approved
+40,Self-Employed,63251,678,167816,Yes,Small Business Support,552474,12,No,Gold,57591,Rejected
+58,Salaried,79925,679,1198514,Yes,Medical Emergency,238652,6,Yes,Gold,238652,Approved
+32,Salaried,36158,519,1299902,Yes,Education Fees,449924,12,Yes,Gold,449924,Partial
+22,Business,144592,508,958603,No,Medical Emergency,597894,3,Yes,Gold,597894,Approved
+49,Freelancer,112819,809,1429777,Yes,Education Fees,595610,15,No,Gold,595610,Partial
+43,Salaried,23704,758,44381,Yes,Medical Emergency,326637,14,Yes,Gold,269259,Partial
+62,Self-Employed,35808,739,889318,Yes,Personal Need,678732,11,Yes,Gold,500103,Partial
+40,Self-Employed,20665,599,141812,Yes,Education Fees,396294,3,Yes,Gold,18217,Rejected
+58,Freelancer,24176,849,296392,Yes,Personal Need,509290,5,No,Gold,66369,Rejected
+31,Freelancer,21228,864,719972,Yes,Education Fees,782357,6,Yes,Gold,350843,Approved
+57,Salaried,41311,664,200646,No,Personal Need,275193,12,No,Gold,60263,Rejected
+41,Self-Employed,24135,572,48223,No,Education Fees,433764,7,Yes,Gold,433764,Partial
+31,Self-Employed,89786,513,387386,No,Education Fees,209090,6,Yes,Gold,209090,Approved
+28,Freelancer,84411,891,1101225,No,Medical Emergency,666855,6,Yes,Gold,666855,Approved
+23,Self-Employed,176728,812,652867,No,Personal Need,686357,12,No,Gold,686357,Approved
+62,Business,49301,728,1263143,No,Small Business Support,208740,11,No,Gold,208740,Partial
+25,Business,43107,873,757738,No,Medical Emergency,433830,14,No,Gold,433830,Approved
+22,Salaried,65315,705,332909,Yes,Personal Need,362394,14,Yes,Gold,362394,Approved
+39,Freelancer,30188,786,741056,Yes,Education Fees,117545,1,Yes,Gold,117545,Partial
+22,Freelancer,81248,624,499687,Yes,Education Fees,696906,8,No,Gold,696906,Partial
+33,Salaried,49277,708,858325,No,Personal Need,416319,15,No,Gold,416319,Approved
+29,Self-Employed,93229,634,705579,No,Education Fees,69346,14,Yes,Gold,69346,Approved
+31,Freelancer,33948,714,1181333,No,Medical Emergency,698135,6,No,Gold,566821,Partial
+54,Self-Employed,41748,859,1389598,Yes,Education Fees,329779,6,No,Gold,329779,Partial
+44,Freelancer,71078,735,1060522,No,Education Fees,698322,12,No,Gold,698322,Approved
+27,Self-Employed,78898,807,1085880,Yes,Medical Emergency,94771,14,Yes,Gold,94771,Approved
+40,Self-Employed,28002,725,966039,Yes,Personal Need,144310,13,Yes,Gold,144310,Partial
+45,Self-Employed,79977,720,433240,Yes,Small Business Support,384117,15,No,Gold,384117,Partial
+25,Freelancer,176001,692,1223710,Yes,Personal Need,263469,1,No,Gold,263469,Approved
+56,Self-Employed,84246,506,603280,No,Small Business Support,701379,13,No,Gold,701379,Partial
+52,Freelancer,38579,556,57334,Yes,Medical Emergency,170663,12,No,Gold,6300,Rejected
+23,Business,30695,608,87713,Yes,Small Business Support,704007,8,Yes,Gold,43190,Rejected
+26,Self-Employed,49301,566,918172,No,Personal Need,562256,15,Yes,Gold,562256,Partial
+35,Business,38096,666,433150,No,Medical Emergency,133902,11,Yes,Gold,133902,Partial
+22,Freelancer,125218,557,619069,Yes,Education Fees,525914,6,No,Gold,525914,Partial
+55,Freelancer,48498,708,1232996,Yes,Education Fees,55233,8,Yes,Gold,55233,Approved
+47,Salaried,74956,727,508023,No,Education Fees,719054,12,Yes,Gold,719054,Approved
+29,Freelancer,41658,661,915321,Yes,Education Fees,475433,3,Yes,Gold,475433,Partial
+22,Business,121696,798,1251887,Yes,Small Business Support,492146,10,Yes,Gold,492146,Approved
+40,Self-Employed,21816,622,1092103,Yes,Education Fees,102726,14,No,Gold,18865,Rejected
+32,Salaried,70452,857,163686,No,Personal Need,183033,4,No,Gold,183033,Partial
+56,Freelancer,122645,614,836449,No,Medical Emergency,356860,2,Yes,Gold,356860,Approved
+26,Business,56813,512,989628,Yes,Personal Need,525977,6,No,Gold,525977,Partial
+50,Business,20622,820,1427631,No,Education Fees,233183,3,Yes,Gold,233183,Approved
+28,Self-Employed,87519,760,854495,No,Education Fees,621385,10,Yes,Gold,621385,Approved
+26,Self-Employed,53036,590,138865,Yes,Personal Need,739077,4,No,Gold,11560,Rejected
+52,Business,41869,627,705677,Yes,Education Fees,586884,12,No,Gold,531777,Partial
+55,Business,26324,676,1379328,No,Small Business Support,673639,4,Yes,Gold,502728,Partial
+46,Business,174271,674,1232281,No,Education Fees,577385,15,No,Gold,577385,Partial
+49,Business,21490,680,413263,Yes,Education Fees,575545,14,Yes,Gold,323943,Partial
+59,Business,21923,798,1089971,No,Medical Emergency,54951,5,Yes,Gold,54951,Approved
+30,Self-Employed,87624,635,533021,No,Personal Need,231606,2,Yes,Gold,231606,Partial
+46,Salaried,49290,865,154852,Yes,Education Fees,351672,6,No,Gold,351672,Partial
+58,Self-Employed,21561,647,307366,No,Small Business Support,253072,6,Yes,Gold,253072,Partial
+59,Business,72965,655,1432760,No,Medical Emergency,497987,12,Yes,Gold,497987,Approved
+47,Salaried,146401,573,1354329,No,Personal Need,596944,2,Yes,Gold,596944,Approved
+49,Self-Employed,31107,711,706476,No,Personal Need,362750,4,Yes,Gold,362750,Partial
+27,Freelancer,27303,798,1451117,No,Personal Need,529497,10,No,Gold,374980,Approved
+55,Salaried,164309,583,1294210,Yes,Education Fees,395169,11,Yes,Gold,395169,Partial
+60,Freelancer,131138,883,1057203,No,Small Business Support,700137,3,Yes,Gold,700137,Approved
+56,Business,27865,661,243923,No,Education Fees,584766,4,Yes,Gold,78677,Rejected
+39,Self-Employed,40578,708,71930,No,Small Business Support,330766,13,No,Gold,69540,Rejected
+60,Salaried,123365,649,1172677,No,Personal Need,182112,3,No,Gold,182112,Partial
+34,Self-Employed,67154,866,70361,No,Personal Need,210710,3,Yes,Gold,210710,Approved
+56,Salaried,48059,583,353880,Yes,Small Business Support,274683,13,No,Gold,28865,Rejected
+26,Salaried,23196,772,770739,Yes,Medical Emergency,237477,8,Yes,Gold,237477,Partial
+31,Self-Employed,30432,536,258597,No,Personal Need,81906,4,Yes,Gold,15545,Rejected
+23,Self-Employed,37253,647,541547,Yes,Small Business Support,280716,5,Yes,Gold,280716,Partial
+34,Freelancer,167656,859,651226,No,Small Business Support,636963,10,No,Gold,636963,Approved
+29,Freelancer,49571,633,335261,Yes,Personal Need,214030,2,No,Gold,214030,Partial
+34,Salaried,21858,639,569998,No,Small Business Support,429876,14,No,Gold,65100,Rejected
+44,Salaried,57140,557,751039,Yes,Personal Need,66656,14,No,Gold,12144,Rejected
+27,Self-Employed,22623,624,1004236,No,Education Fees,558138,5,Yes,Gold,329641,Partial
+44,Salaried,78431,573,941641,Yes,Medical Emergency,358943,12,No,Gold,358943,Partial
+47,Business,69034,855,162239,Yes,Personal Need,582906,6,No,Gold,582906,Partial
+49,Self-Employed,102799,505,521142,Yes,Small Business Support,364939,3,No,Gold,364939,Partial
+52,Freelancer,74156,829,465574,Yes,Small Business Support,262009,12,Yes,Gold,262009,Approved
+55,Freelancer,36692,809,1375102,No,Small Business Support,707459,13,No,Gold,707459,Approved
+23,Self-Employed,38487,812,1454082,Yes,Small Business Support,574750,12,No,Gold,574750,Partial
+29,Salaried,101929,517,722617,No,Small Business Support,304604,14,Yes,Gold,304604,Approved
+33,Self-Employed,44524,682,574761,No,Personal Need,582140,8,Yes,Gold,582140,Partial
+55,Self-Employed,28771,852,793286,Yes,Education Fees,55167,10,No,Gold,55167,Partial
+34,Business,84481,648,1279376,Yes,Small Business Support,514020,12,Yes,Gold,514020,Partial
+34,Self-Employed,37731,819,1406097,No,Personal Need,785568,10,Yes,Gold,785568,Approved
+55,Freelancer,49510,805,142922,No,Medical Emergency,102767,3,No,Gold,102767,Partial
+48,Freelancer,122342,713,1364475,No,Small Business Support,351476,12,No,Gold,351476,Partial
+59,Business,29716,634,1209740,Yes,Small Business Support,421385,7,No,Gold,79594,Rejected
+60,Business,38000,834,692265,No,Medical Emergency,226378,4,No,Gold,226378,Partial
+57,Self-Employed,55964,700,473295,No,Personal Need,286158,9,No,Gold,286158,Partial
+34,Business,29871,647,1219011,Yes,Education Fees,739683,6,Yes,Gold,439950,Partial
+50,Freelancer,62692,806,1097436,No,Small Business Support,356477,2,No,Gold,356477,Approved
+54,Self-Employed,46416,751,754900,No,Small Business Support,685219,4,Yes,Gold,685219,Partial
+31,Self-Employed,24769,776,710253,Yes,Education Fees,570778,13,No,Gold,285557,Partial
+60,Self-Employed,58381,688,340208,No,Small Business Support,413738,6,No,Gold,413738,Partial
+35,Self-Employed,36178,651,1266994,No,Education Fees,607977,8,Yes,Gold,607977,Partial
+42,Salaried,39309,669,373545,No,Small Business Support,609985,7,No,Gold,609985,Partial
+30,Salaried,26292,638,561408,No,Personal Need,394174,11,No,Gold,394174,Partial
+30,Salaried,132486,700,1030166,Yes,Medical Emergency,606182,11,Yes,Gold,606182,Approved
+27,Freelancer,27015,724,176733,Yes,Medical Emergency,540892,14,No,Gold,57430,Rejected
+29,Freelancer,24585,717,1237018,No,Small Business Support,536806,2,Yes,Gold,523445,Partial
+42,Business,43804,732,195646,No,Small Business Support,259293,5,Yes,Gold,259293,Partial
+58,Freelancer,132731,749,391179,Yes,Small Business Support,545061,9,Yes,Gold,545061,Approved
+54,Freelancer,47279,715,1262896,No,Medical Emergency,560475,4,Yes,Gold,560475,Partial
+43,Salaried,40469,767,1137321,Yes,Personal Need,396157,15,No,Gold,396157,Partial
+62,Salaried,57365,700,1057209,No,Small Business Support,709045,13,Yes,Gold,709045,Approved
+45,Salaried,106851,718,611819,Yes,Medical Emergency,761751,6,Yes,Gold,761751,Approved
+33,Business,24519,578,1484323,Yes,Small Business Support,54469,13,No,Gold,4165,Rejected
+38,Business,22374,820,567607,Yes,Personal Need,391572,9,No,Gold,391572,Partial
+46,Business,163774,628,462252,Yes,Small Business Support,634548,9,No,Gold,634548,Partial
+32,Self-Employed,24768,836,217580,Yes,Education Fees,642900,7,Yes,Gold,94246,Rejected
+23,Business,45178,671,1274832,Yes,Personal Need,554145,15,Yes,Gold,554145,Partial
+24,Self-Employed,125688,735,382624,No,Personal Need,134141,2,No,Gold,134141,Partial
+31,Business,85335,759,793503,Yes,Personal Need,761766,2,Yes,Gold,761766,Approved
+44,Business,24485,575,629242,Yes,Personal Need,637682,10,Yes,Gold,28469,Rejected
+32,Salaried,157619,674,628712,No,Education Fees,451675,7,Yes,Gold,451675,Approved
+34,Business,72255,571,346015,No,Medical Emergency,271237,10,No,Gold,271237,Approved
+31,Salaried,37579,748,1059815,No,Education Fees,480650,6,No,Gold,480650,Partial
+57,Business,36394,529,123639,No,Education Fees,277804,11,Yes,Gold,39208,Rejected
+54,Business,72596,843,1294186,No,Small Business Support,172358,2,No,Gold,172358,Approved
+41,Freelancer,42374,513,1426990,No,Medical Emergency,99183,12,No,Gold,99183,Partial
+25,Self-Employed,36672,881,195112,Yes,Small Business Support,456051,2,Yes,Gold,456051,Partial
+45,Business,24752,557,1236297,No,Small Business Support,184419,11,Yes,Gold,184419,Partial
+30,Freelancer,30908,691,177991,No,Education Fees,572933,4,Yes,Gold,522649,Partial
+25,Salaried,44633,893,561218,Yes,Personal Need,386508,4,Yes,Gold,386508,Partial
+26,Freelancer,53933,627,1317542,Yes,Personal Need,420222,5,Yes,Gold,420222,Partial
+54,Business,37077,772,952869,No,Medical Emergency,234302,2,Yes,Gold,234302,Approved
+46,Freelancer,39333,662,1066764,No,Personal Need,779585,13,No,Gold,673433,Partial
+62,Salaried,39742,636,1470224,No,Education Fees,705601,2,No,Gold,705601,Partial
+26,Business,71159,708,1348067,No,Personal Need,131996,12,Yes,Gold,131996,Approved
+29,Business,25598,704,1262090,Yes,Medical Emergency,571960,13,No,Gold,374433,Partial
+29,Self-Employed,79572,688,645001,No,Medical Emergency,199583,14,Yes,Gold,199583,Approved
+48,Salaried,114162,876,1125353,No,Small Business Support,412515,8,No,Gold,412515,Approved
+31,Self-Employed,34813,631,887163,Yes,Medical Emergency,114759,1,Yes,Gold,21431,Rejected
+24,Salaried,38658,627,57085,Yes,Small Business Support,303721,7,No,Gold,42168,Rejected
+56,Business,48392,536,1157656,Yes,Small Business Support,363106,13,Yes,Gold,363106,Partial
+40,Self-Employed,46224,796,1252283,No,Personal Need,288992,15,Yes,Gold,288992,Approved
+45,Freelancer,164469,613,99667,No,Small Business Support,179879,14,Yes,Gold,179879,Partial
+47,Business,139787,743,1253686,No,Medical Emergency,328359,14,Yes,Gold,328359,Approved
+29,Freelancer,36684,646,959323,Yes,Medical Emergency,584192,6,Yes,Gold,428525,Partial
+25,Freelancer,23072,859,928534,No,Education Fees,670530,7,Yes,Gold,504599,Approved
+50,Freelancer,48611,720,1124017,No,Medical Emergency,633195,11,Yes,Gold,633195,Partial
+31,Freelancer,71891,647,65230,No,Education Fees,214520,8,No,Gold,39902,Rejected
+50,Salaried,31719,562,226000,No,Education Fees,721612,14,No,Gold,93344,Rejected
+39,Self-Employed,41326,512,1218662,No,Medical Emergency,403073,12,Yes,Gold,403073,Partial
+42,Business,69029,619,1099711,No,Small Business Support,704014,3,Yes,Gold,704014,Approved
+57,Business,48494,675,929500,Yes,Personal Need,531240,2,Yes,Gold,531240,Partial
+53,Freelancer,37211,729,748757,Yes,Personal Need,750615,1,Yes,Gold,650953,Approved
+23,Business,87131,563,102575,Yes,Medical Emergency,428497,9,Yes,Gold,61795,Rejected
+47,Freelancer,28164,694,864770,Yes,Personal Need,269965,13,No,Gold,269965,Partial
+47,Freelancer,43411,740,153956,No,Medical Emergency,743232,4,No,Gold,589717,Partial
+39,Salaried,36046,899,923859,No,Medical Emergency,566250,7,Yes,Gold,566250,Approved
+33,Self-Employed,138785,578,628559,No,Personal Need,467175,11,Yes,Gold,467175,Approved
+55,Salaried,23741,670,1161352,Yes,Small Business Support,275446,6,Yes,Gold,274242,Partial
+42,Business,46066,767,627333,No,Education Fees,279698,10,Yes,Gold,279698,Approved
+22,Business,59464,797,1226922,Yes,Personal Need,477455,13,Yes,Gold,477455,Approved
+56,Self-Employed,82019,686,138687,No,Education Fees,428141,9,No,Gold,428141,Partial
+61,Salaried,88546,872,421792,No,Personal Need,379728,4,No,Gold,379728,Approved
+27,Self-Employed,52257,640,342981,Yes,Personal Need,273900,7,No,Gold,273900,Partial
+31,Salaried,37568,625,1039597,Yes,Medical Emergency,118896,2,No,Gold,3140,Rejected
+48,Salaried,62747,710,773227,Yes,Personal Need,763368,13,No,Gold,763368,Approved
+44,Salaried,39297,541,389297,Yes,Medical Emergency,760928,14,No,Gold,566977,Partial
+32,Self-Employed,23836,713,763863,Yes,Small Business Support,789275,11,No,Gold,190574,Rejected
+46,Self-Employed,35137,660,236490,No,Education Fees,548127,1,Yes,Gold,548127,Partial
+40,Freelancer,24243,803,297549,Yes,Small Business Support,372683,13,No,Gold,71306,Rejected
+42,Business,84491,871,657627,No,Personal Need,439199,14,Yes,Gold,439199,Approved
+51,Salaried,44611,666,1116730,No,Medical Emergency,714267,1,No,Gold,714267,Partial
+31,Freelancer,31794,799,1219695,Yes,Medical Emergency,70266,9,No,Gold,70266,Partial
+46,Freelancer,71187,669,180125,Yes,Medical Emergency,335671,6,No,Gold,29609,Rejected
+48,Business,129885,772,150805,Yes,Medical Emergency,552818,8,No,Gold,552818,Partial
+59,Salaried,86169,830,1125078,No,Medical Emergency,92084,12,Yes,Gold,92084,Approved
+39,Business,143244,754,150822,No,Personal Need,458622,7,No,Gold,458622,Partial
+52,Business,29340,690,872394,No,Small Business Support,583233,14,Yes,Gold,448157,Partial
+58,Business,38501,705,593580,Yes,Small Business Support,105562,15,No,Gold,105562,Partial
+37,Self-Employed,82411,819,1102399,Yes,Small Business Support,778582,14,No,Gold,778582,Partial
+40,Freelancer,48069,782,725448,Yes,Personal Need,476380,15,No,Gold,476380,Partial
+51,Self-Employed,26563,710,145349,No,Small Business Support,339756,2,No,Gold,339756,Partial
+39,Salaried,45771,619,1453639,No,Working Capital,3470360,14,No,Business,767501,Partial
+54,Salaried,87678,896,1422118,No,Working Capital,4855073,11,Yes,Business,1640697,Approved
+51,Self-Employed,177386,716,1140548,No,Startup Capital,4798477,13,No,Business,2667745,Approved
+48,Business,45984,883,620904,No,Working Capital,4870146,1,Yes,Business,1012866,Approved
+50,Freelancer,59214,895,243924,No,Machinery Purchase,491971,12,Yes,Business,491971,Approved
+43,Business,109076,540,913754,No,Working Capital,3288774,8,Yes,Business,2132591,Partial
+41,Salaried,57175,686,225418,No,Working Capital,1824710,8,No,Business,894782,Partial
+25,Salaried,49708,619,144909,Yes,Working Capital,1850675,11,Yes,Business,354398,Rejected
+58,Self-Employed,73990,876,392163,No,Machinery Purchase,484149,4,No,Business,484149,Approved
+53,Self-Employed,40856,578,1434681,No,Shop Expansion,2834991,13,Yes,Business,655832,Partial
+61,Salaried,34775,787,692301,No,Shop Expansion,3416475,1,No,Business,510993,Approved
+56,Freelancer,26798,709,1133227,Yes,Machinery Purchase,4263169,13,No,Business,412578,Partial
+39,Business,146555,675,345637,No,Working Capital,1758469,13,No,Business,1758469,Partial
+41,Self-Employed,131892,560,954132,No,Shop Expansion,1399780,11,No,Business,1399780,Partial
+24,Salaried,37357,712,950935,Yes,Working Capital,2891772,11,No,Business,642395,Partial
+49,Salaried,78177,788,144241,Yes,Machinery Purchase,4317569,12,Yes,Business,1229917,Partial
+22,Business,43009,591,548456,Yes,Startup Capital,2902771,15,No,Business,615897,Partial
+38,Self-Employed,76192,531,236704,Yes,Shop Expansion,4736466,12,No,Business,196602,Rejected
+51,Salaried,67162,560,827511,No,Startup Capital,3348517,7,Yes,Business,1211299,Partial
+46,Business,39430,753,104288,Yes,Working Capital,2645244,4,Yes,Business,588641,Partial
+33,Business,26202,744,1480787,No,Startup Capital,2814698,6,No,Business,486575,Partial
+55,Salaried,48406,833,596404,Yes,Shop Expansion,2558560,15,Yes,Business,928467,Partial
+23,Salaried,21989,788,56833,No,Working Capital,1669522,5,No,Business,368631,Partial
+49,Self-Employed,28158,833,983969,No,Machinery Purchase,3954364,12,No,Business,468843,Partial
+38,Business,43734,648,322115,No,Machinery Purchase,3605990,7,Yes,Business,882772,Partial
+28,Freelancer,44504,781,1375996,Yes,Working Capital,4688263,4,Yes,Business,548901,Partial
+34,Salaried,33096,767,680559,Yes,Working Capital,3282419,9,No,Business,400253,Partial
+28,Salaried,38724,535,377771,Yes,Shop Expansion,3741385,3,Yes,Business,498996,Partial
+47,Salaried,30198,873,857005,No,Shop Expansion,4006984,10,No,Business,434696,Partial
+52,Freelancer,51159,644,89442,No,Machinery Purchase,4750160,7,Yes,Business,874107,Partial
+36,Self-Employed,36245,641,722616,No,Shop Expansion,2779609,8,No,Business,644840,Partial
+22,Business,67193,707,829981,Yes,Shop Expansion,4763367,9,No,Business,790728,Partial
+40,Salaried,82066,526,1463102,Yes,Startup Capital,914791,4,No,Business,914791,Partial
+39,Freelancer,41668,728,484985,Yes,Machinery Purchase,3619763,1,No,Business,503538,Partial
+31,Business,60500,586,150264,No,Shop Expansion,4802035,4,Yes,Business,1265471,Partial
+41,Salaried,44016,724,133839,No,Shop Expansion,688540,11,No,Business,128535,Rejected
+40,Freelancer,40618,799,324270,Yes,Machinery Purchase,1306734,14,No,Business,500749,Partial
+60,Salaried,39739,893,1285996,Yes,Machinery Purchase,3577858,4,No,Business,504726,Partial
+38,Business,46440,710,1236550,Yes,Machinery Purchase,697183,5,No,Business,677302,Partial
+51,Salaried,47203,684,1191533,No,Machinery Purchase,1962870,4,No,Business,836159,Partial
+34,Salaried,136588,710,75620,No,Startup Capital,1094044,4,Yes,Business,1094044,Partial
+32,Salaried,23755,521,652325,Yes,Startup Capital,831158,10,No,Business,169113,Rejected
+27,Self-Employed,108354,743,714621,No,Shop Expansion,4717329,7,No,Business,1661156,Approved
+46,Salaried,30875,693,781237,No,Working Capital,4064621,13,No,Business,527179,Partial
+54,Business,27059,824,1396475,Yes,Working Capital,3933743,15,No,Business,351140,Partial
+25,Freelancer,81936,702,1067260,Yes,Startup Capital,2398856,5,Yes,Business,1392090,Approved
+42,Salaried,27437,727,1217521,No,Working Capital,3353139,10,Yes,Business,604054,Partial
+52,Salaried,59107,523,774472,Yes,Working Capital,3108834,6,No,Business,104487,Rejected
+38,Self-Employed,63988,735,1060303,Yes,Shop Expansion,1573545,3,No,Business,978674,Partial
+33,Salaried,55522,710,937810,Yes,Machinery Purchase,2021021,13,No,Business,620095,Partial
+31,Business,33316,609,1145675,No,Shop Expansion,2598221,15,No,Business,540295,Partial
+57,Freelancer,24448,754,277032,Yes,Machinery Purchase,800111,7,Yes,Business,82075,Rejected
+61,Salaried,45800,711,1487286,Yes,Shop Expansion,2745711,14,No,Business,702919,Partial
+58,Freelancer,66579,698,513441,No,Shop Expansion,3459763,13,Yes,Business,1085863,Approved
+50,Business,137913,606,1055268,Yes,Shop Expansion,2709196,15,No,Business,1890099,Partial
+59,Business,45248,591,1405407,Yes,Machinery Purchase,3843399,5,No,Business,565137,Partial
+51,Salaried,165420,852,1473337,No,Startup Capital,2054426,5,Yes,Business,2054426,Approved
+48,Freelancer,168994,737,900077,No,Startup Capital,1011928,13,No,Business,1011928,Partial
+23,Self-Employed,72095,873,1066077,Yes,Shop Expansion,567661,8,No,Business,567661,Partial
+31,Salaried,22578,670,507283,Yes,Startup Capital,4947815,3,No,Business,312422,Rejected
+42,Freelancer,88359,609,1436415,Yes,Machinery Purchase,2009744,10,No,Business,1194400,Partial
+59,Business,20338,679,1182883,Yes,Working Capital,2214103,12,No,Business,201343,Rejected
+35,Salaried,85042,626,151252,Yes,Shop Expansion,3604450,7,Yes,Business,1079803,Partial
+57,Business,80181,753,752281,Yes,Startup Capital,657041,11,Yes,Business,657041,Approved
+58,Business,20856,750,314670,No,Shop Expansion,2510079,12,No,Business,325051,Partial
+34,Freelancer,22700,780,1490093,Yes,Machinery Purchase,4177231,10,Yes,Business,347844,Approved
+27,Freelancer,145428,651,597497,Yes,Shop Expansion,3796160,1,No,Business,2032315,Partial
+27,Business,89757,725,447544,Yes,Working Capital,1044133,12,No,Business,1044133,Partial
+35,Self-Employed,26536,797,1148085,Yes,Shop Expansion,819795,10,Yes,Business,352445,Partial
+24,Freelancer,175088,667,836647,No,Shop Expansion,1192340,5,Yes,Business,1192340,Partial
+42,Self-Employed,75815,830,134403,No,Startup Capital,2535569,9,No,Business,1424770,Partial
+28,Freelancer,73694,684,328615,No,Working Capital,412006,1,Yes,Business,412006,Approved
+32,Salaried,21291,544,551163,No,Shop Expansion,923292,2,No,Business,334719,Partial
+40,Freelancer,20358,588,981928,Yes,Startup Capital,2097846,10,No,Business,328557,Rejected
+50,Freelancer,62168,578,1241066,No,Working Capital,2867226,15,Yes,Business,1331744,Approved
+56,Freelancer,88725,843,1347957,Yes,Working Capital,632856,6,No,Business,632856,Partial
+38,Salaried,75307,650,189493,Yes,Shop Expansion,3455323,14,No,Business,1044415,Partial
+53,Business,48298,686,1204943,No,Working Capital,1139132,14,No,Business,963357,Approved
+53,Freelancer,25080,702,398782,No,Machinery Purchase,4585529,13,Yes,Business,483323,Partial
+34,Self-Employed,54121,863,363980,Yes,Working Capital,2217465,10,Yes,Business,930694,Partial
+52,Freelancer,23537,838,275897,No,Machinery Purchase,3831733,3,No,Business,382356,Partial
+42,Freelancer,22217,715,885853,No,Shop Expansion,1294687,8,No,Business,331089,Partial
+40,Business,62922,541,677116,No,Machinery Purchase,687900,8,No,Business,687900,Partial
+38,Business,44559,572,1200943,Yes,Working Capital,3339369,3,No,Business,590703,Partial
+44,Self-Employed,20614,753,787903,No,Shop Expansion,4381320,1,No,Business,317482,Partial
+33,Salaried,124996,644,441710,No,Startup Capital,2733946,7,No,Business,1916806,Partial
+61,Self-Employed,40457,725,1276725,Yes,Machinery Purchase,4153329,8,No,Business,669266,Partial
+60,Salaried,49585,675,1237838,Yes,Machinery Purchase,4189479,8,No,Business,240770,Rejected
+31,Freelancer,95572,783,1327711,No,Working Capital,1265592,14,No,Business,1265592,Approved
+42,Salaried,52667,613,93757,Yes,Shop Expansion,4488163,7,No,Business,296987,Rejected
+26,Freelancer,27476,691,483318,No,Machinery Purchase,3202364,4,No,Business,479081,Partial
+23,Salaried,78852,610,1203410,No,Shop Expansion,780759,13,Yes,Business,780759,Approved
+58,Business,62688,652,921648,No,Shop Expansion,3234564,3,No,Business,1122307,Partial
+32,Salaried,34532,516,1069836,Yes,Startup Capital,530103,11,Yes,Business,530103,Partial
+35,Freelancer,33022,642,468769,Yes,Machinery Purchase,1316396,4,Yes,Business,107766,Rejected
+25,Self-Employed,36925,882,1249179,Yes,Machinery Purchase,2358886,2,Yes,Business,534099,Approved
+62,Salaried,21134,691,46680,Yes,Shop Expansion,4783388,10,No,Business,501830,Rejected
+30,Business,46094,766,1279427,Yes,Machinery Purchase,3581651,7,No,Business,578570,Approved
+40,Self-Employed,179644,725,847254,No,Shop Expansion,586711,14,No,Business,586711,Approved
+28,Self-Employed,20957,832,373028,Yes,Working Capital,3518701,2,No,Business,424577,Partial
+60,Business,153654,656,395338,Yes,Startup Capital,1832730,2,No,Business,1832730,Partial
+60,Salaried,45802,787,1266719,Yes,Shop Expansion,3155113,7,No,Business,599359,Partial
+24,Self-Employed,43346,735,635388,No,Startup Capital,4892233,3,No,Business,563542,Partial
+61,Self-Employed,66435,793,719661,No,Working Capital,856810,2,No,Business,856810,Approved
+31,Salaried,28602,539,77730,No,Machinery Purchase,2742032,5,No,Business,131018,Rejected
+39,Business,85821,822,394284,Yes,Startup Capital,838937,12,No,Business,838937,Approved
+48,Freelancer,41953,893,313249,No,Working Capital,3327934,3,Yes,Business,695924,Approved
+38,Freelancer,35950,800,344495,No,Machinery Purchase,1634651,8,Yes,Business,750261,Approved
+46,Salaried,25970,515,681141,No,Shop Expansion,4541393,10,Yes,Business,454933,Partial
+48,Self-Employed,127260,808,313174,Yes,Machinery Purchase,2159540,14,No,Business,2159540,Approved
+33,Self-Employed,21630,839,862608,Yes,Shop Expansion,813036,4,No,Business,343786,Partial
+62,Freelancer,86672,726,369790,No,Working Capital,1371998,2,Yes,Business,1371998,Approved
+58,Salaried,48077,713,711209,Yes,Working Capital,1019451,11,No,Business,724046,Partial
+22,Salaried,34554,891,897464,No,Working Capital,4407787,12,No,Business,753858,Approved
+60,Freelancer,37056,699,569580,Yes,Machinery Purchase,2010974,5,No,Business,492660,Partial
+60,Business,31042,704,1061926,No,Working Capital,4814429,4,Yes,Business,613564,Partial
+53,Freelancer,27585,650,1424489,No,Shop Expansion,893463,11,No,Business,437398,Partial
+56,Salaried,27349,705,931580,No,Working Capital,4014093,9,No,Business,502968,Partial
+56,Salaried,120778,676,977443,Yes,Working Capital,1088101,3,Yes,Business,1088101,Partial
+54,Self-Employed,60542,583,823067,No,Working Capital,2769332,6,Yes,Business,879756,Approved
+34,Self-Employed,44812,745,601641,Yes,Startup Capital,767425,11,No,Business,616540,Partial
+36,Salaried,26517,554,723528,Yes,Shop Expansion,1618109,10,Yes,Business,409097,Partial
+23,Business,35003,752,996546,No,Shop Expansion,3600674,1,Yes,Business,576587,Approved
+52,Business,24735,580,1151831,No,Shop Expansion,455339,5,No,Business,10129,Rejected
+48,Freelancer,157111,793,1004467,Yes,Shop Expansion,4663832,15,Yes,Business,2903172,Approved
+26,Business,67298,729,451615,No,Shop Expansion,2099663,11,Yes,Business,1348511,Approved
+58,Salaried,168419,896,177918,No,Startup Capital,1522741,12,No,Business,1522741,Partial
+23,Salaried,29199,897,1221519,No,Startup Capital,874559,2,Yes,Business,726717,Approved
+34,Self-Employed,21471,800,223829,No,Working Capital,2235379,10,Yes,Business,315249,Partial
+37,Self-Employed,21341,664,1061230,No,Machinery Purchase,3430143,7,Yes,Business,428482,Partial
+43,Freelancer,83717,694,200396,No,Machinery Purchase,4547216,13,Yes,Business,1452616,Partial
+49,Self-Employed,30664,593,1479074,No,Working Capital,722024,5,No,Business,544498,Partial
+22,Self-Employed,125608,799,464443,Yes,Working Capital,1107578,11,No,Business,1107578,Approved
+31,Salaried,39547,894,337206,Yes,Working Capital,4411458,12,No,Business,505382,Partial
+31,Business,46832,632,488652,No,Working Capital,2882880,1,Yes,Business,705588,Partial
+57,Freelancer,34122,639,834864,No,Machinery Purchase,1417260,5,Yes,Business,870432,Partial
+53,Freelancer,86697,771,1415314,Yes,Shop Expansion,1867046,3,Yes,Business,1125436,Approved
+28,Salaried,48350,651,44793,Yes,Working Capital,2180601,9,No,Business,101864,Rejected
+26,Freelancer,141543,681,701649,Yes,Working Capital,4391926,2,Yes,Business,2118209,Approved
+59,Business,35500,712,1408988,Yes,Startup Capital,3363619,4,Yes,Business,574323,Approved
+43,Self-Employed,115162,789,1429504,No,Working Capital,1036536,1,Yes,Business,1036536,Approved
+42,Self-Employed,44509,684,681743,No,Shop Expansion,1867759,5,Yes,Business,1095189,Approved
+30,Self-Employed,80285,826,865544,No,Shop Expansion,1402790,13,Yes,Business,1402790,Approved
+47,Freelancer,52939,774,601994,No,Machinery Purchase,1354601,13,No,Business,740456,Approved
+23,Business,58258,648,1071750,Yes,Machinery Purchase,749153,14,Yes,Business,749153,Partial
+59,Self-Employed,50111,868,1437483,No,Shop Expansion,3320866,7,Yes,Business,1044716,Approved
+47,Freelancer,71813,717,563047,No,Startup Capital,4072632,6,No,Business,1501725,Approved
+45,Salaried,24382,593,311781,No,Machinery Purchase,4469623,5,Yes,Business,468740,Partial
+35,Business,58755,563,725738,Yes,Startup Capital,3792594,14,No,Business,545433,Rejected
+48,Business,157851,594,403617,No,Shop Expansion,1533867,1,Yes,Business,1533867,Partial
+49,Salaried,34880,717,178635,Yes,Machinery Purchase,4854615,9,Yes,Business,650106,Partial
+23,Self-Employed,63003,871,974080,No,Shop Expansion,3686140,14,No,Business,1068295,Approved
+55,Salaried,44800,783,808483,No,Working Capital,4255879,10,Yes,Business,945881,Approved
+31,Freelancer,72157,682,1400040,Yes,Working Capital,1926155,11,No,Business,1219875,Partial
+24,Business,124673,830,1346617,Yes,Machinery Purchase,3177049,15,Yes,Business,2270783,Approved
+26,Business,58633,802,566711,Yes,Working Capital,3509465,9,Yes,Business,1049550,Approved
+46,Business,109376,642,986096,Yes,Machinery Purchase,2799560,14,Yes,Business,1459300,Approved
+59,Self-Employed,33579,620,302186,No,Working Capital,2373059,13,Yes,Business,834682,Partial
+45,Freelancer,83233,507,568919,Yes,Machinery Purchase,1776152,11,Yes,Business,1049388,Partial
+43,Salaried,22564,639,1466589,No,Startup Capital,2815379,2,No,Business,334805,Partial
+53,Business,39708,802,909888,Yes,Shop Expansion,1914681,5,Yes,Business,601372,Approved
+25,Self-Employed,50228,536,1432509,No,Shop Expansion,1095699,8,Yes,Business,1081037,Partial
+45,Freelancer,48925,645,388784,Yes,Machinery Purchase,3615952,3,Yes,Business,715022,Partial
+40,Salaried,56320,730,346462,Yes,Working Capital,4569766,10,Yes,Business,983943,Partial
+35,Freelancer,26859,714,1180235,No,Startup Capital,2054593,10,No,Business,421144,Partial
+46,Self-Employed,65675,696,794545,No,Working Capital,3236760,7,No,Business,1282691,Approved
+30,Business,49835,827,546361,Yes,Startup Capital,2862870,1,Yes,Business,1017214,Approved
+48,Salaried,41893,862,755974,Yes,Shop Expansion,2177323,2,Yes,Business,797116,Partial
+54,Self-Employed,148094,563,272415,No,Shop Expansion,3409528,12,Yes,Business,2849687,Partial
+24,Self-Employed,23725,661,873223,No,Startup Capital,3293406,13,No,Business,423350,Partial
+38,Freelancer,81339,852,85715,Yes,Shop Expansion,3705211,15,No,Business,1383842,Partial
+41,Salaried,39152,677,1075444,No,Working Capital,628515,11,Yes,Business,628515,Approved
+56,Salaried,56048,693,588817,Yes,Working Capital,2447786,5,Yes,Business,1013068,Partial
+23,Business,24485,842,703868,No,Shop Expansion,3080660,1,Yes,Business,557314,Partial
+60,Freelancer,44221,510,1472426,No,Startup Capital,3897234,6,Yes,Business,1070144,Partial
+37,Business,139047,808,160058,Yes,Working Capital,4258807,9,Yes,Business,2100139,Partial
+56,Business,30816,860,188829,Yes,Startup Capital,4663419,7,No,Business,395441,Rejected
+35,Freelancer,38648,780,1290036,No,Shop Expansion,1931711,7,No,Business,544420,Approved
+31,Self-Employed,36012,662,1249973,No,Machinery Purchase,4331663,11,No,Business,472971,Partial
+45,Business,39676,754,382470,No,Working Capital,4225118,1,No,Business,561813,Partial
+35,Self-Employed,157919,654,971053,Yes,Working Capital,926116,1,Yes,Business,926116,Partial
+34,Business,47453,613,688310,No,Startup Capital,2868654,10,Yes,Business,1045848,Partial
+29,Business,49450,630,366456,Yes,Startup Capital,4884091,5,No,Business,743753,Partial
+33,Salaried,49417,773,1485028,Yes,Startup Capital,1943779,13,Yes,Business,839494,Approved
+56,Freelancer,112490,510,771670,Yes,Machinery Purchase,2825444,3,Yes,Business,1861493,Partial
+23,Self-Employed,39951,834,1286242,No,Shop Expansion,4577545,12,Yes,Business,902527,Approved
+52,Business,24832,638,78884,No,Working Capital,1553267,11,Yes,Business,226695,Rejected
+43,Business,46760,552,359872,No,Machinery Purchase,3318176,7,No,Business,780942,Partial
+42,Freelancer,148392,609,361833,Yes,Machinery Purchase,1826613,2,No,Business,1826613,Partial
+23,Business,58542,636,308698,No,Startup Capital,2254437,6,No,Business,1010021,Partial
+43,Business,48981,867,563416,Yes,Machinery Purchase,3531142,8,No,Business,793298,Approved
+41,Business,41411,645,30661,No,Working Capital,3476010,11,Yes,Business,776440,Partial
+36,Business,41244,779,664514,Yes,Shop Expansion,4560703,12,No,Business,524557,Approved
+40,Self-Employed,33994,688,253657,No,Shop Expansion,4461938,1,No,Business,610920,Rejected
+31,Business,42851,726,1225882,No,Shop Expansion,2078686,2,No,Business,861672,Partial
+32,Freelancer,153148,638,367228,No,Machinery Purchase,3215175,3,No,Business,3021825,Partial
+32,Business,176891,574,844309,No,Working Capital,1907704,4,Yes,Business,1907704,Approved
+36,Freelancer,57471,608,598017,No,Startup Capital,3078524,5,Yes,Business,1252616,Partial
+44,Salaried,24783,735,1290432,No,Machinery Purchase,4762593,10,No,Business,484890,Partial
+25,Business,69119,862,469225,No,Shop Expansion,3994033,8,Yes,Business,1476798,Approved
+61,Freelancer,47792,801,1229292,Yes,Shop Expansion,1965632,5,Yes,Business,733462,Approved
+34,Freelancer,24123,588,936639,No,Startup Capital,3656736,11,Yes,Business,520121,Partial
+36,Business,160146,588,91210,Yes,Working Capital,949849,12,No,Business,218830,Rejected
+56,Freelancer,27190,644,730594,No,Shop Expansion,1332476,10,No,Business,586546,Partial
+27,Freelancer,37353,626,1334564,No,Working Capital,1264993,12,No,Business,509399,Partial
+26,Freelancer,20685,797,1122956,No,Machinery Purchase,915649,11,No,Business,297631,Approved
+54,Business,45154,726,478721,Yes,Working Capital,2904565,1,No,Business,560784,Partial
+39,Salaried,132193,841,1181223,No,Working Capital,3046526,12,Yes,Business,2479705,Approved
+51,Self-Employed,33570,834,1049630,No,Startup Capital,3421975,14,Yes,Business,815724,Approved
+24,Salaried,152840,627,406811,Yes,Startup Capital,1873153,8,Yes,Business,1873153,Partial
+55,Self-Employed,84200,818,1451447,No,Startup Capital,736159,7,No,Business,736159,Approved
+31,Freelancer,28034,662,701962,No,Startup Capital,890377,9,Yes,Business,448310,Partial
+33,Self-Employed,22787,729,599908,No,Startup Capital,3103981,4,Yes,Business,375183,Partial
+57,Self-Employed,23843,761,301352,Yes,Shop Expansion,4192779,6,No,Business,312540,Partial
+22,Salaried,36492,645,231729,No,Startup Capital,4185430,1,No,Business,533259,Partial
+42,Salaried,84647,690,1362287,No,Shop Expansion,542414,8,Yes,Business,542414,Approved
+53,Business,27211,681,359218,Yes,Shop Expansion,3097237,2,Yes,Business,466747,Partial
+44,Salaried,70180,548,94069,Yes,Machinery Purchase,2494637,4,Yes,Business,991851,Partial
+32,Self-Employed,44775,535,1145525,No,Machinery Purchase,572363,12,No,Business,572363,Partial
+36,Salaried,39483,657,1230179,Yes,Machinery Purchase,861404,7,Yes,Business,493761,Partial
+26,Freelancer,35381,664,1304379,Yes,Shop Expansion,733596,12,Yes,Business,636943,Partial
+53,Self-Employed,33524,729,730185,Yes,Machinery Purchase,1930967,6,No,Business,413059,Partial
+59,Business,35683,568,619921,No,Machinery Purchase,3000571,12,No,Business,721142,Partial
+39,Salaried,38498,843,997969,No,Shop Expansion,4666215,2,No,Business,934818,Approved
+31,Salaried,27482,740,83328,Yes,Working Capital,4927897,10,No,Business,281159,Rejected
+25,Salaried,94885,893,603617,Yes,Working Capital,666795,1,No,Business,666795,Approved
+31,Freelancer,25334,817,995488,No,Shop Expansion,1159888,13,Yes,Business,639228,Partial
+33,Self-Employed,123425,675,1269951,No,Shop Expansion,3185945,14,Yes,Business,2169455,Partial
+24,Freelancer,26213,702,99304,Yes,Startup Capital,1692635,5,No,Business,281239,Rejected
+45,Self-Employed,32389,721,209057,Yes,Shop Expansion,4147344,9,Yes,Business,466365,Partial
+41,Salaried,145837,728,1201386,Yes,Startup Capital,500280,15,No,Business,500280,Partial
+49,Salaried,143248,502,249870,No,Working Capital,4048919,14,Yes,Business,3032711,Partial
+33,Salaried,33949,850,979178,No,Shop Expansion,3486312,3,No,Business,667769,Approved
+25,Self-Employed,66107,691,1486083,Yes,Startup Capital,3915311,5,Yes,Business,1024866,Approved
+23,Business,152672,605,960351,No,Shop Expansion,3187565,15,No,Business,3187565,Partial
+58,Freelancer,22109,623,638460,Yes,Shop Expansion,3093534,6,Yes,Business,414878,Rejected
+41,Self-Employed,24094,632,59821,Yes,Shop Expansion,3593963,14,Yes,Business,483000,Rejected
+34,Salaried,103401,567,725553,Yes,Shop Expansion,1066479,12,Yes,Business,1066479,Partial
+42,Salaried,98595,592,612428,Yes,Working Capital,2178467,8,Yes,Business,1605412,Partial
+37,Business,89648,849,599211,Yes,Shop Expansion,532609,3,Yes,Business,532609,Approved
+41,Business,73554,569,1159665,No,Shop Expansion,4252630,14,Yes,Business,1806829,Approved
+30,Salaried,129078,795,1265806,Yes,Startup Capital,1648434,14,Yes,Business,1648434,Approved
+61,Self-Employed,71377,778,863304,Yes,Shop Expansion,811437,15,No,Business,811437,Approved
+44,Self-Employed,45397,666,938265,Yes,Startup Capital,2624192,9,Yes,Business,838556,Partial
+37,Self-Employed,22870,673,692477,Yes,Machinery Purchase,2864600,6,Yes,Business,266265,Rejected
+26,Salaried,27624,705,379163,Yes,Working Capital,634839,3,No,Business,465444,Partial
+61,Salaried,72504,588,1006559,Yes,Working Capital,1858648,13,Yes,Business,1052547,Partial
+46,Business,77375,717,495246,Yes,Shop Expansion,1829295,6,No,Business,1311743,Approved
+22,Freelancer,36439,673,1421476,Yes,Startup Capital,1366163,12,Yes,Business,655278,Partial
+42,Business,145796,863,144131,No,Working Capital,2901498,13,Yes,Business,2901498,Approved
+54,Salaried,47240,722,1087731,Yes,Working Capital,2323557,13,Yes,Business,560125,Partial
+23,Freelancer,81530,563,1470061,No,Startup Capital,1716400,1,No,Business,1289311,Partial
+58,Business,74792,721,509352,No,Machinery Purchase,1359881,13,Yes,Business,1359881,Approved
+48,Self-Employed,33725,566,727161,Yes,Machinery Purchase,4074750,9,No,Business,684536,Rejected
+38,Freelancer,22799,617,1218558,Yes,Shop Expansion,2796293,9,Yes,Business,333328,Partial
+41,Salaried,37686,699,347113,No,Shop Expansion,4455105,6,No,Business,804176,Partial
+51,Self-Employed,43732,887,263973,Yes,Machinery Purchase,3778261,2,No,Business,593069,Partial
+35,Freelancer,50284,789,835539,No,Working Capital,3672797,1,No,Business,917425,Approved
+56,Business,126674,780,1100357,Yes,Working Capital,1258539,15,Yes,Business,1258539,Approved
+31,Business,21948,793,982759,Yes,Startup Capital,3069549,6,Yes,Business,313648,Partial
+28,Freelancer,120825,639,212811,Yes,Machinery Purchase,2470878,10,Yes,Business,1865312,Partial
+47,Salaried,31596,870,972954,No,Startup Capital,1060058,9,No,Business,668494,Partial
+62,Salaried,83553,539,825306,No,Startup Capital,3554924,9,No,Business,1446533,Partial
+60,Self-Employed,35445,876,1381723,Yes,Startup Capital,883291,7,Yes,Business,622742,Approved
+25,Self-Employed,175668,782,66841,Yes,Machinery Purchase,4452606,14,No,Business,3122702,Partial
+43,Freelancer,82114,555,580774,No,Startup Capital,3204240,4,No,Business,1512803,Partial
+59,Self-Employed,24464,817,1276271,Yes,Startup Capital,2473335,1,Yes,Business,391361,Partial
+30,Freelancer,57454,830,1217817,Yes,Startup Capital,1961312,1,No,Business,956335,Partial
+23,Freelancer,147469,505,630733,Yes,Machinery Purchase,3637098,1,No,Business,1852962,Partial
+31,Salaried,31900,509,1442761,No,Shop Expansion,2423745,15,Yes,Business,722595,Partial
+38,Salaried,25420,791,253059,Yes,Shop Expansion,4179908,9,No,Business,493500,Rejected
+50,Business,43661,565,750756,Yes,Shop Expansion,834068,8,No,Business,60088,Rejected
+40,Self-Employed,84280,578,183025,Yes,Shop Expansion,3721649,8,Yes,Business,1415686,Partial
+53,Self-Employed,40313,649,321378,No,Working Capital,1585432,9,No,Business,621623,Partial
+30,Business,97893,861,1230916,No,Shop Expansion,1968993,15,Yes,Business,1968993,Approved
+60,Business,39878,677,415810,No,Machinery Purchase,3064425,15,Yes,Business,873187,Partial
+60,Self-Employed,67072,538,703298,No,Working Capital,3638830,7,No,Business,1167330,Approved
+52,Freelancer,70181,723,690735,No,Machinery Purchase,3059874,5,Yes,Business,1304108,Approved
+54,Salaried,121670,787,299869,Yes,Shop Expansion,3591779,9,Yes,Business,1805373,Partial
+50,Business,35443,578,543119,Yes,Startup Capital,3791230,9,Yes,Business,423272,Partial
+47,Salaried,48483,770,1360208,No,Working Capital,4632724,8,No,Business,710316,Approved
+51,Self-Employed,30140,543,875391,Yes,Working Capital,2245377,15,No,Business,364224,Rejected
+49,Freelancer,56677,794,1432579,Yes,Working Capital,4355053,11,Yes,Business,832541,Approved
+44,Business,20459,527,1247064,Yes,Working Capital,2073061,4,No,Business,445021,Rejected
+48,Freelancer,35695,679,1024590,Yes,Shop Expansion,1990271,3,Yes,Business,534933,Partial
+42,Salaried,22006,677,177006,No,Startup Capital,2922786,8,No,Business,675468,Rejected
+25,Business,23242,845,573144,No,Startup Capital,3853076,6,Yes,Business,417825,Approved
+38,Business,39226,637,917569,No,Working Capital,2398945,15,No,Business,564400,Partial
+41,Business,33524,738,1461207,No,Startup Capital,2290987,15,No,Business,655775,Partial
+26,Salaried,119086,640,237698,No,Startup Capital,1217387,6,No,Business,1217387,Partial
+45,Salaried,24858,777,1230113,No,Startup Capital,3465367,4,Yes,Business,478205,Partial
+29,Salaried,87813,686,513839,No,Startup Capital,3210777,2,Yes,Business,1701363,Approved
+31,Self-Employed,40618,519,620752,No,Working Capital,4847054,1,Yes,Business,822052,Partial
+36,Freelancer,81227,725,346762,Yes,Startup Capital,3029209,1,Yes,Business,1374736,Approved
+36,Freelancer,22223,716,856566,No,Machinery Purchase,2213244,4,No,Business,339702,Partial
+42,Freelancer,175742,531,950708,Yes,Machinery Purchase,2687624,3,Yes,Business,2687624,Approved
+45,Self-Employed,38815,869,734332,Yes,Startup Capital,3490314,14,Yes,Business,661278,Approved
+29,Self-Employed,30379,691,1098452,No,Machinery Purchase,2246855,8,Yes,Business,609972,Partial
+58,Self-Employed,66993,578,1341371,No,Shop Expansion,4431550,1,Yes,Business,1124443,Approved
+60,Freelancer,48329,570,628495,No,Working Capital,1426055,1,Yes,Business,712506,Partial
+28,Business,71458,702,206797,Yes,Startup Capital,3023421,10,Yes,Business,890421,Partial
+40,Self-Employed,111381,820,1347197,Yes,Working Capital,2875468,3,Yes,Business,1789042,Approved
+41,Salaried,47601,664,1131662,Yes,Startup Capital,1258671,1,No,Business,700034,Partial
+59,Business,28054,622,108119,Yes,Working Capital,3970264,14,Yes,Business,347669,Rejected
+24,Business,75817,524,708362,Yes,Startup Capital,3127247,2,No,Business,1418185,Partial
+22,Freelancer,35955,772,1134501,Yes,Machinery Purchase,4194907,7,Yes,Business,586750,Approved
+30,Salaried,159836,864,1338307,No,Machinery Purchase,3936335,12,Yes,Business,3705083,Approved
+22,Business,41723,648,208924,Yes,Working Capital,3960984,5,No,Business,365050,Rejected
+24,Salaried,65853,504,1304610,No,Shop Expansion,4576556,6,Yes,Business,1314879,Approved
+46,Self-Employed,30139,522,1357291,Yes,Working Capital,4229843,6,No,Business,250840,Rejected
+45,Business,47707,696,606024,No,Shop Expansion,2295140,14,Yes,Business,1053155,Approved
+42,Self-Employed,35977,648,560897,No,Shop Expansion,4721838,1,No,Business,660667,Partial
+49,Freelancer,137462,622,1227775,Yes,Startup Capital,2542121,2,No,Business,2183304,Partial
+52,Business,60485,719,706349,Yes,Machinery Purchase,3920374,3,Yes,Business,906397,Partial
+34,Freelancer,61918,673,477352,No,Working Capital,3297878,3,No,Business,1032857,Approved
+43,Business,64974,853,86666,Yes,Shop Expansion,4894222,12,Yes,Business,887134,Partial
+35,Self-Employed,91380,582,524300,Yes,Working Capital,3234458,2,Yes,Business,1817585,Partial
+40,Freelancer,44761,621,1273418,No,Startup Capital,1173413,4,No,Business,833597,Partial
+30,Business,143693,690,148238,Yes,Working Capital,1575829,7,Yes,Business,1575829,Partial
+36,Business,59014,630,262203,No,Working Capital,1838129,7,No,Business,997721,Partial
+45,Business,78384,625,316810,No,Machinery Purchase,577411,15,No,Business,577411,Partial
+42,Business,39282,564,654898,Yes,Shop Expansion,4922019,8,Yes,Business,583017,Partial
+52,Freelancer,49649,816,1302510,Yes,Machinery Purchase,4123900,13,Yes,Business,982141,Approved
+35,Business,26045,638,207333,No,Machinery Purchase,2070171,15,No,Business,466550,Rejected
+25,Salaried,76124,508,1047595,No,Shop Expansion,2291728,1,Yes,Business,1605628,Approved
+31,Self-Employed,36934,898,728133,Yes,Startup Capital,1970001,7,No,Business,468282,Approved
+47,Freelancer,75366,557,1153475,No,Startup Capital,1617619,3,Yes,Business,1389094,Partial
+35,Freelancer,77489,631,686345,Yes,Working Capital,2725310,14,No,Business,1266404,Partial
+30,Salaried,21887,854,1408813,Yes,Working Capital,1894934,1,Yes,Business,374753,Partial
+40,Self-Employed,89430,717,1368479,No,Shop Expansion,3982160,4,Yes,Business,1742085,Approved
+45,Self-Employed,97573,576,1131040,Yes,Shop Expansion,4914886,7,Yes,Business,1110235,Approved
+50,Self-Employed,71392,722,1238078,No,Machinery Purchase,835536,15,Yes,Business,835536,Approved
+53,Self-Employed,35700,557,459844,Yes,Working Capital,4112813,5,No,Business,617717,Partial
+57,Business,51681,603,328045,No,Shop Expansion,4878899,5,No,Business,804820,Partial
+38,Business,36168,520,331894,No,Working Capital,411691,4,No,Business,411691,Partial
+28,Salaried,63373,524,786114,No,Startup Capital,4361493,5,Yes,Business,1067682,Approved
+22,Self-Employed,36138,647,994442,Yes,Shop Expansion,813426,5,Yes,Business,600516,Partial
+45,Freelancer,54419,742,1347222,Yes,Shop Expansion,1361884,10,No,Business,924072,Partial
+42,Self-Employed,46723,869,349891,No,Shop Expansion,1965993,11,No,Business,1109046,Approved
+43,Freelancer,23950,643,536461,No,Working Capital,4922921,4,No,Business,450499,Partial
+28,Freelancer,35075,829,1150145,Yes,Working Capital,2415326,8,Yes,Business,640137,Approved
+47,Self-Employed,124213,880,894408,No,Machinery Purchase,4364511,12,Yes,Business,2939163,Approved
+61,Salaried,23438,854,1163599,Yes,Startup Capital,2717623,10,No,Business,491742,Partial
+61,Business,47221,637,806873,No,Working Capital,4880234,1,Yes,Business,1068351,Approved
+26,Business,33817,804,281740,No,Shop Expansion,1718667,4,No,Business,766701,Partial
+24,Self-Employed,104978,640,1120854,Yes,Startup Capital,3117016,3,Yes,Business,1414609,Approved
+45,Business,26375,667,438992,No,Shop Expansion,3038407,13,Yes,Business,443136,Partial
+61,Salaried,88766,712,463854,No,Machinery Purchase,898976,10,No,Business,898976,Approved
+40,Business,22017,743,1153350,No,Working Capital,954021,4,No,Business,325235,Partial
+28,Salaried,31019,562,750388,Yes,Startup Capital,4362182,1,No,Business,367306,Partial
+31,Self-Employed,33267,704,461271,Yes,Working Capital,1977352,15,Yes,Business,416937,Partial
+59,Business,25591,685,276464,No,Machinery Purchase,4541996,4,No,Business,670565,Rejected
+39,Business,31983,691,322990,Yes,Machinery Purchase,4649611,8,Yes,Business,384348,Partial
+24,Self-Employed,41853,665,844259,Yes,Machinery Purchase,801551,2,Yes,Business,653594,Partial
+51,Self-Employed,49740,896,346289,No,Working Capital,4607842,8,No,Business,1165625,Approved
+33,Business,71245,623,1294842,No,Working Capital,2463658,12,Yes,Business,1307795,Approved
+59,Business,57548,652,690570,Yes,Startup Capital,3022721,3,Yes,Business,956607,Partial
+58,Salaried,29508,745,985905,Yes,Working Capital,1503241,4,Yes,Business,447292,Partial
+29,Salaried,25473,714,1002132,No,Shop Expansion,4947268,14,Yes,Business,434418,Approved
+35,Self-Employed,22493,698,1022753,No,Startup Capital,2364766,6,Yes,Business,321479,Partial
+59,Freelancer,76290,779,267820,No,Machinery Purchase,4560458,8,No,Business,1290410,Partial
+40,Salaried,27623,638,797357,Yes,Shop Expansion,3304124,8,Yes,Business,332849,Partial
+41,Salaried,129551,590,580035,No,Startup Capital,4683397,4,Yes,Business,2027080,Approved
+29,Freelancer,66664,536,264769,Yes,Shop Expansion,3905908,11,Yes,Business,907598,Rejected
+41,Salaried,107329,539,647589,No,Working Capital,1786389,2,Yes,Business,1786389,Approved
+55,Business,43805,633,1100238,Yes,Machinery Purchase,2964999,12,Yes,Business,635515,Partial
+43,Self-Employed,87036,799,1148979,No,Working Capital,2340976,15,Yes,Business,1726453,Approved
+27,Salaried,123449,834,610422,No,Machinery Purchase,3403804,10,Yes,Business,2907089,Approved
+46,Self-Employed,140848,692,272398,Yes,Working Capital,1319680,3,Yes,Business,1319680,Partial
+38,Self-Employed,63464,862,1109525,No,Machinery Purchase,2632128,13,Yes,Business,1000561,Approved
+46,Self-Employed,146579,718,1422298,Yes,Working Capital,2321641,15,Yes,Business,2321641,Approved
+29,Self-Employed,40791,850,521819,No,Working Capital,4771907,8,Yes,Business,935117,Approved
+47,Business,26192,728,243501,Yes,Shop Expansion,4379745,8,No,Business,827150,Rejected
+44,Freelancer,49275,730,249685,No,Working Capital,1376080,6,Yes,Business,981803,Partial
+46,Self-Employed,27856,826,1162628,Yes,Startup Capital,2198641,2,Yes,Business,450504,Approved
+47,Salaried,23088,667,1434185,Yes,Machinery Purchase,4591529,2,No,Business,754167,Rejected
+38,Business,55756,651,1002038,Yes,Startup Capital,1477979,8,Yes,Business,961918,Partial
+41,Business,59672,707,473114,Yes,Working Capital,2742232,8,Yes,Business,867942,Partial
+33,Self-Employed,49276,778,50746,Yes,Working Capital,648559,12,Yes,Business,648559,Partial
+59,Freelancer,41649,618,1457990,No,Startup Capital,4726989,13,No,Business,656123,Partial
+47,Freelancer,117594,789,369650,No,Shop Expansion,2619629,12,Yes,Business,1839627,Approved
+53,Freelancer,66142,606,1132450,Yes,Shop Expansion,482700,3,No,Business,482700,Partial
+58,Business,34317,655,860935,No,Working Capital,3786088,12,No,Business,489002,Rejected
+49,Freelancer,21420,825,931443,No,Machinery Purchase,4410197,8,No,Business,440430,Partial
+23,Freelancer,48574,649,399927,Yes,Startup Capital,3759002,2,Yes,Business,981401,Partial
+29,Salaried,45789,700,179210,Yes,Machinery Purchase,1844132,10,Yes,Business,128391,Rejected
+60,Salaried,41854,705,48039,No,Shop Expansion,1901038,4,No,Business,20128,Rejected
+33,Business,22417,854,1032099,Yes,Machinery Purchase,1431012,8,No,Business,327991,Partial
+28,Self-Employed,39277,517,707009,Yes,Machinery Purchase,2302961,12,Yes,Business,571154,Partial
+61,Freelancer,84377,636,40421,Yes,Startup Capital,4533518,14,No,Business,1084862,Rejected
+53,Self-Employed,49859,795,321906,Yes,Machinery Purchase,3113690,12,Yes,Business,810300,Partial
+33,Business,21233,847,156506,No,Working Capital,2451376,14,No,Business,425199,Partial
+22,Business,54315,618,411167,Yes,Shop Expansion,4192367,11,Yes,Business,784684,Partial
+26,Salaried,75026,665,252944,Yes,Machinery Purchase,3966527,5,Yes,Business,1436850,Partial
+40,Freelancer,32095,723,960682,Yes,Working Capital,943032,9,Yes,Business,448375,Partial
+52,Salaried,129972,680,632547,No,Machinery Purchase,1967893,3,No,Business,1967893,Partial
+22,Freelancer,77674,780,1320400,No,Startup Capital,2977316,10,Yes,Business,1622024,Approved
+28,Salaried,30464,874,983343,Yes,Working Capital,2587001,9,Yes,Business,514281,Partial
+50,Salaried,40715,630,142444,No,Shop Expansion,2534380,9,No,Business,45769,Rejected
+28,Freelancer,47775,729,1056846,No,Working Capital,4498713,9,Yes,Business,1096988,Approved
+54,Freelancer,61655,687,1003144,Yes,Shop Expansion,4714051,1,No,Business,916437,Partial
+57,Freelancer,33229,732,166979,Yes,Machinery Purchase,4931882,7,No,Business,879720,Rejected
+42,Self-Employed,48054,802,710557,No,Shop Expansion,1538173,2,No,Business,868357,Approved
+22,Self-Employed,20794,879,1456349,Yes,Machinery Purchase,716660,9,No,Business,313410,Partial
+57,Salaried,20784,718,357613,Yes,Shop Expansion,1194766,4,No,Business,280686,Partial
+23,Self-Employed,68392,893,630690,No,Working Capital,4508196,1,No,Business,1471661,Approved
+27,Salaried,131346,612,687848,No,Shop Expansion,2033284,15,Yes,Business,2033284,Partial
+23,Freelancer,79794,778,319203,No,Machinery Purchase,4226052,15,No,Business,1730319,Approved
+51,Freelancer,33014,516,1390171,Yes,Machinery Purchase,2018651,8,No,Business,461127,Partial
+40,Self-Employed,72482,893,1074898,Yes,Shop Expansion,4664955,5,No,Business,1221628,Partial
+32,Self-Employed,43850,849,1378415,Yes,Working Capital,2801624,12,Yes,Business,769464,Partial
+23,Business,122584,546,420094,No,Machinery Purchase,1061441,6,Yes,Business,1061441,Approved
+24,Self-Employed,127551,730,108837,No,Working Capital,2311143,7,No,Business,2311143,Partial
+29,Freelancer,26277,865,388567,Yes,Working Capital,2257166,1,No,Business,413769,Partial
+55,Freelancer,22730,644,862419,Yes,Working Capital,4401787,11,No,Business,339103,Partial
+42,Business,23019,751,1091095,No,Shop Expansion,3221530,13,Yes,Business,504879,Partial
+24,Freelancer,21112,727,656069,Yes,Startup Capital,459292,1,Yes,Business,333244,Partial
+42,Freelancer,50395,552,834889,Yes,Shop Expansion,2895892,13,Yes,Business,952486,Partial
+58,Self-Employed,91546,784,786249,Yes,Shop Expansion,1533332,11,No,Business,1229221,Approved
+42,Salaried,33780,876,680473,Yes,Machinery Purchase,4087760,15,Yes,Business,499461,Approved
+45,Salaried,35065,829,1081737,No,Working Capital,2634454,2,Yes,Business,597482,Approved
+23,Self-Employed,33971,625,1264591,Yes,Machinery Purchase,1106514,15,No,Business,50954,Rejected
+60,Salaried,63916,712,1032875,No,Shop Expansion,2458845,13,Yes,Business,1335271,Approved
+27,Salaried,113967,644,665032,Yes,Shop Expansion,4851944,3,Yes,Business,1732350,Partial
+56,Freelancer,69905,613,574950,Yes,Working Capital,3477168,10,No,Business,836261,Partial
+26,Self-Employed,35793,532,393652,Yes,Startup Capital,688595,1,No,Business,113289,Rejected
+59,Freelancer,83722,814,355446,No,Startup Capital,3335599,15,No,Business,1497896,Approved
+46,Business,155687,792,826949,No,Shop Expansion,2718400,8,No,Business,2718400,Approved
+62,Business,143082,740,293667,Yes,Shop Expansion,4827300,14,Yes,Business,2203469,Partial
+23,Self-Employed,80858,893,1030767,Yes,Shop Expansion,2686108,11,No,Business,910748,Approved
+47,Self-Employed,59415,710,878125,Yes,Machinery Purchase,1045839,14,No,Business,812125,Partial
+60,Self-Employed,46468,612,694609,No,Startup Capital,3556888,13,Yes,Business,715734,Partial
+24,Freelancer,24458,741,726684,Yes,Startup Capital,2056784,4,No,Business,285400,Partial
+55,Self-Employed,68495,720,1276136,No,Working Capital,2096078,5,Yes,Business,1548802,Approved
+43,Business,30785,557,202137,No,Startup Capital,908059,6,Yes,Business,137360,Rejected
+50,Self-Employed,152022,700,178264,Yes,Shop Expansion,1062472,12,Yes,Business,1062472,Partial
+31,Salaried,35907,734,1499828,No,Startup Capital,484386,3,No,Business,461990,Approved
+55,Salaried,28263,632,1014590,Yes,Startup Capital,2083862,12,No,Business,265175,Rejected
+62,Business,85534,619,790642,Yes,Shop Expansion,4835582,10,No,Business,1365931,Partial
+56,Self-Employed,86430,886,1124573,Yes,Startup Capital,2775084,11,No,Business,1514691,Approved
+48,Business,51066,756,1049492,Yes,Machinery Purchase,1096806,9,Yes,Business,747918,Partial
+35,Self-Employed,34552,843,47591,No,Machinery Purchase,4217565,15,No,Business,708005,Partial
+54,Self-Employed,47966,807,1063925,Yes,Startup Capital,4364757,7,No,Business,682787,Approved
+23,Self-Employed,64452,822,977714,No,Startup Capital,3160248,8,No,Business,1094765,Approved
+30,Business,39086,843,348011,Yes,Shop Expansion,2886278,10,No,Business,702702,Approved
+52,Salaried,35790,556,863336,No,Startup Capital,4769766,10,No,Business,708451,Partial
+45,Self-Employed,41086,522,802066,No,Machinery Purchase,2694437,13,No,Business,740758,Partial
+61,Business,167333,578,623670,No,Working Capital,2598064,10,Yes,Business,2598064,Approved
+36,Self-Employed,27824,724,977682,Yes,Startup Capital,1818103,13,Yes,Business,435157,Partial
+31,Self-Employed,26307,583,450655,Yes,Working Capital,828542,1,No,Business,143681,Rejected
+40,Self-Employed,68663,751,710626,No,Machinery Purchase,2292919,12,Yes,Business,1363435,Approved
+44,Self-Employed,52256,835,1074752,Yes,Shop Expansion,1930323,2,No,Business,1002260,Partial
+38,Salaried,36527,631,426852,Yes,Shop Expansion,1303652,3,No,Business,544668,Partial
+44,Business,50351,824,1395632,No,Shop Expansion,2492541,15,Yes,Business,1068029,Approved
+31,Business,28886,616,457880,Yes,Working Capital,4853709,8,No,Business,379416,Partial
+58,Business,118338,512,731669,Yes,Working Capital,3356247,8,Yes,Business,1961665,Approved
+29,Freelancer,62611,697,64718,Yes,Machinery Purchase,1613367,11,Yes,Business,1027227,Partial
+56,Freelancer,28251,542,1263592,Yes,Working Capital,474585,13,No,Business,102307,Rejected
+37,Business,35711,634,1446385,Yes,Shop Expansion,2295457,10,No,Business,115992,Rejected
+38,Salaried,42630,528,800007,Yes,Machinery Purchase,1175465,10,No,Business,474291,Partial
+55,Salaried,21574,837,931544,No,Startup Capital,4567826,12,No,Business,400357,Partial
+39,Salaried,39787,567,32245,No,Shop Expansion,4892645,15,No,Business,202211,Rejected
+61,Self-Employed,75712,672,34555,Yes,Startup Capital,4325202,7,Yes,Business,1389075,Partial
+33,Self-Employed,33768,842,1443203,Yes,Startup Capital,3568052,1,No,Business,715899,Partial
+60,Business,44709,781,623319,No,Shop Expansion,2615261,3,No,Business,756359,Approved
+56,Business,43160,878,954840,Yes,Shop Expansion,507993,14,No,Business,507993,Approved
+39,Freelancer,21249,593,1021107,Yes,Shop Expansion,4476544,15,Yes,Business,304000,Partial
+52,Business,32460,675,845465,No,Shop Expansion,725302,9,Yes,Business,550239,Partial
+46,Business,28769,557,542823,No,Startup Capital,459816,3,Yes,Business,432619,Partial
+45,Self-Employed,22760,696,330222,Yes,Shop Expansion,1675586,2,No,Business,318708,Partial
+60,Self-Employed,75699,736,1080663,Yes,Startup Capital,4366826,13,No,Business,979230,Partial
+47,Freelancer,81406,858,693821,No,Machinery Purchase,2250867,6,No,Business,1583352,Approved
+27,Self-Employed,27968,674,888236,No,Startup Capital,1507578,11,Yes,Business,460672,Partial
+58,Freelancer,172642,623,901721,No,Machinery Purchase,3572649,1,No,Business,3526600,Partial
+34,Business,58470,842,917620,Yes,Machinery Purchase,1721005,7,No,Business,812946,Partial
+46,Freelancer,153291,641,762045,No,Working Capital,1764314,1,No,Business,1764314,Partial
+54,Salaried,74847,604,483229,No,Startup Capital,3368740,15,Yes,Business,1717560,Approved
+58,Self-Employed,48222,607,261364,Yes,Startup Capital,2411656,10,No,Business,545664,Rejected
+26,Freelancer,67064,736,193019,Yes,Machinery Purchase,2230113,2,Yes,Business,1317099,Partial
+57,Self-Employed,86055,716,615203,Yes,Machinery Purchase,3025084,1,No,Business,1468866,Partial
+31,Self-Employed,30562,894,220352,No,Shop Expansion,1534414,6,Yes,Business,625949,Partial
+53,Salaried,74366,715,721306,No,Machinery Purchase,3803263,15,Yes,Business,1281173,Approved
+30,Freelancer,46670,853,659573,Yes,Working Capital,690730,9,No,Business,690730,Partial
+54,Freelancer,30716,700,923806,Yes,Startup Capital,4481588,4,No,Business,309416,Partial
+60,Business,85102,705,163622,No,Working Capital,1657627,11,Yes,Business,1657627,Partial
+42,Self-Employed,22645,876,629346,No,Working Capital,4164544,1,No,Business,430951,Partial
+47,Business,44248,604,148395,No,Working Capital,4796737,11,Yes,Business,769952,Rejected
+33,Freelancer,162823,679,666619,No,Machinery Purchase,2736373,5,Yes,Business,2736373,Approved
+44,Salaried,23028,722,1254489,No,Machinery Purchase,4678327,11,Yes,Business,459480,Partial
+49,Freelancer,83306,676,134865,Yes,Startup Capital,4040792,9,No,Business,786047,Rejected
+33,Freelancer,31916,667,369004,Yes,Working Capital,4234697,6,Yes,Business,400529,Partial
+62,Business,28304,878,362019,No,Shop Expansion,2118500,10,Yes,Business,718588,Approved
+60,Self-Employed,43220,892,1333724,No,Shop Expansion,2456498,15,No,Business,807764,Approved
+39,Self-Employed,32499,663,987397,No,Shop Expansion,4997796,14,Yes,Business,722715,Partial
+48,Business,36867,722,414584,No,Shop Expansion,2062475,5,Yes,Business,787119,Approved
+34,Freelancer,47773,874,62848,Yes,Shop Expansion,2169173,2,No,Business,711830,Partial
+59,Salaried,37004,801,398321,Yes,Shop Expansion,3885448,3,Yes,Business,596144,Approved
+47,Business,33946,731,304126,Yes,Machinery Purchase,2430039,15,Yes,Business,452362,Partial
+55,Self-Employed,44072,687,854977,No,Startup Capital,4039268,7,No,Business,814451,Approved
+40,Self-Employed,40926,529,548201,Yes,Startup Capital,4775078,6,Yes,Business,649126,Partial

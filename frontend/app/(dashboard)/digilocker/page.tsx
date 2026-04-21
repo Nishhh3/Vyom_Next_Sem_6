@@ -30,13 +30,12 @@ const API_BASE = "http://localhost:8000";
 const MAX_SIZE_MB = 10;
 const MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
 
-// ─── Auth ─────────────────────────────────────────────────────────────────────
+
+// Auth
 function getAuthHeaders(): Record<string, string> {
-  const token =
-    typeof window !== "undefined" ? localStorage.getItem("access_token") : null;
-  if (token) return { Authorization: `Bearer ${token}` };
-  // Dev fallback
-  return { "X-User-Email": "dev@example.com" };
+  return {
+    "X-User-Email": "dev@example.com",
+  };
 }
 
 async function apiFetch(path: string, options: RequestInit = {}) {
@@ -67,15 +66,26 @@ function formatDate(isoString: string): string {
   });
 }
 
-function getFileIcon(mimeType: string): { color: string; label: string } {
+function getFileIcon(mimeType?: string) {
+  if (!mimeType) {
+    return {
+      color: "text-gray-400 bg-gray-500/10 border-gray-500/20",
+      label: "FILE",
+    };
+  }
+
   if (mimeType === "application/pdf")
     return { color: "text-red-400 bg-red-500/10 border-red-500/20", label: "PDF" };
+
   if (mimeType.startsWith("image/"))
     return { color: "text-purple-400 bg-purple-500/10 border-purple-500/20", label: "IMG" };
+
   if (mimeType.includes("word"))
     return { color: "text-blue-400 bg-blue-500/10 border-blue-500/20", label: "DOC" };
+
   if (mimeType.includes("excel") || mimeType.includes("sheet"))
     return { color: "text-green-400 bg-green-500/10 border-green-500/20", label: "XLS" };
+
   return { color: "text-gray-400 bg-gray-500/10 border-gray-500/20", label: "FILE" };
 }
 
@@ -616,7 +626,7 @@ function VaultScreen({ onLock, onChangePin }: { onLock: () => void; onChangePin:
             <div className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 border border-gray-700/50 rounded-2xl overflow-hidden">
               <div className="divide-y divide-gray-700/40">
                 {documents.map((doc) => {
-                  const fileIcon = getFileIcon(doc.type);
+                  const fileIcon = getFileIcon(doc.type || "");
                   return (
                     <div key={doc.id} className="flex items-center gap-4 px-5 py-4 hover:bg-white/[0.03] transition-colors">
                       <div className={`w-10 h-10 rounded-lg border flex items-center justify-center flex-shrink-0 ${fileIcon.color}`}>
@@ -715,42 +725,13 @@ function VaultScreen({ onLock, onChangePin }: { onLock: () => void; onChangePin:
 
 // ─── Root Component — orchestrates all screens ────────────────────────────────
 export default function DigiLockerPage() {
-  useSessionGuard(); // ← ADD line 5 — first line inside the function
+  useSessionGuard();
 
-  const [screen, setScreen] = useState<Screen>("loading");
-
-  // On mount: check if user has a PIN set
-  useEffect(() => {
-    apiFetch("/api/digilocker/pin/status")
-      .then((res) => setScreen(res.has_pin ? "enter_pin" : "create_pin"))
-      .catch(() => setScreen("enter_pin")); // default to enter if API fails
-  }, []);
-
-  if (screen === "loading") {
-    return (
-      <div className="min-h-screen bg-[#0a0b14] flex items-center justify-center">
-        <div className="w-10 h-10 border-2 border-gray-700 border-t-red-500 rounded-full animate-spin" />
-      </div>
-    );
-  }
-
-  if (screen === "create_pin") {
-    return <CreatePinScreen onCreated={() => setScreen("vault")} />;
-  }
-
-  if (screen === "enter_pin") {
-    return <EnterPinScreen onVerified={() => setScreen("vault")} />;
-  }
-
-  if (screen === "change_pin") {
-    return <ChangePinScreen onDone={() => setScreen("vault")} />;
-  }
-
-  // screen === "vault"
+  // Directly load vault (NO PIN FLOW)
   return (
     <VaultScreen
-      onLock={() => setScreen("enter_pin")}
-      onChangePin={() => setScreen("change_pin")}
+      onLock={() => {}}          // no-op
+      onChangePin={() => {}}     // no-op
     />
   );
 }
